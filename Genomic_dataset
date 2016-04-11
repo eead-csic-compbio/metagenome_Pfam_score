@@ -37,7 +37,7 @@ perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (s
 #The script use as input the uid list and the directory of all genomes. 
 
 
-#METAGENOMIC DATASE
+#METAGENOMIC DATASET
 
 
  # 1)List of Metagenomes of interest (MG-RAST id)  http://metagenomics.anl.gov/   	(f)Metagenomic_dataset.txt)
