@@ -1,4 +1,4 @@
-#Genomic Dataset 
+###Genomic Dataset 
 
 #We obtain all the complete annotated genomes from NCBI  (June 25 2014) using the following command:  
 wget ftp://ftp.ncbi.nlm.nih.gov/genomes/Bacteria/all.faa.tar.gz
