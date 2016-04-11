@@ -5,9 +5,9 @@ This computational pipeline was developed by B Contreras-Moreira, C Poot and V D
 We propose this computational approach (written  in perl and python) to compare, at molecular level, the importance of sulfur cycle (SC) by using a multigenomic scale, gathering all the taxa, genes and enzymatic numbers as well as the protein families involved in the SC to estimate the relative entropies, in order to generate a dimensionless Sulfur Score (SS), which allows evaluating the importance of the SC as well as its ecological weight in a global scale. The advantage of this algorithm is that can be used with subsets of gene families from particular metabolic pathways to search specific ecological capabilities, belonging either to different habitats or biogeochemical cycles
 
 
-The algoritm is dividen in four main stages:
+###The algoritm is dividen in four main stages:
 
-STAGE 1. Compilation of datasets and databases:
+##STAGE 1. Compilation of datasets and databases:
 
 a) Genes of metabolism of interest in this case our database is called SuCy  (Sulfur Cycle) that includes the bulk of genes involved in metabolic mobilization of sulfur compounds. 
 
@@ -24,10 +24,10 @@ f) Metagenomic dataset  A set of 935 metagenomes available from MG-RAST (3.6) wa
 
 
 
-STAGE 2. Searching for the protein domains (hmmsearch) 
+##STAGE 2. Searching for the protein domains (hmmsearch) 
 
-STAGE 3. Knowing the relative entropy
+##STAGE 3. Knowing the relative entropy
 
-STAGE 4. Sulfur Score (SS) origin and interpretation
+##STAGE 4. Sulfur Score (SS) origin and interpretation
 
 
