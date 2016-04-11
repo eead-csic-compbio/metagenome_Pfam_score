@@ -25,6 +25,9 @@ f) Metagenomic dataset  A set of 935 metagenomes available from MG-RAST (3.6) wa
 
 
 STAGE 2. Searching for the protein domains (hmmsearch) 
+
 STAGE 3. Knowing the relative entropy
+
 STAGE 4. Sulfur Score (SS) origin and interpretation
+
 
