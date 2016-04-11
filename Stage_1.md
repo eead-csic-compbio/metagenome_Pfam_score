@@ -19,8 +19,8 @@ Convert to one line format from : #http://www.eead.csic.es/compbio/material/bioi
 `perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (sort(keys(%fa))){ print "$s\n$fa{$s}\n" }}' GENOMAS_NCBI.faa > GENOMAS_NCBI.1.faa`
 
 
-Obtain the list of non redundant genomes from http://microbiome.wlu.ca/research/redundancy/redundancy.cgi
-Clusters GGS of 95%
+Obtain the list of non redundant genomes from http://microbiome.wlu.ca/research/redundancy/redundancy.cgi  
+Clusters GGS of 95%  
 
 REDUNDANCY—Interface (results)
 You have chosen the following items:  
