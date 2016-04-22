@@ -1,20 +1,12 @@
----
-title: "Metagenome Pfam score"
-author:
-- name: Valerie de Anda
-  affiliation: Instituto de Ecología, Universidad Nacional Autónoma de México, México
-- name: Cesar Poot-Hernandez 
-  affiliation: Instituto de Biotecnología, Universidad Nacional Autónoma de México, México
-- name: Bruno Contreras-Moreira
-  affiliation: Fundación ARAID & Estación Experimental de Aula Dei-CSIC, Zaragoza, Spain
-output:
-  html_document:
-    fig_caption: yes
-    toc: yes
-  pdf_document:
-    fig_caption: yes
-    toc: yes
----
+# Metagenome Pfam score
+
+Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira (3)
+
+1. Instituto de Ecología, Universidad Nacional Autónoma de México, Mé
+2. Instituto de Biotecnología, Universidad Nacional Autónoma de México, Mé
+3. Fundación ARAID & Estación Experimental de Aula Dei-CSIC, Zaragoza, Spa
+
+--
 
 We share this computational approach (written in perl and python) to compute, at molecular level, sulfur cycle (SC) enrichment at multigenomic scale. We hope it can help other researchers. This piIn a nutshell, this pipeline first estimates the relative
 
