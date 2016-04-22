@@ -2,9 +2,9 @@
 
 Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira (3)
 
-1. Instituto de Ecología, Universidad Nacional Autónoma de Méxicoexico
-2. Instituto de Biotecnología, Universidad Nacional Autónoma de MéxicMexico
-3. Fundación ARAID & Estación Experimental de Aula Dei-CSIC, Zaragoza, Sin
+1. Instituto de Ecologia, UNAM, Mexico
+2. Instituto de Biotecnologia, UNAM, Mexico
+3. Fundacion ARAID & EEAD-CSIC, Zaragoza, Spain
 
 --
 
