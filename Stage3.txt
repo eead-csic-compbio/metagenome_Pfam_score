@@ -1,0 +1,12 @@
+#STAGE 3. Estimating the relative entropy of protein domains
+
+Script matrix.pl calculates the relative entropy of each protein domain. 
+
+$ falta ejemplo
+
+In order to plot the results we used two scripts, extract_entropies.py and barplots.py:
+
+$ python extract_entropies.py /folder/containing/matrix/with/relative/entropies/
+
+$ python barplots.py data/matrices_pfam_entropies.tab
+
