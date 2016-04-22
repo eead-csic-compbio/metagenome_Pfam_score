@@ -2,8 +2,9 @@
 
 use strict;
 
-my $NCBI_RAW_FOLDERS = "/path/to/extracted/genomes/";
-my $NRLIST = 'data/list_nr_genomes_24042014.txt';
+die "usage: $0 <list of nr genome uids> <folder with NCBI genome<>\n" if(!$ARGV[1]);
+
+my ($NRLIST,$NCBI_RAW_FOLDERS) = @ARGV;
 
 my (%nr,$uid);
 open(NRLIST,$NRLIST);
