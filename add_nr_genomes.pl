@@ -2,8 +2,8 @@
 
 use strict;
 
-my $NCBI_RAW_FOLDERS = "/home/val/zaragoza/faa/";
-my $NRLIST = 'list_nr_genomes_24042014.txt';
+my $NCBI_RAW_FOLDERS = "/path/to/extracted/genomes/";
+my $NRLIST = 'data/list_nr_genomes_24042014.txt';
 
 my (%nr,$uid);
 open(NRLIST,$NRLIST);
