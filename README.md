@@ -62,7 +62,10 @@ With these procedures we evaluated the variation of relative entropy of each PFA
 ![legend](data/matrices_pfam_entropies.tab_hmap.png)
 
 
-
 ##STAGE 4. Sulfur Score (SS) and interpretation
 
 Source: [Stage4.txt](Stage4.txt)
+
+We propose to evaluate the SC in a quantitative and comparative way using one single value that we call Sulfur Score (SS). In this approach, information-rich (H’) protein families (114) will contribute to higher Sulfur Scores, whereas non-informative families will decrease it. 
+ 
+Therefore, if we compare total Sulfur Scores across different metagenomic datasets, sampled from different environments, those wherein the mobilization of sulfur compounds is most significant, will have a high SS; in contrast, environments where the SC is marginal will have low SS scores. Using this approach we calculated SS in genomic and metagenomic datasets of different mean fragment length.
