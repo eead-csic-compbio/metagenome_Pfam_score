@@ -1,0 +1,53 @@
+#STAGE 1 
+
+**GENOMIC DATASET**
+
+1. Download all the complete annotated genomes from NCBI using the following command. Ours were retrieved on June 25 2014:  
+
+`wget ftp://ftp.ncbi.nlm.nih.gov/genomes/Bacteria/all.faa.tar.gz`
+
+Since the FTP directory changed this command now should be updated to: 
+
+`wget ftp://ftp.ncbi.nih.gov/genomes/archive/old_refseq/Bacteria/all.faa.tar.gz`
+
+2. Decompress the file:
+
+`tar xvzf all.faa.tar.gz`
+
+<!--3. Convert to one line FASTA format:
+
+`perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (sort(keys(%fa))){ print "$s\n$fa{$s}\n" }}' GENOMAS_NCBI.faa > GENOMAS_NCBI.1.faa` -->
+
+3. Choose a GSS value of 0.95 and retrieve a list of non redundant genomes from <http://microbiome.wlu.ca/research/redundancy/redundancy.cgi> . Save it to a local file, such as [data/list_nr_genomes_24042014.txt](data/list_nr_genomes_24042014.txt).
+
+<!--  REDUNDANCY—Interface (results)
+  You have chosen the following items:  
+    GSS / DNA Signature = GSSb  
+    GSS threshold = 0.95  
+    DNA-signature threshold = 0.01  
+    Sort by size or overannotation = largest      
+    Results style = simple list --> 
+
+4. Make a FASTA file with peptide sequences from non-redundant genomes. For this task we require the script [add_nr_genomes.pl](add_nr_genomes.pl). The script takes as input i) the uid list and ii) the directory where of NCBI genomes were unpacked:
+
+`perl add_nr_genomes.pl data/list_nr_genomes_24042014.txt ncbi_genomes/ > data/GENOMES_NCBI_nr_24042014.faa`
+
+**METAGENOMIC DATASET**
+
+5. Create a list of metagenomes of interest, such as MG-RAST ids from <http://metagenomics.anl.gov>. See file [data/Metagenomic_dataset.txt](data/Metagenomic_dataset.txt) as an example.
+
+6. Obtain the corresponding encoded protein sequences:
+ 
+`for line in `cat data/Metagenomic_dataset.txt`; do wget "http://api.metagenomics.anl.gov/1/download/mgm$line?file=350.1" -O  $line".gz" ; done`
+
+7. Decompress the files:
+
+`tar -xvz *.gz`
+ 
+8. Obtain the mean size of the protein coding sequences:
+
+ `for FILE in *; do perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; printf("%1.0f\t",$m/scalar(keys(%fa))) }' $FILE; echo $FILE; done > list_mean_sequence_length.tab`
+
+
+
+
