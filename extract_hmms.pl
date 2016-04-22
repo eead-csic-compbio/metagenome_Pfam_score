@@ -3,9 +3,9 @@ use strict;
 my $IDLIST = 'id_interpro.txt';
 
 my %DBs = ( 
-  'Pfam'=>'/compbio_db/interproscan-5.4-47.0/data/pfam/27.0/Pfam-A.hmm',
-	#'SUPERFAMILY'=>'/compbio_db/interproscan-5.4-47.0/data/superfamily/1.75/hmmlib_1.75',
-	#'TIGRFAM'=>'/compbio_db/interproscan-5.4-47.0/data/tigrfam/13.0/TIGRFAMs_13.0_HMM.LIB'
+  'Pfam'=>'interproscan-5.4-47.0/data/pfam/27.0/Pfam-A.hmm',
+	#'SUPERFAMILY'=>'interproscan-5.4-47.0/data/superfamily/1.75/hmmlib_1.75',
+	#'TIGRFAM'=>'interproscan-5.4-47.0/data/tigrfam/13.0/TIGRFAMs_13.0_HMM.LIB'
 );
 
 my (%IDs,$db,$name,$hmmtext,$n_of_hmms);
