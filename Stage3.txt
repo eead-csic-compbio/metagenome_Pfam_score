@@ -2,8 +2,7 @@
 
 Script matrix.pl calculates the relative entropy of each protein domain. 
 
- perl matrix.pl  <output from hmmsearch *.tab> <SuLy>  
-
+ perl matrix.pl  <output from hmmsearch *.tab> </data/nr_sucy.txt>  
 
 In order to plot the results we used two scripts, extract_entropies.py and barplots.py:
 
