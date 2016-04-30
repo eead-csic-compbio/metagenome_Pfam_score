@@ -6,7 +6,7 @@ How to run sulfur score
 
       # metagenomic dataset output's
 
-        /Home2/sulfur_score/hmmers/*.tab 
+        /data/h/hmmers/*.tab 
 
 
         # Genomic  dataset output's
