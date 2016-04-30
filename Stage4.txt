@@ -2,23 +2,53 @@
 
 How to run sulfur score
 
-1) Create a directory with the output tab format of hmmsearch output.tab 
+1) Create a directory with the output tab format of hmmsearch output.tab derived from the 
 
-      # metagenomic dataset output's
+a) Metagenomic dataset: Example of the output should look like this:
 
-        /data/h/hmmers/*.tab 
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+252_1_89_+           -          ABC_tran             PF00005.22     5e-11   38.6   0.0     5e-11   38.6   0.0   1.0   1   0   0   1   1   1   1 -
+3930_1_79_-          -          GTP_EFTU             PF00009.22   1.3e-06   23.5   1.0   1.3e-06   23.5   1.0   1.0   1   0   0   1   1   1   1 -
+#
 
+b) Genomic dataset: Example of the output should look like this:
 
-        # Genomic  dataset output's
-
-        /Home2/sulfur_score/genomas_cover10/pfam_cover10/GENOMAS_NCBI_nr_24042014.fa.pf.tab
-
+#                                                                           --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                    accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#            ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+gi|15669207|ref|NP_248012.1|     -          2-Hacid_dh           PF00389.25   7.4e-44  156.6   0.6   7.4e-44  156.6   0.6   1.9   3   0   0   3   3   1   1 D-3-phosphoglycerate dehydrogenase [Methanocaldococcus jannaschii DSM 2661]
+gi|289193097|ref|YP_003459038.1| -          2-Hacid_dh           PF00389.25   9.5e-44  156.2   0.5   9.5e-44  156.2   0.5   2.0   3   0   0   3   3   1   1 D-3-phosphoglycerate dehydrogenase [Methanocaldococcus sp. FS406-22]
+gi|333910517|ref|YP_004484250.1| -          2-Hacid_dh           PF00389.25     1e-43  156.1   0.5     1e-43  156.1   0.5   2.0   3   0   0   3   3   1   1 D-3-phosphoglycerate dehydrogenase [Methanotorris igneus Kol 5]
 
 2)There are two scripts to run sulfur score, one for each data set 
 
-in /Home2/sulfur_score 
 perl sscore_genomes.pl # for genomic datset
+
 perl sccore_metagenomes.pl # for metagenomic dataset 
+
+
+SS SIZE CALIBRATION
+
+Selection of the input size of SS in metagenomic dataset 
+SS size Average mean size length  of the metagenome (MSL)
+30    0-45
+60    45-80
+100   80-125
+150   125-175
+200   175-225
+250   225-275
+300   275-300
+The SS algorithm was designed to test the importance of SC in genomic and metagenomic datasets with variable mean size length. The mean size is a very important factor to consider in metagenomic datasets, due to its imperfect nature. Consequently, the detection of certain family protein (i.e larger amino acid chain), can be severely affected in small metagenomic reads (less than 20 aminoacids in mean size). Therefore, the SS was calibrated in order to specify the mean size of the input metagenome. First, we compute the relative entropies of the protein families in GenF (30, 60,100,150,200,250,300) /data/matrix. The latter entropies were used to compute the SS in Met. The information of mean size length (MSL) of each metagenome was used to consider the suitable size used as input of SS, therefore the SS cannot be computed if there is none information about the MSL of each metagenome.
+
+
+
+
+
+
+
+The algoritm to compute SS has the following options 
 
       usage: sscore_genomes.pl [options]      
 
@@ -26,12 +56,12 @@ perl sccore_metagenomes.pl # for metagenomic dataset
  
       -input            input file with HMM matches created by hmmsearch, tbl format
 
-      -size             desired size of genomic datset    (integer, default 500)
+      -size             desired size of genomic datset    (integer, default 100) (this option  
  
       -bzip             input file is bzip2-compressed
  
       -matrixdir        directory containing hmm matrices from fragments of variable size (string, 
-                    default /Home2/sulfur_score/matrices_curadas_sep)
+                    default /data/matrix/)
  
       -minentropy       min relative entropy of HMMs to be considered (float)
                                                  
