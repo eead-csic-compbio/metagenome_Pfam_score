@@ -1,35 +1,12 @@
 #STAGE 4. Sulfur Score (SS) origin and interpretation
 
-How to run sulfur score
+Requirements before compute SS 
 
-1) Create a directory with the output tab format of hmmsearch output.tab derived from the 
+**SIZE SELECTION**
 
-a) Metagenomic dataset: Example of the output should look like this:
+The SS algorithm was designed to test the importance of SC in genomic and metagenomic datasets with variable mean size length. The mean size is a very important factor to consider in metagenomic datasets, due to its imperfect nature. Consequently, the detection of certain family protein (i.e larger amino acid chain), can be severely affected in small metagenomic reads (less than 20 aminoacids in mean size). Therefore, the SS was calibrated in order to specify the mean size of the input metagenome. First, we compute the relative entropies of the protein families in GenF (30, 60,100,150,200,250,300) /data/matrix. The latter entropies were used to compute the SS in Met. The information of mean size length (MSL) of each metagenome was used to consider the suitable size used as input of SS, therefore the SS cannot be computed if there is none information about the MSL of each metagenome.
 
-#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
-# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
-#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
-252_1_89_+           -          ABC_tran             PF00005.22     5e-11   38.6   0.0     5e-11   38.6   0.0   1.0   1   0   0   1   1   1   1 -
-3930_1_79_-          -          GTP_EFTU             PF00009.22   1.3e-06   23.5   1.0   1.3e-06   23.5   1.0   1.0   1   0   0   1   1   1   1 -
-#
-
-b) Genomic dataset: Example of the output should look like this:
-
-#                                                                           --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
-# target name                    accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
-#            ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
-gi|15669207|ref|NP_248012.1|     -          2-Hacid_dh           PF00389.25   7.4e-44  156.6   0.6   7.4e-44  156.6   0.6   1.9   3   0   0   3   3   1   1 D-3-phosphoglycerate dehydrogenase [Methanocaldococcus jannaschii DSM 2661]
-gi|289193097|ref|YP_003459038.1| -          2-Hacid_dh           PF00389.25   9.5e-44  156.2   0.5   9.5e-44  156.2   0.5   2.0   3   0   0   3   3   1   1 D-3-phosphoglycerate dehydrogenase [Methanocaldococcus sp. FS406-22]
-gi|333910517|ref|YP_004484250.1| -          2-Hacid_dh           PF00389.25     1e-43  156.1   0.5     1e-43  156.1   0.5   2.0   3   0   0   3   3   1   1 D-3-phosphoglycerate dehydrogenase [Methanotorris igneus Kol 5]
-
-2)There are two scripts to run sulfur score, one for each data set 
-
-perl sscore_genomes.pl # for genomic datset
-
-perl sccore_metagenomes.pl # for metagenomic dataset 
-
-
-SS SIZE CALIBRATION
+***SIZE *** 
 
 Selection of the input size of SS in metagenomic dataset 
 SS size Average mean size length  of the metagenome (MSL)
@@ -40,36 +17,61 @@ SS size Average mean size length  of the metagenome (MSL)
 200   175-225
 250   225-275
 300   275-300
-The SS algorithm was designed to test the importance of SC in genomic and metagenomic datasets with variable mean size length. The mean size is a very important factor to consider in metagenomic datasets, due to its imperfect nature. Consequently, the detection of certain family protein (i.e larger amino acid chain), can be severely affected in small metagenomic reads (less than 20 aminoacids in mean size). Therefore, the SS was calibrated in order to specify the mean size of the input metagenome. First, we compute the relative entropies of the protein families in GenF (30, 60,100,150,200,250,300) /data/matrix. The latter entropies were used to compute the SS in Met. The information of mean size length (MSL) of each metagenome was used to consider the suitable size used as input of SS, therefore the SS cannot be computed if there is none information about the MSL of each metagenome.
+
+Requirements
+
+1) Once the mean size of the metagenomic dataset is computed (step 8 in STAGE 1), select the propper size to run SS taking into account the above mentioned  table. 
+2)   Create a directory with the output tab format of hmmsearch output.tab derived from the  metagenomic dataset: Example of the output should look like this:
+
+#                                                               --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name        accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+252_1_89_+           -          ABC_tran             PF00005.22     5e-11   38.6   0.0     5e-11   38.6   0.0   1.0   1   0   0   1   1   1   1 -
+3930_1_79_-          -          GTP_EFTU             PF00009.22   1.3e-06   23.5   1.0   1.3e-06   23.5   1.0   1.0   1   0   0   1   1   1   1 -
+#
+
+3) If you want to compute the SS selecting entropies of a certain size (close to one are more informative), you can select this option, however  the higher the number choosen for the entropy,  the less informative the SS will be in terms of importance of SC. Therefore we strogly recomend to use specific PFAMS rather than entropy cut-off. 
+
+4) There is another option of SS that help you to visualize the PFAMs in the metabolic pathway of KEGG (map00920), you will need to provide a list with the PFAM id and the equivalente KO number (Note that PFAMs constitute partial domains of a protein, therefore, one PFAM, may be represented in several KO numbers). Example in  /data/sulfur_score_kegg_list
+
+5)  The algorithm is able to compute the SS using specific PFAMS belonging to certain metabolic pathways, you can specify each specific metabolic pathways...... 
 
 
+####me falta describir que via metabolica  corresponde a los numeros..... ###
 
+perl sscore_metagenomes.pl
 
+usage: sscore_metagenomes.pl [options] 
 
-
-
-The algoritm to compute SS has the following options 
-
-      usage: sscore_genomes.pl [options]      
-
-      -help             brief help message
+ -help             brief help message
  
-      -input            input file with HMM matches created by hmmsearch, tbl format
+ -input            input file with HMM matches created by hmmsearch, tbl format
 
-      -size             desired size of genomic datset    (integer, default 100) (this option  
+ -size             desired size for produced random fragments    (integer, default 100)
  
-      -bzip             input file is bzip2-compressed
+ -bzip             input file is bzip2-compressed
  
-      -matrixdir        directory containing hmm matrices from fragments of variable size (string, 
-                    default /data/matrix/)
+ -matrixdir        directory containing hmm matrices from fragments of variable size (string, 
+                    default /Home2/PROYECTOS/sulfur_score/Home2/sulfur_score/matrices_curadas_sep/)
  
-      -minentropy       min relative entropy of HMMs to be considered (float)
-                                                 
-      -keggmap          file with HMM to KEGG mappings
+ -minentropy       min relative entropy of HMMs to be considered (float)
+						 
+ -keggmap          file with HMM to KEGG mappings
  
-      -pathway          comma-separated pathway numbers from -keggmap file to consider only member HMMs  (string, by default all pathways are used, requires -keggmap)
+ -pathway          comma-separated pathway numbers from -keggmap file to consider only member HMMs  (string, by default all pathways are used, requires -keggmap)
 
-     
+
+Especificar varios ejemplos 
+en el caso de que se tenga una carpeta con metagenomas de tamaño  30  
+
 
 `for file in hmmers/*.tab; do perl sscore_metagenomes.pl -input $file -size 30 -matrixdir /Home2/sulfur_score/matrices_curadas_sep -keggmap sulfur_score_kegg_list  > $file.30..score; done` 
+
+
+en caso de que se quiera hacer el mapeo en keeg.. como procede
+
+
+
+en caso de  que se quiera analizar una via metabolica especifica... 
+
 
