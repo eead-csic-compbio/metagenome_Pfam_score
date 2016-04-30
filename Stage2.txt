@@ -25,7 +25,11 @@ $ interproscan-5.4-47.0/bin/superfamily/1.75/ass3.pl GENOMES_NCBI_nr_24042014.fa
 
 Q54506    6cbba7cb557879dfe57c62e4e0c8bfe1    437    TIGRFAM    TIGR00339    sopT: sulfate adenylyltransferase    4    386    3.4E-141    T    10-07-2014    IPR002650    Sulphate adenylyltransferase    KEGG: 00230+2.7.7.4|KEGG: 00450+2.7.7.4|KEGG: 00920+2.7.7.4|MetaCyc: PWY-5278|MetaCyc: PWY-5340|MetaCyc: PWY-6683|MetaCyc: PWY-6932|Reactome: REACT_13433|UniPathway: UPA00140
 
-3. From the output file we are interested in the PFAMs ids, copy third and fourht column in a new file *.txt   
+
+
+
+
+3. From the output file we are interested in the PFAMs ids, copy third and fourht column in a new file  /data/id_interpro.txt 
 
 4. With script extract_hmms.pl, we generate the database that contains the hidden markov models of each family.   
    
