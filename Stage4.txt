@@ -34,10 +34,8 @@ Requirements
 
 4) There is another option of SS that help you to visualize the PFAMs in the metabolic pathway of KEGG (map00920), you will need to provide a list with the PFAM id and the equivalente KO number (Note that PFAMs constitute partial domains of a protein, therefore, one PFAM, may be represented in several KO numbers). Example in  /data/sulfur_score_kegg_list
 
-5)  The algorithm is able to compute the SS using specific PFAMS belonging to certain metabolic pathways, you can specify each specific metabolic pathways...... 
+5)  The algorithm is able to compute the SS using specific PFAMS belonging to certain metabolic pathways, you can specify each specific metabolic pathways according to  the pathways described in /data/pathways.ods 
 
-
-####me falta describir que via metabolica  corresponde a los numeros..... ###
 
 perl sscore_metagenomes.pl
 
@@ -52,7 +50,7 @@ usage: sscore_metagenomes.pl [options]
  -bzip             input file is bzip2-compressed
  
  -matrixdir        directory containing hmm matrices from fragments of variable size (string, 
-                    default /Home2/PROYECTOS/sulfur_score/Home2/sulfur_score/matrices_curadas_sep/)
+                    default /data/matrix)
  
  -minentropy       min relative entropy of HMMs to be considered (float)
 						 
@@ -61,17 +59,16 @@ usage: sscore_metagenomes.pl [options]
  -pathway          comma-separated pathway numbers from -keggmap file to consider only member HMMs  (string, by default all pathways are used, requires -keggmap)
 
 
-Especificar varios ejemplos 
-en el caso de que se tenga una carpeta con metagenomas de tamaño  30  
+Example. 
+1) If you have a folder containing metagenomes of size 30, and all the matrix in another containing folder (i.e all the files named  GENOMAS_NCBI_nr_24042014_size100_cover10.faa.pf.tab.csv)  you can compute the SS with the following command line : 
 
 
-`for file in hmmers/*.tab; do perl sscore_metagenomes.pl -input $file -size 30 -matrixdir /Home2/sulfur_score/matrices_curadas_sep -keggmap sulfur_score_kegg_list  > $file.30..score; done` 
+for file in *.tab; do perl sscore_metagenomes.pl -input $file -size 30 -matrixdir /matrixfolder/ -keggmap /data/sulfur_score_kegg_list  > $file.30..score; done
 
 
-en caso de que se quiera hacer el mapeo en keeg.. como procede
+2) If you want to compute the SS using specific metabolic pathways, follow the /data/pathways.ods file, and then choose the specific pathway number. 
 
 
-
-en caso de  que se quiera analizar una via metabolica especifica... 
+for file in *.tab; do perl sscore_metagenomes.pl -input $file -size 30 -matrixdir /matrixfolder/ -keggmap /data/sulfur_score_kegg_list  -pathway 25 > $file.30.paht25; done
 
 
