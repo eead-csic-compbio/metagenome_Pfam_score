@@ -6,9 +6,6 @@ Script matrix.pl calculates the relative entropy of each protein domain.
 
 In order to plot the results we used two scripts, extract_entropies.py and barplots.py:
 
-Podemos pasar todos los archivos  GENOMAS_NCBI_nr_24042014_size*.csv  
-a un directorio diferente como por ejemplo  /data/matrix/*.csv  
-
 This script parse all the matrix containing entropies and  returns a tabular list of the entropies  measured in the GenF 
 see  the example output data/matrices_pfam_entropies.tab
  
