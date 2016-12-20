@@ -1,10 +1,5 @@
----
-title: "Stage 1"
-author: "Valerie De Anda"
-date: "December 2016"
-output: html_document
----
 
+#Stage 1
 In this stage, the user should have previous knowledge of the biogeochemical cycle or metabolic pathway to analyze, in this case we provide all the data involved in the sulfur cycle 
 
 ###Required datasets provided by the user 
