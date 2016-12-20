@@ -1,0 +1,146 @@
+---
+title: "Stage 1"
+author: "Valerie De Anda"
+date: "December 2016"
+output: html_document
+---
+
+In this stage, the user should have previous knowledge of the biogeochemical cycle or metabolic pathway to analyze, in this case we provide all the data involved in the sulfur cycle 
+
+###Required datasets provided by the user 
+
+1) A multifasta file of protein coding genes involved in a specific biogeochemical cycle, or several metabolic pathways (i.e hidrocarbon degradation). 
+
+```{r,eval=FALSE}
+less data/sucy_database_uniprot.fasta
+```
+
+2) A comprhensive list of curated organisms. In our case we provided the list of sulfur energy based prokariotes (See also Supplementary Table S1 )
+
+```{r,eval=FALSE}
+less data/suli.txt 
+```
+
+3) Omic datasets. Genomic and Metagenomic data are neccesary to run the algorithm.  
+
+###Genomic dataset
+
+```{r,eval=FALSE}
+mkdir ncbi_genomes
+cd ncbi_genomes
+#Dowload the complete  annotated genomes from NCBI using the following command. Ours were retrieved on June 25 2014:  
+#wget ftp://ftp.ncbi.nlm.nih.gov/genomes/Bacteria/all.faa.tar.gz
+#Since the FTP directory changed this command now should be updated to
+wget ftp://ftp.ncbi.nih.gov/genomes/archive/old_refseq/Bacteria/all.faa.tar.gz
+tar xvzf all.faa.tar.gz
+# At this point should be  downloaded 2775 genomes
+ls | wc 
+```
+
+###Non-redundant Genomic dataset
+
+Go to the [algorithm](http://microbiome.wlu.ca/research/redundancy/redundancy.cgi) described in [Moreno et al., 2012](http://bioinformatics.oxfordjournals.org/content/early/2013/02/27/bioinformatics.btt064.full), and Choose a GSS value.
+
+We chose the following items:
+
+```{r,eval=FALSE}
+#GSS / DNA Signature = GSSb
+#GSS threshold = 0.95
+#DNA-signature threshold = 0.01
+#Sort by size or overannotation = largest
+#Results style = simple list
+#and save it to a local file 
+less  data/list_nr_genomes_24042014.txt  
+```
+ 
+
+###Genomic non redundant multifasta file 
+
+```{r,eval=FALSE}
+#GSS / DNA Signature = GSSb
+#GSS threshold = 0.95
+#DNA-signature threshold = 0.01
+#Sort by size or overannotation = largest
+#Results style = simple list
+#and save it to a local file 
+less  data/list_nr_genomes_24042014.txt  
+```
+ 
+
+###Generate a FASTA file with peptide sequences from non-redundant genomes.
+
+
+```{r,eval=FALSE}
+#For this task we require the script  add_nr_genomes.pl located in the scripts directory 
+#The script takes as input i) the uid list generated above and ii) the directory of the genomic dataset 
+#This command  will generate a multifastafile of 1528 genomes  
+perl /scripts/add_nr_genomes.pl data/list_nr_genomes_24042014.txt ncbi_genomes/ > data/GENOMES_NCBI_nr_24042014.faa
+
+#Generate one line multifasta file using the following perl lne comand
+
+ perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (sort(keys(%fa))){ print "$s\n$fa{$s}\n" }}' GENOMAS_NCBI_nr_24042014.faa > GENOMAS_NCBI_nr_24042014.1.line.faa
+
+rm GENOMAS_NCBI_nr_24042014.faa
+```
+
+###Metagenomic dataset 
+Generate a list of metagenomes of interest. We selected only those metagenomes from the metagenomics RAST server (mg-RAST) version 3.6 that meet the following conditions:
+
+1. Public and available metagenomes
+
+2. Available metadata associated 
+
+3. Environmental samples (isolated from defined environments o features: rivers, soil, biofilms, etc), discarding the microbiome associated metagenomes (i.e human, cow, chicken)
+
+4. We also included several private metagenomes unpublished derived from sediment, water and microbial mats from Cuatro Cienegas Coahuila (De Anda, in progress)
+Using this conditions, a total of 935 id-numbers were saved to a local file
+
+```{r,eval=FALSE}
+less data/id_metagenomes.txt
+mkdir metagenome_dir
+mv id_metagenomes.txt metagenome_dir 
+cd metagenome_dir 
+```
+
+5. Obtain the corresponding encoded protein sequences using the API from MG-RAST, were ech number corresponded to one of the processing steps 
+```
+.050.1 ==> upload.fna                 
+.100.1 ==> preprocess.passed.fna      
+.100.1 ==> preprocess.removed.fna     
+.150.1 ==> dereplication.passed.fna   
+.150.1 ==> dereplication.removed.fna  
+.299.1 ==> screen.passed.fna          
+.350.1 ==> genecalling.faa      #We use this stage to dowload protein coding genes  
+.425.1 ==> rna.filter.fna             
+.440.1 ==> cluster.rna97.mapping      
+.440.1 ==> cluster.rna97.fna          
+.450.1 ==> rna.sims                   
+.550.1 ==> cluster.aa90.mapping       
+.550.1 ==> cluster.aa90.faa           
+.650.1 ==> protein.sims               
+.700.1 ==> annotation.sims.filter.seq 
+```
+```{r, eval=FALSE}
+#Begin downloading the files, this will take several minutes. Make sure you have enough space on your computer, and you are located in metagenome_dir 
+
+For line in `cat id_metagenomes.txt`; do wget "http://api.metagenomics.anl.gov/1/download/mgm$line?file=350.1" -O  $line" ; done
+
+#The dowloading files should look like this:
+
+>FA4SSCL02FZQ74_1_237_-
+LGRPIDIESLDVSFWGGLGVVLGNVVISNPEDMPGDTLMVAKEIDVKLQLWPLLSSEVRADRFIINDPTIRLHKTADG
+>FA4SSCL02ILJM5_1_200_-
+YIYLTLVEFKGQAAGLRERESIQHFQWSDKQVSKKEGSFGVDHIWYLQGIFMCSSIQKDYPKIK
+>FA4SSCL02ISFX8_1_222_+
+DEEAMHYDADYVRALEYGMPPTAGEGIGIDRLVMLLTDSPSIRDVLLFPHLRSEKGRQSSVHTFSMKLIFA
+
+```
+
+### Mean Size Lenght  (MSL) 
+Taking into account the lenght size variation in the input proteins, their detection in the metagenomic samples will likely be affected by the average length of the reads. For example, we reasoned that the detection of proteins with more than 500 aa would be challenging in metagenomes with average read length of 300 aa. In addition, larger proteins, are likely to have more domains (i.e catalytic, cofactor binding etc) of variable sizes. Consequently, we expected that the detection of certain protein families would be severely affected in small metagenomic reads (less than 20 amino acids in mean size). Therefore, we compute the mean size lenght of ech metagenome using the following script:
+
+```{r,eval=FALSE}
+cd metagenome_dir
+for FILE in *; do perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; printf("%1.0f\t",$m/scalar(keys(%fa))) }' $FILE; echo $FILE; done > list_mean_sequence_length.tab
+
+```
