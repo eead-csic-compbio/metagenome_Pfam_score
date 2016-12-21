@@ -71,6 +71,7 @@ perl /scripts/add_nr_genomes.pl data/list_nr_genomes_24042014.txt ncbi_genomes/ 
 
 
 ###New genomes using the current realease of refseq dic 2016 
+##Non redundant dataset 
 ```{r,eval=FALSE}
 #Personal communication with Gabriel Moreno.He provided us with the  GSSb List using the above parameters but with the current database of complete genomes 4085 in total 
 less /data/genomic_dataset/GSSb-0.95.txt
@@ -101,8 +102,30 @@ cat *.faa >Genomes21122016.fasta
 ###Generate one line multifasta file using the following perl lne comand
 
 ```{r,eval=FALSE}
-perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (sort(keys(%fa))){ print "$s\n$fa{$s}\n" }}' GENOMAS_NCBI_nr_24042014.faa > GENOMAS_NCBI_nr_24042014.1.line.faa
+#old data
+#perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (sort(keys(%fa))){ print "$s\n$fa{$s}\n" }}' GENOMAS_NCBI_nr_24042014.faa > GENOMAS_NCBI_nr_24042014.1.line.faa
+perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (sort(keys(%fa))){ print "$s\n$fa{$s}\n" }}' Genomes21122016.fasta  > Genomes21122016.fasta.1.line.faa
 
+```
+
+
+###Non redundant-genomic fragmented dataset  
+
+Fragment the genomic dataset using the script get_protein_fragments.pl 
+
+```{r,eval=FALSE}
+#Run each time depending on the desired sizes (30,60,100,150,200,250,300)
+perl /scripts/get_protein_fragments.pl -inFASTA Genomes21122016.fasta.1.line.faa -oUTFASTA Genomes21122016.fasta.1.line.S30.faa -size 30 -cover 10 
+```
+
+```
+Program to produce random fragments of proteins in input file with size and coverage set by user.
+usage: get_protein_fragments.pl [options] 
+ -help             brief help message
+  -inFASTA          input file with protein sequences in FASTA format
+ -outFASTA         output file with protein fragments in FASTA format
+  -size             desired size for produced random fragments    (integer, default 100)
+  -cover            desired protein coverage of produced fragment (integer, default 1) 
 ```
 
 ###Metagenomic dataset 
@@ -166,3 +189,14 @@ for FILE in *; do perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $
 less data/list_mean_sequence_length.tab
 
 ```
+
+```{r,eval=FALSE}
+#Plot the histogram open R terminal 
+
+data<-read.table("list_mean_sequence_length.tab",header=T)
+pdf(hist.pdf)
+hist(data$MSL)
+dev.off()
+```
+
+![legend](data/metagenomic_dataset/hist.pdf)
