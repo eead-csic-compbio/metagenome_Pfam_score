@@ -13,12 +13,23 @@ less data/sucy_database_uniprot.fasta
 2) A comprhensive list of curated organisms. In our case we provided the list of sulfur energy based prokariotes (See also Supplementary Table S1 )
 
 ```{r,eval=FALSE}
-less data/suli.txt 
+
+#a) Genearate a list of know genera we named (genus_suli.txt)
+head genus_suli.txt 
+
+Desulfovibrio 
+Desulfotomaculum
+Beggiatoa 
+
+#b) Search each organisms in the file of complete genomes from refseq  (see more details in Genomic data)
+
+for i in `cat genus_suli.txt ` ; do grep $i assembly_refseq.nr2016.txt |cut -f 8  >> suli.nr21122016.txt ; done
+
 ```
 
 3) Omic datasets. Genomic and Metagenomic data are neccesary to run the algorithm.  
 
-###Genomic dataset
+###Genomic dataset (Old data 2014)
 
 ```{r,eval=FALSE}
 mkdir ncbi_genomes
@@ -36,7 +47,7 @@ ls | wc
 
 Go to the [algorithm](http://microbiome.wlu.ca/research/redundancy/redundancy.cgi) described in [Moreno et al., 2012](http://bioinformatics.oxfordjournals.org/content/early/2013/02/27/bioinformatics.btt064.full), and Choose a GSS value.
 
-We chose the following items:
+We chose the following parameters:
 
 ```{r,eval=FALSE}
 #GSS / DNA Signature = GSSb
@@ -47,35 +58,52 @@ We chose the following items:
 #and save it to a local file 
 less  data/list_nr_genomes_24042014.txt  
 ```
- 
 
-###Genomic non redundant multifasta file 
-
-```{r,eval=FALSE}
-#GSS / DNA Signature = GSSb
-#GSS threshold = 0.95
-#DNA-signature threshold = 0.01
-#Sort by size or overannotation = largest
-#Results style = simple list
-#and save it to a local file 
-less  data/list_nr_genomes_24042014.txt  
-```
- 
-
-###Generate a FASTA file with peptide sequences from non-redundant genomes.
-
+###Generate a FASTA file with peptide sequences from non-redundant genomes (old data 2014)
 
 ```{r,eval=FALSE}
 #For this task we require the script  add_nr_genomes.pl located in the scripts directory 
 #The script takes as input i) the uid list generated above and ii) the directory of the genomic dataset 
 #This command  will generate a multifastafile of 1528 genomes  
 perl /scripts/add_nr_genomes.pl data/list_nr_genomes_24042014.txt ncbi_genomes/ > data/GENOMES_NCBI_nr_24042014.faa
+```
+
+
+###New data 2016 
+```{r,eval=FALSE}
+#Personal communication with Gabriel Moreno. Provided GSSb List
+#usign the above parameters (not yet web implemented)
+
+#Parse the list in order to obtain the identifiers 
+
+sed 's/,/\t/g' GSSb-0.95.txt  | sed 's/ /\t/g'  | cut -f 3  > list_nr_genomes_21122016.txt
+
+#Obtain the assembly data from those genomes 
+
+mkdir refseq_genomes
+
+wget "ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/assembly_summary_refseq.txt" 
+
+for i in `cat list_nr_genomes_21122016.tx` ; do grep $i assembly_summary_refseq.txt >> assembly_refseq.nr2016.txt ; done
+
+#Get the download links 
+
+less assembly_refseq.nr2016.txt | cut -f 20 | sed 's/$/\/*.faa.gz/g' > assembly_refseq.nr2016.download.txt
+
+#Download the genomes in faa format  
+
+wget -i assembly_refseq.nr2016.download.txt
+
+gunzip *.gz 
+cat *.faa >Genomes21122016.fasta
+```
+ 
 
 #Generate one line multifasta file using the following perl lne comand
 
- perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (sort(keys(%fa))){ print "$s\n$fa{$s}\n" }}' GENOMAS_NCBI_nr_24042014.faa > GENOMAS_NCBI_nr_24042014.1.line.faa
+```{r,eval=FALSE}
+perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (sort(keys(%fa))){ print "$s\n$fa{$s}\n" }}' GENOMAS_NCBI_nr_24042014.faa > GENOMAS_NCBI_nr_24042014.1.line.faa
 
-rm GENOMAS_NCBI_nr_24042014.faa
 ```
 
 ###Metagenomic dataset 
@@ -137,5 +165,6 @@ Taking into account the lenght size variation in the input proteins, their detec
 ```{r,eval=FALSE}
 cd metagenome_dir
 for FILE in *; do perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; printf("%1.0f\t",$m/scalar(keys(%fa))) }' $FILE; echo $FILE; done > list_mean_sequence_length.tab
+less data/list_mean_sequence_length.tab
 
 ```
