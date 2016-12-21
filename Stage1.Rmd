@@ -7,7 +7,7 @@ In this stage, the user should have previous knowledge of the biogeochemical cyc
 1) A multifasta file of protein coding genes involved in a specific biogeochemical cycle, or several metabolic pathways (i.e hidrocarbon degradation). 
 
 ```{r,eval=FALSE}
-less data/sucy_database_uniprot.fasta
+less input_data/sucy_database_uniprot.fasta
 ```
 
 2) A comprhensive list of curated organisms. In our case we provided the list of sulfur energy based prokariotes (See also Supplementary Table S1 )
@@ -25,6 +25,7 @@ Beggiatoa
 
 for i in `cat genus_suli.txt ` ; do grep $i assembly_refseq.nr2016.txt |cut -f 8  >> suli.nr21122016.txt ; done
 
+less input_data/suli.nr21122016.txt
 ```
 
 3) Omic datasets. Genomic and Metagenomic data are neccesary to run the algorithm.  
@@ -32,8 +33,8 @@ for i in `cat genus_suli.txt ` ; do grep $i assembly_refseq.nr2016.txt |cut -f 8
 ###Genomic dataset (Old data 2014)
 
 ```{r,eval=FALSE}
-mkdir ncbi_genomes
-cd ncbi_genomes
+
+#Files located in old_data2014
 #Dowload the complete  annotated genomes from NCBI using the following command. Ours were retrieved on June 25 2014:  
 #wget ftp://ftp.ncbi.nlm.nih.gov/genomes/Bacteria/all.faa.tar.gz
 #Since the FTP directory changed this command now should be updated to
@@ -69,18 +70,16 @@ perl /scripts/add_nr_genomes.pl data/list_nr_genomes_24042014.txt ncbi_genomes/ 
 ```
 
 
-###New data 2016 
+###New genomes using the current realease of refseq dic 2016 
 ```{r,eval=FALSE}
-#Personal communication with Gabriel Moreno. Provided GSSb List
-#usign the above parameters (not yet web implemented)
+#Personal communication with Gabriel Moreno.He provided us with the  GSSb List using the above parameters but with the current database of complete genomes 4085 in total 
+less /data/genomic_dataset/GSSb-0.95.txt
 
-#Parse the list in order to obtain the identifiers 
-
+#Parse the list in order to obtain the identifiers of non-redundant genomes
+cd /data/genomic_dataset
 sed 's/,/\t/g' GSSb-0.95.txt  | sed 's/ /\t/g'  | cut -f 3  > list_nr_genomes_21122016.txt
 
 #Obtain the assembly data from those genomes 
-
-mkdir refseq_genomes
 
 wget "ftp://ftp.ncbi.nlm.nih.gov/genomes/refseq/assembly_summary_refseq.txt" 
 
@@ -99,7 +98,7 @@ cat *.faa >Genomes21122016.fasta
 ```
  
 
-#Generate one line multifasta file using the following perl lne comand
+###Generate one line multifasta file using the following perl lne comand
 
 ```{r,eval=FALSE}
 perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (sort(keys(%fa))){ print "$s\n$fa{$s}\n" }}' GENOMAS_NCBI_nr_24042014.faa > GENOMAS_NCBI_nr_24042014.1.line.faa
@@ -119,10 +118,9 @@ Generate a list of metagenomes of interest. We selected only those metagenomes f
 Using this conditions, a total of 935 id-numbers were saved to a local file
 
 ```{r,eval=FALSE}
+cd data/metagenomic_dataset
 less data/id_metagenomes.txt
-mkdir metagenome_dir
-mv id_metagenomes.txt metagenome_dir 
-cd metagenome_dir 
+
 ```
 
 5. Obtain the corresponding encoded protein sequences using the API from MG-RAST, were ech number corresponded to one of the processing steps 
@@ -163,7 +161,7 @@ DEEAMHYDADYVRALEYGMPPTAGEGIGIDRLVMLLTDSPSIRDVLLFPHLRSEKGRQSSVHTFSMKLIFA
 Taking into account the lenght size variation in the input proteins, their detection in the metagenomic samples will likely be affected by the average length of the reads. For example, we reasoned that the detection of proteins with more than 500 aa would be challenging in metagenomes with average read length of 300 aa. In addition, larger proteins, are likely to have more domains (i.e catalytic, cofactor binding etc) of variable sizes. Consequently, we expected that the detection of certain protein families would be severely affected in small metagenomic reads (less than 20 amino acids in mean size). Therefore, we compute the mean size lenght of ech metagenome using the following script:
 
 ```{r,eval=FALSE}
-cd metagenome_dir
+
 for FILE in *; do perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; printf("%1.0f\t",$m/scalar(keys(%fa))) }' $FILE; echo $FILE; done > list_mean_sequence_length.tab
 less data/list_mean_sequence_length.tab
 
