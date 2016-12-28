@@ -56,7 +56,9 @@ perl ../scripts/extract_hmms.pl
 #Genomic dataset 
 cd data/
 hmmsearch --cpu 8 --cut_ga -o /dev/null  --tblout genomes_refseq_nr_22122016.fa.pf.tab  my_Pfam.hmm genomic_dataset/genomes_refseq_nr_22122016.1.faa  & 
-  
+#Genomic dataset (each genome) 
+#Optionally, compute the hmmsearch for each genome to calculate the SScore in Stage 4.Using the same command line  
+
 #Genomic fragmented dataset 
 nohup for i in /data/genomic_dataset_fragm/*.faa ; do hmmsearch --cpu 8 --cut_ga -o /dev/null --tblout $i.out.hmmsearch.tab my_Pfam.hmm  $i; done  & 
 
