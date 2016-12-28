@@ -1,0 +1,141 @@
+#STAGE 4. Sulfur Score (SS) origin and interpretation
+
+###Requirements before compute SS 
+
+Select the adecuate MSL of the metagenome in order to compute SS 
+
+| GenF size | MSL     |
+|-----------|---------|
+| 30        | 0-45    |
+| 60        | 45-80   |
+| 100       | 80-125  |
+| 150       | 125-175 |
+| 200       | 175-225 |
+| 250       | 225-275 |
+| 300       | 275-300 |
+
+If you want to compute the SS selecting entropies of a certain size (close to one are more informative), you can select this option, however  the higher the number choosen for the entropy,  the less informative the SS will be in terms of importance of global biogeochemical cycles. Therefore, we strogly recomend to use specific PFAMS rather than entropy cut-off. 
+
+There is another option of SS that help you to visualize the PFAMs in the metabolic pathway of KEGG (map00920), you will need to provide a list with the PFAM id and the equivalente KO number (Note that PFAMs constitute partial domains of a protein, therefore, one PFAM, may be represented in several KO numbers). Example in  /input_data/sulfur_score_kegg_list
+
+The algorithm is able to compute the SS using specific PFAMS belonging to certain metabolic pathways, you can specify each specific metabolic pathways. In order to use this option you only need to numerate the pathways of interes (arbitrarily ) and specify the Pfams belonging to those pathwas. The file is the same as above, /input_data/sulfur_score_kegg_list : 
+
+```
+PFAM    KEGG    PATHWAY
+PF00124 K07147  1
+PF00556 K07147  1
+PF03967 K07147  1
+PF05239 K07147  1
+PF05398 K07147  1
+PF00034 K17223  2
+PF00581         2
+PF02872 K17224  2
+PF04173 K16937  2
+
+```
+
+```{r,eval=FALSE}
+perl sscore_metagenomes.pl
+
+usage: sscore_metagenomes.pl [options] 
+
+ -help             brief help message
+-input            input file with HMM matches created by hmmsearch, tbl format
+ -size             desired size for produced random fragments    (integer, default 100)
+  -bzip             input file is bzip2-compressed
+  -matrixdir        directory containing hmm matrices from fragments of variable size (string, 
+                    default /data/matrix)
+  -minentropy       min relative entropy of HMMs to be considered (float)
+ -keggmap          file with HMM to KEGG mappings
+  -pathway          comma-separated pathway numbers from -keggmap file to consider only member HMMs  (string, by default all pathways are used, requires -keggmap)
+
+```
+
+
+
+1) If you have a folder containing metagenomes of size 30, and all the matrix in another containing folder (i.e all the files named  GENOMAS_NCBI_nr_24042014_size100_cover10.faa.pf.tab.csv)  you can compute the SS with the following command line : 
+
+
+for file in *.tab; do perl sscore_metagenomes.pl -input $file -size 30 -matrixdir /matrixfolder/ -keggmap /data/sulfur_score_kegg_list  > $file.30..score; done
+
+
+2) If you want to compute the SS using specific metabolic pathways, follow the /data/pathways.ods file, and then choose the specific pathway number. 
+
+
+for file in *.tab; do perl sscore_metagenomes.pl -input $file -size 30 -matrixdir /matrixfolder/ -keggmap /data/sulfur_score_kegg_list  -pathway 25 > $file.30.paht25; done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+						 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
