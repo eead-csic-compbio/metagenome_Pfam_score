@@ -68,6 +68,8 @@ for file in *.tab; do perl sscore_metagenomes.pl -input $file -size 30 -matrixdi
 
 
 
+grep qualscore *.score | sed 's/.27122016.hmmsearch.tab./\t/g' | sed 's/.score:qualscore:/\t/g'  > privates.csv & 
+
 
 
 
