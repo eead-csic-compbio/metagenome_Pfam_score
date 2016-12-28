@@ -6,8 +6,7 @@
 [hmmsearch](http://hmmer.org/)
 
 
-1. Annotate "domain composition" using Pfam database (and others) in the user's input proteins (See stage 1) 
-
+1. Annotate "domain composition" of the input proteins (in our case sucy_database_uniprot.fasta) using interproscan and current realease of PfamA  (december 2016) 
 ```{r,eval=FALSE}
 cd data
  
@@ -16,7 +15,6 @@ cd data
 
 #Run interproscan
 /interproscan-5.21-60.0/interproscan.sh -appl PfamA-30.0 -i /input_data/sucy_database_uniprot.fasta -f tsv -pa -iprlookupD
-
 ```
 
 2. Examinate the output example, using  following the output information of   [interproscan](https://github.com/ebi-pf-team/interproscan/wiki/InterProScan5OutputFormats)
@@ -26,11 +24,11 @@ less -S sucy_database_uniprot.fasta.tsv
 ```
 
 
-3. To get the markov models of the 152 sulfur proteins, the following files are needed
+3. To get the markov models of the input  proteins, the following files are needed
 
 ```{r,eval=FALSE}
 #1. Complete Pfam database of hmm 
-#Get the current realease of Pfam database
+#Get the current realease of Pfam database (heavy file, not provided!)
 wget ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/Pfam-A.hmm.gz
 gunzip Pfam-A.hmm.gz
 ```
@@ -41,16 +39,15 @@ gunzip Pfam-A.hmm.gz
 cut -f 4,5 sucy_database_uniprot.fasta.tsv  > id_interpro.txt 
 ```
 
-
 4. Obtain the specific markov models of the input proteins 
 ```{r,eval=FALSE}
-#Run the script extract_hmms.pl . The latter uses the files above mentioned (id_interpro.txt ) and the PfamA.hmm 
+#Run the script extract_hmms.pl . The latter use as input i) id_interpro.txt  and ii)  PfamA.hmm (Make sure you have those files in data/, and you are using those names, otherwise the script will not run )
 perl ../scripts/extract_hmms.pl 
 # Pfam
-# hmms = 112 #pfam version 30 and 114 using pfam version 27 
-#This will generate an output file named 'my_Pfam.hmm'. Note that Superfamily and TIGRFAM HMMs can also be used, but are commented out.
+# hmms = 112 #pfam version 30. Using pfam version 27 we obtain a total of  114  hmms  
+#This will generate an output file named 'my_Pfam.hmm'. (We We have compressed the file my_Pfam.hmm.bz2) 
+#Note that Superfamily and TIGRFAM HMMs can also be used, but are commented out.
 ```
-
 
 5. Annotate PFAM domains in the omic datasets using hmmsearch 
 
@@ -58,31 +55,21 @@ perl ../scripts/extract_hmms.pl
 
 #Genomic dataset 
 cd data/
-time hmmsearch --cpu 8 --cut_ga -o /dev/null  --tblout genomes_refseq_nr_22122016.1.faa.tab ../my_Pfam.hmm genomes_refseq_nr_22122016.1.faa  & 
- 
-  
-real	57m44.856s
-user	309m5.040s
-sys	3m24.429s
-
+hmmsearch --cpu 8 --cut_ga -o /dev/null  --tblout genomes_refseq_nr_22122016.1.faa.out.hmmsearch.tab  my_Pfam.hmm genomic_dataset/genomes_refseq_nr_22122016.1.faa  & 
   
 #Genomic fragmented dataset 
-nohup for i in /data/genomic_dataset_fragm/*.faa ; do hmmsearch --cpu 8 --cut_ga -o /dev/null --tblout $i.tab my_Pfam.hmm  $i; done  & 
+nohup for i in /data/genomic_dataset_fragm/*.faa ; do hmmsearch --cpu 8 --cut_ga -o /dev/null --tblout $i.out.hmmsearch.tab my_Pfam.hmm  $i; done  & 
 
 #Metagenomic dataset  
 
-nohup for i in /data/metagenomic_dataset/* ; do hmmsearch --cpu 4 --cut_ga -o /dev/null --tblout $i.tab my_Pfam.hmm  $i; done  & 
-
-
-
+nohup for i in /data/metagenomic_dataset/* ; do hmmsearch --cpu 8 --cut_ga -o /dev/null --tblout $i.out.hmmsearch.tab my_Pfam.hmm  $i; done  & 
 ```
 
 Check the output from the above command in the corresponding directories 
 
 ```{r,eval=FALSE}
-ls *.tab /home/user/pfam_score/data/genomic_dataset 
-ls *.tab /home/user/pfam_score/data/genomic_dataset_fragm 
-ls *.tab /home/user/pfam_score/data/metagenomic_dataset
+ls *.tab data/genomic_dataset 
+ls *.tab data/genomic_dataset_fragm 
+ls *.tab data/metagenomic_dataset
 ```
-
 
