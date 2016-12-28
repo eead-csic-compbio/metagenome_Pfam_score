@@ -1,0 +1,69 @@
+STAGE 3. Estimating the relative entropy 
+
+We used a derivative of the Kullback-Leibler divergenc (Kullback and Leibler, 1951)—also known as relative entropy H’(i)—to measure the difference between two probability distributions P and Q (Eq. 1). In this context, P(i) represents the total number of occurrences of protein family i in sulfur-related genomes (observed frequency), while Q(i) represents the total number of occurrences of that family in the genomic dataset (expected frequency). H’, in bits, captures the extent to which a family informs specifically about sulfur metabolism. H’ values that are close to 1 correspond to the most informative families (enriched among sulfur-related genomes), whereas low H’ values (close to zero) describe non-informative families. Negative values correspond to protein families observed less than expected
+
+H'= P(i)log2 (aP(i)/Q(i))
+
+
+####Requirements 
+
+1. hmmsearch output tabular format 
+```{r,eval=FALSE}
+ls /data/genomic_dataset/
+```
+
+2. Curated list of genomes of metabolism of interest /input_data/
+```{r,eval=FALSE}
+head /input/data/suli.nr21122016.txt
+```
+
+###Computing the relative entropy in the genomic and genomic fragmented datasets 
+```{r,eval=FALSE}
+
+#Genomic dataset 
+cd /data/genomic_dataset/
+  
+time perl ../../scripts/entropy.pl genomes_refseq_nr_22122016.1.faa.tab ../../input_data/suli.nr21122016.txt  > genomes_refseq_nr_22122016.1.suli.csv 
+
+
+Use of uninitialized value $dom_assign_file2 in concatenation (.) or string at ../../scripts/entropy.pl
+
+real	9m21.823s
+user	9m22.052s
+sys	0m0.100s
+
+
+```
+
+
+$ perl  matrix.pl *.tab nr_sucy.txt > matrix.csv
+
+
+
+Script matrix.pl calculates the relative entropy of each protein domain. 
+
+ perl matrix.pl  <output from hmmsearch *.tab> </data/nr_sucy.txt>  
+
+In order to plot the results we used two scripts, extract_entropies.py and barplots.py:
+
+This script parse all the matrix containing entropies and  returns a tabular list of the entropies  measured in the GenF 
+see  the example output data/matrices_pfam_entropies.tab
+ 
+$ python extract_entropies.py /data/matrix/
+
+The following script plot a heatmap and barplot of the entropies 
+
+$ python barplots.py data/matrices_pfam_entropies.tab
+
+
+
+
+
+Due to its nature, H’ might be biased by the number of sequenced sulfur microorganisms (SuLi). For this reason, we recalculated H’, this time substituting SuLy with equally sized lists of random genomes (Rlist). If there really was no such bias, then we could expect to obtain low-informative Pfam domains during the random test. 
+	Using these procedures, we evaluated the variation of relative entropy of each Pfam domain in order to short-list those that could be used as markers in metagenomic datasets, regardless of average length, and to generate a measure to be used as a way to compare the importance of sulfur metabolisms in metagenomes derived from any environment
+
+
+![legend](data/matrices_pfam_entropies.tab_bar.png)
+
+![legend](data/matrices_pfam_entropies.tab_hmap.png)
+
