@@ -4,8 +4,9 @@ use Getopt::Long;
 use FindBin '$Bin';
 
 my $DEFAULTFRAGSIZE  = 100;
-my $DEFAULTMATRIXDIR = $Bin.'/Home2/sulfur_score/matrices_curadas_sep/';
-my $DEFAULTMATRIXFILENAME = 'GENOMAS_NCBI_nr_24042014_sizeXXX_cover10.faa.pf.tab.csv';
+my $DEFAULTMATRIXDIR = $Bin.'/home/val/github/metagenome_Pfam_score/data/entropies_matrix/';
+my $DEFAULTMATRIXFILENAME = 'genomes_refseq_nr_22122016_sizeXXX_cover10.faa.out.hmmsearch.tab.csv';
+#my $DEFAULTMATRIXFILENAME = 'GENOMAS_NCBI_nr_24042014_sizeXXX_cover10.faa.pf.tab.csv';
 my $DEFAULTMINRELENTROPY  = 0;
 
 my @COLORS = ( '#FF9999', '#FF6666',  '#FF3333', '#FF0000', '#CC0000' );
@@ -30,7 +31,7 @@ if (-t STDIN && ($INP_help || $INP_pfamsearchfile eq ''))
 {
 die<<EODOC;
 
-Program to produce random fragments of proteins in input file with size and coverage set by user.
+Program to compute Pfam score (i.e Sulfur score).
 
 usage: $0 [options] 
 
