@@ -51,9 +51,11 @@ usage: sscore_metagenomes.pl [options]
 
 ```
 
+###Basic mode 
 
+Compute the score 
 
-1) If you have a folder containing metagenomes of size 30, and all the matrix in another containing folder (i.e all the files named  GENOMAS_NCBI_nr_24042014_size100_cover10.faa.pf.tab.csv)  you can compute the SS with the following command line : 
+f you have a folder containing metagenomes of size 30, and all the matrix in another containing folder (i.e all the files named  GENOMAS_NCBI_nr_24042014_size100_cover10.faa.pf.tab.csv)  you can compute the SS with the following command line : 
 
 
 for file in *.tab; do perl sscore_metagenomes.pl -input $file -size 30 -matrixdir /matrixfolder/ -keggmap /data/sulfur_score_kegg_list  > $file.30..score; done
