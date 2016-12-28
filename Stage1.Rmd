@@ -10,7 +10,7 @@ In this stage, the user should have previous knowledge of the biogeochemical cyc
 less input_data/sucy_database_uniprot.fasta
 ```
 
-2) A comprhensive list of curated organisms. In our case we provided the list of sulfur energy based prokariotes (See also Supplementary Table S1 )
+2) A comprhensive list of curated organisms. In our case we provided the list of sulfur energy based prokaryotes (See also Supplementary Table S1 )
 
 ```{r,eval=FALSE}
 
@@ -105,7 +105,7 @@ gunzip *.gz
 
 ###IMPORTANT step changing the headers !!
 
-Before generate a multifasta file, it is important to change the headers of all the genomes for latter proposed (Stage 2) 
+Before generate a multifasta file, it is important to change the headers of all the genomes for latter purposses (Stage 2) 
 
 ```{r,eval=FALSE}
 
