@@ -23,7 +23,7 @@ Beggiatoa
 
 #b) Search each organisms in the file of complete genomes from refseq  (see more details in Genomic data)
 
-for i in `cat genus_suli.txt ` ; do grep $i assembly_refseq.nr2016.txt |cut -f 8  >> suli.nr21122016.txt ; done
+for i in `cat genus_suli.txt  ` ; do grep $i assembly_refseq.nr2016.txt |cut -f 8  >> suli.nr21122016.txt ; done
 
 less input_data/suli.nr21122016.txt
 ```
@@ -72,6 +72,8 @@ perl /scripts/add_nr_genomes.pl data/list_nr_genomes_24042014.txt ncbi_genomes/ 
 
 ###New genomes using the current realease of refseq dic 2016 
 ##Non redundant dataset 
+Make sure you have at least of 109.3 G to store the genomic and genomic fragmented dataset 
+
 ```{r,eval=FALSE}
 #Personal communication with Gabriel Moreno.He provided us with the  GSSb List using the above parameters but with the current database of complete genomes 4085 in total 
 less /data/genomic_dataset/GSSb-0.95.txt
@@ -94,8 +96,7 @@ less assembly_refseq.nr2016.txt | cut -f 20 | sed 's/$/\/*.faa.gz/g' > assembly_
 
 wget -i assembly_refseq.nr2016.download.txt
 
-gunzip *.gz 
-cat *.faa >Genomes21122016.fasta
+zcat *.gz > genomes_refseq_nr_21122016.faa
 ```
  
 
@@ -104,19 +105,18 @@ cat *.faa >Genomes21122016.fasta
 ```{r,eval=FALSE}
 #old data
 #perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (sort(keys(%fa))){ print "$s\n$fa{$s}\n" }}' GENOMAS_NCBI_nr_24042014.faa > GENOMAS_NCBI_nr_24042014.1.line.faa
-perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (sort(keys(%fa))){ print "$s\n$fa{$s}\n" }}' Genomes21122016.fasta  > Genomes21122016.fasta.1.line.faa
+
+time perl -lne 'if(/^(>.*)/){ $head=$1 } else { $fa{$head} .= $_ } END{ foreach $s (sort(keys(%fa))){ print "$s\n$fa{$s}\n" }}' genomes_refseq_nr_22122016.faa > genomes_refseq_nr_22122016.1.faa & 
+real	1m49.201s
+user	1m40.928s
+sys	0m8.166s
 
 ```
 
 
 ###Non redundant-genomic fragmented dataset  
 
-Fragment the genomic dataset using the script get_protein_fragments.pl 
-
-```{r,eval=FALSE}
-#Run each time depending on the desired sizes (30,60,100,150,200,250,300)
-perl /scripts/get_protein_fragments.pl -inFASTA Genomes21122016.fasta.1.line.faa -oUTFASTA Genomes21122016.fasta.1.line.S30.faa -size 30 -cover 10 
-```
+Fragment the genomic dataset using the script get_protein_fragments.pl
 
 ```
 Program to produce random fragments of proteins in input file with size and coverage set by user.
@@ -127,6 +127,30 @@ usage: get_protein_fragments.pl [options]
   -size             desired size for produced random fragments    (integer, default 100)
   -cover            desired protein coverage of produced fragment (integer, default 1) 
 ```
+
+```{r,eval=FALSE}
+#Run each time depending on the desired sizes (30,60,100,150,200,250,300) make sure you are changing the output names
+perl /scripts/get_protein_fragments.pl -inFASTA genomes_refseq_nr_21122016.1.faa -oUTFASTA genomes_refseq_nr_21122016_size30_cover10.faa -size 30 -cover 10 
+
+cd ..
+mkdir genomic_dataset_fragm
+mv **cover* genomic_dataset genomic_dataset_fragm
+```
+
+Using the above commands you should have the folowing files:
+
+| Details          | File name                                      | Size File |
+|------------------|------------------------------------------------|-----------|
+| nr-genomes | genomes_refseq_nr_22122016.1.faa               | 2.7G      |
+| nr-genomes size 30          | genomes_refseq_nr_21122016_size30_cover10.faa  | 7.8 G     |
+| nr-genomes size 60          | genomes_refseq_nr_21122016_size60_cover10.faa  | 9.8 G     |
+| nr-genomes size 100         | genomes_refseq_nr_21122016_size100_cover10.faa | 13 G      |
+| nr-genomes size 150         | genomes_refseq_nr_21122016_size150_cover10.faa | 16 G      |
+| nr-genomes size 200         | genomes_refseq_nr_21122016_size200_cover10.faa | 18 G      |
+| nr-genomes size 250         | genomes_refseq_nr_21122016_size200_cover10.faa | 20 G      |
+| nr-genomessize 300         | genomes_refseq_nr_21122016_size200_cover10.faa | 22 G      |
+
+
 
 ###Metagenomic dataset 
 Generate a list of metagenomes of interest. We selected only those metagenomes from the metagenomics RAST server (mg-RAST) version 3.6 that meet the following conditions:
@@ -167,7 +191,7 @@ less data/id_metagenomes.txt
 ```{r, eval=FALSE}
 #Begin downloading the files, this will take several minutes. Make sure you have enough space on your computer, and you are located in metagenome_dir 
 
-For line in `cat id_metagenomes.txt`; do wget "http://api.metagenomics.anl.gov/1/download/mgm$line?file=350.1" -O  $line" ; done
+for line in  `cat id_metagenomes.txt` ; do wget "http://api.metagenomics.anl.gov/1/download/mgm$line?file=350.1" -O $line ; done
 
 #The dowloading files should look like this:
 
@@ -177,6 +201,10 @@ LGRPIDIESLDVSFWGGLGVVLGNVVISNPEDMPGDTLMVAKEIDVKLQLWPLLSSEVRADRFIINDPTIRLHKTADG
 YIYLTLVEFKGQAAGLRERESIQHFQWSDKQVSKKEGSFGVDHIWYLQGIFMCSSIQKDYPKIK
 >FA4SSCL02ISFX8_1_222_+
 DEEAMHYDADYVRALEYGMPPTAGEGIGIDRLVMLLTDSPSIRDVLLFPHLRSEKGRQSSVHTFSMKLIFA
+
+#Make sure that all the files were dowloaded correctly 
+find -empty | wc
+
 
 ```
 
@@ -200,3 +228,6 @@ dev.off()
 ```
 
 ![legend](data/metagenomic_dataset/hist.pdf)
+
+
+
