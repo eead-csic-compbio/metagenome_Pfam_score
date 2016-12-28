@@ -1,53 +1,88 @@
-#STAGE 2. Annotating protein domains in peptide sequences
+#STAGE 2. Domain composition 
 
-**Requirements** 
+###Software Requirements
+[Interproscan]( https://www.ebi.ac.uk/interpro/interproscan.htm)
+
+[hmmsearch](http://hmmer.org/)
+
+
+1. Annotate "domain composition" using Pfam database (and others) in the user's input proteins (See stage 1) 
+
+```{r,eval=FALSE}
+cd data
  
-interproscan (https://www.ebi.ac.uk/interpro/interproscan.html)  
-hmmsearch (http://hmmer.org/)
+#old data
+#/user/path/to/interproscan-5.4-47.0/interproscan.sh -appl TIGRFAM-13.0,ProDom-2006.1,PfamA-27.0,PrositeProfiles-20.97,SMART-6.2,HAMAP-201311.27,PrositePatterns-20.97,PRINTS-42.0,SuperFamily-1.75 -i sucy_database_uniprot.fasta -f tsv -pa -iprlookupD
 
-**Datasets**  
+#Run interproscan
+/interproscan-5.21-60.0/interproscan.sh -appl PfamA-30.0 -i /input_data/sucy_database_uniprot.fasta -f tsv -pa -iprlookupD
 
-a) data/sucy_database_uniprot.fasta    
-b) data/GENOMES_NCBI_nr_24042014.faa  -> non-redundant proteomes (heavy file, not provided; see Stage1)
-c) hidden markov models *.hmm     
- 	
-1. Annotate PFAM domains in non-redundant proteomes. Optionally Superfamily and TIGRFAM domains could also be annotated:
+```
 
-$ interproscan-5.4-47.0/bin/superfamily/1.75/ass3.pl GENOMES_NCBI_nr_24042014.faa \
-  GENOMES_NCBI_nr_24042014.sf.tab GENOMES_NCBI_nr_24042014.sf \
-  -s interproscan-5.4-47.0/data/superfamily/1.75/self_hits.tab \
-  -r interproscan-5.4-47.0/data/superfamily/1.75/dir.cla.scop.txt_1.75 |
-  -m interproscan-5.4-47.0/data/superfamily/1.75/model.tab \ 
-  -p interproscan-5.4-47.0/data/superfamily/1.75/pdbj95d \
-  -f 12
+2. Examinate the output example, using  following the output information of   [interproscan](https://github.com/ebi-pf-team/interproscan/wiki/InterProScan5OutputFormats)
 
-2. Output should look like this:      
-
-Q54506    6cbba7cb557879dfe57c62e4e0c8bfe1    437    TIGRFAM    TIGR00339    sopT: sulfate adenylyltransferase    4    386    3.4E-141    T    10-07-2014    IPR002650    Sulphate adenylyltransferase    KEGG: 00230+2.7.7.4|KEGG: 00450+2.7.7.4|KEGG: 00920+2.7.7.4|MetaCyc: PWY-5278|MetaCyc: PWY-5340|MetaCyc: PWY-6683|MetaCyc: PWY-6932|Reactome: REACT_13433|UniPathway: UPA00140
+```{r,eval=FALSE}
+less -S sucy_database_uniprot.fasta.tsv
+```
 
 
+3. To get the markov models of the 152 sulfur proteins, the following files are needed
+
+```{r,eval=FALSE}
+#1. Complete Pfam database of hmm 
+#Get the current realease of Pfam database
+wget ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/Pfam-A.hmm.gz
+gunzip Pfam-A.hmm.gz
+```
+
+```{r,eval=FALSE}
+#2. Especific domain identifiers of the input proteins 
+#Using the output file from interproscan: sucy_database_uniprot.fasta.tsv,  we are interested in the 4° column:Analysis (e.g. Pfam / PRINTS / Gene3D) and the 5°: Signature Accession (e.g. PF09103 / G3DSA:2.40.50.140) 
+cut -f 4,5 sucy_database_uniprot.fasta.tsv  > id_interpro.txt 
+```
+
+
+4. Obtain the specific markov models of the input proteins 
+```{r,eval=FALSE}
+#Run the script extract_hmms.pl . The latter uses the files above mentioned (id_interpro.txt ) and the PfamA.hmm 
+perl ../scripts/extract_hmms.pl 
+# Pfam
+# hmms = 112 #pfam version 30 and 114 using pfam version 27 
+#This will generate an output file named 'my_Pfam.hmm'. Note that Superfamily and TIGRFAM HMMs can also be used, but are commented out.
+```
+
+
+5. Annotate PFAM domains in the omic datasets using hmmsearch 
+
+```{r,eval=FALSE}
+
+#Genomic dataset 
+cd data/
+time hmmsearch --cpu 8 --cut_ga -o /dev/null  --tblout genomes_refseq_nr_22122016.1.faa.tab ../my_Pfam.hmm genomes_refseq_nr_22122016.1.faa  & 
+ 
+  
+real	57m44.856s
+user	309m5.040s
+sys	3m24.429s
+
+  
+#Genomic fragmented dataset 
+nohup for i in /data/genomic_dataset_fragm/*.faa ; do hmmsearch --cpu 8 --cut_ga -o /dev/null --tblout $i.tab my_Pfam.hmm  $i; done  & 
+
+#Metagenomic dataset  
+
+nohup for i in /data/metagenomic_dataset/* ; do hmmsearch --cpu 4 --cut_ga -o /dev/null --tblout $i.tab my_Pfam.hmm  $i; done  & 
 
 
 
-3. From the output file we are interested in the PFAMs ids, copy third and fourht column in a new file  /data/id_interpro.txt 
+```
 
-4. With script extract_hmms.pl, we generate the database that contains the hidden markov models of each family.   
-   
-$ perl extract_hmms.pl
+Check the output from the above command in the corresponding directories 
 
-5. This will generate an output file named 'my_Pfam.hmm'. Note that Superfamily and TIGRFAM HMMs can also be used, but are commented out.
-
-6. Annotate PFAM domains in non-redundant proteomes:   
-
-$ hmmsearch --cut_ga --tblout file.tab /pfam_metagenomes/datasets/myPfam.hmm  GENOMAS_NCBI_nr_24042014.faa
-
-#Relative entropy  
-
-**Requirements**
-
-1) hmmsearch output tabular format: file.tab  
-2) curated list of genomes of metabolism of interest: nr_sucy.txt
-
-$ perl  matrix.pl *.tab nr_sucy.txt > matrix.csv
+```{r,eval=FALSE}
+ls *.tab /home/user/pfam_score/data/genomic_dataset 
+ls *.tab /home/user/pfam_score/data/genomic_dataset_fragm 
+ls *.tab /home/user/pfam_score/data/metagenomic_dataset
+```
 
 
