@@ -65,14 +65,15 @@ python3 ../scripts/plot_entropy.py entropies_matrix_entropies.tab
 The above command will generate 5 different plots of the entropies 
 
 
-![legend](data/entropies_matrix_entropies.tab_bar.png )
-![legend](data/entropies_matrix_entropies.tab_entropy_hist.png )
-![legend](data/entropies_matrix_entropies.tab_hmap.png )
-![legend](data/entropies_matrix_entropies.tab_prof_box.png )
-![legend](data/entropies_matrix_entropies.tab_scatter.png )
+
+![Barplot](data/entropies_matrix_entropies.tab_bar.png )
+![Histogram](data/entropies_matrix_entropies.tab_entropy_hist.png )
+![Heatmap](data/entropies_matrix_entropies.tab_hmap.png )
+![Boxplot](data/entropies_matrix_entropies.tab_prof_box.png )
+![Scatter](data/entropies_matrix_entropies.tab_scatter.png )
 
 
 #Random test 
 Due to its nature, H’ might be biased by the number of sequenced sulfur microorganisms (SuLi). For this reason, we recalculated H’, this time substituting SuLy with equally sized lists of random genomes (Rlist). If there really was no such bias, then we could expect to obtain low-informative Pfam domains during the random test. 
 	Using these procedures, we evaluated the variation of relative entropy of each Pfam domain in order to short-list those that could be used as markers in metagenomic datasets, regardless of average length, and to generate a measure to be used as a way to compare the importance of sulfur metabolisms in metagenomes derived from any environment
-
+1
