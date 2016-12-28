@@ -237,7 +237,7 @@ find -empty | wc
 
 ### Mean Size Lenght  (MSL) 
 Taking into account the lenght size variation in the input proteins, their detection in the metagenomic samples will likely be affected by the average length of the reads. For example, we reasoned that the detection of proteins with more than 500 aa would be challenging in metagenomes with average read length of 300 aa. In addition, larger proteins, are likely to have more domains (i.e catalytic, cofactor binding etc) of variable sizes. Consequently, we expected that the detection of certain protein families would be severely affected in small metagenomic reads (less than 20 amino acids in mean size). Therefore, we compute the mean size lenght of ech metagenome using the following script:
-
+S
 ```{r,eval=FALSE}
 
 for FILE in *; do perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; printf("%1.0f\t",$m/scalar(keys(%fa))) }' $FILE; echo $FILE; done > MSL.tab
@@ -259,7 +259,7 @@ evince hist.privates.pdf  &
 
 
 
-![legend](data/metagenomic_dataset/hist.privates.pdf)
+![Histogram](data/metagenomic_dataset/hist.privates.pdf)
 
 
 
