@@ -1,30 +1,50 @@
  #!/usr/bin/perl -w
 use strict;
 
-# This script takes 2 inputs:
+# This script takes 2-3 inputs:
 # 1) a hmmsearch TSV outfile with the results of scanning a collection of Pfam domais against
 # a large set of (non-redundant) genomes
 # 2) a list of selected accessions of genomes interest to compute entropy
+# 3) an optional list of RefSeq assembly annotations to print scientific names instead of accession codes
 #
 # Output:
 # 1) a matrix of occurrence of Pfam domains across genomes
 # 2) entropy estimates of each scanned Pfam domain with respect to the selected accessions
 
+
 # B Contreras-Moreira, V de Anda 2016
 
 my $PSEUDOCOUNT = 0.8; #https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2647310/
 
-my ($dom_assign_file,$list_file) = ('','');
+my ($dom_assign_file,$list_file,$refseq_file) = ('','','');
 
-if(!$ARGV[0]){ die "# $0 : usage: $0 || <pfam_annotations.tab> <list of accessions (ie Suli)>\n"; }
-else{ ($dom_assign_file,$list_file) = @ARGV }
+if(!$ARGV[1]){ die "# $0 : usage: $0 <pfam_hmmsearch.tab> <accession list (ie Suli)> <RefSeq list, optional>\n"; }
+else
+{ 
+  ($dom_assign_file,$list_file,$refseq_file) = @ARGV;
+  if(!$refseq_file){ $refseq_file = 'null' } 
+}
 
-print "# dom_assign_file=$dom_assign_file\n# list_file=$list_file\n";
+print "# dom_assign_file=$dom_assign_file\n# list_file=$list_file\n# RefSeq_file=$refseq_file\n";
 print "# PSEUDOCOUNT=$PSEUDOCOUNT\n\n";
 
 my ($seqid,$domid,$taxonid,$spid,$line,$total_obs,$total_exp,$freq_obs,$freq_exp,$entropy);
-my (%taxa,%hmm,%matrix,%list_matrix,%taxon_list,%matched_taxa,%matched_assign_file,%matched_assign_file2);
-my ($listOK,$genusOK) = (0,0);
+my (%taxa,%hmm,%matrix,%list_matrix,%taxon_list,%matched_taxa,%scnames);
+my $listOK = 0;
+
+## 0) read optional RefSeq file
+if($refseq_file && -s $refseq_file)
+{
+  open(REFSEQ,$refseq_file) || die "# $0 : cannot read $refseq_file\n";
+  while($line = <REFSEQ>)
+  {
+    #GCF_000262325.2  PRJNA224116 SAMN02604280    na  1037911 294 Pseudomonas fluorescens A506  strain=A506   latest...
+    next if($line =~ /^#/); 
+    my @data = split(/\t/,$line);
+    $scnames{$data[0]} = $data[7]; #print "$data[0] $data[7]\n";
+  }
+  close(REFSEQ);
+}
 
 ## 1) read accession list file
 if($list_file && -s $list_file)
@@ -104,7 +124,8 @@ foreach $domid (sort keys(%hmm))
 #Print Data 
 foreach $taxonid (sort keys(%taxa))
 {
-    print "$taxonid";
+    printf("%s",$scnames{$taxonid} || $taxonid);
+
     foreach $domid (sort keys(%hmm))
     {
         if($matrix{$taxonid}{$domid})
@@ -135,10 +156,13 @@ foreach $domid (sort keys(%hmm))
 if($listOK)
 {
     # Print the organisms matched in the list
-    printf("\n\nmatched list taxa in %s (%d) : ",$dom_assign_file,scalar(keys(%matched_taxa)));
+    printf("\n\nmatched list taxa in %s (%d) : ",
+      $dom_assign_file,
+      scalar(keys(%matched_taxa)));
+
     foreach $taxonid (sort keys(%matched_taxa))
     {
-        print "\t$taxonid"
+        printf("%s,",$scnames{$taxonid} || $taxonid);
     }
     print "\n";
 
