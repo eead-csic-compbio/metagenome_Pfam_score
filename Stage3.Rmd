@@ -73,6 +73,33 @@ The above command will generate 5 different plots of the entropies
 ![Scatter](data/entropies_matrix_entropies.tab_scatter.png )
 
 
+To get the names of each PFAM  use the following commands 
+
+
+ ```{r,eval=FALSE}
+#Generate a list with the PFAM domains 
+cd data/
+less entropies_matrix_entropies.tab | cut -f 1 > pfam_terms.tab
+#Use the script pfam.terms.sh obtained from (https://github.com/Cantalapiedra/pfam_terms)
+cd ../scripts
+./pfam.terms.sh 
+#The latter script will generate this file:
+pfam_terms.desc.tab
+moved to data directory 
+mv pfam_terms.desc.tab ../data/
+head pfam_terms.desc.tab 
+
+#PF00005	ABC transporter
+#PF00009	Elongation factor Tu GTP binding domain
+#PF00034	Cytochrome c
+#PF00037	4Fe-4S binding domain
+#PF00106	short chain dehydrogenase
+#PF00111	2Fe-2S iron-sulfur cluster binding domain
+#PF00124	Photosynthetic reaction centre protein
+#PF00171	Aldehyde dehydrogenase family
+#PF00174	Oxidoreductase molybdopterin binding domain
+ ```
+
 #Random test 
 Due to its nature, H’ might be biased by the number of sequenced sulfur microorganisms (SuLi). For this reason, we recalculated H’, this time substituting SuLy with equally sized lists of random genomes (Rlist). If there really was no such bias, then we could expect to obtain low-informative Pfam domains during the random test. 
 	Using these procedures, we evaluated the variation of relative entropy of each Pfam domain in order to short-list those that could be used as markers in metagenomic datasets, regardless of average length, and to generate a measure to be used as a way to compare the importance of sulfur metabolisms in metagenomes derived from any environment
