@@ -55,7 +55,7 @@ perl ../scripts/extract_hmms.pl
 
 #Genomic dataset 
 cd data/
-hmmsearch --cpu 8 --cut_ga -o /dev/null  --tblout genomes_refseq_nr_22122016.1.faa.out.hmmsearch.tab  my_Pfam.hmm genomic_dataset/genomes_refseq_nr_22122016.1.faa  & 
+hmmsearch --cpu 8 --cut_ga -o /dev/null  --tblout genomes_refseq_nr_22122016.fa.pf.tab  my_Pfam.hmm genomic_dataset/genomes_refseq_nr_22122016.1.faa  & 
   
 #Genomic fragmented dataset 
 nohup for i in /data/genomic_dataset_fragm/*.faa ; do hmmsearch --cpu 8 --cut_ga -o /dev/null --tblout $i.out.hmmsearch.tab my_Pfam.hmm  $i; done  & 
