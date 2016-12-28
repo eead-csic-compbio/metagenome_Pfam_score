@@ -3,7 +3,7 @@ use strict;
 my $IDLIST = 'id_interpro.txt';
 
 my %DBs = ( 
-  'Pfam'=>'interproscan-5.4-47.0/data/pfam/27.0/Pfam-A.hmm',
+  'Pfam'=>'Pfam-A.hmm',
 	#'SUPERFAMILY'=>'interproscan-5.4-47.0/data/superfamily/1.75/hmmlib_1.75',
 	#'TIGRFAM'=>'interproscan-5.4-47.0/data/tigrfam/13.0/TIGRFAMs_13.0_HMM.LIB'
 );
