@@ -259,7 +259,7 @@ evince hist.privates.pdf  &
 
 
 
-![legend](data/metagenomic_dataset/hist.pdf)
+![legend](data/metagenomic_dataset/hist.privates.pdf)
 
 
 
