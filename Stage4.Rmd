@@ -67,6 +67,7 @@ for file in *.tab; do perl sscore_metagenomes.pl -input $file -size 30 -matrixdi
 for file in *.tab; do perl sscore_metagenomes.pl -input $file -size 30 -matrixdir /matrixfolder/ -keggmap /data/sulfur_score_kegg_list  -pathway 25 > $file.30.paht25; done
 
 
+for file in *.tab; do perl /home/val/github/metagenome_Pfam_score/scripts/entropy_score.pl -input $file -size 30  -matrixdir /home/val/github/metagenome_Pfam_score/data/entropies_matrix/  > $file.30.score ; done 
 
 grep qualscore *.score | sed 's/.27122016.hmmsearch.tab./\t/g' | sed 's/.score:qualscore:/\t/g'  > privates.csv & 
 
