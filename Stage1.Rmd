@@ -262,4 +262,17 @@ evince hist.privates.pdf  &
 ![Histogram](data/metagenomic_dataset/hist.privates.pdf)
 
 
+#RANDOM TEST 
+
+
+cd genomic_dataset 
+mkdir random_test 
+
+for ((i=1;i<1001;i+=1)); do cat assembly_refseq.nr2016.txt | cut -f 1,8 | shuf -n 161  > random_test/random$i.txt  ; done
+Compute the random entropy 
+for i in random_test/*.txt; do perl entropy.pl genomes_refseq_nr_22122016.1.faa.out.hmmsearch.tab $i assembly_refseq.nr2016.txt  > $i.csv ; done 
+
+
+
+
 
