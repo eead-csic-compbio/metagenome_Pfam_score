@@ -3,10 +3,21 @@ use strict;
 use Getopt::Long;
 use FindBin '$Bin';
 
+# This script takes a single required input and several optional choices: 
+# 1) a hmmsearch TSV outfile with the results of scanning a collection of Pfam domais against
+# a large set of genomes or metagenomes. 
+# In case metagenomes are used, a second parameter indicating the MSL is also required.
+
+# Output:
+# 1) TAB-separated output with Pfam entropy scores
+
+# B Contreras-Moreira, V de Anda 2016
+
+
+
 my $DEFAULTFRAGSIZE  = 100;
-my $DEFAULTMATRIXDIR = $Bin.'/home/val/github/metagenome_Pfam_score/data/entropies_matrix/';
-my $DEFAULTMATRIXFILENAME = 'genomes_refseq_nr_22122016_sizeXXX_cover10.faa.out.hmmsearch.tab.csv';
-#my $DEFAULTMATRIXFILENAME = 'GENOMAS_NCBI_nr_24042014_sizeXXX_cover10.faa.pf.tab.csv';
+my $DEFAULTMATRIXDIR = $Bin.'/../data/entropies_matrix/';
+my $DEFAULTMATRIXFILENAME = 'genomes_refseq_nr_22122016_sizeXXX_cover10.faa.out.hmmsearch.tab.csv'; 
 my $DEFAULTMINRELENTROPY  = 0;
 
 my @COLORS = ( '#FF9999', '#FF6666',  '#FF3333', '#FF0000', '#CC0000' );
@@ -31,25 +42,25 @@ if (-t STDIN && ($INP_help || $INP_pfamsearchfile eq ''))
 {
 die<<EODOC;
 
-Program to compute Pfam score (i.e Sulfur score).
+Program to compute Pfam entropy score (i.e Sulfur score).
 
 usage: $0 [options] 
 
  -help             brief help message
  
- -input            input file with HMM matches created by hmmsearch, tbl format
+ -input            input file with HMM matches produced by hmmsearch, tbl format
 
- -size             desired size for produced random fragments    (integer, default $INP_fragment_size)
+ -size             mean peptide size length (MSL)         (integer, default $INP_fragment_size)
  
  -bzip             input file is bzip2-compressed
  
- -matrixdir        directory containing hmm matrices from fragments of variable size (string, \n                    default $DEFAULTMATRIXDIR)
+ -matrixdir        directory containing pre-computed entropies from peptides of variable size (string, \n                    default $DEFAULTMATRIXDIR)
  
  -minentropy       min relative entropy of HMMs to be considered (float)
 						 
  -keggmap          file with HMM to KEGG mappings
  
- -pathway          comma-separated pathway numbers from -keggmap file to consider only member HMMs  (string, by default all pathways are used, requires -keggmap)
+ -pathway          comma-separated pathway numbers from -keggmap file to consider only member HMMs  (string, \n                    by default all pathways are used, requires -keggmap)
 
 EODOC
 }
@@ -98,13 +109,15 @@ while(<HMMMATRIX>)
 	if(/^\tPF\d+\t/)
 	{
 		chomp;
-		@HMMs = split(/\t/,$_); #print;
+		@HMMs = split(/\t/,$_); 
+    shift(@HMMs); # delete first cell, empty
 	}
 	elsif(/^rel_entropy/)
 	{
 		chomp;
 		my @entropies = split(/\t/,$_);
-		foreach $hmm (1 .. $#HMMs)
+    shift(@entropies);
+		foreach $hmm (0 .. $#HMMs)
 		{
 			$HMMentropy{$HMMs[$hmm]} = $entropies[$hmm];
 		}
@@ -159,8 +172,8 @@ while(<INFILE>)
 	next if(/^#/ || /^\s+$/);
 
 	my @data = split(/\s+/,$_);
-	$hmm = $data[3]; #print "$hmm\n"; 
-	$hmm = (split(/\.\d+/,$hmm))[0]; #print "$hmm\n"; exit;
+	$hmm = $data[3];  
+	$hmm = (split(/\.\d+/,$hmm))[0];
 	
 	if($INP_pathways)
 	{
@@ -187,8 +200,10 @@ close(INFILE);
 my ($qualscore,$matches,$mapscript,$color,%previous) = (0,0,'');
 foreach $hmm (@HMMs)
 {
+   
+
 	$matches = $matchedHMMs{$hmm} || 0;
-	$entropy = $HMMentropy{$hmm};
+	$entropy = $HMMentropy{$hmm} || 0;
 	
 	if($matches>0)
 	{
@@ -208,4 +223,4 @@ foreach $hmm (@HMMs)
 	print "$hmm\t$entropy\t$matches\n";	
 }
 
-print "\nqualscore: $qualscore\n\n$mapscript";
+print "\nPfam entropy score: $qualscore\n\n$mapscript";
