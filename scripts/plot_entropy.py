@@ -64,7 +64,7 @@ def plot_graph(dataframe):
         # - subplot update
         ploti += 1
     fig.tight_layout()
-    fig.subplots_adjust(wspace=0.08)        
+    fig.subplots_adjust(wspace=0.18)        
     
 def hmap(dataframe):
     """
@@ -119,13 +119,17 @@ if __name__ == '__main__':
     plt.savefig(argv[1]+"_hmap.png")
     plt.close()
     # plot entropies histograms
-    data.hist(figsize=(10, 10))
+    data.hist(figsize=(10, 10)) #,range=[-0.3, 1.3])
     plt.savefig(argv[1]+"_entropy_hist.png")
     plt.close()
     # plot boxplot of profiles
-    data.T.boxplot(rot=90, figsize=(18, 6), grid=False)
-    plt.axhline(0, alpha=0.5)
-    plt.tight_layout()
+    #data.T.boxplot(figsize=(10,15), grid=False, vert=False )
+    plt.figure(figsize=(7,15))
+    data.T.boxplot(grid=False, vert=False )
+    plt.axvline(0, alpha=0.5)
+    plt.yticks(size='xx-small')
+    plt.xlabel('Entropy (bits)')
+    #plt.tight_layout()
     plt.savefig(argv[1]+"_prof_box.png")
     plt.close()
     # Plot scatter plot
