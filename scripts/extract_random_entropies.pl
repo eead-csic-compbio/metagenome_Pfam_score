@@ -68,7 +68,7 @@ foreach my $matrixfile (@matfiles)
   }
   else
   {
-    open(INFILE, $INP_matrixdir/$matrixfile) || die "# $0 : cannot find $INP_matrixdir/$matrixfile\n";
+    open(INFILE,"$INP_matrixdir/$matrixfile") || die "# $0 : cannot find $INP_matrixdir/$matrixfile\n";
   }
 
   # extract peptide size from filename
