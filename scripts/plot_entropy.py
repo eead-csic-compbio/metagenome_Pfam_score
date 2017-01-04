@@ -107,7 +107,20 @@ def hmap(dataframe):
     fig.subplots_adjust(bottom=0.05, top=0.95)
     
 if __name__ == '__main__':
-    fname = argv[1]
+    if len(argv) >3:
+      fname = argv[1]
+      perc5rnd = float(argv[2])
+      perc95rnd = float(argv[3])
+    elif len(argv) > 1: 
+      fname = argv[1]
+      perc5rnd = 0.0
+      perc95rnd = 0.0
+    else:
+      print ("""Usage:
+        $python3 plot_entropy.py data.tab [random perc5] [random perc95]
+        """)
+      exit()
+
     # Use . as decimal indicator
     data = pd.read_table(fname, index_col=0, na_values=['NA', "SIN DATO"], decimal='.')
     # sort data by 'real' column
@@ -125,8 +138,15 @@ if __name__ == '__main__':
     # plot boxplot of profiles
     #data.T.boxplot(figsize=(10,15), grid=False, vert=False )
     plt.figure(figsize=(7,15))
+
+    # default boxplot with whiskers around 1.5x IQR
     data.T.boxplot(grid=False, vert=False )
     plt.axvline(0, alpha=0.5)
+
+    if(perc95rnd < 0.0 or perc95rnd > 0.0):
+      plt.axvline(perc5rnd, alpha=0.5, color='black')
+      plt.axvline(perc95rnd, alpha=0.5, color='black') 
+
     plt.yticks(size='xx-small')
     plt.xlabel('Entropy (bits)')
     #plt.tight_layout()
