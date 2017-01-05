@@ -96,6 +96,7 @@ usage: $0 [options]
 EODOC
 }
 if(!-s $INP_scoredir)
+#300     276..300
 {
     die "# ERROR : cannot locate directory containing score -scoredir  $INP_scoredir\n";
 }  
