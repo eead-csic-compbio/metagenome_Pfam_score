@@ -4,7 +4,7 @@ use Getopt::Long;
 use FindBin '$Bin';
 
 # This script takes 3 different inputs : 
-# 1) folder  contaning the computed Scores for all the different MSL (i.e 30,60,100,150,200,300)
+# 1) folder  contaning the computed Scores for each metagenome using different MSL (i.e 30,60,100,150,200,300)
 
 #	4510165.3.27122016.hmmsearch.tab.100.score
 #	4510165.3.27122016.hmmsearch.tab.150.score
@@ -14,26 +14,39 @@ use FindBin '$Bin';
 #	4510165.3.27122016.hmmsearch.tab.30.score
 #	4510165.3.27122016.hmmsearch.tab.60.score
 
-# 2) Tab delimiter file contaning the MSL e for each metagenome (MSL.tab) derived from Stage 1, using the following perl lne command:
+# 2) Tab delimiter file contaning the corresponding MSL e for each metagenome (MSL.tab) derived from Stage 1, using the following perl lne command:
 
 #for FILE in *; do perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} 
 #END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; 
 #printf("%1.0f\t",$m/scalar(keys(%fa))) }' $FILE; echo $FILE; done > 
 #MSL.tab
 
-#3) MSL to consider the correct Score for each metagenome (MSL.selection.tab) 
+#104     AMAY13
+#103     AMAY14
+#103     ANOV12
+#116     BORDETELLA
+#106     CMAY13
+#117     CNOV12
+#92      JP1110514WATERRESIZED
 
-#size   msl of each metagenome (Range) 
+#3) Use MSL sizes to consider a range of possible choices  to consider the correct Score for each metagenome (MSL.selection.tab).The closer range to msl of each metagenome (2cond column), the greater accuracy to choose the correct score. For example in the case of metagenome AMAY13, which have a MSL of 104. The most logic is to compute the score using the precomputed entropies for that specific MSL. Therefore the adequate entropies to compute the Score are those found in the Size 100. To consider a closer range between the msl of the genomic dataset fragemented  and the msl of each metagenome, we take into account that the maximum of peptides of difference could be 15-20.It should be notice that if the user uses another sizes to fragment the genomic dataset, this have to be adapted to that sizes 
 #30      0..45
 #60      46..80
 #100     81..125
-#150     26..175
+#150     126..175
 #200     176..225
 #250     226..275
 #300     276..300
 
 # Output:
 #1)  TAB-separated output with metagenomes and the corresponding score  (using the table selection) and the scores computed in each size 
+
+#Example 
+#idnames	MSL	score	SS_30	SS_60	SS_100	SS_150	SS_200	SS_250	SS_300
+#4524971.3	52	16.711	13.477	16.711	16.127	15.989	16.236	16.191	16.07
+#4451035.3	79	16.705	13.471	16.705	16.121	15.984	16.23	16.185	16.064
+#4441580.3	159	1.178	1.156	1.203	1.208	1.178	1.259	1.148	1.189
+#4441599.3	245	16.303	13.568	16.813	16.217	16.092	16.337	16.303	16.179
 
 
 # B Contreras-Moreira, V de Anda 2016
