@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+ # -*- coding: utf-8 -*-
 
 from sys import argv
 import numpy as np
@@ -161,7 +161,34 @@ if __name__ == '__main__':
     plt.tight_layout()
     plt.savefig(argv[1]+"_scatter.png")
     plt.close()
-    
+    # Plot differential plot 
+    ndata = data / data[1]
+    # obtaining the differential (xi−xi−1)
+    mean = ndata.mean(1)
+    stdsn = ndata.std(1)
+    meansn
+    errorbar(dif_means.index, dif_means, yerr=dif_stds, fmt='k--o')
+    xlabel('MSL', weight='bold')
+    ylabel('Normalized entropy in bits', weight='bold')
+    plt.tight_layout()
+    plt.savefig(argv[1]+"_differential.png")
+    plt.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
     
     
 
