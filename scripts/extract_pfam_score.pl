@@ -14,7 +14,7 @@ use FindBin '$Bin';
 #	4510165.3.27122016.hmmsearch.tab.30.score
 #	4510165.3.27122016.hmmsearch.tab.60.score
 
-# 2) Tab delimiter file contaning the MSL size for each metagenome (MSL.tab) derived from Stage 1, using the following perl lne command:
+# 2) Tab delimiter file contaning the MSL e for each metagenome (MSL.tab) derived from Stage 1, using the following perl lne command:
 
 #for FILE in *; do perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} 
 #END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; 
@@ -95,6 +95,7 @@ print "# $0 call:\n# -scoredir $INP_scoredir -MSL.tab  $INP_mslfile -MSL.selecti
 
 my %sizes;
 my $size;
+my %idnames;
 opendir (SCORES, $INP_scoredir) || die "# $0 : ERROR : cannot list $INP_scoredir\n"; 
 my @scorefile = grep{/$FILENAMEPATTERN/}readdir (SCORES);
 closedir(SCORES);
@@ -106,25 +107,31 @@ foreach my $scores (@scorefile)
  
 	  open(INFILE,"$INP_scoredir/$scores") || die "# $0 : cannot find $INP_scoredir/$scores\n";
 
+##3) extract metagenome name and  MSL from FILENAME 
 
-
-##3) extract MSL frm FILENAME 
-
-	if ($scores =~m/(\d+)\.score/)
-
+	if ($scores =~m/(^[0-9]{9})|[^a-zA-Z0-9$]/)
 	{
-	 $size= $1
+##Regex that match the first 9 characteres     ^[0-9]{9}
+## Regex that match alphabet or digit before   [^a-zA-Z0-9$]  
+##in the case of privates metagenomes 
+	$idnames =$1
+	
+	if ($scores =~m/(\d+)\.score/)
+	{
+	$sizes  =$1
 
 	}
 
-##4) store sizes observed 
+##4) store metagenomes and sizes 
+	
+$idnames{$idnames}{$sizes}
 
-	$sizes{$size}++
+
 
 ##5) Read each score file 
 
 #in bash only grep "Pfam entropy score" *.score 
-
+#4510165.3.27122016.hmmsearch.tab.100.score
 #JP5WATER110514AMP.faa.27122016.hmmsearch.tab.100.score:Pfam entropy score: 10.855
 #JP5WATER110514AMP.faa.27122016.hmmsearch.tab.150.score:Pfam entropy score: 11.043
 #JP5WATER110514AMP.faa.27122016.hmmsearch.tab.200.score:Pfam entropy score: 11.013
@@ -146,18 +153,32 @@ foreach my $scores (@scorefile)
 }
 
 
+#6) Parse third argument (MSL selection) $INP_mslselec
+
+my %size 
+
+if ($INP_mslselec)
+{ 	
+	open ($INP_mslselec);
+	while (<SELECT>)
+	{
+	chomp;
+	:w
+my @sizes = split (/\t/);
+	$size =$sizes[0]
+	$msl = $sizes[0]
+$sizes{$size}=$msl
+        }
+
+foreach $size (@sizes)
+
+	{
 
 
 
+	}	
 
+}
 
-
-
-
-
-
-
-
-
-
+	
 
