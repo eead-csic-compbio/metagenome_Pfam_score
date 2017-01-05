@@ -23,24 +23,35 @@ use FindBin '$Bin';
 
 #3) MSL to consider the correct Score for each metagenome (MSL.selection.tab) 
 
-#Entropy calculated in genomic dataset Size	MSL of each metagenome (Range) 
-#30	0-45
-#60	46-80
-#100	81-125
-#150	126-175
-#200	176-225
-#250	226-275
-#300	276-300
-
+#size   msl of each metagenome (Range) 
+#30      0..45
+#60      46..80
+#100     81..125
+#150     26..175
+#200     176..225
+#250     226..275
+#300     276..300
 
 # Output:
-#1)  TAB-separated output with metagenomes and the corrisponding score  (using the table selection) and the scores computed in each size 
+#1)  TAB-separated output with metagenomes and the corresponding score  (using the table selection) and the scores computed in each size 
+
 
 # B Contreras-Moreira, V de Anda 2016
 
-my $DEFAULTSCOREDIR = $Bin.'/../data/metagenomic_dataset/computed_scores/';
-my $FILENAMEPATTERN = 'metagenome.faa.date.hmmsearch.tab(\d+)\.score';                 
 
+my $DEFAULTSCOREDIR = $Bin.'/../data/metagenomic_dataset/computed_scores/';
+#my $FILENAMEPATTERN = 'metagenome.faa.date.hmmsearch.tab(\d+)\.score';                 
+
+
+#Debido a que cada vez que se corrio hmmsearch se cambio el nombre (varios servidores), posiblemente este patron no sea lo adecuado....  
+#Lo mejor será abrir el archivo y parsear la primeras linea donde está indicado el tamaño para cada uno 
+
+# -input /media/val/0412BA8912BA7F6C/ROW_DATA/SS_2016/output_hmmsearch_metagenomes/JP5WATER110514AMP.faa.27122016.
+#hmmsearch.tab -size 30 -bzip 0 -matrixdir ../data/entropies_matrix/ -minentropy 0 -keggmap  -pathway 
+
+
+##4510165.3.27122016.hmmsearch.tab.100.score
+##JP5WATER110514AMP.faa.27122016.hmmsearch.tab.100.score
 
 my ($INP_help,$INP_scoredir) =(0, $DEFAULTSCOREDIR);
 my ( $INP_mslfile, $INP_mslselec) = ('','');
@@ -96,18 +107,18 @@ print "# $0 call:\n# -scoredir $INP_scoredir -MSL.tab  $INP_mslfile -MSL.selecti
 my %sizes;
 my $size;
 my %idnames;
+
 opendir (SCORES, $INP_scoredir) || die "# $0 : ERROR : cannot list $INP_scoredir\n"; 
-my @scorefile = grep{/$FILENAMEPATTERN/}readdir (SCORES);
-closedir(SCORES);
+#my @scorefile = grep{/$FILENAMEPATTERN/}readdir (SCORES);
+#modificar para que lea todos los scores 
+
 
 ##2) parse all files 
-
-foreach my $scores (@scorefile)
-{
  
-	  open(INFILE,"$INP_scoredir/$scores") || die "# $0 : cannot find $INP_scoredir/$scores\n";
-
-##3) extract metagenome name and  MSL from FILENAME 
+	open(INFILE,"$INP_scoredir/$scores") || die "# $0 : cannot find $INP_scoredir/$scores\n";
+	while (<INFILE>)
+{
+##3) extract size  name and  MSL from FILENAME 
 
 	if ($scores =~m/(^[0-9]{9})|[^a-zA-Z0-9$]/)
 	{
