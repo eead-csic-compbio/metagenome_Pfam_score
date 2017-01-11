@@ -62,10 +62,12 @@ parser.add_argument('filename',
                     "columns are metagenome fragment (reads) length ")
 parser.add_argument(
     '-o', '--out_fig', help='Stores the figure in the specified file (and format).')
-parser.add_argument('--dpi', type=int,
-                    help='Resolution for output figure file (default = 300)', default=300)
+parser.add_argument('--dpi', type=int, default=300,
+                    help='Resolution for output figure file (default = 300)')
 parser.add_argument('-s', '--sigma', action='store_true',
                     help='Plot standard deviation instead of coefficient of variation.')
+parser.add_argument('-k', type=int, choices=range(2, 9), default=3,
+                    help='Number of k-means clusters (default = 3)')
 args = parser.parse_args()
 
 # input file
@@ -92,7 +94,7 @@ if args.sigma:
     x = np.vstack((means, stds)).T
 else:
     x = np.vstack((means, cv)).T
-k = 3
+k = args.k
 # noramlize data
 X = StandardScaler().fit_transform(x)
 
@@ -107,7 +109,7 @@ ward.fit(X)
 # cluster labels
 y_pred = ward.labels_
 clusts = np.unique(y_pred)
-cs_ = ['b', 'g', 'r']
+cs_ = ['b', 'g', 'r', 'y', 'k', 'c', 'm', 'grey']
 
 # figure
 fig = plt.figure()
@@ -172,7 +174,8 @@ for i in clusts:
     dset = data.ix[mask]
     m = dset.mean(1)
     s = dset.std(1)
-    df = pd.concat((m, s), 1, keys=['mean', 'std'])
+    _cv = m / s
+    df = pd.concat((m, s, _cv), 1, keys=['mean', 'std', 'VC'])
     fname = 'cluster_{}_pfam.tab'.format(i)
     df.to_csv(fname, sep='\t')
 
