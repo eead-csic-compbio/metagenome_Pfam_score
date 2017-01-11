@@ -11,7 +11,7 @@
 # Copyright:   (c) acph 2015
 # Licence:     GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007
 # ------------------------------
-"""Mean vs std figure of profiles Using ward linkage hyerarchical clustering. Creates a file for
+"""Mean vs coefficient of variation figure of profiles and ward linkage hyerarchical clustering. Creates a file for
 each cluster that contains the list of profiles that are included."""
 
 
@@ -27,7 +27,7 @@ from sklearn.preprocessing import StandardScaler
 # options
 epilog = """Example:
 
-$ python3 F_meanVSstd matrices_curadas_sep_entropies.tab -o figure.png"""
+$ python3 F_meanVSstd entropies_matrix_entropies.tab -o figure.png"""
 
 parser = argparse.ArgumentParser(description=__doc__, epilog=epilog)
 parser.add_argument('filename',
@@ -37,15 +37,17 @@ parser.add_argument(
     '-o', '--out_fig', help='Stores the figure in the specified file (and format).')
 parser.add_argument('--dpi', type=int,
                     help='Resolution for output figure file (default = 300)', default=300)
+parser.add_argument('-s', '--sigma', action='store_true',
+                    help='Plot standard deviation instead of coefficient of variation.')
 args = parser.parse_args()
 
-# input file 
+# input file
 # fname = 'matrices_pfam_entropies.tab'
 # fname = 'matrices_curadas_sep_entropies.tab'
 fname = args.filename
 
-data = pd.read_table(fname, index_col=0, na_values=[
-    'NA', "SIN DATO"], decimal='.')
+data = pd.read_table(fname, index_col=0, na_values=['NA', "SIN DATO"],
+                     decimal='.')
 means = np.array(data.mean(1))
 stds = np.array(data.std(1))
 mask1 = ~np.isnan(means)
@@ -54,9 +56,16 @@ mask = mask1 * mask2
 data = data.ix[mask]
 means = np.array(data.mean(1))
 stds = np.array(data.std(1))
-x = np.vstack((means, stds)).T
+cv = stds / means                    # Coefficient of variation
 
-k = 3 
+##############
+# Clustering #
+##############
+if args.sigma:
+    x = np.vstack((means, stds)).T
+else:
+    x = np.vstack((means, cv)).T
+k = 3
 # noramlize data
 X = StandardScaler().fit_transform(x)
 
@@ -92,8 +101,38 @@ for i in clusts:
                       color=cs_[i], label='Cluster {}'.format(i))
 
 leg = axscatter.legend(fontsize='small')
-ylims = (-0.01, 0.22)
-xlims = (-0.4, 1.1)
+
+
+def limits(array, percentage=0.01):
+    """Computes plot limits to plot the data of an array.
+
+    Parameters
+    ----------
+    array : 1D array
+    percentage : Fraction of the array to add to the limits
+
+
+    Returns
+    -------
+    out : Returns a 2 values tuple. First value is low limit and second 
+          value is the high limit
+
+    """
+    max_ = array.max()
+    min_ = array.min()
+    ad = (max_ - min_) * percentage
+    if max_ == 0.0:
+        max_ = 0 + ad
+    if min_ == 0.0:
+        min_ = 0 - ad
+    low = min_ - ad
+    high = max_ + ad
+    return low, high
+
+#ylims = (-0.01, 0.22)
+#xlims = (-0.4, 1.1)
+ylims = limits(x[:, 1])
+xlims = limits(x[:, 0])
 axscatter.set_ylim(ylims)
 axscatter.set_xlim(xlims)
 
