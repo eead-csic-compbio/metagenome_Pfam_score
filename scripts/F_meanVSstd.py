@@ -24,6 +24,33 @@ from sklearn import cluster   # , datasets
 from sklearn.neighbors import kneighbors_graph
 from sklearn.preprocessing import StandardScaler
 
+
+def limits(array, percentage=0.01):
+    """Computes plot limits to plot the data of an array.
+
+    Parameters
+    ----------
+    array : 1D array
+    percentage : Fraction of the array to add to the limits
+
+
+    Returns
+    -------
+    out : Returns a 2 values tuple. First value is low limit and second 
+          value is the high limit
+
+    """
+    max_ = array.max()
+    min_ = array.min()
+    ad = (max_ - min_) * percentage
+    if max_ == 0.0:
+        max_ = 0 + ad
+    if min_ == 0.0:
+        min_ = 0 - ad
+    low = min_ - ad
+    high = max_ + ad
+    return low, high
+
 # options
 epilog = """Example:
 
@@ -101,36 +128,6 @@ for i in clusts:
                       color=cs_[i], label='Cluster {}'.format(i))
 
 leg = axscatter.legend(fontsize='small')
-
-
-def limits(array, percentage=0.01):
-    """Computes plot limits to plot the data of an array.
-
-    Parameters
-    ----------
-    array : 1D array
-    percentage : Fraction of the array to add to the limits
-
-
-    Returns
-    -------
-    out : Returns a 2 values tuple. First value is low limit and second 
-          value is the high limit
-
-    """
-    max_ = array.max()
-    min_ = array.min()
-    ad = (max_ - min_) * percentage
-    if max_ == 0.0:
-        max_ = 0 + ad
-    if min_ == 0.0:
-        min_ = 0 - ad
-    low = min_ - ad
-    high = max_ + ad
-    return low, high
-
-#ylims = (-0.01, 0.22)
-#xlims = (-0.4, 1.1)
 ylims = limits(x[:, 1])
 xlims = limits(x[:, 0])
 axscatter.set_ylim(ylims)
