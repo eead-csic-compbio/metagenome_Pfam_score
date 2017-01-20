@@ -14,7 +14,7 @@
 """Mean vs coefficient of variation figure of profiles and ward linkage hyerarchical clustering. Creates a file for
 each cluster that contains the list of profiles that are included."""
 
-
+import os
 import argparse
 import numpy as np
 import matplotlib.pyplot as plt
@@ -68,6 +68,8 @@ parser.add_argument('-s', '--sigma', action='store_true',
                     help='Plot standard deviation instead of coefficient of variation.')
 parser.add_argument('-k', type=int, choices=range(2, 9), default=3,
                     help='Number of k-means clusters (default = 3)')
+parser.add_argument('--plot-random', default=None, metavar='DIRECTORY',
+                    help='Folder where the *.tab files containing random samples are stored.')
 args = parser.parse_args()
 
 # input file
@@ -86,14 +88,20 @@ data = data.ix[mask]
 means = np.array(data.mean(1))
 stds = np.array(data.std(1))
 cv = stds / means                    # Coefficient of variation
+# ID = stds**2 / means                 # Index of dispersion
+# cv = ID
+# _range = np.array(data).ptp(1)      # Data Range
+# cv = _range
 
 ##############
 # Clustering #
 ##############
 if args.sigma:
     x = np.vstack((means, stds)).T
+    y_label = 'Entropy standard deviation'
 else:
     x = np.vstack((means, cv)).T
+    y_label = 'Entropy variation coefficient'
 k = args.k
 # noramlize data
 X = StandardScaler().fit_transform(x)
@@ -122,6 +130,29 @@ axscatter = fig.add_axes(scat_pos, frameon=True)
 axxbox = fig.add_axes(xbox_pos, frameon=False)
 axybox = fig.add_axes(ybox_pos, frameon=False)
 
+# plot random
+if args.plot_random:
+    dataframes = {}
+    files = os.listdir(args.plot_random)
+    files = [f for f in files if '.tab' in f]
+    for f in files:
+        path = os.path.join(args.plot_random, f)
+        key = f.split('.')[-2]
+        df = pd.read_table(path)
+        del df[df.columns[0]]
+        dataframes[key] = df
+    panel = pd.Panel(dataframes)
+    r_means = panel.mean(0)
+    r_stds = panel.std(0)
+    if args.sigma:
+        r_variation = r_stds
+    else:
+        # coefficent of variation
+        r_variation = r_stds / r_means
+#    import seaborn as sns
+#    sns.kdeplot(r_means, r_variation, ax=axscatter)
+    axscatter.scatter(r_means, r_variation, color='mistyrose',
+                      label='Random samples', alpha=0.8)
 # scatter plot
 for i in clusts:
     mask = y_pred == i
@@ -135,14 +166,15 @@ xlims = limits(x[:, 0])
 axscatter.set_ylim(ylims)
 axscatter.set_xlim(xlims)
 
-clust2 = x[y_pred == 2]
-labels = data.index[y_pred == 2]
+
+clust2 = x[y_pred == 1]
+labels = data.index[y_pred == 1]
 for i in range(len(labels)):
     axscatter.annotate(labels[i], clust2[i], alpha=0.5, fontsize='xx-small')
 
 
 axscatter.set_xlabel("Entropy mean", fontweight='bold')
-axscatter.set_ylabel("Entropy std", fontweight='bold')
+axscatter.set_ylabel(y_label, fontweight='bold')
 
 # box plots
 bpx = axxbox.boxplot(x[:, 0], vert=False)
@@ -166,6 +198,15 @@ plt.setp(bpy['boxes'], color='black', linewidth=1.5)
 plt.setp(bpy['whiskers'], color='black', linewidth=1.5)
 plt.setp(bpy['caps'], color='black', linewidth=1.5)
 plt.setp(bpy['fliers'], color='black')
+
+
+# dataframes = {}
+# for f in files:
+#     path = os.path.join(fol, f)
+#     key = f.split('.')[-2]
+#     df = pd.read_table(path)
+#     del df[df.columns[0]]
+#     dataframes[key] = df
 
 
 # save clusters
