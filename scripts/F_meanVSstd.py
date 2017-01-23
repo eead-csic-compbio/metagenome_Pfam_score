@@ -59,23 +59,23 @@ $ python3 F_meanVSstd entropies_matrix_entropies.tab -o figure.png"""
 parser = argparse.ArgumentParser(description=__doc__, epilog=epilog)
 parser.add_argument('filename',
                     help="Input file in tabular format. Rows are pfam families and " +
-                    "columns are metagenome fragment (reads) length ")
+                    "columns are metagenome fragment (reads) length.")
 parser.add_argument(
     '-o', '--out_fig', help='Stores the figure in the specified file (and format).')
 parser.add_argument('--dpi', type=int, default=300,
-                    help='Resolution for output figure file (default = 300)')
+                    help='Resolution for output figure file [300].')
 parser.add_argument('-v', '--variation', default='std',
                     choices=['std', 'cv', 'id', 'range'],
                     help='Select the measurement of variation to plot in y axis [std]: standard devitation (std), coefficient of variation (cv), index of dispersion (id) or range. cv and id cannot be used in variables with negative values.')
 parser.add_argument('-k', type=int, choices=range(2, 9), default=3,
-                    help='Number of k-means clusters (default = 3)')
+                    help='Number of k-means clusters [3].')
 parser.add_argument('--plot-random', default=None, metavar='DIRECTORY',
                     help='Folder where the *.tab files containing random samples are stored.')
 parser.add_argument('-c', '--cluster-alg', choices=['ward', 'birch'],
                     default='ward',
-                    help='Chose clustering algorithm [ward]. Ward linked hierarchical clustering or birch clustering')
-parser.add_argument('--labels', type=int,
-                    help="Plot the labels of the points in the specified cluster")
+                    help='Chose clustering algorithm [ward]. Ward linked hierarchical clustering or birch clustering.')
+parser.add_argument('--labels', type=int, metavar='CLUSTER',
+                    help="Plot the labels of the points in the specified cluster.")
 args = parser.parse_args()
 
 # input file
@@ -192,6 +192,7 @@ for i in clusts:
                       color=cs_[i], label='Cluster {}'.format(i))
 
 leg = axscatter.legend(fontsize='small')
+leg.draggable()
 ylims = limits(x[:, 1])
 xlims = limits(x[:, 0])
 axscatter.set_ylim(ylims)
