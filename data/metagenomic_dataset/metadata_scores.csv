@@ -1,0 +1,938 @@
+ID 	Private data (old id MG-RAST) 	MSL	Sscore 2017	Sscore2014	30	60	100	150	200	250	300	biome	feature	material	env_package	location	latitude	longitude	depth
+4524971.3		52	16.488	16.711	13.401	16.488	15.234	15.513	15.555	15.705	15.603	aquatic biome	microbial feature	sludge	wastewater|sludge	shenzhen xili	22	114	0
+4451035.3		79	16.459	16.705	13.372	16.459	15.205	15.487	15.527	15.677	15.575	Mangrove biome	intertidal zone	estuarine mud	soil	Bertioga	-25.08389	-45.25083	0
+4441022.3		75	16.394	15.29	13.39	16.394	15.13	15.396	15.384	15.528	15.426	estuarine biome	marine benthic feature	sandy sediment	sediment	Coorong Lagoon	36.166	139.651	0
+JP2C120525SEDIMENT	4557986.3	73	16.34	16.656	13.399	16.34	15.076	15.343	15.331	15.475	15.373	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4441021.3		76	16.207	16.546	13.158	16.207	15.035	15.309	15.357	15.486	15.391	estuarine biome	marine benthic feature	sandy sediment	sediment	Coorong Lagoon	35.938	139.488	0
+4451034.3		76	16.171	16.406	13.2	16.171	14.923	15.192	15.178	15.328	15.226	Mangrove biome	intertidal zone	estuarine mud	soil	Bertioga	-23.90167	-45.25083	0
+4451033.3		76	16.112	16.503	13.08	16.112	14.951	15.229	15.274	15.403	15.308	Mangrove biome	intertidal zone	estuarine mud	soil	Bertioga	-23.89694	-46.20778	0
+4440984.3		76	15.997	16.089	13.028	15.997	14.84	15.165	15.2	15.344	15.239	estuarine biome	marine benthic feature	sandy sediment	sediment	Coorong Lagoon	35.551	138.88	0
+4451036.3		72	15.918	16.423	12.919	15.918	14.773	15.051	15.096	15.231	15.136	Mangrove biome	intertidal zone	estuarine mud	soil	Cananeia	-25.08389	-47.95056	0
+4441020.3		76	15.767	16.442	12.912	15.767	14.544	14.808	14.8	14.935	14.84	estuarine biome	marine benthic feature	sandy sediment	sediment	Coorong Lagoon	35.79	139.31	0
+4504798.3		128	15.763	16.061	13.589	16.718	15.477	15.763	15.799	15.943	15.841	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4441599.3		245	15.712	16.303	13.41	16.493	15.241	15.52	15.562	15.712	15.61	marine habitat	marine habitat	marine habitat	water	Punta Cormorant, Hypersaline Lagoon, Floreana Island	-1.2283	-90.4292	0.2 m
+4441598.3		230	15.707	16.303	13.401	16.488	15.236	15.515	15.557	15.707	15.605	marine habitat	marine habitat	marine habitat	water	Galapagos Islands - Mangrove on Isabella Island	-.59389	-91.06944	.1
+4441574.3		227	15.657	16.277	13.361	16.427	15.186	15.466	15.507	15.657	15.555	marine habitat	marine habitat	marine habitat	water	Sargasso Sea	32.1748	-64.01017	5
+4493725.3		223	15.652	16.297	13.484	16.587	15.33	15.613	15.652	15.796	15.694	activated sludge	lake	water	wastewater|sludge	Jiangsu	32.05	118.72	0
+4504797.3		127	15.585	16.087	13.428	16.524	15.299	15.585	15.621	15.771	15.669	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.771111	-92.961667	0
+BMAY13	4621756.3	99	15.564	16.315	13.676	16.818	15.564	15.846	15.885	16.029	15.927	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	0	0	0
+BOCT13	4621759.3	106	15.5	16.258	13.667	16.754	15.5	15.783	15.822	15.966	15.864	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	0	0	0
+4525341.3		172	15.435	15.958	13.323	16.393	15.152	15.435	15.474	15.624	15.522	marine biome	coast	marine sediment	host-associated	Elba, Sant Andrea	42.807838	10.143549	0
+4549766.3		83	15.419	16.225	13.571	16.687	15.419	15.698	15.74	15.884	15.782	freshwater biome	hydrographic feature	microbial mat material	microbial mat|biofilm	Little Hot Creek	37.694518	-118.816545	0
+4491734.3		53	15.416	15.611	12.303	15.416	14.178	14.46	14.506	14.663	14.561	Polar domain (100)	Glacial feature	microbial mat	sediment	Europe	46.5	11.03	0
+BMAY14	4621757.3	100	15.412	16.225	13.562	16.682	15.412	15.691	15.733	15.877	15.775	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	0	0	0
+4485982.3		101	15.383	16.121	13.533	16.653	15.383	15.665	15.705	15.849	15.747	Mangrove biome	intertidal zone	estuarine mud	miscellaneous	Ilha Grande	-23.169959	-44.283389	0
+4485219.3		101	15.383	16.121	13.533	16.653	15.383	15.665	15.705	15.849	15.747	Mangrove biome	intertidal zone	estuarine mud	miscellaneous	Ilha Grande	-23.169959	-44.283389	0
+4461840.3		102	15.381	16.127	13.506	16.619	15.381	15.663	15.702	15.852	15.75	soil	soil	soil	soil	Lucknow	27.0, 24.7	81.08, 57.8	.02 ; Meter
+4449956.3		113	15.381	16.217	13.506	16.619	15.381	15.663	15.702	15.852	15.75	terrestrial biome	plant-associated habitat	organic material	plant-associated	Los Banos	14.1387	121.26159	0
+AOCT13	4621755.3	102	15.355	16.168	13.446	16.552	15.355	15.635	15.677	15.821	15.719	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	0	0	0
+4461011.3		107	15.352	16.211	13.477	16.59	15.352	15.637	15.674	15.824	15.722	soil	soil	soil	soil	Lucknow	27.	81	.02 ; Meter
+4453246.3		110	15.299	16.185	13.428	16.524	15.299	15.585	15.621	15.771	15.669	Temperate grasslands	prairie	soil	soil	Rothamsted	51.481481	0.222231	0
+4442626.3		233	15.276	15.512	13.215	16.13	14.826	15.136	15.111	15.276	15.164	marine habitat	marine habitat	marine habitat	water	Upwelling, Fernandina Island	-.30111	-91.65167	12
+4441597.3		233	15.276	15.512	13.215	16.13	14.826	15.136	15.111	15.276	15.164	marine habitat	marine habitat	marine habitat	water	Upwelling, Fernandina Island	0.30111	-91.65167	12
+4446153.3		125	15.24	16.128	13.428	16.465	15.24	15.527	15.563	15.713	15.611	soil	soil	soil	soil	subtropical lower montane wet forest in the Luquillo Experimental Forest	18.3	-65.833	0-.1
+COCT13	4621763.3	99	15.236	16.127	13.401	16.488	15.236	15.515	15.557	15.707	15.605	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	0	0	0
+ANOV12	4621754.3	103	15.236	16.127	13.401	16.488	15.236	15.515	15.557	15.707	15.605	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	0	0	0
+4539508.3		113	15.236	16.127	13.401	16.488	15.236	15.515	15.557	15.707	15.605	oceanic epipelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	150
+4454153.3		115	15.236	16.127	13.401	16.488	15.236	15.515	15.557	15.707	15.605	biofilm	biofilm	biofilm	microbial mat|biofilm	USA:Cape Cod:Sippewissett Marsh	41.575836	-70.639233	0.25
+AMAY14	4621753.3	103	15.234	16.127	13.401	16.488	15.234	15.513	15.555	15.705	15.603	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	0	0	0
+4550960.3		89	15.234	16.127	13.401	16.488	15.234	15.513	15.555	15.705	15.603	freshwater biome	hydrographic feature	microbial mat material	microbial mat|biofilm	Little Hot Creek	37.694518	-118.816545	0
+4549767.3		86	15.234	16.127	13.401	16.488	15.234	15.513	15.555	15.705	15.603	freshwater biome	hydrographic feature	microbial mat material	microbial mat|biofilm	Little Hot Creek	37.694518	-118.816545	0
+4485981.3		104	15.234	16.127	13.401	16.488	15.234	15.513	15.555	15.705	15.603	Mangrove biome	intertidal zone	estuarine mud	miscellaneous	Porto Seguro	-16.588118	-39.091845	0
+4485218.3		101	15.234	16.127	13.401	16.488	15.234	15.513	15.555	15.705	15.603	Mangrove biome	intertidal zone	estuarine mud	miscellaneous	Porto Seguro	-16.588118	-39.091845	0
+4441620.3		229	15.217	15.584	13.267	16.117	14.811	15.082	15.067	15.217	15.115	fossil	fossil	fossil	host-associated	Pacific Ocean, Santa Cruz Basin	33.30	119.22	1674
+4539507.3		103	15.21	16.121	13.381	16.464	15.21	15.492	15.532	15.682	15.58	oceanic epipelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	150
+4539513.3		109	15.181	16.101	13.352	16.422	15.181	15.461	15.502	15.652	15.55	oceanic mesopelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	300
+AMAY13	4621752.3	104	15.177	16.07	13.401	16.429	15.177	15.457	15.499	15.649	15.547	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	0	0	0
+4449103.3		123	15.152	16.095	13.323	16.393	15.152	15.435	15.474	15.624	15.522	oceanic epipelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	200
+4453406.3		108	15.146	16.064	13.372	16.4	15.146	15.429	15.469	15.619	15.517	Temperate grasslands	prairie	soil	soil	Rothamsted	51.481481	0.222231	0
+4453254.3		108	15.146	16.064	13.372	16.4	15.146	15.429	15.469	15.619	15.517	Temperate grasslands	prairie	soil	soil	Rothamsted	51.481481	0.222231	0
+4493726.3		233	15.064	16.252	12.94	15.642	14.733	14.965	15.002	15.064	14.929	activated sludge	lake	water	wastewater|sludge	Jiangsu	32.05	118.72	0
+CMAY13	4621760.3	106	15.057	15.93	13.146	16.337	15.057	15.347	15.393	15.54	15.441	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	0	0	0
+4441363.3		68	15.021	15.521	12.225	15.021	13.622	13.837	13.833	13.974	13.886	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.8234444	-102.0147778	1
+4539502.3		111	14.959	15.876	13.354	16.276	14.959	15.225	15.213	15.363	15.261	oceanic epipelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	40
+CMAY14	4621761.3	101	14.954	15.786	13.345	16.271	14.954	15.22	15.208	15.358	15.256	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	0	0	0
+4460189.3		112	14.954	16.217	13.345	16.271	14.954	15.22	15.208	15.358	15.256	estuarine biome	estuarine bulk water	water	water	Puget Sound, WA	47.683889	122.406944	0.5
+JP5SED110513AMP	4557997.3	87	14.892	16.07	13.274	16.212	14.892	15.147	15.128	15.278	15.177	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4441603.3		228	14.859	15.574	12.576	15.702	14.443	14.731	14.751	14.859	14.76	marine habitat	marine habitat	marine habitat	water	Polynesia Archipelagos - Moorea, Cooks Bay	-17.47583	-149.8122	1.4
+4478939.3		141	14.854	14.08	12.786	15.811	14.57	14.854	14.893	15.043	14.941	Tropical and subtropical moist broadleaf forest biome	agricultural soil	rhizosphere	soil	Amazonia	-11.7412664	-56.2533385	0
+4539511.3		100	14.797	15.098	12.791	15.977	14.797	15.091	15.134	15.287	15.188	oceanic mesopelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	200
+4441663.3		158	14.765	14.952	12.531	15.594	14.437	14.765	14.791	14.956	14.844	hydrothermal vent	hydrothermal vent	hydrothermal vent	water	Black smoker chimneys on East Pacific Rise	9.84	-104.28	2500
+4441102.3		158	14.765	14.952	12.531	15.594	14.437	14.765	14.791	14.956	14.844	hydrothermal vent	hydrothermal vent	hydrothermal vent	water	Black smoker chimneys on East Pacific Rise	9.84	-104.28	2500
+4441573.3		221	14.698	15.611	12.527	15.636	14.39	14.679	14.698	14.806	14.707	marine habitat	marine habitat	marine habitat	water	Sargasso Sea	31.175	-64.324	5
+4446342.3		104	14.579	15.742	12.936	15.911	14.579	14.808	14.847	15	14.902	estuarine biome	marine benthic feature	sandy sediment	sediment	Port Flinders	33.1025	128.023	0
+4441585.3		241	14.577	15.104	12.495	15.475	14.182	14.504	14.454	14.577	14.468	marine habitat	marine habitat	marine habitat	water	Off Nags Head, NC	36.00389	-75.3947	2.1
+4441617.3		218	14.554	15.253	12.518	15.55	14.313	14.591	14.554	14.662	14.563	marine habitat	marine habitat	marine habitat	water	Indian Ocean - East coast Zanzibar (Tanzania), offshore Paje lagoon	-6.3167	39.55	.3
+4453247.3		124	14.531	15.413	12.681	15.774	14.531	14.823	14.84	14.948	14.849	Temperate grasslands	prairie	soil	soil	Rothamsted	51.481481	0.222231	0
+4441610.3		233	14.512	15.216	12.404	15.414	14.163	14.438	14.404	14.512	14.413	marine habitat	marine habitat	marine habitat	water	Indian Ocean	-7.0075	76.3314	1.8
+4441143.3		231	14.457	15.19	12.355	15.348	14.108	14.384	14.349	14.457	14.358	marine habitat	marine habitat	marine habitat	water	Block Island, NY	41.091	-71.602	1
+4441613.3		218	14.454	14.954	12.495	15.475	14.182	14.504	14.454	14.577	14.468	marine habitat	marine habitat	marine habitat	water	Indian Ocean - St. Anne Island, Seychelles	-4.6136	55.5086	1.8
+4460178.3		107	14.452	16.07	12.611	15.272	14.452	14.725	14.752	14.835	14.69	estuarine biome	estuarine bulk water	water	water	Puget Sound, WA	48.016667	122.300556	5
+4453434.3		113	14.449	15.291	12.603	15.679	14.449	14.745	14.759	14.867	14.768	Temperate grasslands	prairie	soil	soil	Rothamsted	51.481481	0.222231	0
+4460182.3		107	14.445	15.38	12.576	15.702	14.445	14.733	14.753	14.861	14.762	estuarine biome	estuarine bulk water	water	water	Puget Sound, WA	47.333333	122.434722	5
+4450127.3		121	14.418	15.555	12.619	15.644	14.418	14.707	14.756	14.894	14.802	Tundra biome	peat soil	peat soil	soil	Ny Ãlesund, Svalbard	80.6090666666667	13.48425	0
+CNOV12	4621762.3	117	14.416	15.383	12.924	15.909	14.416	14.635	14.624	14.774	14.679	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	0	0	0
+4441570.3		224	14.409	15.152	12.529	15.49	14.168	14.443	14.409	14.517	14.418	marine habitat	marine habitat	marine habitat	water	Sargasso Sea	31.175	-64.324	5
+4441611.3		218	14.407	15.152	12.529	15.49	14.166	14.441	14.407	14.515	14.416	marine habitat	marine habitat	marine habitat	water	Indian Ocean - 500 Miles west of the Seychelles in the Indian Ocean	-4.99028	64.9767	1.5
+4539510.3		109	14.39	15.354	12.527	15.636	14.39	14.679	14.698	14.806	14.707	oceanic mesopelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	200
+4443684.3		219	14.387	15.117	12.837	15.37	14.095	14.353	14.387	14.539	14.444	freshwater	freshwater	freshwater	water	0	0	0	0
+4479361.3		132	14.382	14.885	12.225	15.321	14.096	14.382	14.425	14.582	14.48	Subtropical and temperate rainforests or woodlands	Zoological garden	compost	built environment	Sao Paulo Zoo Park	-23	-46	0
+4516290.3		115	14.37	15.11	12.808	15.689	14.37	14.637	14.625	14.775	14.673	aquatic biome	freshwater habitat	eutrophic water	water	Valencia	39.3037632	-0.3226403	0
+4450126.3		120	14.359	15.498	12.619	15.585	14.359	14.649	14.698	14.836	14.744	Tundra biome	peat soil	peat soil	soil	Ny Ãlesund, Svalbard	80.6090666666667	13.48425	0
+4453256.3		128	14.35	14.828	12.254	15.291	14.066	14.35	14.395	14.552	14.45	Temperate grasslands	prairie	soil	soil	Rothamsted	51.481481	0.222231	0
+4441149.3		230	14.339	14.72	12.352	15.251	13.942	14.265	14.216	14.339	14.23	marine habitat	marine habitat	marine habitat	water	Outside Seychelles, Indian Ocean	-4.635	56.8361	1.5
+4453436.3		111	14.302	15.291	12.498	15.548	14.302	14.595	14.612	14.72	14.621	Temperate grasslands	prairie	soil	soil	Rothamsted	51.481481	0.222231	0
+4539509.3		102	14.248	15.754	13.128	15.591	14.248	14.536	14.512	14.665	14.56	oceanic epipelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	150
+4539505.3		108	14.228	14.115	12.547	15.521	14.228	14.51	14.47	14.578	14.479	oceanic epipelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	120
+4478038.3		141	14.211	13.719	12.21	15.144	13.923	14.211	14.234	14.327	14.235	Tropical and subtropical moist broadleaf forest biome	agricultural soil	bulk soil	soil	Amazonia	-11.7412664	-56.2533385	0
+4477789.3		141	14.175	14.715	12.442	15.19	13.909	14.175	14.166	14.301	14.206	Tropical and subtropical moist broadleaf forest biome	agricultural soil	bulk soil	soil	Amazonia	-11.6832502	-55.8357663	0
+4539504.3		109	14.163	14.147	12.52	15.485	14.163	14.438	14.404	14.512	14.413	oceanic epipelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	80
+4441591.3		243	14.134	15.462	12.041	14.762	13.853	14.09	14.108	14.134	14.002	marine habitat	marine habitat	marine habitat	water	Eastern Tropical Pacific, Gulf of Panama	8.1292	-79.6911	1.6
+4461013.3		105	14.125	14.989	12.254	15.35	14.125	14.408	14.453	14.61	14.508	soil	soil	soil	soil	Lucknow	27.0, 24.7	81.08, 57.8	.02 ; Meter
+4479944.3		128	14.087	14.544	12.169	15.104	13.814	14.087	14.076	14.233	14.131	Subtropical and temperate rainforests or woodlands	Zoological garden	compost	built environment	Sao Paulo Zoo Park	-23	-46	0
+4478941.3		141	14.072	14.631	11.961	15.025	13.779	14.072	14.089	14.197	14.098	Tropical and subtropical moist broadleaf forest biome	agricultural soil	bulk soil	soil	Amazonia	-11.7412664	-56.2533385	0
+4443705.3		73	14.035	15.155	11.869	14.035	13.082	13.28	13.248	13.262	13.137	marine habitat	marine habitat	marine habitat	water	coastal waters of a fjord close to Bergen, Norway	60.27	-5.22	0
+4450328.3		108	14.033	14.925	12.198	15.285	14.033	14.312	14.361	14.518	14.416	terrestrial biome	plant-associated habitat	organic material	plant-associated	Los Banos	14.1387	121.26159	0
+4450125.3		120	13.978	14.152	12.149	15.219	13.978	14.258	14.306	14.463	14.361	Tundra biome	peat soil	peat soil	soil	Ny Ãlesund, Svalbard	80.6090666666667	13.48425	0
+4494601.3		138	13.966	15.223	12.015	14.77	13.84	13.966	14.002	14.072	13.937	oceanic mesopelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	300
+4441590.3		247	13.935	13.535	11.661	14.703	13.449	13.729	13.778	13.935	13.833	freshwater habitat	freshwater habitat	freshwater habitat	water	Lake Gatun, Panama	9.1644	-79.83611	4.2
+4453261.3		120	13.919	14.842	12.149	15.16	13.919	14.2	14.248	14.405	14.303	Temperate grasslands	prairie	soil	soil	Rothamsted	51.481481	0.222231	0
+4478943.3		141	13.916	14.58	12.154	14.927	13.641	13.916	13.885	13.978	13.886	Tropical and subtropical moist broadleaf forest biome	agricultural soil	bulk soil	soil	Amazonia	-11.7412664	-56.2533385	0
+4478350.3		299	13.891	14.731	12.292	15.075	13.622	13.843	13.838	13.979	13.891	cultured habitat	cultured habitat	cultured habitat	soil	Berkeley, CA	37.786111	-122.318611	0 ; Meter
+4453433.3		115	13.89	14.836	12.12	15.131	13.89	14.174	14.22	14.377	14.275	Temperate grasslands	prairie	soil	soil	Rothamsted	51.481481	0.222231	0
+4441582.3		236	13.853	15.296	11.704	14.384	13.585	13.823	13.842	13.853	13.728	marine habitat	marine habitat	marine habitat	water	Bay of Fundy, Nova Scotia	44.112	-64.9467	1
+4441144.3		237	13.847	14.107	11.853	14.762	13.451	13.771	13.724	13.847	13.738	marine habitat	marine habitat	marine habitat	water	Cape May, NJ	38.94	-74.685	1
+4516220.3		174	13.83	14.415	11.588	14.715	13.535	13.83	13.88	14.04	13.941	freshwater biome	extreme high temperature habitat	sediment	sediment	USA Great Basin Desert, Great Boiling Spring	40.65833	-119.37772	0.01
+4460180.3		109	13.817	15.374	12.003	14.728	13.817	14.057	14.073	14.099	13.967	estuarine biome	estuarine bulk water	water	water	Puget Sound, WA	47.700556	122.450556	5
+4441596.4		241	13.785	15.216	11.869	14.474	13.571	13.795	13.759	13.785	13.653	marine habitat	marine habitat	marine habitat	water	Galapagos Islands, Coastal Floreana	1.2169	-90.3197	2
+4445990.3		113	13.779	14.672	11.961	15.025	13.779	14.072	14.089	14.197	14.098	soil	soil	soil	soil	Mercury, Navada	36.49	-115.55	0-0.005 ; Meter
+4441618.3		222	13.752	15.253	11.976	14.54	13.564	13.788	13.752	13.778	13.646	marine habitat	marine habitat	marine habitat	water	Indian Ocean - West coast Zanzibar (Tanzania), harbour region	-6.1167	39.1167	1.5
+4441662.3		236	13.727	14.684	11.712	14.594	13.355	13.594	13.614	13.727	13.635	marine habitat	marine habitat	marine habitat	water	Galapagos Islands - Warm seep, Roca Redonda	.2722	-91.633	19
+JP2C120525SEDRESIZEAMP	4557987.3	83	13.697	14.868	12.035	14.943	13.697	13.964	13.959	14.116	14.014	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4441589.3		234	13.691	14.783	11.837	14.394	13.431	13.699	13.65	13.691	13.549	marine habitat	marine habitat	marine habitat	water	Caribbean Sea, Northeast of Colon	10.7164	-80.2544	1.7
+4443699.3		74	13.688	12.88	11.213	13.688	12.386	12.569	12.531	12.629	12.534	marine habitat	marine habitat	marine habitat	water	Pacific North Equatorial	5.0833	-161.967	5 ; Meter
+4460188.3		109	13.679	15.039	12.413	14.98	13.679	13.928	13.898	13.994	13.902	estuarine biome	estuarine bulk water	water	water	Puget Sound, WA	47.883333	122.366667	5
+4548350.3		33	13.676	13.666	13.676	16.818	15.566	15.848	15.887	16.031	15.929	marine biome	tidal pool	sediment	microbial mat|biofilm	Schiermonnikoog	53.4785962	6.1560311	0
+4516637.3		29	13.676	13.544	13.676	16.818	15.566	15.848	15.887	16.031	15.929	air	air	air	air	Beijing	40.0047	116.3261	0
+4510168.3		32	13.676	13.575	13.676	16.818	15.566	15.848	15.887	16.031	15.929	marine benthic biome	ocean	marine sediment	sediment	Gulf of Mexico	28.74491944	-88.374242	0
+4502930.3		31	13.676	13.666	13.676	16.818	15.566	15.848	15.887	16.031	15.929	Prairie Division (250)	field	arable soil	plant-associated	Wrights IL	39.3767667	-90.3235	0
+4546372.3		29	13.667	13.453	13.667	16.813	15.559	15.841	15.88	16.024	15.922	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	3.5580384	105.6420599	0
+4546289.3		30	13.667	13.446	13.667	16.813	15.559	15.841	15.88	16.024	15.922	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	8.5580384	110.6420599	0
+4539528.3		25	13.667	13.666	13.667	16.754	15.5	15.783	15.822	15.966	15.864	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.771111	-92.961667	0
+4516803.3		29	13.667	13.446	13.667	16.813	15.559	15.841	15.88	16.024	15.922	air	air	air	air	Beijing	40.0047	116.3261	0
+4510170.3		32	13.667	13.477	13.667	16.813	15.559	15.841	15.88	16.024	15.922	marine benthic biome	ocean	marine sediment	sediment	Gulf of Mexico	28.672508	-88.435906	0
+4502924.3		31	13.667	13.666	13.667	16.813	15.561	15.843	15.882	16.026	15.924	Prairie Division (250)	field	arable soil	plant-associated	Auburn, IL	39.5853	-89.7607167	0
+4494855.3		32	13.667	13.544	13.667	16.813	15.559	15.841	15.88	16.024	15.922	aquatic biome	wastewater treatment plant	activated sludge	wastewater|sludge	Zhecheng Henan province	34.08	115.29	0
+4441092.3		233	13.643	14.335	11.385	14.541	13.263	13.437	13.484	13.643	13.541	sludge	sludge	sludge	wastewater|sludge	Thornside Sewage Treatment Plant	-27.467	153.01667	0
+4441146.3		233	13.639	14.419	11.649	14.682	13.394	13.564	13.529	13.639	13.54	marine habitat	marine habitat	marine habitat	water	Tropical South Pacific - 201 miles from F. Polynesia	-10.1314	-135.4494	30
+4453083.3		120	13.628	14.861	12.292	15.085	13.628	13.843	13.838	13.979	13.891	freshwater habitat	freshwater habitat	freshwater habitat	water	South Australia	-35.18	138.46	79 ; Meter
+4443682.3		217	13.613	15.063	11.898	14.386	13.423	13.652	13.613	13.639	13.507	freshwater	freshwater	freshwater	water	Ace Lake Vestfold Hills, Antarctica	68.4	78.182778	11.5
+4546368.3		30	13.611	13.446	13.611	16.596	15.277	15.546	15.531	15.675	15.573	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4546291.3		30	13.611	13.446	13.611	16.596	15.277	15.546	15.531	15.675	15.573	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	10.5580384	112.6420599	0
+4546290.3		30	13.611	13.392	13.611	16.596	15.277	15.546	15.531	15.675	15.573	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	9.5580384	111.6420599	0
+4546288.3		29	13.611	13.294	13.611	16.596	15.277	15.546	15.531	15.675	15.573	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	7.5580384	109.6420599	0
+4546287.3		30	13.611	13.446	13.611	16.596	15.277	15.546	15.531	15.675	15.573	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	6.5580384	108.6420599	0
+4546283.3		30	13.611	13.392	13.611	16.596	15.279	15.548	15.533	15.677	15.575	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	2.5580384	104.6420599	0
+4546281.3		30	13.611	13.294	13.611	16.596	15.277	15.546	15.531	15.675	15.573	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4546280.3		30	13.611	13.294	13.611	16.596	15.277	15.546	15.531	15.675	15.573	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4494863.3		32	13.611	13.666	13.611	16.596	15.279	15.548	15.533	15.677	15.575	aquatic biome	wastewater treatment plant	activated sludge	wastewater|sludge	Xiangcheng Henan province	33.44	114.9	0
+4450123.3		120	13.599	14.654	11.861	14.815	13.599	13.874	13.928	14.07	13.975	Tundra biome	peat soil	peat soil	soil	Ny Ãlesund, Svalbard	80.5925	13.6101833333333	0
+4510162.3		32	13.571	13.575	13.571	16.687	15.419	15.698	15.74	15.884	15.782	marine benthic biome	ocean	marine sediment	sediment	Gulf of Mexico	28.742303	-88.362169	0
+4448052.3		109	13.57	14.648	11.832	14.786	13.57	13.848	13.9	14.042	13.947	aquatic biome	cave	water	microbial mat|biofilm	south australia	-31.654180526	128.774993896	0
+4478242.3		116	13.569	13.659	12.176	14.955	13.569	13.785	13.78	13.921	13.833	aquatic habitat	aquatic habitat	aquatic habitat	water	Ocean Drilling Program Leg 201, Site 1229	-10.9762017	-77.95765	1 ; Meter
+4546373.3		29	13.562	13.355	13.562	16.682	15.412	15.691	15.733	15.877	15.775	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	4.5580384	106.6420599	0
+4539523.3		29	13.562	13.477	13.562	16.682	15.414	15.693	15.735	15.879	15.777	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.771111	-92.961667	0
+4531922.3		32	13.562	13.355	13.562	16.682	15.412	15.691	15.733	15.877	15.775	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4502934.3		31	13.562	13.477	13.562	16.682	15.412	15.691	15.733	15.877	15.775	Prairie Division (250)	field	arable soil	plant-associated	Auburn, IL	39.5976167	-89.7643167	0
+4502932.3		31	13.562	13.575	13.562	16.682	15.412	15.691	15.733	15.877	15.775	Prairie Division (250)	field	arable soil	plant-associated	Wrights IL	39.3784833	-90.3239167	0
+4502925.3		31	13.562	13.477	13.562	16.682	15.412	15.691	15.733	15.877	15.775	Prairie Division (250)	field	arable soil	plant-associated	Mansfield, IL	40.21975	-88.4673667	0
+4494888.3		32	13.562	13.575	13.562	16.682	15.412	15.691	15.733	15.877	15.775	aquatic biome	wastewater treatment plant	activated sludge	wastewater|sludge	Xiangcheng Henan province	33.44	114.9	0
+4441600.3		235	13.552	13.986	11.626	14.607	13.261	13.475	13.427	13.552	13.443	marine habitat	marine habitat	marine habitat	water	Galapagos Islands - North Seamore Island	-.3831	-90.2797	2.1
+4441596.3		238	13.552	14.419	11.626	14.607	13.261	13.475	13.427	13.552	13.443	marine habitat	marine habitat	marine habitat	water	Galapagos Islands - North James Bay, Santigo Island	.2	-90.8353	2.1
+4539516.3		29	13.551	13.477	13.551	16.683	15.5	15.783	15.822	15.966	15.864	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.771111	-92.961667	0
+4531924.3		32	13.551	13.478	13.551	16.742	15.559	15.841	15.88	16.024	15.922	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4510174.3		32	13.533	13.471	13.533	16.653	15.383	15.665	15.705	15.849	15.747	marine benthic biome	ocean	marine sediment	sediment	Gulf of Mexico	28.51414444	-88.60056944	0
+4510172.3		32	13.533	13.471	13.533	16.653	15.383	15.665	15.705	15.849	15.747	marine benthic biome	ocean	marine sediment	sediment	Gulf of Mexico	28.41556667	-88.704275	0
+4531897.3		32	13.515	13.446	13.515	16.624	15.386	15.668	15.707	15.857	15.755	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4517064.3		29	13.515	13.446	13.515	16.624	15.386	15.668	15.707	15.857	15.755	air	air	air	air	Beijing	40.0047	116.3261	0
+4516952.3		29	13.515	13.446	13.515	16.624	15.388	15.67	15.709	15.859	15.757	air	air	air	air	Beijing	40.0047	116.3261	0
+4516911.3		29	13.515	13.477	13.515	16.624	15.388	15.67	15.709	15.859	15.757	air	air	air	air	Beijing	40.0047	116.3261	0
+4516910.3		29	13.515	13.477	13.515	16.624	15.388	15.67	15.709	15.859	15.757	air	air	air	air	Beijing	40.0047	116.3261	0
+4516651.3		28	13.515	13.568	13.515	16.624	15.386	15.668	15.707	15.857	15.755	air	air	air	air	Beijing	40.0047	116.3261	0
+4510163.3		32	13.515	13.477	13.515	16.624	15.388	15.67	15.709	15.859	15.757	marine benthic biome	ocean	marine sediment	sediment	Gulf of Mexico	28.731703	-88.358731	0
+4546370.3		30	13.506	13.477	13.506	16.465	15.13	15.396	15.384	15.528	15.426	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4546367.3		30	13.506	13.355	13.506	16.619	15.381	15.663	15.702	15.852	15.75	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4545449.3		30	13.506	13.477	13.506	16.619	15.381	15.663	15.702	15.852	15.75	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4545191.3		30	13.506	13.568	13.506	16.619	15.381	15.663	15.702	15.852	15.75	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4539521.3		29	13.506	13.355	13.506	16.56	15.322	15.605	15.644	15.794	15.692	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.771111	-92.961667	0
+4539520.3		29	13.506	13.477	13.506	16.56	15.322	15.605	15.644	15.794	15.692	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.771111	-92.961667	0
+4539519.3		29	13.506	13.477	13.506	16.56	15.322	15.605	15.644	15.794	15.692	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.771111	-92.961667	0
+4522552.3		32	13.506	13.568	13.506	16.619	15.381	15.663	15.702	15.852	15.75	aquatic biome	microbial feature	sludge	wastewater|sludge	shenzhen xili	22	114	0
+4521534.3		32	13.506	13.568	13.506	16.619	15.381	15.663	15.702	15.852	15.75	aquatic biome	microbial feature	sludge	wastewater|sludge	shenzhen xili	22	114	0
+4516594.3		28	13.506	13.568	13.506	16.619	15.383	15.665	15.704	15.854	15.752	air	air	air	air	Beijing	40.0047	116.3261	0
+4516403.3		29	13.506	13.446	13.506	16.619	15.383	15.665	15.704	15.854	15.752	air	air	air	air	Beijing	40.0047	116.3261	0
+4516402.3		29	13.506	13.568	13.506	16.619	15.383	15.665	15.704	15.854	15.752	air	air	air	air	Beijing	40.0047	116.3261	0
+4510166.3		32	13.506	13.477	13.506	16.619	15.383	15.665	15.704	15.854	15.752	marine benthic biome	ocean	marine sediment	sediment	Gulf of Mexico	28.745108	-88.359144	0
+4502935.3		31	13.506	13.568	13.506	16.619	15.381	15.663	15.702	15.852	15.75	Prairie Division (250)	field	arable soil	plant-associated	Auburn, IL	39.5997167	-89.7609333	0
+4502933.3		31	13.506	13.477	13.506	16.619	15.381	15.663	15.702	15.852	15.75	Prairie Division (250)	field	arable soil	plant-associated	Wrights IL	39.3788	-90.3226167	0
+4502929.3		31	13.506	13.568	13.506	16.619	15.381	15.663	15.702	15.852	15.75	Prairie Division (250)	field	arable soil	plant-associated	Coulterville, IL	38.1986167	-89.6272	0
+4502926.3		31	13.506	13.568	13.506	16.619	15.383	15.665	15.704	15.854	15.752	Prairie Division (250)	field	arable soil	plant-associated	Mansfield, IL	40.2212833	-88.4665333	0
+4502923.3		31	13.506	13.568	13.506	16.619	15.383	15.665	15.704	15.854	15.752	Prairie Division (250)	field	arable soil	plant-associated	Coulterville, IL	38.198	-89.6276	0
+4502543.3		31	13.506	13.568	13.506	16.619	15.381	15.663	15.702	15.852	15.75	Prairie Division (250)	field	arable soil	plant-associated	Auburn, IL	39.5997833	-89.7643667	0
+4502542.3		32	13.506	13.568	13.506	16.619	15.381	15.663	15.702	15.852	15.75	Prairie Division (250)	field	arable soil	plant-associated	Auburn, IL	39.5997833	-89.7643667	0
+4502541.3		32	13.506	13.568	13.506	16.619	15.381	15.663	15.702	15.852	15.75	Prairie Division (250)	field	arable soil	plant-associated	Auburn, IL	39.5997833	-89.7643667	0
+4546371.3		30	13.495	13.265	13.495	16.525	15.277	15.546	15.531	15.675	15.573	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	2.5580384	104.6420599	0
+4545019.3		29	13.495	13.265	13.495	16.525	15.277	15.546	15.531	15.675	15.573	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	9.5580384	111.6420599	0
+4545017.3		29	13.495	13.387	13.495	16.525	15.277	15.546	15.531	15.675	15.573	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	7.5580384	109.6420599	0
+4510335.3		139	13.495	14.235	11.776	14.51	13.229	13.495	13.493	13.635	13.54	marine bathyal zone biome	continental slope	marine sediment	sediment	Peru_Margin	-10.9762016666667	-77.95765	30
+4494609.3		137	13.479	14.071	11.562	14.582	13.305	13.479	13.441	13.551	13.452	oceanic epipelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	150
+4510169.3		32	13.477	13.471	13.477	16.59	15.352	15.637	15.674	15.824	15.722	marine benthic biome	ocean	marine sediment	sediment	Gulf of Mexico	28.704972	-88.492633	0
+4516459.3		29	13.459	13.568	13.459	16.407	15.104	15.373	15.358	15.508	15.406	air	air	air	air	Beijing	40.0047	116.3261	0
+4548349.3		32	13.455	13.363	13.455	16.616	15.419	15.698	15.74	15.884	15.782	marine biome	tidal pool	sediment	microbial mat|biofilm	Schiermonnikoog	53.4785962	6.1560311	0
+4546374.3		30	13.45	13.446	13.45	16.402	15.099	15.368	15.353	15.503	15.401	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	5.5580384	107.6420599	0
+4546293.3		30	13.45	13.294	13.45	16.402	15.099	15.368	15.353	15.503	15.401	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	12.5580384	114.6420599	0
+4546292.3		30	13.45	13.568	13.45	16.402	15.099	15.368	15.353	15.503	15.401	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	11.5580384	113.6420599	0
+4546285.3		30	13.45	13.294	13.45	16.402	15.099	15.368	15.353	15.503	15.401	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	4.5580384	106.6420599	0
+4546284.3		30	13.45	13.568	13.45	16.402	15.099	15.368	15.353	15.503	15.401	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	3.5580384	105.6420599	0
+4546282.3		30	13.45	13.294	13.45	16.402	15.101	15.37	15.355	15.505	15.403	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4546279.3		30	13.45	13.294	13.45	16.402	15.099	15.368	15.353	15.503	15.401	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4545189.3		30	13.45	13.355	13.45	16.402	15.099	15.368	15.353	15.503	15.401	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4516802.3		29	13.45	13.568	13.45	16.402	15.099	15.368	15.353	15.503	15.401	air	air	air	air	Beijing	40.0047	116.3261	0
+4516455.3		29	13.45	13.568	13.45	16.402	15.099	15.368	15.353	15.503	15.401	air	air	air	air	Beijing	40.0047	116.3261	0
+4516366.3		28	13.45	13.294	13.45	16.402	15.099	15.368	15.353	15.503	15.401	air	air	air	air	Beijing	40.0047	116.3261	0
+4546375.3		30	13.446	13.454	13.446	16.459	15.224	15.494	15.478	15.622	15.52	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	6.5580384	108.6420599	0
+4545014.3		30	13.446	13.363	13.446	16.611	15.412	15.691	15.733	15.877	15.775	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	4.5580384	106.6420599	0
+4531568.3		32	13.446	13.265	13.446	16.611	15.412	15.691	15.733	15.877	15.775	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4494854.3		32	13.446	13.485	13.446	16.611	15.412	15.691	15.733	15.877	15.775	aquatic biome	wastewater treatment plant	activated sludge	wastewater|sludge	Zhecheng Henan province	34.08	115.29	0
+4494623.3		31	13.446	13.387	13.446	16.611	15.412	15.691	15.733	15.877	15.775	activated sludge	lake	water	wastewater|sludge	Jiangsu	32.05	118.72	0
+4494621.3		32	13.446	13.363	13.446	16.611	15.412	15.691	15.733	15.877	15.775	activated sludge	lake	water	wastewater|sludge	Jiangsu	32.05	118.72	0
+4516291.3		117	13.439	14.124	11.787	14.801	13.439	13.653	13.605	13.724	13.615	mediterranean sea biome	lagoon	hypersaline water	water	Murcia	37.72955	-0.7741	0
+4477755.3		141	13.424	14.528	11.417	14.08	13.182	13.424	13.439	13.465	13.333	Tropical and subtropical moist broadleaf forest biome	agricultural soil	rhizosphere	soil	Amazonia	-11.6832502	-55.8357663	0
+4545681.3		30	13.421	13.44	13.421	16.373	15.07	15.342	15.325	15.475	15.373	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4545675.3		30	13.421	13.44	13.421	16.373	15.07	15.342	15.325	15.475	15.373	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4531898.3		32	13.421	13.288	13.421	16.373	15.07	15.342	15.325	15.475	15.373	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4510167.3		32	13.41	13.477	13.41	16.493	15.241	15.52	15.562	15.712	15.61	marine benthic biome	ocean	marine sediment	sediment	Gulf of Mexico	28.742525	-88.3705	0
+4510164.3		32	13.41	13.477	13.41	16.493	15.241	15.52	15.562	15.712	15.61	marine benthic biome	ocean	marine sediment	sediment	Gulf of Mexico	28.704972	-88.370508	0
+4502540.3		31	13.41	13.477	13.41	16.493	15.239	15.518	15.56	15.71	15.608	Prairie Division (250)	field	arable soil	plant-associated	Auburn, IL	39.59845	-89.7643667	0
+4539594.3		31	13.401	13.477	13.401	16.488	15.234	15.513	15.555	15.705	15.603	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4539593.3		30	13.401	13.456	13.401	16.488	15.234	15.513	15.555	15.705	15.603	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4539583.3		28	13.401	13.477	13.401	16.429	15.175	15.455	15.497	15.647	15.545	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4539579.3		28	13.401	13.477	13.401	16.429	15.175	15.455	15.497	15.647	15.545	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4539577.3		30	13.401	13.477	13.401	16.488	15.234	15.513	15.555	15.705	15.603	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4539576.3		30	13.401	13.477	13.401	16.488	15.234	15.513	15.555	15.705	15.603	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4539575.3		30	13.401	13.477	13.401	16.488	15.234	15.513	15.555	15.705	15.603	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4539574.3		30	13.401	13.477	13.401	16.488	15.234	15.513	15.555	15.705	15.603	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4539573.3		30	13.401	13.477	13.401	16.488	15.234	15.513	15.555	15.705	15.603	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4539572.3		30	13.401	13.568	13.401	16.488	15.234	15.513	15.555	15.705	15.603	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4539571.3		30	13.401	13.477	13.401	16.488	15.234	15.513	15.555	15.705	15.603	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4539527.3		29	13.401	13.477	13.401	16.429	15.175	15.455	15.497	15.647	15.545	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.771111	-92.961667	0
+4539524.3		29	13.401	13.477	13.401	16.429	15.175	15.455	15.497	15.647	15.545	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.771111	-92.961667	0
+4539522.3		29	13.401	13.477	13.401	16.429	15.175	15.455	15.497	15.647	15.545	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.771111	-92.961667	0
+4539518.3		29	13.401	13.477	13.401	16.488	15.234	15.513	15.555	15.705	15.603	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.771111	-92.961667	0
+4539517.3		29	13.401	13.477	13.401	16.429	15.175	15.455	15.497	15.647	15.545	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.771111	-92.961667	0
+4531895.3		32	13.401	13.355	13.401	16.488	15.236	15.515	15.557	15.707	15.605	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4510173.3		31	13.401	13.477	13.401	16.488	15.236	15.515	15.557	15.707	15.605	marine benthic biome	ocean	marine sediment	sediment	Gulf of Mexico	28.575208	-88.537842	0
+4510171.3		32	13.401	13.355	13.401	16.488	15.234	15.513	15.555	15.705	15.603	marine benthic biome	ocean	marine sediment	sediment	Gulf of Mexico	28.639058	-88.471317	0
+4510165.3		32	13.401	13.477	13.401	16.488	15.234	15.513	15.555	15.705	15.603	marine benthic biome	ocean	marine sediment	sediment	Gulf of Mexico	28.740483	88.368058	0
+4502931.3		31	13.401	13.477	13.401	16.488	15.234	15.513	15.555	15.705	15.603	Prairie Division (250)	field	arable soil	plant-associated	Wrights IL	39.3756667	-90.3237167	0
+4502928.3		31	13.401	13.477	13.401	16.488	15.234	15.513	15.555	15.705	15.603	Prairie Division (250)	field	arable soil	plant-associated	Urbana, IL	40.0776833	-88.2157167	0
+4502927.3		31	13.401	13.477	13.401	16.488	15.236	15.515	15.557	15.707	15.605	Prairie Division (250)	field	arable soil	plant-associated	Urbana, IL	40.0776667	-88.2178667	0
+4502539.3		32	13.401	13.477	13.401	16.488	15.234	15.513	15.555	15.705	15.603	Prairie Division (250)	field	arable soil	plant-associated	Auburn, IL	39.59845	-89.7643667	0
+4479311.3		141	13.392	13.945	11.295	14.345	13.099	13.392	13.416	13.531	13.432	Tropical and subtropical moist broadleaf forest biome	agricultural soil	rhizosphere	soil	Amazonia	-11.7412664	-56.2533385	0
+4546369.3		30	13.39	13.265	13.39	16.548	15.381	15.663	15.702	15.852	15.75	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4545018.3		29	13.39	13.363	13.39	16.394	15.13	15.396	15.384	15.528	15.426	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	8.5580384	110.6420599	0
+4545016.3		30	13.39	13.356	13.39	16.548	15.381	15.663	15.702	15.852	15.75	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	6.5580384	108.6420599	0
+4545013.3		30	13.39	13.363	13.39	16.394	15.13	15.396	15.384	15.528	15.426	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	3.5580384	105.6420599	0
+4539526.3		29	13.39	13.477	13.39	16.548	15.381	15.663	15.702	15.852	15.75	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.771111	-92.961667	0
+4531601.3		32	13.39	13.355	13.39	16.548	15.381	15.663	15.702	15.852	15.75	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4453257.3		121	13.387	14.268	11.478	14.63	13.387	13.678	13.702	13.817	13.718	Temperate grasslands	prairie	soil	soil	Rothamsted	51.481481	0.222231	0
+4516289.3		116	13.38	14.121	11.663	14.286	13.38	13.609	13.656	13.731	13.596	aquatic biome	freshwater habitat	eutrophic water	water	Valencia	39.3037632	-0.3226403	0
+4545677.3		30	13.372	13.419	13.372	16.307	15.017	15.29	15.272	15.422	15.32	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4539592.3		32	13.372	13.471	13.372	16.459	15.205	15.487	15.527	15.677	15.575	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4539582.3		28	13.372	13.349	13.372	16.4	15.146	15.429	15.469	15.619	15.517	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4539581.3		28	13.372	13.471	13.372	16.4	15.146	15.429	15.469	15.619	15.517	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4531604.3		32	13.372	13.419	13.372	16.307	15.017	15.29	15.272	15.422	15.32	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4510175.3		32	13.372	13.471	13.372	16.459	15.205	15.487	15.527	15.677	15.575	marine benthic biome	ocean	marine sediment	sediment	Gulf of Mexico	28.345175	-88.778517	0
+4441658.3		231	13.371	14.326	11.647	14.372	13.066	13.292	13.258	13.371	13.279	marine habitat	marine habitat	marine habitat	water	Delaware Bay, NJ	39.4178	-75.5142	1
+4531586.3		32	13.361	13.259	13.361	16.519	15.352	15.637	15.674	15.824	15.722	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4545020.3		30	13.345	13.355	13.345	16.271	14.952	15.218	15.206	15.356	15.254	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	10.5580384	112.6420599	0
+4545446.3		29	13.334	13.265	13.334	16.331	15.099	15.368	15.353	15.503	15.401	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4545192.3		30	13.334	13.387	13.334	16.331	15.099	15.368	15.353	15.503	15.401	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4544304.3		30	13.334	13.356	13.334	16.331	15.099	15.368	15.353	15.503	15.401	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4544296.3		30	13.334	13.387	13.334	16.331	15.099	15.368	15.353	15.503	15.401	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4478940.3		141	13.325	13.911	11.295	14.263	13.047	13.325	13.377	13.519	13.424	Tropical and subtropical moist broadleaf forest biome	agricultural soil	bulk soil	soil	Amazonia	-11.7412664	-56.2533385	0
+4539580.3		28	13.323	13.349	13.323	16.393	15.152	15.435	15.474	15.624	15.522	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4477874.3		32	13.316	13.349	13.316	16.183	14.864	15.134	15.12	15.27	15.168	Tundra biome	slope	bulk soil	soil	Toolik Lake LTER, Alaska, USA	68.633	-149.583	0
+4443717.3		76	13.302	14.73	10.996	13.302	12.415	12.591	12.555	12.586	12.461	marine habitat	marine habitat	marine habitat	water	0	0	0	0
+4545448.3		30	13.285	13.265	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4545190.3		30	13.285	13.265	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4544306.3		30	13.285	13.387	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4544303.3		29	13.285	13.265	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4544302.3		29	13.285	13.265	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4544301.3		29	13.285	13.265	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4544300.3		29	13.285	13.265	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4544298.3		30	13.285	13.265	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4544295.3		30	13.285	13.265	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4544294.3		30	13.285	13.265	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4544293.3		30	13.285	13.265	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4539525.3		29	13.285	13.477	13.285	16.417	15.234	15.513	15.555	15.705	15.603	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.771111	-92.961667	0
+4539515.3		29	13.285	13.355	13.285	16.358	15.175	15.455	15.497	15.647	15.545	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.771111	-92.961667	0
+4539514.3		29	13.285	13.355	13.285	16.358	15.177	15.457	15.499	15.649	15.547	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.771111	-92.961667	0
+4531600.3		32	13.285	13.265	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4531585.3		32	13.285	13.265	13.285	16.417	15.236	15.515	15.557	15.707	15.605	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4531584.3		32	13.285	13.265	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4531583.3		32	13.285	13.265	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4531573.3		32	13.285	13.387	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4531570.3		32	13.285	13.387	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4531566.3		32	13.285	13.265	13.285	16.417	15.234	15.513	15.555	15.705	15.603	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4467420.3		31	13.285	13.355	13.285	16.417	15.234	15.513	15.555	15.705	15.603	aquatic biome	wastewater treatment plant	waste water	wastewater|sludge	Aerobic activated sludge DNA from Stanley wastewater treatment plant of Hong Kong	22.21	114.22	0
+4545678.3		30	13.269	13.44	13.269	16.373	15.203	15.481	15.514	15.667	15.565	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4447810.3		73	13.266	13.552	10.657	13.266	12.361	12.585	12.556	12.589	12.457	terrestrial biome	plant-associated habitat	organic material	plant-associated	Ciruelos de Coca	41.21333	-4.54556	0
+4531602.3		32	13.256	13.259	13.256	16.319	15.14	15.429	15.469	15.619	15.517	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4453407.3		121	13.246	14.179	11.4	14.476	13.246	13.542	13.563	13.678	13.579	Temperate grasslands	prairie	soil	soil	Rothamsted	51.481481	0.222231	0
+4441616.3		231	13.233	13.836	11.517	14.172	12.881	13.152	13.105	13.233	13.131	marine habitat	marine habitat	marine habitat	water	Indian Ocean - International water between Madagascar and South Africa	-32.39917	36.5919	2.2
+4545450.3		30	13.229	12.837	13.229	16.2	14.952	15.218	15.206	15.356	15.254	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4545447.3		29	13.229	13.265	13.229	16.2	14.952	15.218	15.206	15.356	15.254	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4545193.3		30	13.229	13.387	13.229	16.2	14.952	15.218	15.206	15.356	15.254	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4545015.3		30	13.229	13.265	13.229	16.2	14.952	15.218	15.206	15.356	15.254	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	5.5580384	107.6420599	0
+4545012.3		30	13.229	13.265	13.229	16.2	14.952	15.218	15.206	15.356	15.254	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	2.5580384	104.6420599	0
+4544307.3		30	13.229	13.265	13.229	16.2	14.952	15.218	15.206	15.356	15.254	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4544297.3		30	13.229	13.265	13.229	16.2	14.952	15.218	15.206	15.356	15.254	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4544292.3		30	13.229	13.265	13.229	16.2	14.952	15.218	15.206	15.356	15.254	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4544291.3		30	13.229	13.265	13.229	16.2	14.952	15.218	15.206	15.356	15.254	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4477807.3		32	13.229	13.477	13.229	16.2	14.952	15.218	15.206	15.356	15.254	Tropical and subtropical moist broadleaf forest biome	slope	bulk soil	soil	Manu National Park, Peru	-12.633	-71.233	0
+4544305.3		30	13.219	13.265	13.219	16.228	14.921	15.176	15.174	15.315	15.212	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4544299.3		30	13.2	13.259	13.2	16.112	14.864	15.134	15.12	15.27	15.168	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4539589.3		24	13.2	13.349	13.2	16.112	14.864	15.134	15.12	15.27	15.168	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4441215.3		68	13.185	12.557	10.616	13.185	11.784	11.996	11.983	12.159	12.097	marine bathyal zone biome	abyssal plain	marine sediment	sediment	Gulf of Mexico	27.30134833333	-94.3875616666666	1470
+4446341.3		105	13.178	13.996	11.55	14.371	13.178	13.49	13.477	13.634	13.529	estuarine biome	marine benthic feature	sandy sediment	sediment	Point Turton	1434.949	137.354	0
+4478936.3		141	13.173	13.685	11.673	14.182	12.911	13.173	13.2	13.281	13.196	Tropical and subtropical moist broadleaf forest biome	agricultural soil	bulk soil	soil	Amazonia	-11.6832502	-55.8357663	0
+4539590.3		24	13.158	13.355	13.158	16.141	14.89	15.145	15.126	15.276	15.175	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4460179.3		108	13.158	14.114	11.448	14.313	13.158	13.442	13.449	13.577	13.475	estuarine biome	estuarine bulk water	water	water	Puget Sound, WA	48.368056	122.716667	5
+4441615.3		217	13.156	13.963	11.508	14.226	12.933	13.203	13.156	13.284	13.182	marine habitat	marine habitat	marine habitat	water	Indian Ocean - International waters between Madagascar and South Africa	-30.8983	40.4203	1.9
+4449284.3		122	13.152	14.111	12.154	14.488	13.152	13.401	13.374	13.455	13.37	grassland biome	meadow soil	bulk soil	soil	Cedar Creek Ecosystem Science Reserve, Bethel, MN, USA	45.39926	-93.26529	0
+4531925.3		32	13.151	13.238	13.151	16.046	14.811	15.082	15.067	15.217	15.115	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4443716.3		77	13.151	14.328	10.848	13.151	12.279	12.499	12.45	12.496	12.361	marine habitat	marine habitat	marine habitat	water	0	0	0	0
+4531923.3		32	13.15	13.161	13.15	16.277	15.032	15.295	15.351	15.492	15.389	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4453435.3		106	13.128	14.095	11.324	14.374	13.128	13.418	13.444	13.559	13.46	Temperate grasslands	prairie	soil	soil	Rothamsted	51.481481	0.222231	0
+4441604.3		246	13.116	13.8	11.228	14.23	12.871	13.041	13.006	13.116	13.017	marine habitat	marine habitat	marine habitat	water	Polynesia Archipelagos - Rangirora Atoll	-15.1436	-147.435	1
+4441601.3		238	13.116	13.8	11.228	14.23	12.871	13.041	13.006	13.116	13.017	marine habitat	marine habitat	marine habitat	water	Galapagos Islands - Wolf Island	1.3891367	-91.81694	1.7
+4545684.3		30	13.101	13.288	13.101	15.965	14.509	14.721	14.703	14.856	14.758	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+JP3CWATER120525AMPED	4557990.3	92	13.039	14.286	11.387	14.395	13.039	13.199	13.193	13.352	13.25	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4441602.3		247	13.027	13.367	10.973	14.013	12.736	12.95	12.902	13.027	12.918	marine habitat	marine habitat	marine habitat	water	Cabo Marshall, Isabella Island	-.02083	-91.1978	2.1
+4441150.3		230	12.994	13.473	10.935	13.979	12.702	12.919	12.869	12.994	12.885	marine habitat	marine habitat	marine habitat	water	Indian Ocean	-4.6625	60.5231	1.5
+4441595.3		238	12.965	14.476	11.221	13.867	12.856	12.974	12.937	12.965	12.833	marine habitat	marine habitat	marine habitat	water	Galapagos Islands, Devil	1.2161	-90.42278	2.2
+4531896.3		32	12.958	12.055	12.958	15.858	14.444	14.649	14.637	14.79	14.692	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4545683.3		30	12.943	13.267	12.943	16.06	14.867	15.148	15.123	15.27	15.163	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4539591.3		24	12.938	13.259	12.938	15.638	14.422	14.727	14.728	14.877	14.775	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4545676.3		30	12.933	13.44	12.933	15.645	14.755	14.989	15.024	15.092	14.957	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4480864.3		32	12.929	13.107	12.929	15.829	14.415	14.623	14.609	14.762	14.664	anaerobic digester sludge	anaerobic digester sludge	anaerobic digester sludge	wastewater|sludge	Ithaca, New York	42.44	-76.5	0
+4480815.3		32	12.929	13.107	12.929	15.76	14.35	14.565	14.551	14.704	14.606	anaerobic digester sludge	anaerobic digester sludge	anaerobic digester sludge	wastewater|sludge	Ithaca, New York	42.44	-76.5	0
+4443681.3		242	12.927	13.481	10.964	13.984	12.574	12.77	12.716	12.927	12.838	freshwater	freshwater	freshwater	water	Ace Lake Vestfold Hills, Antarctica	-68.4	78.182778	12.7
+4545679.3		30	12.906	13.446	12.906	15.457	14.502	14.72	14.703	14.771	14.636	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4441594.3		228	12.902	14.419	11.096	13.732	12.792	12.911	12.874	12.902	12.77	marine habitat	marine habitat	marine habitat	water	Open Ocean, 134 miles NE of Galapagos	1.2642	-90.295	2
+4531605.3		32	12.884	13.562	12.884	15.569	14.696	14.937	14.971	15.039	14.904	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4480863.3		32	12.88	12.803	12.88	15.704	14.303	14.513	14.498	14.651	14.553	anaerobic digester sludge	anaerobic digester sludge	anaerobic digester sludge	wastewater|sludge	Ithaca, New York	42.44	-76.5	0
+4477749.3		141	12.869	13.326	10.758	13.822	12.576	12.869	12.893	13.008	12.909	Tropical and subtropical moist broadleaf forest biome	agricultural soil	rhizosphere	soil	Amazonia	-11.6832502	-55.8357663	0
+4442709.3		246	12.863	14.479	10.897	13.535	12.654	12.829	12.835	12.863	12.728	marine habitat	marine habitat	marine habitat	water	Northern Gulf of Maine	43.632	-66.8472	1
+4441153.3		240	12.863	14.479	10.897	13.535	12.654	12.829	12.835	12.863	12.728	marine habitat	marine habitat	marine habitat	water	Northern Gulf of Maine	43.632	66.8472	1
+4545682.3		30	12.857	13.273	12.857	15.391	14.449	14.668	14.65	14.718	14.583	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4441661.3		235	12.815	13.986	11.073	13.657	12.659	12.822	12.772	12.815	12.673	marine habitat	marine habitat	marine habitat	water	Eastern Tropical Pacific, 30 miles from Cocos Island	5.64	-86.565	2
+BNOV12	4621758.3	115	12.812	13.613	11.073	14.07	12.812	13.09	13.089	13.249	13.15	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	0	0	0
+4545021.3		30	12.8	13.265	12.8	15.953	14.802	15.076	15.057	15.204	15.097	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	11.5580384	113.6420599	0
+4443702.3		74	12.781	13.765	10.924	12.781	11.801	11.995	11.949	11.983	11.855	marine habitat	marine habitat	marine habitat	water	coastal waters of a fjord close to Bergen, Norway	60.27	5.22	0
+4441609.3		215	12.772	14.455	11.073	13.657	12.659	12.822	12.772	12.815	12.673	marine habitat	marine habitat	marine habitat	water	Indian Ocean	-8.505	80.3756	1.8
+4539587.3		24	12.771	12.831	12.771	15.865	14.714	14.992	14.971	15.118	15.011	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4539588.3		24	12.77	13.265	12.77	15.619	14.26	14.461	14.444	14.6	14.502	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4453274.3		108	12.749	13.85	11.036	13.97	12.749	13.034	13.066	13.166	13.074	Temperate grasslands	prairie	soil	soil	Rothamsted	51.481481	0.222231	0
+4493727.3		258	12.734	13.512	11.604	13.907	12.416	12.595	12.6	12.734	12.652	activated sludge	lake	water	wastewater|sludge	Jiangsu	32.05	118.72	0
+4443701.3		74	12.714	13.3	10.43	12.714	11.432	11.522	11.496	11.584	11.506	marine habitat	marine habitat	marine habitat	water	North Pacific Tropical Gyre	13.483	-159.8833	5 ; Meter
+4443713.3		77	12.695	14.034	10.348	12.695	11.7	11.77	11.733	11.766	11.641	marine habitat	marine habitat	marine habitat	water	0	0	0	0
+4443712.3		78	12.678	13.984	10.775	12.678	11.734	11.918	11.894	11.924	11.788	marine habitat	marine habitat	marine habitat	water	0	0	0	0
+4451106.3		93	12.658	13.502	10.836	13.917	12.658	12.947	12.974	13.089	12.99	soil	soil	soil	soil	Nevada	36.49	-115.55	0-0.002 ; Meter
+4451105.3		110	12.658	13.6	10.836	13.917	12.658	12.947	12.974	13.089	12.99	soil	soil	soil	soil	Nevada	36.49	-115.55	0-0.002 ; Meter
+4451104.3		102	12.658	14.249	10.836	13.917	12.658	12.947	12.974	13.089	12.99	soil	soil	soil	soil	Nevada	36.49	-115.55	0-0.002 ; Meter
+4451103.3		112	12.658	13.502	10.836	13.917	12.658	12.947	12.974	13.089	12.99	soil	soil	soil	soil	Nevada	36.49	-115.55	0-0.002 ; Meter
+4478291.3		141	12.64	12.902	11.39	13.453	12.44	12.64	12.607	12.621	12.496	Tropical and subtropical moist broadleaf forest biome	agricultural soil	rhizosphere	soil	Amazonia	-11.6832502	-55.8357663	0
+4544308.3		29	12.636	12.837	12.636	15.13	14.243	14.46	14.445	14.513	14.378	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4441619.3		213	12.636	12.923	10.774	13.897	12.459	12.59	12.636	12.801	12.706	fossil	fossil	fossil	miscellaneous	Southern Ocean off the west Antarctic Peninsula shelf	-65.10	-64.47	560
+4478037.3		140	12.628	12.759	10.823	13.642	12.351	12.628	12.63	12.775	12.683	Tropical and subtropical moist broadleaf forest biome	agricultural soil	rhizosphere	soil	Amazonia	-11.7412664	-56.2533385	0
+4447811.3		72	12.619	13.356	10.017	12.619	11.351	11.616	11.582	11.702	11.607	terrestrial biome	plant-associated habitat	organic material	plant-associated	Reckenholz	47.44083	8.49833	0
+4477875.3		32	12.614	12.605	12.614	15.523	14.288	14.559	14.544	14.694	14.592	Tropical and subtropical moist broadleaf forest biome	slope	bulk soil	soil	Misiones, Argentina	-26.733	-54.683	0
+4441138.3		239	12.61	13.492	10.93	13.766	12.308	12.538	12.511	12.61	12.525	mine drainage ; microbial mat	mine drainage ; microbial mat	mine drainage ; microbial mat	built environment	Richmond Mine, Iron Mountain, CA	40.68	-122.522	.05
+4477805.3		32	12.607	13.259	12.607	15.16	14.273	14.492	14.475	14.543	14.408	Deserts and xeric shrubland biome	slope	bulk soil	soil	Mojave Desert, California, USA	34.9	-115.65	0
+4539586.3		24	12.587	13.349	12.587	15.542	14.504	14.843	14.897	15.043	14.935	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4539578.3		28	12.576	12.644	12.576	15.702	14.443	14.731	14.751	14.859	14.76	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4443766.3		66	12.568	13.03	10.567	12.568	11.264	11.576	11.556	11.673	11.585	marine habitat	marine habitat	marine habitat	water	South Pacific Subtropical Gyre	16	-170	5 ; Meter
+4494604.3		128	12.563	13.282	11.424	13.506	12.417	12.563	12.59	12.592	12.478	oceanic mesopelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	180
+4477877.3		32	12.561	13.334	12.561	14.727	13.804	14.068	14.075	14.142	14.006	Temperate coniferous forest biome	slope	bulk soil	soil	Calhoun Experimental Forest, South Carolina, USA	34.617	-81.667	0
+4539584.3		28	12.547	12.638	12.547	15.614	14.355	14.647	14.665	14.773	14.674	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+JP1WATER110514	4557983.3	84	12.544	13.098	10.785	13.807	12.544	12.831	12.808	12.926	12.83	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4453064.3		119	12.533	13.005	11.024	13.911	12.533	12.756	12.808	12.953	12.862	freshwater habitat	freshwater habitat	freshwater habitat	water	South Australia	-35.18	138.46	13 ; Meter
+4545686.3		30	12.513	12.839	12.513	15.567	14.263	14.475	14.447	14.6	14.497	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4545685.3		30	12.504	13.44	12.504	15.398	14.605	14.847	14.875	14.94	14.8	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4465556.3		113	12.502	14.146	10.751	13.4	12.502	12.744	12.766	12.799	12.667	Mediterranean forests, woodlands, and shrub biome	Forest	mountain forest soil	soil	Sierra Nevada National Park, Granada, Spain	36.96971	-3.46027	0.25
+4441614.3		231	12.495	13.529	10.883	13.635	12.294	12.415	12.38	12.495	12.403	marine habitat	marine habitat	marine habitat	water	Indian Ocean - International water between Madagascar and South Africa	-29.3489	43.2156	1.5
+4478294.3		141	12.485	13.1	10.47	13.418	12.197	12.485	12.515	12.615	12.523	Tropical and subtropical moist broadleaf forest biome	agricultural soil	bulk soil	soil	Amazonia	-11.6832502	-55.8357663	0
+4477751.3		141	12.485	13.1	10.47	13.418	12.197	12.485	12.515	12.615	12.523	Tropical and subtropical moist broadleaf forest biome	agricultural soil	rhizosphere	soil	Amazonia	-11.6832502	-55.8357663	0
+4478283.3		141	12.477	13.326	10.567	13.348	12.137	12.477	12.523	12.637	12.537	Tropical and subtropical moist broadleaf forest biome	agricultural soil	bulk soil	soil	Amazonia	-11.7412664	-56.2533385	0
+4524607.3		35	12.448	13.086	12.448	14.473	13.873	14.079	14.034	14.12	13.969	marine biome	marine feature	water	host-associated	Chula Vista, CA	32.6	-117.1072	0
+4480861.3		32	12.443	12.613	12.443	14.747	13.299	13.483	13.464	13.619	13.528	anaerobic digester sludge	anaerobic digester sludge	anaerobic digester sludge	wastewater|sludge	Ithaca, New York	42.44	-76.5	0
+4441156.3		226	12.441	13.147	10.724	13.524	12.194	12.361	12.311	12.441	12.339	marine habitat	marine habitat	marine habitat	water	Indian Ocean	-9.59694	84.1957	1.8
+4441605.3		219	12.438	13.622	10.767	13.623	12.353	12.473	12.438	12.553	12.461	marine habitat	marine habitat	marine habitat	water	Polynesia Archipelagos - Moorea, Outside Cooks	-17.45306	-149.7989	1.4
+4453376.3		128	12.432	12.536	10.964	13.569	12.244	12.432	12.388	12.501	12.399	ocean biome	ocean	coastal water	water	Rio de Janeiro	-22.923242	-43.145186	1
+4539094.3		89	12.425	14.012	11.089	13.882	12.425	12.64	12.642	12.79	12.702	biome	environmental feature	environmental material	host-associated	Bolivia	-16.290154	-63.588653	0
+4516293.3		90	12.412	13.186	11.317	13.784	12.412	12.662	12.639	12.742	12.65	mediterranean sea biome	lagoon	hypersaline water	water	Murcia	37.72955	-0.7741	0
+4546294.3		30	12.396	13.295	12.396	14.896	13.474	13.669	13.64	13.786	13.69	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	13.5580384	115.6420599	0
+4441167.3		222	12.384	14.152	11.194	13.198	12.2	12.409	12.384	12.386	12.271	marine habitat	marine habitat	marine habitat	water	Polynesia Archipelagos - Moorea, Cooks Bay	-17.47583	-149.812	1.4
+4441155.3		225	12.38	13.464	10.767	13.564	12.294	12.415	12.38	12.495	12.403	marine habitat	marine habitat	marine habitat	water	Indian Ocean	-10.94361	92.05889	1.5
+4453297.3		115	12.379	13.445	11.667	13.857	12.379	12.614	12.591	12.749	12.658	temperate coniferous forest biome	Cave	Water	water	Outokumpu	62.717	29.062	600
+4441214.3		69	12.369	11.543	9.713	12.369	10.985	11.13	11.106	11.307	11.221	sediment	sediment	sediment	sediment	Gulf of Mexico	27.30134833333	-94.38756166666667	-1470 ; Meter
+4480764.3		32	12.343	12.803	12.343	15.181	13.78	13.99	13.975	14.128	14.03	anaerobic digester sludge	anaerobic digester sludge	anaerobic digester sludge	wastewater|sludge	Ithaca, New York	42.44	-76.5	0
+JP2C120525WATER	4557988.3	77	12.333	13.881	10.58	12.333	11.711	11.981	11.946	11.993	11.844	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+JP4B120525WATERRESIZEAMP	4557996.3	87	12.327	12.242	10.871	13.532	12.327	12.694	12.676	12.805	12.695	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4546376.3		30	12.321	13.244	12.321	14.799	13.782	13.984	13.936	14.104	13.985	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	7.5580384	109.6420599	0
+4441145.3		238	12.297	13.367	10.545	13.139	12.141	12.304	12.254	12.297	12.155	marine habitat	marine habitat	marine habitat	water	Equatorial Pacific TAO Buoy	-1.97389	-95.01472	1.8
+4539503.3		108	12.294	13.541	10.883	13.635	12.294	12.415	12.38	12.495	12.403	oceanic epipelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	40
+4531603.3		32	12.265	12.628	12.265	14.864	13.692	13.942	13.917	14.066	13.966	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+JP2110514WATERAMP	4559109.3	85	12.248	12.47	10.446	13.538	12.248	12.417	12.389	12.506	12.407	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4480867.3		32	12.225	12.238	12.225	15.011	13.616	13.837	13.833	13.974	13.886	anaerobic digester sludge	anaerobic digester sludge	anaerobic digester sludge	wastewater|sludge	Ithaca, New York	42.44	-76.5	0
+4480859.3		32	12.225	12.238	12.225	15.011	13.616	13.837	13.833	13.974	13.886	anaerobic digester sludge	anaerobic digester sludge	anaerobic digester sludge	wastewater|sludge	Ithaca, New York	42.44	-76.5	0
+4537105.3		32	12.209	12.714	12.209	14.671	13.851	14.056	14.043	14.099	13.971	marginal sea biome	ice mass	coastal water	water	Barrow, Alaska	71.36816	-156.69784	0
+4554157.3		106	12.203	12.744	10.872	13.571	12.203	12.353	12.349	12.494	12.425	tundra biome	tundra	soil	soil	Arctic	0	0	0
+4441568.3		226	12.202	14.45	10.137	12.827	11.993	12.206	12.157	12.202	12.057	marine habitat	marine habitat	marine habitat	water	Indian Ocean - International Water Outside of Reunion Island	-23.2161	52.3061	2
+4441151.3		226	12.202	14.45	10.137	12.827	11.993	12.206	12.157	12.202	12.057	marine habitat	marine habitat	marine habitat	water	Indian Ocean - International Water Outside of Reunion Island	-23.2161	52.3061	2
+4445996.3		113	12.197	13.225	10.47	13.418	12.197	12.485	12.515	12.615	12.523	soil	soil	soil	soil	Mercury, Navada	36.49	-115.55	0-0.005 ; Meter
+4537104.3		32	12.194	12.81	12.194	14.41	13.379	13.583	13.589	13.659	13.527	marginal sea biome	ice mass	coastal water	water	Barrow, Alaska	71.36816	-156.69784	0
+4550336.3		32	12.176	12.217	12.176	14.468	13.318	13.534	13.504	13.66	13.556	ocean biome	borehole	Water	water	Gippsland Basin	-38.1666666666667	148.416666666667	-1960
+4550335.3		32	12.176	12.217	12.176	14.468	13.318	13.534	13.504	13.66	13.556	ocean biome	borehole	Water	water	Gippsland Basin	-38.1666666666667	148.416666666667	-1960
+4445994.3		110	12.169	12.908	10.836	13.478	12.169	12.432	12.463	12.566	12.474	soil	soil	soil	soil	Mercury, Navada	36.49	-115.55	0-0.002 ; Meter
+4449104.3		119	12.161	13.134	10.744	13.489	12.161	12.326	12.278	12.408	12.306	oceanic epipelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	10
+4449255.3		123	12.137	13.47	10.567	13.348	12.137	12.477	12.523	12.637	12.537	grassland biome	meadow soil	bulk soil	soil	Cedar Creek Ecosystem Science Reserve, Bethel, MN, USA	45.39926	-93.26529	0
+4545680.3		30	12.128	13.18	12.128	14.763	13.756	13.931	13.904	13.972	13.836	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4443686.3		208	12.128	12.963	11.142	13.229	11.924	12.168	12.128	12.229	12.141	marine habitat	marine habitat	marine habitat	water	Newcomb Bay, Antarctica	-66.27	110.533	1.82926829268293 ; Meter
+4443715.3		77	12.092	13.546	9.744	12.092	11.22	11.396	11.366	11.404	11.279	marine habitat	marine habitat	marine habitat	water	0	0	0	0
+4478030.3		140	12.065	13.378	10.407	12.779	11.841	12.065	12.039	12.057	11.932	Tropical and subtropical moist broadleaf forest biome	agricultural soil	rhizosphere	soil	Amazonia	-11.6832502	-55.8357663	0
+4442466.3		75	12.014	13.44	9.44	12.014	11.097	11.152	11.095	11.148	11.038	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.8713889	-102.0198056	1
+4441135.3		209	11.998	13.376	10.792	12.977	11.998	12.077	11.998	12.062	11.942	marine habitat	marine habitat	marine habitat	water	Indian Ocean - Madagascar Waters	-26.035	50.123	2.8
+4477899.3		32	11.99	11.99	11.99	15.054	13.808	14.098	14.117	14.225	14.126	Temperate coniferous forest biome	slope	bulk soil	soil	Duke Forest, North Carolina, USA	35.967	-79.083	0
+4441139.3		215	11.973	13.471	10.271	12.805	11.89	12.004	11.973	11.986	11.861	marine habitat	marine habitat	marine habitat	water	Indian Ocean - Coccos Keeling, Inside Lagoon	-12.0925	96.88167	1.8
+4441133.3		236	11.973	13.544	10.848	12.712	11.79	11.984	11.939	11.973	11.845	marine habitat	marine habitat	marine habitat	water	Indian Ocean - Coccos Keeling, Inside Lagoon	-12.0925	96.88167	1.8
+4441606.3		213	11.971	13.471	10.271	12.805	11.888	12.002	11.971	11.984	11.859	marine habitat	marine habitat	marine habitat	water	Indian Ocean - Coccos Keeling, Inside Lagoon	12.0925	96.88167	1.8
+4477873.3		32	11.957	12.326	11.957	14.199	13.334	13.597	13.605	13.672	13.536	Deserts and xeric shrubland biome	slope	bulk soil	soil	Chihuahuan Desert, Sevilleta LTER, New Mexico, USA	34.333	-106.733	0
+4443714.3		77	11.955	13.397	9.556	11.955	11.046	11.16	11.11	11.158	11.023	marine habitat	marine habitat	marine habitat	water	0	0	0	0
+4443725.3		74	11.944	12.782	9.754	11.944	10.965	11.102	11.063	11.101	10.966	marine habitat	marine habitat	marine habitat	water 	0	0	0	0
+4494599.3		139	11.932	12.338	10.73	12.794	11.84	11.932	11.902	11.903	11.785	oceanic mesopelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	180
+4477790.3		141	11.926	12.985	10.158	12.66	11.697	11.926	11.894	11.927	11.795	Tropical and subtropical moist broadleaf forest biome	agricultural soil	bulk soil	soil	Amazonia	-11.6832502	-55.8357663	0
+4477872.3		32	11.916	11.466	11.916	14.686	13.846	14.083	14.101	14.127	13.995	Deserts and xeric shrubland biome	slope	bulk soil	soil	Chihuahuan Desert, Galisteo, New Mexico, USA	35.383	-105.933	0
+4453374.3		124	11.899	13.232	10.818	12.803	11.899	12.141	12.099	12.113	11.985	marine pelagic biome	marine habitat	coastal water	water	JoÃ£o fernandinho beach, bÃºzios peninsula, Rio de Janeiro state	-22.738705	-41.874604	4
+4539095.3		94	11.896	13.097	10.552	13.349	11.896	12.117	12.119	12.267	12.179	biome	environmental feature	environmental material	host-associated	Bolivia	-16.290154	-63.588653	0
+4477804.3		32	11.894	11.915	11.894	15.02	13.832	14.124	14.142	14.25	14.151	Temperate grasslands, savannas, and shrubland biome	slope	bulk soil	soil	Konza Prairie LTER, Kansas, USA	39.1	-96.6	0
+JP2110513SEDIMENT	4557984.3	67	11.87	11.798	9.698	11.87	10.896	11.208	11.181	11.298	11.193	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4516288.3		111	11.842	12.681	10.715	13.129	11.842	12.093	12.061	12.178	12.086	aquatic biome	freshwater habitat	eutrophic water	water	Valencia	39.3037632	-0.3226403	0
+4478937.3		141	11.837	13.1	9.926	12.473	11.6	11.837	11.865	11.883	11.758	Tropical and subtropical moist broadleaf forest biome	agricultural soil	bulk soil	soil	Amazonia	-11.6832502	-55.8357663	0
+4478241.3		108	11.837	12.957	10.436	13.219	11.837	12.059	12.061	12.209	12.121	extreme habitat	extreme habitat	extreme habitat	water	Ocean Drilling Program Leg 201, Site 1229	-10.9762017	-77.95765	32 ; Meter
+4460190.3		112	11.836	12.704	10.68	13.023	11.836	12.094	12.151	12.312	12.217	freshwater biome	anthropogenic habitat	water	wastewater|sludge	Puget Sound, WA	47.661667	122.433333	0
+4477904.3		32	11.811	12.593	11.811	14.344	13.452	13.678	13.641	13.667	13.535	Deserts and xeric shrubland biome	slope	bulk soil	soil	Wright Valley, Antarctica	-77.527	161.702	0
+4477902.3		32	11.811	12.471	11.811	14.344	13.452	13.678	13.641	13.667	13.535	Deserts and xeric shrubland biome	slope	bulk soil	soil	Lake Fryxell Valley, Antarctica	-77.608	163.249	0
+4441607.3		213	11.788	13.521	10.339	12.749	11.756	11.825	11.788	11.821	11.696	marine habitat	marine habitat	marine habitat	water	Indian Ocean	-10.4461	88.3027	1.5
+4546286.3		30	11.777	11.988	11.777	14.27	12.988	13.235	13.22	13.373	13.278	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	5.5580384	107.6420599	0
+4453375.3		127	11.772	12.702	10.07	12.506	11.609	11.772	11.737	11.782	11.64	ocean biome	ocean	coastal water	water	Rio de Janeiro	-22.923242	-43.145186	1
+4445130.3		107	11.738	12.375	10.95	13.228	11.738	11.978	11.971	12.122	12.031	cultured habitat	cultured habitat	cultured habitat	miscellaneous	Hunting Valley, OH	41.50	81.42	0
+JP4110514WATERAMP	4557992.3	86	11.729	12.541	10.167	12.722	11.729	11.883	11.862	11.954	11.809	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4480719.3		32	11.726	13.229	11.726	14.616	13.206	13.42	13.413	13.573	13.475	anaerobic digester sludge	anaerobic digester sludge	anaerobic digester sludge	wastewater|sludge	Ithaca, New York	42.44	-76.5	0
+4445993.3		115	11.726	13.135	10.187	12.689	11.726	11.952	11.922	11.955	11.823	soil	soil	soil	soil	Mercury, Navada	36.49	115.55	0-0.002 ; Meter
+4480865.3		32	11.718	11.817	11.718	14.485	12.944	13.148	13.159	13.291	13.202	anaerobic digester sludge	anaerobic digester sludge	anaerobic digester sludge	wastewater|sludge	Ithaca, New York	42.44	-76.5	0
+4480776.3		32	11.709	11.78	11.709	14.554	13.335	13.605	13.604	13.746	13.651	anaerobic digester sludge	anaerobic digester sludge	anaerobic digester sludge	wastewater|sludge	Ithaca, New York	42.44	-76.5	0
+4477757.3		141	11.706	12.709	10.214	12.438	11.49	11.706	11.732	11.753	11.628	Tropical and subtropical moist broadleaf forest biome	agricultural soil	bulk soil	soil	Amazonia	-11.6832502	-55.8357663	0
+4449877.3		123	11.697	12.401	10.158	12.66	11.697	11.926	11.894	11.927	11.795	grassland biome	meadow soil	bulk soil	soil	Cedar Creek Ecosystem Science Reserve, Bethel, MN, USA	45.39926	-93.26529	0
+4440968.3		179	11.695	12.03	10.6	13.114	11.583	11.697	11.695	11.836	11.742	microbial mat	microbial mat	microbial mat	microbial mat|biofilm	Exportadora de Sal saltworks, Guerrero Negro, Baja California Sur, Mexico	27.68908	-113.9170	.010-.022
+4451759.3		113	11.682	12.805	10.891	13.194	11.682	11.884	11.875	12.04	11.952	temperate coniferous forest biome	Cave	Water	water	Outokumpu	62.717	29.062	1500
+4443683.3		210	11.675	11.939	10.499	12.964	11.445	11.673	11.675	11.832	11.733	freshwater	freshwater	freshwater	water	Ace Lake Vestfold Hills, Antarctica	-68.4	78.182778	23
+4467058.3		113	11.668	12.522	10.025	13.027	11.668	11.838	11.81	11.927	11.828	Large lake biome	lake	water	water	Jiangsu and Zheijiang Provinces	31.26	120.12	0
+4450124.3		121	11.666	13.293	10.891	12.641	11.666	11.857	11.853	11.925	11.797	Tundra biome	peat soil	peat soil	soil	Ny Ãlesund, Svalbard	80.5925	13.6101833333333	0
+4508831.3		99	11.654	12.536	10.217	12.895	11.654	11.806	11.846	12.007	11.912	Large lake biome	biofilm	contaminated water	wastewater|sludge	kobe	34.6676643364835	135.213546752929	0
+4449362.3		107	11.611	12.884	10.414	12.665	11.611	11.881	11.832	11.947	11.839	grassland biome	meadow soil	bulk soil	soil	Kellog Biological Station, Hickory Corners, MI, USA	42.44158	-85.3760899999999	0
+4443704.3		58	11.565	13.125	9.902	11.565	10.641	10.776	10.752	10.787	10.658	marine habitat	marine habitat	marine habitat	water	coastal waters of a fjord close to Bergen, Norway	60.27	64.47	0
+4442500.4		205	11.557	12.796	10.12	11.864	11.335	11.6	11.557	11.65	11.503	marine habitat	marine habitat	marine habitat	water	HOT station ALOHA	22.75	-158.033	770
+4441062.3		205	11.557	12.796	10.12	11.864	11.335	11.6	11.557	11.65	11.503	marine habitat	marine habitat	marine habitat	water	HOT station ALOHA	22.75	-158.033	770
+4440970.3		187	11.549	12.579	10.086	12.662	11.31	11.532	11.549	11.699	11.611	microbial mat	microbial mat	microbial mat	microbial mat|biofilm	Exportadora de Sal saltworks, Guerrero Negro, Baja California Sur, Mexico	27.68908	-113.9170	.006-.010
+4449206.3		62	11.546	11.561	9.492	11.546	10.608	10.655	10.596	10.703	10.611	aquatic biome	acid hot spring	hydrothermal fluid	water	Parque Nacional Nevado del Ruiz	-75.264278	-4.874167	0.3
+4478292.3		141	11.542	12.759	9.87	12.256	11.318	11.542	11.516	11.534	11.409	Tropical and subtropical moist broadleaf forest biome	agricultural soil	rhizosphere	soil	Amazonia	-11.6832502	-55.8357663	0
+4449360.3		109	11.54	13.47	10.023	12.403	11.54	11.829	11.873	11.905	11.772	grassland biome	meadow soil	bulk soil	soil	Kellog Biological Station, Hickory Corners, MI, USA	42.44158	-85.3760899999999	0
+4511179.3		31	11.482	11.903	11.482	14.052	13.152	13.367	13.36	13.435	13.3	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511149.3		31	11.482	11.475	11.482	13.993	13.093	13.309	13.302	13.377	13.242	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4554155.3		105	11.404	12.34	10.38	12.624	11.404	11.658	11.716	11.866	11.776	tundra biome	tundra	soil	soil	Arctic	0	0	0
+4517734.3		32	11.396	11.344	11.396	13.738	12.433	12.641	12.624	12.793	12.681	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4449258.3		123	11.366	12.042	10.511	12.692	11.366	11.667	11.663	11.765	11.672	grassland biome	meadow soil	bulk soil	soil	Cedar Creek Ecosystem Science Reserve, Bethel, MN, USA	45.39926	-93.26529	0
+4449359.3		107	11.365	13.134	9.787	12.353	11.365	11.594	11.561	11.595	11.467	grassland biome	meadow soil	bulk soil	soil	Kellog Biological Station, Hickory Corners, MI, USA	42.44158	-85.3760899999999	0
+4517745.3		32	11.343	11.121	11.343	14.202	12.753	13.027	13.007	13.185	13.08	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4517730.3		32	11.343	11.411	11.343	13.227	11.96	12.203	12.162	12.343	12.229	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4517727.3		32	11.343	11.121	11.343	14.202	12.753	13.027	13.007	13.185	13.08	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4517726.3		32	11.343	11.137	11.343	13.666	12.449	12.718	12.673	12.866	12.745	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4517724.3		32	11.343	11.121	11.343	13.666	12.449	12.718	12.673	12.866	12.745	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4517718.3		32	11.343	11.121	11.343	13.006	11.682	11.998	11.974	12.171	12.057	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4517711.3		32	11.343	11.121	11.343	14.212	12.759	13.027	13.007	13.185	13.08	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4517710.3		32	11.343	11.121	11.343	14.202	12.753	13.027	13.007	13.185	13.08	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4442708.3		244	11.339	12.855	9.912	12.199	11.242	11.35	11.306	11.339	11.211	marine habitat	marine habitat	marine habitat	water	Outside Halifax, Nova Scotia	44.1372	-63.644	2
+4449364.3		109	11.318	12.156	9.754	12.185	11.318	11.542	11.516	11.534	11.409	grassland biome	meadow soil	bulk soil	soil	Kellog Biological Station, Hickory Corners, MI, USA	42.44158	-85.3760899999999	0
+4443697.3		75	11.312	12.607	9.27	11.312	10.328	10.383	10.354	10.378	10.263	marine habitat	marine habitat	marine habitat	water	Pacific Equatorial Divergence Province	1.667	-163.667	0
+4451761.3		111	11.31	12.6	10.086	12.662	11.31	11.532	11.549	11.699	11.611	temperate coniferous forest biome	Cave	Water	water	Outokumpu	62.717	29.062	2300
+4477803.3		32	11.3	12.145	11.3	13.524	12.661	12.924	12.939	13.013	12.877	Deserts and xeric shrubland biome	slope	bulk soil	soil	Lake Bonney Valley, Antarctica	-77.725	162.311	0
+4441152.3		238	11.286	12.855	9.863	12.133	11.189	11.298	11.253	11.286	11.158	marine habitat	marine habitat	marine habitat	water	Outside Halifax, Nova Scotia	44.1372	-63.644	2
+4441093.3		222	11.276	12.061	9.983	12.35	11.068	11.221	11.276	11.439	11.344	sludge	sludge	sludge	wastewater|sludge	Nine Springs Wastwater Treatment Plant, Madison, WI	43.0667	-89.4	0
+4440281.3		34	11.274	11.916	11.274	13.303	12.317	12.646	12.69	12.765	12.628	mine drainage	mine drainage	mine drainage	sediment	Soudan Underground Mine, on the south shore of Lake Vermilion, MN	47.819307	-92.242595	714
+4517743.3		32	11.257	11.16	11.257	13.592	12.3	12.552	12.522	12.706	12.584	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4517713.3		32	11.257	11.054	11.257	13.153	11.811	12.037	12.011	12.183	12.068	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4537103.3		32	11.249	12.136	11.249	13.745	12.858	13.056	13.035	13.04	12.914	marginal sea biome	ice mass	coastal water	water	Barrow, Alaska	71.36816	-156.69784	0
+4477900.3		32	11.245	11.984	11.245	13.792	12.9	13.129	13.09	13.116	12.984	Deserts and xeric shrubland biome	slope	bulk soil	soil	Garwood Valley, Antarctica	-78.03	163.873283333333	0
+4517712.3		32	11.238	11.03	11.238	13.096	11.813	12.053	12.015	12.196	12.082	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4450752.3		101	11.229	12.341	10.228	12.666	11.229	11.427	11.463	11.554	11.473	soil	soil	soil	soil	Nevada	36.49	-115.55	0-0.002 ; Meter
+4443703.3		75	11.212	12.277	9.632	11.212	10.248	10.343	10.284	10.326	10.22	marine habitat	marine habitat	marine habitat	water	coastal waters of a fjord close to Bergen, Norway	60.27	5.22	0
+4465558.3		95	11.208	12.535	10.158	12.221	11.208	11.411	11.383	11.404	11.279	Mediterranean forests, woodlands, and shrub biome	Forest	mountain forest soil	soil	Sierra Nevada National Park, Granada, Spain	36.95744	-3.46336	0.25
+4511050.3		31	11.201	11.314	11.201	14.211	12.958	13.233	13.206	13.321	13.222	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4478222.3		140	11.198	12.701	9.454	11.911	10.963	11.198	11.176	11.197	11.075	Tropical and subtropical moist broadleaf forest biome	agricultural soil	bulk soil	soil	Amazonia	-11.7412664	-56.2533385	0
+4442503.3		213	11.18	12.694	9.586	11.891	11.012	11.188	11.18	11.195	11.072	marine habitat	marine habitat	marine habitat	water	HOT station ALOHA	22.75	-158.033	4000
+4441056.3		213	11.18	12.694	9.586	11.891	11.012	11.188	11.18	11.195	11.072	marine habitat	marine habitat	marine habitat	water	HOT station ALOHA	22.75	-158.033	4000
+4467029.3		121	11.172	11.928	9.9	12.512	11.172	11.316	11.292	11.397	11.305	Large lake biome	lake	water	water	Erie Harbor, Lake Erie	42.1469444444444	-8.01444444444444	0
+4443687.3		209	11.167	13.269	9.834	12.045	11.101	11.214	11.167	11.2	11.072	marine habitat	marine habitat	marine habitat	water	Antarctic Territory Claimed by Australia	-63.8911	112.07306	2 ; Meter
+JP2110514WATERRESIZE	4557985.3	89	11.156	11.792	10.026	12.17	11.156	11.387	11.342	11.378	11.244	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4537102.3		32	11.144	11.708	11.144	13.345	12.568	12.83	12.816	12.829	12.703	marginal sea biome	ice mass	coastal water	water	Barrow, Alaska	71.36816	-156.69784	0
+4478290.3		141	11.131	12.255	9.423	12.011	11.011	11.131	11.1	11.135	11.003	Tropical and subtropical moist broadleaf forest biome	agricultural soil	rhizosphere	soil	Amazonia	-11.6832502	-55.8357663	0
+4494607.3		125	11.124	12.863	9.747	11.993	11.124	11.24	11.195	11.228	11.1	oceanic epipelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	20
+4517738.3		32	11.115	10.61	11.115	13.184	11.914	12.212	12.205	12.388	12.265	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4449249.3		121	11.111	12.631	9.926	12.034	11.111	11.322	11.354	11.36	11.242	grassland biome	meadow soil	bulk soil	soil	Cedar Creek Ecosystem Science Reserve, Bethel, MN, USA	45.39926	-93.26529	0
+4517736.3		32	11.104	10.454	11.104	13.328	12.123	12.386	12.348	12.526	12.412	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4443729.3		75	11.103	12.185	9.227	11.103	9.989	10.017	9.97	10.009	9.885	marine habitat	marine habitat	marine habitat	water	0	0	0	0
+4477903.3		32	11.102	11.62	11.102	13.488	12.552	12.773	12.742	12.753	12.628	Deserts and xeric shrubland biome	slope	bulk soil	soil	Lake Hoare Valley, Antarctica	-77.6375	162.887	0
+4517742.3		32	11.086	11.038	11.086	13.261	12.17	12.436	12.399	12.584	12.465	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4517737.3		32	11.086	11.328	11.086	12.822	11.681	11.921	11.888	12.061	11.949	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4446406.3		98	11.078	12.54	10.093	12.039	11.078	11.166	11.12	11.156	11.028	estuarine biome	marine pelagic feature	saline water	water	Coorong Lagoon	35.551	138.88	0
+4517744.3		32	11.055	11.004	11.055	13.321	12.129	12.392	12.353	12.531	12.417	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4517729.3		32	11.055	10.882	11.055	13.041	11.792	12.129	12.107	12.301	12.187	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4517728.3		32	11.055	10.882	11.055	13.262	12.07	12.334	12.295	12.473	12.359	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4517725.3		32	11.055	10.882	11.055	13.262	12.07	12.334	12.295	12.473	12.359	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4494605.3		129	11.04	12.477	9.789	11.85	10.848	11.04	11.037	11.037	10.921	oceanic mesopelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	200
+4441147.3		211	11.039	11.402	9.893	11.997	10.962	11.065	11.039	11.043	10.928	marine habitat	marine habitat	marine habitat	water	Indian Ocean	-8.505	80.3756	1.8
+4517741.3		32	11.03	10.947	11.03	13.732	12.38	12.647	12.639	12.809	12.706	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4508404.3		104	11.026	12.109	9.933	12.285	11.026	11.287	11.262	11.367	11.285	Large lake biome	biofilm	contaminated water	wastewater|sludge	kobe	34.6676643364835	135.213546752929	0
+JP4B120525WATER	4557995.3	78	11.018	11.942	8.954	11.018	10.06	10.177	10.169	10.208	10.082	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4447951.3		161	11.006	11.883	9.316	11.641	10.756	11.006	11.015	11.019	10.895	aquatic biome	cave	water	microbial mat|biofilm	south australia	-31.654180526	128.774993896	0
+4494603.3		127	11.001	11.48	9.85	11.958	10.924	11.001	11.019	11.063	10.944	oceanic epipelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	150
+4517715.3		32	10.984	11.193	10.984	13.041	11.789	12.114	12.085	12.279	12.166	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4449358.3		107	10.982	12.58	9.827	12.025	10.982	11.137	11.163	11.187	11.066	grassland biome	meadow soil	bulk soil	soil	Kellog Biological Station, Hickory Corners, MI, USA	42.44158	-85.3760899999999	0
+4441148.3		232	10.969	12.522	10.179	11.993	10.89	10.979	10.947	10.969	10.855	marine habitat	marine habitat	marine habitat	water	Indian Ocean - St. Anne Island, Seychelles	-4.6136	55.5086	1.8
+4517705.3		32	10.95	10.913	10.95	12.692	11.434	11.669	11.637	11.803	11.696	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4489328.3		129	10.948	11.68	9.245	12.201	10.786	10.948	10.914	11.037	10.942	Rainforest Division - Mountain Provinces (M420)	plant-associated habitat	fermented plant derived beverage	plant-associated	Manen village,Menghai County	21.944817	100.364174	0
+4450750.3		111	10.942	11.944	10.015	12.479	10.942	11.146	11.124	11.233	11.148	soil	soil	soil	soil	Nevada	36.49	-115.55	0-0.002 ; Meter
+4511115.3		31	10.934	11.495	10.934	13.685	12.79	13.03	13.052	13.085	12.953	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4440329.3		34	10.928	10.306	10.928	12.021	10.964	11.231	11.159	11.368	11.301	extreme habitat ; hypersaline	extreme habitat ; hypersaline	extreme habitat ; hypersaline	water	Salton Sea, California	33.4167	-115.9167	14
+4460441.3		91	10.914	11.998	10.034	11.786	10.914	11.175	11.237	11.242	11.124	microbial mat	microbial mat	microbial mat	microbial mat|biofilm	0	73	8	2350 ; Meter
+4440966.3		175	10.896	12.271	9.813	11.835	10.751	10.896	10.896	10.954	10.838	microbial mat	microbial mat	microbial mat	microbial mat|biofilm	Exportadora de Sal saltworks, Guerrero Negro, Baja California Sur, Mexico	27.68908	-113.9170	.003-.004
+4494606.3		130	10.884	12.235	9.885	11.67	10.687	10.884	10.938	10.946	10.831	oceanic mesopelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	300
+4511138.3		31	10.878	11.373	10.878	13.468	12.508	12.735	12.703	12.736	12.604	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511047.3		32	10.878	11.373	10.878	13.468	12.508	12.735	12.703	12.736	12.604	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4478938.3		141	10.876	11.915	9.271	11.58	10.647	10.876	10.859	10.894	10.762	Tropical and subtropical moist broadleaf forest biome	agricultural soil	rhizosphere	soil	Amazonia	-11.6832502	-55.8357663	0
+4443732.3		61	10.872	12.952	8.698	10.872	10.003	10.25	10.216	10.282	10.144	marine habitat	marine habitat	marine habitat	water	0	0	0	0
+JP5WATER110514AMP	4557998.3	85	10.855	11.685	9.729	12.141	10.855	11.043	11.013	11.121	11.037	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4453380.3		128	10.848	11.525	9.88	12.045	10.753	10.848	10.832	10.937	10.852	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.864633	-43.160464	1
+4517716.3		32	10.835	10.821	10.835	12.733	11.466	11.706	11.667	11.848	11.734	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4517740.3		32	10.82	10.438	10.82	12.635	11.296	11.522	11.488	11.674	11.559	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4494608.3		133	10.777	11.205	9.812	11.802	10.699	10.777	10.736	10.755	10.631	oceanic epipelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	80
+4511190.3		31	10.773	11.128	10.773	13.278	12.302	12.527	12.498	12.531	12.399	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511136.3		31	10.773	11.282	10.773	13.337	12.361	12.585	12.556	12.589	12.457	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511113.3		32	10.773	10.557	10.773	13.337	12.361	12.585	12.556	12.589	12.457	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4517733.3		32	10.771	10.422	10.771	13.105	11.547	11.779	11.769	11.94	11.841	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4511135.3		32	10.762	11.647	10.762	13.397	12.508	12.735	12.703	12.736	12.604	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511048.3		31	10.762	11.435	10.762	13.397	12.508	12.735	12.703	12.736	12.604	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4440963.3		178	10.755	10.429	9.375	11.555	10.409	10.748	10.755	10.904	10.803	microbial mat	microbial mat	microbial mat	microbial mat|biofilm	Exportadora de Sal saltworks, Guerrero Negro, Baja California Sur, Mexico	27.68908	-113.9170	.001-.002
+4554159.3		105	10.741	12.566	9.972	11.813	10.741	10.878	10.875	10.943	10.829	tundra biome	tundra	soil	soil	Arctic	0	0	0
+4517717.3		32	10.737	10.562	10.737	12.511	10.99	11.161	11.161	11.299	11.225	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4517704.3		32	10.72	10.527	10.72	13.069	11.777	12.029	11.999	12.183	12.061	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4511184.3		31	10.713	11.556	10.713	13.424	12.584	12.822	12.847	12.88	12.748	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4443695.3		79	10.713	10.628	8.934	10.713	9.479	9.594	9.54	9.669	9.558	marine habitat	marine habitat	marine habitat	water	South Pacific Subtropical Gyre	7.5167	-167	5 ; Meter
+4516292.3		114	10.697	11.359	9.581	12.008	10.697	10.885	10.863	10.979	10.877	mediterranean sea biome	lagoon	hypersaline water	water	Murcia	37.72955	-0.7741	0
+4449363.3		107	10.696	12.088	9.607	11.619	10.696	10.97	11.022	11.045	10.922	grassland biome	meadow soil	bulk soil	soil	Kellog Biological Station, Hickory Corners, MI, USA	42.44158	-85.3760899999999	0
+4441656.4		225	10.694	12.704	9.106	11.578	10.603	10.721	10.694	10.714	10.589	microbial mat ; fossil	microbial mat ; fossil	microbial mat ; fossil	host-associated	Pacific Ocean, Santa Cruz Basin	33.30	-119.22	1674
+4441347.3		70	10.661	11.387	8.02	10.661	9.364	9.452	9.378	9.498	9.434	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.8234444	-102.0147778	1
+4511183.3		31	10.657	10.764	10.657	13.266	12.361	12.585	12.556	12.589	12.457	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511181.3		31	10.657	10.764	10.657	13.266	12.361	12.585	12.556	12.589	12.457	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511153.3		32	10.657	11.192	10.657	13.266	12.361	12.585	12.556	12.589	12.457	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511140.3		31	10.657	11.314	10.657	13.266	12.361	12.585	12.556	12.589	12.457	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511137.3		32	10.657	11.192	10.657	13.207	12.302	12.527	12.498	12.531	12.399	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511134.3		31	10.657	11.192	10.657	13.266	12.361	12.585	12.556	12.589	12.457	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511112.3		31	10.657	10.764	10.657	13.207	12.302	12.527	12.498	12.531	12.399	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511111.3		31	10.657	11.192	10.657	13.266	12.361	12.585	12.556	12.589	12.457	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511062.3		32	10.657	11.192	10.657	13.266	12.361	12.585	12.556	12.589	12.457	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511046.3		32	10.657	11.192	10.657	13.266	12.361	12.585	12.556	12.589	12.457	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4539585.3		24	10.631	11.404	10.631	13.515	12.205	12.441	12.425	12.526	12.425	terrestrial biome	terrestrial habitat	soil	soil	Iowa	41.827222	-93.008611	0
+4517723.3		32	10.6	10.01	10.6	11.799	10.624	10.839	10.801	10.976	10.871	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4511189.3		31	10.571	10.764	10.571	12.923	12.069	12.343	12.333	12.365	12.232	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511065.3		32	10.571	11.495	10.571	12.923	12.069	12.343	12.333	12.365	12.232	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4517707.3		32	10.569	10.266	10.569	12.775	11.317	11.561	11.542	11.707	11.616	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4510337.3		119	10.548	11.861	9.489	11.745	10.548	10.862	10.804	11.004	10.926	marine bathyal zone biome	continental slope	marine sediment	sediment	Peru_Margin	-10.9762016666667	-77.95765	30
+JP2C120525WATERRESIZEAMP	4557989.3	86	10.533	11.467	10.357	11.393	10.533	10.587	10.553	10.635	10.498	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4517732.3		32	10.518	10.371	10.518	13.275	11.851	12.12	12.106	12.269	12.171	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4517735.3		32	10.474	10.799	10.474	12.309	11.377	11.572	11.547	11.634	11.486	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4511192.3		31	10.466	10.764	10.466	12.733	11.863	12.135	12.128	12.16	12.027	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511185.3		32	10.466	11.282	10.466	12.733	11.863	12.135	12.128	12.16	12.027	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511152.3		31	10.466	10.764	10.466	12.792	11.922	12.193	12.186	12.218	12.085	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4441593.3		225	10.459	11.261	9.255	11.397	10.36	10.501	10.459	10.497	10.362	marine habitat	marine habitat	marine habitat	water	Eastern Tropical Pacific, Dirty Rock, Cocos Island	5.55278	-87.0878	1.1
+4508403.3		112	10.454	11.26	9.262	11.285	10.454	10.67	10.702	10.739	10.614	Large lake biome	biofilm	contaminated water	wastewater|sludge	kobe	34.6676643364835	135.213546752929	0
+JP4110514WATERRESIZE	4557993.3	90	10.444	11.881	9.271	11.497	10.444	10.569	10.523	10.561	10.427	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4441205.3		74	10.433	11.407	8.443	10.433	9.495	9.628	9.586	9.623	9.495	terrestrial biome	plant-associated habitat	organic material	plant-associated	Effretikon	47.44611	8.68694	0
+4517739.3		32	10.387	10.809	10.387	11.96	11.073	11.297	11.238	11.355	11.223	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4511148.3		32	10.386	10.764	10.386	12.388	11.549	11.707	11.653	11.704	11.56	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4440965.3		186	10.383	11.7	9.583	11.228	10.203	10.393	10.383	10.461	10.337	microbial mat	microbial mat	microbial mat	microbial mat|biofilm	Exportadora de Sal saltworks, Guerrero Negro, Baja California Sur, Mexico	27.68908	-113.9170	.002-.003
+4440969.3		184	10.3	11.693	9.516	11.226	10.115	10.279	10.3	10.362	10.245	microbial mat	microbial mat	microbial mat	microbial mat|biofilm	Exportadora de Sal saltworks, Guerrero Negro, Baja California Sur, Mexico	27.68908	-113.917	.005-.006
+4443707.3		75	10.296	11.2	9.083	10.296	9.212	9.297	9.257	9.301	9.198	marine habitat	marine habitat	marine habitat	water	coastal waters of a fjord close to Bergen, Norway	60.27	5.22	0
+4449256.3		124	10.26	11.754	9.707	11.248	10.26	10.327	10.292	10.295	10.184	grassland biome	meadow soil	bulk soil	soil	Cedar Creek Ecosystem Science Reserve, Bethel, MN, USA	45.39926	-93.26529	0
+4517714.3		32	10.241	10.183	10.241	12.37	11.035	11.264	11.246	11.403	11.315	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4467059.3		114	10.191	10.595	9.609	11.652	10.191	10.332	10.311	10.47	10.401	Large lake biome	lake	water	water	Ohio, USA	40.531	-84.499	0
+4440967.3		180	10.173	10.786	9.387	11.255	9.888	10.128	10.173	10.31	10.228	microbial mat	microbial mat	microbial mat	microbial mat|biofilm	Exportadora de Sal saltworks, Guerrero Negro, Baja California Sur, Mexico	27.68908	-113.9170	.004-.005
+JP1CWATER120525	4557981.3	74	10.165	10.635	8.383	10.165	8.998	9.226	9.246	9.33	9.238	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4441137.3		209	10.165	11.969	8.573	11.001	9.955	10.185	10.165	10.185	10.064	mine drainage	mine drainage	mine drainage	wastewater|sludge	Richmond Mine, Iron Mountain, CA	40.68	-122.522	.05
+4511186.3		31	10.005	10.648	10.005	12.355	11.413	11.591	11.559	11.597	11.472	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4477876.3		32	9.967	10.795	9.967	12.186	11.258	11.534	11.524	11.556	11.423	Temperate coniferous forest biome	slope	bulk soil	soil	Bonanza Creek LTER, Alaska, USA	64.8	-148.25	0
+4449252.3		121	9.962	11.019	8.572	11.038	9.962	10.095	10.142	10.182	10.056	grassland biome	meadow soil	bulk soil	soil	Cedar Creek Ecosystem Science Reserve, Bethel, MN, USA	45.39926	-93.26529	0
+4511150.3		32	9.949	10.528	9.949	12.805	11.928	12.059	12.083	12.118	11.986	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4440971.3		187	9.932	10.168	8.957	11.073	9.713	9.855	9.932	10.009	10.011	microbial mat	microbial mat	microbial mat	microbial mat|biofilm	Exportadora de Sal saltworks, Guerrero Negro, Baja California Sur, Mexico	27.68908	-113.9170	.022-.034
+4539512.3		88	9.924	10.73	9.383	11.506	9.924	10.053	10.055	10.145	10.073	oceanic mesopelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	200
+4511141.3		32	9.9	10.679	9.9	12.224	11.266	11.441	11.412	11.45	11.325	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511114.3		31	9.9	10.251	9.9	12.224	11.266	11.441	11.412	11.45	11.325	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4517720.3		32	9.886	9.958	9.886	11.581	10.585	10.87	10.811	10.996	10.907	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+JP1110514WATERRESIZED	4557978.3	92	9.882	10.398	9.156	10.882	9.882	10.055	10.022	10.048	9.934	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4517708.3		32	9.867	9.978	9.867	11.811	10.259	10.482	10.478	10.643	10.567	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4517719.3		32	9.866	10.244	9.866	11.081	10.048	10.296	10.225	10.412	10.331	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4440964.3		183	9.86	10.943	9.271	10.997	9.669	9.884	9.86	10.033	9.983	microbial mat	microbial mat	microbial mat	microbial mat|biofilm	Exportadora de Sal saltworks, Guerrero Negro, Baja California Sur, Mexico	27.68908	-113.9170	0-.001
+4511191.3		31	9.849	10.131	9.849	12.342	11.271	11.435	11.406	11.442	11.314	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511193.3		31	9.784	10.467	9.784	12.094	11.207	11.383	11.354	11.392	11.267	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511187.3		31	9.784	10.228	9.784	12.153	11.266	11.441	11.412	11.45	11.325	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511180.3		31	9.784	10.467	9.784	12.153	11.266	11.441	11.412	11.45	11.325	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511139.3		32	9.784	10.589	9.784	12.153	11.266	11.441	11.412	11.45	11.325	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511049.3		32	9.784	10.589	9.784	12.094	11.207	11.383	11.354	11.392	11.267	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4443706.3		75	9.777	9.929	8.096	9.777	8.97	9.184	9.209	9.149	9.1	marine habitat	marine habitat	marine habitat	water	coastal waters of a fjord close to Bergen, Norway	60.27	5.22	0
+4453381.3		123	9.776	10.668	8.516	10.637	9.776	9.895	9.863	9.892	9.775	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.830467	-43.246569	1
+4478244.3		99	9.768	10.951	8.956	10.965	9.768	9.816	9.797	9.811	9.7	high osmolarity habitat	sulfur spring	sulphate-reducing sediment	water	Axel Heiberg Island, Nunavut	79.7	-90.21	0
+4477901.3		32	9.754	10.293	9.754	12.185	11.318	11.542	11.516	11.534	11.409	Deserts and xeric shrubland biome	slope	bulk soil	soil	Lake Bonney Valley, Antarctica	-77.725	162.313	0
+4442499.4		211	9.677	10.234	9.309	10.733	9.558	9.702	9.677	9.694	9.576	marine habitat	marine habitat	marine habitat	water	HOT station ALOHA	22.75	-158.033	500
+4441057.3		211	9.677	10.234	9.309	10.733	9.558	9.702	9.677	9.694	9.576	marine habitat	marine habitat	marine habitat	water	HOT station ALOHA	22.75	-158.033	500
+4449356.3		105	9.675	10.923	8.799	10.594	9.675	9.814	9.813	9.82	9.701	grassland biome	meadow soil	bulk soil	soil	Kellog Biological Station, Hickory Corners, MI, USA	42.44158	-85.3760899999999	0
+4511145.3		31	9.669	10.173	9.669	12.273	11.324	11.49	11.46	11.478	11.352	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4517731.3		32	9.645	9.408	9.645	11.687	10.171	10.397	10.409	10.567	10.475	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4511178.3		31	9.618	10.13	9.618	11.942	10.905	11.022	10.99	11.031	10.91	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4497349.3		102	9.597	10.506	8.924	10.97	9.597	9.838	9.837	10.004	9.913	terrestrial biome	cell culture	anaerobic digester sludge	human-associated	Clermont-Ferrand	45.783088	3.082352	0
+4511182.3		32	9.593	10.039	9.593	11.62	10.768	10.991	10.984	11.021	10.895	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4517721.3		32	9.56	9.184	9.56	11.659	10.494	10.746	10.715	10.895	10.782	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+JP1C120525WATERRESIZEDAMD	4557980.3	79	9.558	9.599	7.73	9.558	8.364	8.527	8.515	8.632	8.555	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4517722.3		32	9.497	9.386	9.497	10.318	9.122	9.341	9.293	9.474	9.391	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4494600.3		140	9.49	10.466	8.304	10.923	9.448	9.49	9.48	9.581	9.499	oceanic mesopelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	200
+4454506.3		133	9.453	10.158	8.607	10.384	9.539	9.453	9.37	9.436	9.395	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.830467	-43.246569	1
+4508401.3		102	9.41	10.008	7.871	9.92	9.41	9.511	9.498	9.536	9.402	Large lake biome	biofilm	contaminated water	wastewater|sludge	kobe	34.6676643364835	135.213546752929	0
+4511188.3		31	9.403	10.32	9.403	12.033	11.25	11.478	11.448	11.463	11.333	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511061.3		31	9.323	10.155	9.323	11.326	10.434	10.616	10.574	10.618	10.515	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4442467.3		99	9.276	9.689	8.616	10.647	9.276	9.37	9.297	9.44	9.392	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.8713889	-102.0198056	1
+4454699.3		135	9.274	9.823	8.645	10.393	9.135	9.274	9.213	9.353	9.281	ocean biome	ocean	coastal water	water	Rio de Janeiro	-22.923242	-43.145186	1
+4443700.3		75	9.27	11.242	8.331	9.27	8.554	8.629	8.64	8.63	8.587	marine habitat	marine habitat	marine habitat	water	Pacific North Equatorial Countercurrent	8.633	-161.0833	5 ; Meter
+4517709.3		32	9.269	9.357	9.269	10.544	9.593	9.757	9.728	9.834	9.687	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4515477.3		180	9.243	10.287	8.406	10.081	9.133	9.267	9.243	9.288	9.184	marine bathyal zone biome	continental slope	marine sediment	sediment	Peru_Margin	-10.9762016666667	-77.95765	70
+4441139.4		213	9.241	10.351	8.485	10.01	9.206	9.287	9.241	9.269	9.136	marine habitat	marine habitat	marine habitat	water	Indian Ocean - International waters between Madagascar and South Africa	-30.8983	40.4203	1.9
+4440972.3		176	9.193	10.78	8.219	9.916	8.925	9.121	9.193	9.172	9.144	microbial mat	microbial mat	microbial mat	microbial mat|biofilm	Exportadora de Sal saltworks, Guerrero Negro, Baja California Sur, Mexico	27.68908	-113.9170	.034-.049
+4511063.3		32	9.167	9.749	9.167	11.694	10.93	11.158	11.108	11.158	11.018	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+JP1SEDIMENT110513	4557982.3	78	9.16	9.137	7.678	9.16	7.764	7.841	7.82	7.92	7.858	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4515478.3		180	9.16	11.222	8.481	10.114	9.148	9.202	9.16	9.194	9.098	marine bathyal zone biome	continental slope	marine sediment	sediment	Peru_Margin	-10.9762016666667	-77.95765	91
+4515476.3		166	9.136	9.895	8.06	10.032	9.049	9.136	9.09	9.136	9.033	marine bathyal zone biome	continental slope	marine sediment	sediment	Peru_Margin	-11.9762016666667	-78.95765	159
+4449357.3		123	9.077	10.114	8.438	10.178	9.077	9.145	9.152	9.195	9.071	grassland biome	meadow soil	bulk soil	soil	Cedar Creek Ecosystem Science Reserve, Bethel, MN, USA	45.39926	-93.26529	0
+4440440.3		33	8.982	10.342	8.982	10.461	9.742	9.942	9.899	9.946	9.817	freshwater	freshwater	freshwater	water	Tilapia Channel (FW1) at Kent SeaTech, Salton Sea, CA	33.537594	-116.097751	0
+4440423.3		33	8.982	10.342	8.982	10.461	9.742	9.942	9.899	9.946	9.817	freshwater	freshwater	freshwater	water	0	0	0	0
+4443731.3		60	8.981	10.965	8.261	8.981	8.297	8.4	8.358	8.387	8.284	marine habitat	marine habitat	marine habitat	water	0	0	0	0
+4465946.3		213	8.978	10.364	8.05	9.908	8.904	8.999	8.978	9.017	8.892	air	air	air	air	Indoor Shopping Center	1.30726	103.903885	0 ; Meter
+4464065.3		184	8.971	10.453	7.481	9.611	8.978	9.007	8.971	9	8.895	freshwater biome	Wastewater treatment plant	Activated sludge	wastewater|sludge	Morges	46.5166	6.51014	0.5
+4511060.3		32	8.9	9.29	8.9	11.049	10.284	10.614	10.574	10.624	10.498	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4511116.3		32	8.895	9.583	8.895	11.179	10.232	10.358	10.315	10.356	10.246	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4510336.3		139	8.847	9.182	8.011	10.175	8.747	8.847	8.836	8.948	8.87	marine bathyal zone biome	continental slope	marine sediment	sediment	Peru_Margin	-10.9762016666667	-77.95765	30
+4531567.3		32	8.796	10.141	8.796	9.843	9.249	9.561	9.582	9.69	9.544	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4539506.3		93	8.725	8.991	7.51	10.063	8.725	8.852	8.891	8.932	8.901	oceanic epipelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	120
+4454502.3		134	8.67	9.035	8.509	9.941	8.576	8.67	8.679	8.776	8.697	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.864633	-43.160464	1
+4441608.3		219	8.648	10.227	8.165	9.569	8.668	8.71	8.648	8.712	8.575	marine habitat	marine habitat	marine habitat	water	Indian Ocean	-10.4461	88.30278	1.5
+4441134.3		220	8.648	10.227	8.165	9.569	8.668	8.71	8.648	8.712	8.575	marine habitat	marine habitat	marine habitat	water	Indian Ocean	-10.4461	88.3027	1.5
+4461456.3		76	8.613	9.57	7.704	8.613	7.516	7.587	7.516	7.568	7.503	marine sponge reef biome	organism-associated habitat	organic material	host-associated	JoÃ£o fernandinho beach, bÃºzios peninsula, Rio de Janeiro state	-22.738705	-41.874604	4
+4517706.3		32	8.527	8.463	8.527	9.735	8.456	8.673	8.639	8.818	8.733	terrestrial biome	mammalia-associated habitat	feces	host-associated	Halifax,NS	44.6488625	-63.5753196	0
+4440437.3		32	8.476	10.148	8.476	9.701	8.977	9.403	9.393	9.441	9.321	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4554152.3		105	8.435	9.641	8.78	9.211	8.435	8.539	8.544	8.602	8.488	tundra biome	tundra	soil	soil	Arctic	0	0	0
+4454501.3		135	8.421	9.5	7.783	9.259	8.315	8.421	8.381	8.428	8.325	ocean biome	ocean	coastal water	water	Rio de Janeiro	-22.923242	-43.145186	1
+4511143.3		31	8.296	8.824	8.296	9.603	9.279	9.518	9.43	9.487	9.363	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4442500.3		212	8.184	10.019	7.761	9.423	8.223	8.257	8.184	8.252	8.168	marine habitat	marine habitat	marine habitat	water	HOT station ALOHA	22.75	-158.033	70
+4441057.4		212	8.184	10.019	7.761	9.423	8.223	8.257	8.184	8.252	8.168	marine habitat	marine habitat	marine habitat	water	HOT station ALOHA	22.75	-158.033	70
+4449365.3		108	8.163	9.554	8.091	9.295	8.163	8.215	8.21	8.222	8.114	grassland biome	meadow soil	bulk soil	soil	Kellog Biological Station, Hickory Corners, MI, USA	42.44158	-85.3760899999999	0
+4554158.3		105	8.149	10.067	7.567	9.036	8.149	8.346	8.303	8.284	8.17	tundra biome	tundra	soil	soil	Arctic	0	0	0
+4440961.3		33	8.101	8.845	8.101	9.325	8.593	8.744	8.748	8.819	8.698	sediment	sediment	sediment	sediment	Ocean Drilling Program leg 201, site 1229	-10.9762017	-77.95765	1 ; Meter
+4440960.3		34	8.1	9.261	8.1	8.671	8.1	8.406	8.367	8.452	8.349	sediment	sediment	sediment	sediment	Ocean Drilling Program leg 201, site 1229	-10.9762017	-77.95765	1 ; Meter
+4511151.3		31	8	8.824	8	9.307	8.469	8.475	8.413	8.462	8.354	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4443679.3		214	7.991	8.243	7.9	8.855	7.803	7.925	7.991	8.001	7.95	freshwater	freshwater	freshwater	water	Ace Lake Vestfold Hills, Antarctica	-68.4	78.182778	14
+4461455.3		81	7.945	8.925	7.028	8.945	7.945	7.98	7.962	8.004	7.901	marine sponge reef biome	organism-associated habitat	organic material	host-associated	JoÃ£o fernandinho beach, bÃºzios peninsula, Rio de Janeiro state	-22.738705	-41.874604	4
+4508402.3		105	7.924	9.814	7.397	8.885	7.924	7.968	7.951	7.98	7.869	Large lake biome	biofilm	contaminated water	wastewater|sludge	kobe	34.6676643364835	135.213546752929	0
+4440067.3		33	7.871	8.664	7.871	9.416	8.964	9.178	9.097	9.131	9.008	marine habitat	marine habitat	marine habitat	water	Pozas Azules II	26.872	-102.0773	0
+4454504.3		136	7.786	8.914	6.976	8.588	7.702	7.786	7.705	7.789	7.695	ocean biome	ocean	coastal water	water	Rio de Janeiro	-22.923242	-43.145186	1
+4464109.3		103	7.732	9.711	7.312	8.42	7.732	7.834	7.797	7.856	7.724	freshwater biome	Wastewater treatment plant	Activated sludge	wastewater|sludge	Visp	46.30044	7.8594	0.5
+4440425.3		32	7.711	8.572	7.711	8.781	8.429	8.537	8.513	8.589	8.446	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4511146.3		31	7.694	9.507	7.694	8.734	7.908	8.04	7.982	8.023	7.909	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4554156.3		106	7.546	8.634	7.682	8.96	7.546	7.619	7.631	7.726	7.653	tundra biome	tundra	soil	soil	Arctic	0	0	0
+4459941.3		36	7.539	8.107	7.539	8.801	8.152	8.27	8.23	8.36	8.255	sediment	sediment	sediment	sediment	Ocean Drilling Program leg 201, site 1229	-10.9762017	-77.95765	50 ; Meter
+4531569.3		32	7.492	8.664	7.492	8.764	8.171	8.353	8.356	8.4	8.259	anthropogenic terrestrial biome	wastewater treatment plant	sewage	wastewater|sludge	Universiti Teknologi Malaysia	1.5580384	103.6420599	0
+4464073.3		93	7.437	10.028	6.84	8.165	7.437	7.471	7.4	7.431	7.303	freshwater biome	Wastewater treatment plant	Activated sludge	wastewater|sludge	Morges	46.5166	6.51014	0.5
+4441622.3		32	7.423	7.659	7.423	8.304	8.064	8.386	8.319	8.377	8.252	marine habitat	marine habitat	marine habitat	water	Arctic Chukchi	73.16167	159.44667	10 to 3246
+4441621.3		32	7.423	7.659	7.423	8.304	8.064	8.386	8.319	8.377	8.252	marine habitat	marine habitat	marine habitat	water	Canadian Arctic	70.6933	-136.4233	2-968 m
+4440306.3		32	7.423	7.659	7.423	8.304	8.064	8.386	8.319	8.377	8.252	marine habitat	marine habitat	marine habitat	water	the Arctic Ocean, the Strait of Georgia,	0	0	2 to 968
+4508805.3		42	7.392	8.4	7.392	8.982	8.313	8.538	8.512	8.674	8.526	Large lake biome	biofilm	contaminated water	wastewater|sludge	kobe	34.6676643364835	135.213546752929	0
+4461444.3		84	7.374	9.705	6.665	8.162	7.374	7.475	7.446	7.478	7.364	marine pelagic biome	marine habitat	coastal water	water	JoÃ£o fernandinho beach, bÃºzios peninsula, Rio de Janeiro state	-22.738705	-41.874604	4
+4450249.3		94	7.36	7.675	7.485	8.796	7.36	7.644	7.675	7.762	7.699	Tundra biome	peat soil	peat soil	soil	Ny Ãlesund, Svalbard	80.5925	13.6101833333333	0
+JP4A120525SEDIMENT	4557994.3	46	7.306	7.063	6.396	7.306	6.44	6.752	6.811	6.748	6.716	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4554154.3		106	7.297	7.752	7.644	8.48	7.297	7.51	7.598	7.676	7.656	tundra biome	tundra	soil	soil	Arctic	0	0	0
+4511144.3		31	7.088	7.895	7.088	9.233	8.452	8.579	8.519	8.562	8.451	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4443718.3		32	7.076	9.064	7.076	7.917	7.632	7.68	7.643	7.621	7.558	marine habitat	marine habitat	marine habitat	water	Sapelo Island, GA	31.3929	-81.2699	0
+4443765.3		33	7.023	7.667	7.023	8.374	8.031	8.34	8.288	8.336	8.18	marine habitat	marine habitat	marine habitat	water	Scripps Institution of Oceanography, La Jolla, CA	32.8664	-117.2522	0
+4443711.3		33	7.023	7.667	7.023	8.374	8.031	8.34	8.288	8.336	8.18	marine habitat	marine habitat	marine habitat	water	Scripps Institution of Oceanography, La Jolla, CA	32.8664	-117.2522	0
+4554153.3		104	6.95	7.219	7.748	8.22	6.95	7.14	7.115	7.202	7.149	tundra biome	tundra	soil	soil	Arctic	0	0	0
+4461454.3		77	6.922	7.831	6.08	6.922	5.643	5.628	5.576	5.67	5.608	marine sponge reef biome	organism-associated habitat	organic material	host-associated	JoÃ£o fernandinho beach, bÃºzios peninsula, Rio de Janeiro state	-22.738705	-41.874604	4
+4446412.3		104	6.921	8.305	6.741	7.958	6.921	6.817	6.747	6.815	6.757	estuarine biome	marine pelagic feature	saline water	water	Coorong Lagoon	36.167	140.651	0
+4441091.3		170	6.878	8.257	6.424	7.602	6.876	6.878	6.818	6.926	6.824	soil	soil	soil	soil	Farm in Waseca County, Minnesota.	43.9614	93.6623	0-.1 ; Meter
+4443749.3		210	6.779	7.863	6.51	8.147	6.652	6.777	6.779	6.878	6.825	hot spring ; microbial mat	hot spring ; microbial mat	hot spring ; microbial mat	microbial mat|biofilm	Yellowstone Natl Park Hot Springs, Moran, WY	44.376	-110.690	.001
+4511147.3		31	6.762	8.318	6.762	7.683	6.829	6.798	6.742	6.802	6.712	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4442464.3		203	6.748	7.883	7.14	7.383	6.638	6.768	6.748	6.817	6.688	marine habitat	marine habitat	marine habitat	water	Ionian Km3 station	36.51	15.68	3101
+4441025.3		203	6.748	7.883	7.14	7.383	6.638	6.768	6.748	6.817	6.688	marine habitat	marine habitat	marine habitat	water	Ionian Km3 station	36.51	15.68	3101
+4459940.3		36	6.714	8.891	6.714	7.474	6.861	7.059	7.019	7.154	7.042	sediment	sediment	sediment	sediment	Ocean Drilling Program leg 201, site 1229	-10.9762017	-77.95765	32 ; Meter
+4442499.3		214	6.713	7.875	6.084	7.843	6.786	6.754	6.713	6.744	6.666	marine habitat	marine habitat	marine habitat	water	HOT station ALOHA	22.75	-158.033	200
+4478934.3		153	6.68	6.938	6.6	7.648	6.566	6.68	6.68	6.712	6.597	Tropical and subtropical moist broadleaf forest biome	agricultural soil	rhizosphere	soil	Amazonia	-11.7412664	-56.2533385	0
+4441041.3		214	6.67	7.759	6.066	7.746	6.761	6.714	6.67	6.679	6.572	marine habitat	marine habitat	marine habitat	water	HOT station ALOHA	22.75	-158.033	200
+4461453.3		82	6.646	8.039	7.036	8	6.646	6.847	6.844	6.965	6.919	marine sponge reef biome	organism-associated habitat	organic material	host-associated	JoÃ£o fernandinho beach, bÃºzios peninsula, Rio de Janeiro state	-22.738705	-41.874604	4
+4511142.3		31	6.625	7.676	6.625	7.735	7.233	7.366	7.301	7.365	7.247	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4440973.3		33	6.552	7.227	6.552	6.673	5.988	6.089	6.054	6.182	6.093	sediment	sediment	sediment	sediment	Ocean Drilling Program leg 201, site 1229	10.9762017	77.95765	16 ; Meter
+4440364.3		32	6.481	8.752	6.481	6.371	6.024	6.2	6.189	6.188	6.146	marine habitat	marine habitat	marine habitat	water	Sapelo Island, GA	31.3929	-81.2699	0
+4440438.3		33	6.445	7.234	6.445	7.6	6.993	7.237	7.215	7.265	7.122	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4557977.3		74	6.182	7.472	5.457	6.182	5.078	5.103	5.068	5.112	5.027	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4453382.3		126	6.174	7.155	6.021	7.019	6.318	6.174	6.042	6.119	6.065	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.830467	-43.246569	1
+4461451.3		79	6.167	8.46	5.87	6.167	5.521	5.545	5.515	5.505	5.414	marine sponge reef biome	organism-associated habitat	organic material	host-associated	JoÃ£o fernandinho beach, bÃºzios peninsula, Rio de Janeiro state	-22.738705	-41.874604	4
+4441095.3		206	6.072	6.868	6.132	7.383	6.193	6.12	6.072	6.138	6.044	hot spring	hot spring	hot spring	water	Yellowstone Natl Park	44.55497	-110.83514	0
+4443720.3		32	6.011	7.467	6.011	6.32	5.536	5.597	5.551	5.664	5.555	marine habitat	marine habitat	marine habitat	water	Sapelo Island, GA	31.3929	-81.2699	0
+4440362.3		32	6.011	7.467	6.011	6.32	5.536	5.597	5.551	5.664	5.555	marine habitat	marine habitat	marine habitat	water	Sapelo Island, GA	31.3929	-81.2699	0
+4441055.3		206	5.997	7.551	6.536	6.574	5.91	6.035	5.997	5.986	5.958	marine habitat	marine habitat	marine habitat	water	HOT station ALOHA	22.75	-158.033	130
+4497981.3		32	5.98	6.102	5.98	6.776	5.784	5.923	5.995	6.078	6.087	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4446411.3		98	5.974	7.135	5.76	6.685	5.974	6.085	6.083	6.057	6.001	estuarine biome	marine pelagic feature	saline water	water	Coorong Lagoon	36.166	139.651	0
+4443746.3		209	5.949	6.894	5.763	7.046	5.967	5.979	5.949	5.999	5.928	hot spring ; microbial mat	hot spring ; microbial mat	hot spring ; microbial mat	microbial mat|biofilm	Yellowstone Natl Park Hot Springs, Moran, WY	44.376	110.690	.001
+4461452.3		81	5.847	7.504	6.231	6.749	5.847	5.956	5.931	5.986	5.899	marine sponge reef biome	organism-associated habitat	organic material	host-associated	JoÃ£o fernandinho beach, bÃºzios peninsula, Rio de Janeiro state	-22.738705	-41.874604	4
+4443722.3		31	5.733	7.353	5.733	5.855	5.051	5.138	5.068	5.189	5.093	marine habitat	marine habitat	marine habitat	water	Sapelo Island, GA	31.3929	-81.2699	0
+4440358.3		31	5.733	7.353	5.733	5.855	5.051	5.138	5.068	5.189	5.093	marine habitat	marine habitat	marine habitat	water	Sapelo Island, GA	31.3929	-81.2699	0
+4498772.3		29	5.625	5.699	5.625	6.519	5.599	5.707	5.754	5.869	5.877	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4443726.3		32	5.578	6.838	5.578	5.946	5.391	5.454	5.363	5.432	5.333	marine habitat	marine habitat	marine habitat	water	Sapelo Island, GA	31.3929	-81.2699	0
+4440361.3		32	5.578	6.838	5.578	5.946	5.391	5.454	5.363	5.432	5.333	marine habitat	marine habitat	marine habitat	water	Sapelo Island, GA	31.3929	-81.2699	0
+4442583.3		223	5.571	7.968	5.592	6.166	5.519	5.606	5.571	5.581	5.482	hot spring	hot spring	hot spring	water	Yellowstone Natl Park	44.534167	110.797944	0
+4441096.3		223	5.571	7.968	5.592	6.166	5.519	5.606	5.571	5.581	5.482	hot spring	hot spring	hot spring	water	Yellowstone Natl Park	44.534167	-110.797944	0
+4454505.3		135	5.565	6.646	4.874	6.209	5.524	5.565	5.464	5.531	5.457	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.864633	-43.160464	1
+4442498.3		206	5.474	6.932	5.999	6.051	5.387	5.512	5.474	5.463	5.435	marine habitat	marine habitat	marine habitat	water	HOT station ALOHA	22.75	-158.033	130
+4450250.3		92	5.386	5.388	5.196	6.715	5.386	5.389	5.369	5.491	5.455	Tundra biome	peat soil	peat soil	soil	Ny Ãlesund, Svalbard	80.6090666666667	13.48425	0
+4440039.3		33	5.353	5.943	5.353	6.258	6.006	6.201	6.193	6.216	6.198	marine habitat	marine habitat	marine habitat	water	Palmyra Atoll	5.866944	-162.1278	~10
+4440038.3		35	5.22	7.523	5.22	5.318	4.872	5.06	4.988	5.036	4.93	marine habitat	marine habitat	marine habitat	water	Christmas (Kiritimati) Atoll	1.99231667	-157.4840667	~10
+4453379.3		128	5.2	5.946	5.278	6.051	5.161	5.2	5.157	5.218	5.085	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.864633	-43.160464	1
+4489655.3		23	5.096	6.569	5.096	5.625	5.177	5.306	5.195	5.346	5.241	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	subterrestrial habitat	soil	soil	Boston, MA, USA	42.3	-71.1	0
+4500753.3		32	5.092	4.915	5.092	5.985	5.425	5.562	5.517	5.55	5.465	WWF biome	cliff	soil	soil	0	0	0	0
+4440060.4		34	5.058	6.015	5.058	6.881	6.684	6.74	6.609	6.742	6.655	marine habitat	marine habitat	marine habitat	water	Rio Mesquites	26.9125	-102.115	0
+4440090.3		33	5.046	6.408	5.046	6.014	5.711	5.863	5.865	5.915	5.849	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4494598.3		120	5.026	4.912	5.112	5.793	5.026	5.227	5.266	5.232	5.198	oceanic epipelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	20
+BORDETELLA	4557977.3	116	5.009	7.472	5.443	6.086	5.009	5.024	5.013	5.021	4.94	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4445106.3		98	4.994	6.609	5.036	5.724	4.994	5.162	5.101	5.12	5.041	cultured habitat	cultured habitat	cultured habitat	miscellaneous	Hunting Valley, OH	41.50	-81.42	0
+4500754.3		32	4.972	6.007	4.972	5.349	4.937	5.144	5.07	5.13	5.021	WWF biome	cliff	soil	air	0	0	0	0
+4498778.3		28	4.967	4.785	4.967	5.057	3.93	4.098	4.032	4.278	4.268	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4443750.3		205	4.91	5.745	5.056	5.677	4.943	4.95	4.91	4.94	4.82	hot spring ; microbial mat	hot spring ; microbial mat	hot spring ; microbial mat	microbial mat|biofilm	Yellowstone Natl Park Hot Springs, Moran, WY	44.376	-110.690	.001
+4442451.3		192	4.909	6.178	4.582	5.438	4.92	4.908	4.909	4.835	4.827	extreme habitat ; hypersaline	extreme habitat ; hypersaline	extreme habitat ; hypersaline	water	crystallizer pond CR30 in the multi-pond saltern "Bras del Port" located in Santa Pola	38.2	.6	0
+4441050.3		192	4.909	6.178	4.582	5.438	4.92	4.908	4.909	4.835	4.827	extreme habitat ; hypersaline	extreme habitat ; hypersaline	extreme habitat ; hypersaline	water	crystallizer pond CR30 in the multi-pond saltern "Bras del Port" located in Santa Pola	38.2	.6	0
+4440430.3		33	4.907	6.931	4.907	5.985	5.561	5.749	5.695	5.742	5.608	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4442582.3		213	4.732	6.232	4.623	5.62	4.803	4.759	4.732	4.772	4.678	marine habitat	marine habitat	marine habitat	water	HOT station ALOHA	22.75	-158.033	10
+4441051.3		213	4.732	6.232	4.623	5.62	4.803	4.759	4.732	4.772	4.678	marine habitat	marine habitat	marine habitat	water	HOT station ALOHA	22.75	-158.033	10
+4441629.3		33	4.656	5.867	4.656	4.518	3.728	3.734	3.764	3.757	3.729	marine habitat	marine habitat	marine habitat	water	Northeastern Gulf of Mexico	28.258	87.6733	1-120 m
+4441628.3		33	4.656	5.867	4.656	4.518	3.728	3.734	3.764	3.757	3.729	marine habitat	marine habitat	marine habitat	water	Texas Coast, Gulf of Mexico	0	0	surface - 5
+4441627.3		33	4.656	5.867	4.656	4.518	3.728	3.734	3.764	3.757	3.729	marine habitat	marine habitat	marine habitat	water	Western Gulf of Mexico	26.205	-93.94167	0-164
+4441626.3		33	4.656	5.867	4.656	4.518	3.728	3.734	3.764	3.757	3.729	marine habitat	marine habitat	marine habitat	water	Texas Coast, Gulf of Mexico	0	0	surface - 5
+4441625.4		33	4.656	5.867	4.656	4.518	3.728	3.734	3.764	3.757	3.729	marine habitat	marine habitat	marine habitat	water	Northeastern Gulf of Mexico	28.258	-87.6733	1-120 m
+4441625.3		33	4.656	5.867	4.656	4.518	3.728	3.734	3.764	3.757	3.729	marine habitat	marine habitat	marine habitat	water	Eastern Gulf of Mexico	25.895	-85.18	3-90
+4440304.3		33	4.656	5.867	4.656	4.518	3.728	3.734	3.764	3.757	3.729	marine habitat	marine habitat	marine habitat	water	Gulf of Mexico	0	0	western GOM = surface to 164, Eastern GOM =3 to 90, Northeastern GOM = 1 to 120,  Texas Coast = 1 to 120
+4454693.3		138	4.517	5.751	5.154	5.318	4.497	4.517	4.58	4.553	4.549	ocean biome	ocean	coastal water	water	Rio de Janeiro	-22.923242	-43.145186	1
+4440435.3		33	4.48	5.08	4.48	4.696	4.187	4.235	4.151	4.205	4.12	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4440037.3		33	4.478	5.149	4.478	4.794	4.738	4.951	4.92	4.922	4.879	marine habitat	marine habitat	marine habitat	water	Kingman Atoll	6.3856	-162.334722	~10
+4443680.3		213	4.44	5.626	4.785	5.425	4.32	4.43	4.44	4.539	4.457	freshwater	freshwater	freshwater	water	Ace Lake Vestfold Hills, Antarctica	-68.4	78.182778	18
+4443317.3		55	4.411	4.99	3.115	4.411	4.335	4.411	4.417	4.462	4.404	ocean biome	marine habitat	anoxic water	water	Iquique	20.10665	70.407383	200
+4454686.3		138	4.38	5.492	4.943	5.569	4.405	4.38	4.341	4.412	4.339	ocean biome	ocean	coastal water	water	Rio de Janeiro	-22.923242	-43.145186	1
+4498769.3		28	4.363	5.949	4.363	4.622	4.215	4.175	4.085	4.187	4.135	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4454503.3		130	4.334	4.939	4.344	5.213	4.364	4.334	4.318	4.317	4.267	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.830467	-43.246569	1
+4441125.3		243	4.313	4.928	3.415	4.649	4.25	4.357	4.401	4.313	4.246	marine habitat	marine habitat	marine habitat	water	Tropical South Pacific	-4.49889	-105.07	2.2
+4497982.3		32	4.291	5.506	4.291	5.909	5.006	5.072	4.958	5.2	5.173	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4498773.3		29	4.289	4.294	4.289	5.832	4.963	5.007	4.9	5.15	5.122	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4454700.3		135	4.281	4.904	4.145	4.933	4.132	4.281	4.237	4.251	4.14	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.864633	-43.160464	1
+4440413.3		33	4.28	5.606	4.28	5.019	4.706	4.796	4.783	4.815	4.809	freshwater	freshwater	freshwater	water	Tilapia Channel (FW1) at Kent SeaTech, Salton Sea, CA	33.537594	-116.097751	0
+4465825.3		205	4.252	5.475	4.5	5.143	4.161	4.199	4.252	4.196	4.175	air	air	air	air	Indoor Shopping Center	1.288725	103.8617	0 ; Meter
+4454701.3		130	4.246	5.291	4.666	4.945	4.214	4.246	4.265	4.276	4.241	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.830467	-43.246569	1
+4440433.3		33	4.243	4.526	4.243	4.349	3.79	3.965	3.898	4.018	3.914	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4464108.3		192	4.217	5.032	4.583	4.665	4.194	4.254	4.217	4.192	4.082	freshwater biome	Wastewater treatment plant	Activated sludge	wastewater|sludge	Visp	46.30044	7.8594	0.5
+4440422.3		33	4.197	4.844	4.197	5.181	4.836	4.998	5.009	5.071	5.081	freshwater	freshwater	freshwater	water	Tilapia Channel (FW1) at Kent SeaTech, Salton Sea, CA	33.537594	-116.097751	0
+4440324.3		32	4.167	5.797	4.167	4.065	3.639	3.742	3.788	3.825	3.827	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4440041.3		33	4.158	5.683	4.158	4.396	3.852	3.815	3.751	3.801	3.778	marine habitat	marine habitat	marine habitat	water	Christmas (Kiritimati) Atoll	1.99231667	157.4840667	~10
+4501098.3		112	4.07	4.734	4.154	4.697	4.07	4.275	4.251	4.282	4.222	Large lake biome	biofilm	contaminated water	wastewater|sludge	kobe	34.6676643364835	135.213546752929	0
+4489661.3		23	4.012	4.521	4.012	3.951	3.825	4.078	4.086	4.158	4.134	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	human-associated habitat	feces	human-gut	Boston, MA, USA	42.3	-71.1	0
+4454703.3		137	3.954	4.68	4.184	4.693	3.973	3.954	3.878	3.958	3.88	ocean biome	ocean	coastal water	water	Rio de Janeiro	-22.923242	-43.145186	1
+4441623.3		33	3.932	4.722	3.932	4.18	3.985	4.07	4.021	4.029	3.898	marine habitat	marine habitat	marine habitat	water	Bay of British Columbia	49.705	124.351667	0 - 245
+4440305.3		33	3.932	4.722	3.932	4.18	3.985	4.07	4.021	4.029	3.898	marine habitat	marine habitat	marine habitat	water	Strait of Georgia and adjacent inlets, Barclay Sound	0	0	surface to 245
+4443762.3		201	3.862	4.482	4.32	4.775	3.79	3.868	3.862	3.876	3.758	hot spring ; microbial mat	hot spring ; microbial mat	hot spring ; microbial mat	microbial mat|biofilm	Yellowstone Natl Park Hot Springs, Moran, WY	44.376	-110.690	.001
+4443316.3		75	3.833	4.226	3.569	3.833	3.521	3.628	3.547	3.58	3.467	ocean biome	marine habitat	anoxic water	water	Iquique	20.10665	70.407383	10
+4443723.3		31	3.73	4.42	3.73	3.854	3.553	3.496	3.458	3.502	3.479	marine habitat	marine habitat	marine habitat	water	Sapelo Island, GA	31.3929	-81.2699	0
+4440359.3		31	3.73	4.42	3.73	3.854	3.553	3.496	3.458	3.502	3.479	marine habitat	marine habitat	marine habitat	water	Sapelo Island, GA	31.3929	-81.2699	0
+4443719.3		31	3.643	4.989	3.643	4.072	3.784	3.846	3.88	3.827	3.815	marine habitat	marine habitat	marine habitat	water	Sapelo Island, GA	31.3929	-81.2699	0
+4489665.3		23	3.594	3.522	3.594	3.74	3.487	3.581	3.51	3.606	3.549	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	human-associated habitat	feces	human-gut	Boston, MA, USA	42.3	-71.1	0
+4440374.3		33	3.495	3.964	3.495	3.268	2.735	2.735	2.806	2.728	2.657	animal-associated habitat	animal-associated habitat	animal-associated habitat	host-associated	Hawaii Institute of Marine Biology	21.434	157.7878	0
+4440429.3		33	3.478	3.926	3.478	3.301	2.769	2.882	2.824	2.925	2.833	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4440420.3		33	3.464	4.712	3.464	3.107	2.593	2.714	2.641	2.79	2.714	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4440282.3		32	3.392	4.618	3.392	3.608	3.425	3.407	3.329	3.401	3.309	mine drainage	mine drainage	mine drainage	sediment	Soudan Underground Mine, on the south shore of Lake Vermilion, MN	47.819307	-92.242595	714
+4497979.3		30	3.368	4.31	3.368	3.682	3.191	3.224	3.246	3.286	3.282	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4440360.3		32	3.351	4.463	3.351	3.946	3.721	3.768	3.798	3.727	3.683	marine habitat	marine habitat	marine habitat	water	Sapelo Island, GA	31.3929	-81.2699	0
+4489648.3		23	3.319	3.194	3.319	3.89	3.548	3.682	3.693	3.734	3.578	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	subterrestrial habitat	soil	soil	Boston, MA, USA	42.3	-71.1	0
+4500755.3		32	3.286	4.856	3.286	3.849	3.52	3.558	3.456	3.576	3.464	WWF biome	rock	rock	air	0	0	0	0
+JP1ASEDIMENT120525	4557979.3	75	3.267	2.765	2.717	3.267	2.858	2.778	2.824	2.737	2.736	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4454695.3		138	3.212	4.195	3.668	4.095	3.347	3.212	3.218	3.206	3.206	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.864633	-43.160464	1
+4441136.3		249	3.193	4.057	3.509	3.492	3.166	3.243	3.212	3.193	3.169	marine habitat	marine habitat	marine habitat	water	Tropical South Pacific	-3.3433	-101.37389	2
+4441624.3		34	3.188	4.113	3.188	3.03	2.861	2.878	2.843	2.867	2.886	marine habitat	marine habitat	marine habitat	water	Sargasso Sea	32.1667	-64.5	80
+4440322.3		34	3.188	4.113	3.188	3.03	2.861	2.878	2.843	2.867	2.886	marine habitat	marine habitat	marine habitat	water	Sargasso Sea, Hydrostation S	32.1667	-64.5	80
+4440434.3		32	3.187	3.825	3.187	3.261	2.986	3.107	3.048	3.08	3.043	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4489663.3		23	3.118	3.367	3.118	2.852	2.591	2.81	2.841	2.83	2.807	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	human-associated habitat	feces	human-gut	Boston, MA, USA	42.3	-71.1	0
+4441579.3		152	3.118	3.718	4.37	3.61	3.225	3.118	3.13	3.119	3.128	marine habitat	marine habitat	marine habitat	water	Gulf of Maine	42.5031	-67.24	1
+4454687.3		139	3.09	4.098	3.634	3.727	3.088	3.09	3.02	3.039	2.924	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.864633	-43.160464	1
+4440036.3		35	3.044	3.934	3.044	3.242	2.923	2.932	2.788	2.939	2.901	marine habitat	marine habitat	marine habitat	water	Kingman Atoll	6.3856	-162.334722	~10
+4441128.3		244	3.007	3.401	3.763	3.558	3.023	2.994	2.986	3.007	3.047	marine habitat	marine habitat	marine habitat	water	Tropical South Pacific	-7.6611	-120.402	1.9
+4448226.3		63	2.929	4.191	3.001	2.929	2.626	2.712	2.647	2.646	2.531	marine habitat	marine habitat	marine habitat	water	Mariana Trough	12.997778	143.616667	2850 ; Meter
+4498770.3		27	2.862	4.136	2.862	3.289	2.912	2.947	2.942	2.971	2.962	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4443698.3		67	2.818	3.563	2.261	2.818	2.475	2.515	2.462	2.437	2.372	marine habitat	marine habitat	marine habitat	water	Pacific North Equatorial	5.0833	-161.967	5 ; Meter
+4441583.3		155	2.792	3.724	3.086	3.276	2.817	2.792	2.681	2.783	2.714	marine habitat	marine habitat	marine habitat	water	Newport Harbor, RI	41.4858	-71.3511	1
+4518021.3		54	2.728	4.331	2.678	2.728	1.912	1.919	1.976	2.013	2.053	terrestrial biome	park	soil	soil	Adelaide	-35.021317	138.515922	0
+4441578.3		189	2.726	3.159	3.46	3.474	2.632	2.655	2.726	2.752	2.737	marine habitat	marine habitat	marine habitat	water	Sargasso Sea	32.1667	-64.5	5
+4489667.3		23	2.721	3.045	2.721	2.549	2.222	2.45	2.483	2.465	2.46	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	human-associated habitat	feces	human-gut	Boston, MA, USA	42.3	-71.1	0
+4443724.3		32	2.707	3.463	2.707	2.86	2.815	3.018	2.927	3.016	2.975	marine habitat	marine habitat	marine habitat	water	Sapelo Island, GA	31.3929	-81.2699	0
+4511045.3		32	2.675	3.707	2.675	2.913	2.596	2.641	2.517	2.648	2.56	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4443756.3		137	2.665	2.329	2.911	2.842	2.582	2.665	2.642	2.644	2.638	waste water	waste water	waste water	wastewater|sludge	0	1.332	103.756	0 ; Meter
+4441660.3		151	2.66	3.062	2.339	2.862	2.703	2.66	2.609	2.55	2.552	marine habitat	marine habitat	marine habitat	water	Caribbean Sea, Gulf of Mexico	24.1747	-84.344	2 m
+4441587.3		152	2.631	3.507	2.666	2.947	2.601	2.631	2.538	2.594	2.561	marine habitat	marine habitat	marine habitat	water	Yucatan Channel	20.5225	-85.4136	2
+4440426.3		33	2.63	2.703	2.63	2.696	2.428	2.495	2.405	2.525	2.435	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+JP4110513SEDIMENT	4557991.3	70	2.623	3.157	2.143	2.623	2.329	2.38	2.328	2.302	2.306	Tropical/Subtropical Desert Division (320)	alkaline salt lake	surface water	microbial mat|biofilm	Cuatro Cienegas	26.848087	-102.141608	0
+4454689.3		136	2.61	2.889	3.49	3.412	2.67	2.61	2.513	2.657	2.594	ocean biome	ocean	coastal water	water	Rio de Janeiro	-22.923242	-43.145186	1
+4494602.3		120	2.517	3.244	2.038	2.788	2.517	2.508	2.48	2.469	2.494	oceanic epipelagic zone biome	marine oligotrophic desert	water	water	Sargasso Sea	32.17	-64.5	80
+4440419.3		34	2.465	3.445	2.465	2.483	2.215	2.259	2.194	2.254	2.284	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4443685.3		195	2.379	2.813	2.597	2.888	2.466	2.409	2.379	2.304	2.313	marine habitat	marine habitat	marine habitat	water	Organic Lake	-68.43278	78.29972	0.15 ; Meter
+4440363.3		32	2.377	2.796	2.377	2.466	2.264	2.384	2.3	2.4	2.362	marine habitat	marine habitat	marine habitat	water	Sapelo Island, GA	31.3929	-81.2699	0
+4441575.3		137	2.343	3.094	2.608	2.513	2.166	2.343	2.373	2.301	2.23	marine habitat	marine habitat	marine habitat	water	Sargasso Sea	31.175	-64.324	5
+4440319.3		33	2.328	3.411	2.328	2.783	2.61	2.694	2.674	2.682	2.683	animal-associated habitat	animal-associated habitat	animal-associated habitat	host-associated	Bocas del Toro	9.331	-82.249	0
+4454691.3		137	2.084	2.813	3.14	2.84	2.152	2.084	2.044	2.109	2.049	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.864633	-43.160464	1
+4503511.3		30	2.074	2.667	2.074	2.787	2.355	2.388	2.316	2.442	2.351	mediterranean sea biome	marine bulk water	coastal water	water	Sabine Island east dock, Pensacola Beach, FL	30.333	-87.137	0
+4441571.3		163	2.068	2.998	3.168	2.694	1.957	2.068	2.126	2.122	2.108	marine habitat	marine habitat	marine habitat	water	Sargasso Sea	31.175	-64.324	5
+4441130.3		239	2.068	2.716	2.848	2.765	2.251	2.095	2.053	2.068	1.998	marine habitat	marine habitat	marine habitat	water	Tropical South Pacific - 400 miles from F. Polynesia	-9.0175	-127.767	1.7
+4443709.3		75	1.989	2.96	2.497	1.989	1.737	1.754	1.783	1.749	1.745	marine habitat	marine habitat	marine habitat	water	coastal waters of a fjord close to Bergen, Norway	60.27	5.22	0
+4514452.3		295	1.972	2.262	1.943	2.114	1.951	1.963	1.936	1.944	1.972	Temperate Steppe Division - Mountain Provinces (M330)	acid habitat	carbon dioxide-reducing sediment	sediment	Yellowstone	44.6993461	-110.7672138	0
+4489654.3		23	1.914	4.419	1.914	2.455	2.242	2.209	2.116	2.271	2.204	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	subterrestrial habitat	soil	soil	Boston, MA, USA	42.3	-71.1	0
+4441584.3		151	1.91	2.867	1.693	2.137	1.834	1.91	1.843	1.905	1.878	marine habitat	marine habitat	marine habitat	water	Chesapeake Bay, MD	38.9469	-76.4172	13.2 m
+4441129.3		226	1.891	2.709	2.497	2.528	1.981	1.927	1.93	1.891	1.91	marine habitat	marine habitat	marine habitat	water	Tropical South Pacific - 600 miles from F. Polynesia	-8.415	-124.2397	2
+4441121.3		235	1.891	2.231	2.643	2.218	1.843	1.875	1.891	1.891	1.856	marine habitat	marine habitat	marine habitat	water	Polynesia Archipelagos - Tikehau Lagoon	-15.2778	-148.224	1.2
+4441127.3		249	1.882	2.618	2.938	2.591	2.03	1.899	1.89	1.882	1.901	marine habitat	marine habitat	marine habitat	water	Tropical South Pacific	-7.1075	-116.119	1.7
+4440411.3		33	1.877	2.664	1.877	2.361	1.906	1.942	1.913	1.934	1.946	freshwater	freshwater	freshwater	water	prebead pond at Kent SeaTech, Salton Sea, CA	33.537594	-116.097751	0
+4454688.3		134	1.838	2.499	2.323	2.33	1.855	1.838	1.869	1.868	1.873	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.830467	-43.246569	1
+4489656.3		23	1.804	4.551	1.804	2.335	1.888	1.956	1.939	2	2.027	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	subterrestrial habitat	soil	soil	Boston, MA, USA	42.3	-71.1	0
+4445756.3		84	1.79	2.322	1.638	1.957	1.79	1.746	1.746	1.68	1.664	organism-associated habitat	organism-associated habitat	organism-associated habitat	host-associated	Nelly Bay Magnetic Island	-19.5	-146.50	1-3 ; Meter
+4501099.3		173	1.742	2.386	1.924	1.907	1.717	1.742	1.716	1.701	1.71	Large lake biome	biofilm	contaminated water	wastewater|sludge	kobe	34.6676643364835	135.213546752929	0
+4489645.3		23	1.712	1.368	1.712	2.059	1.879	1.993	1.922	2.002	1.896	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	subterrestrial habitat	soil	soil	Boston, MA, USA	42.3	-71.1	0
+4443747.3		201	1.703	2.287	2.341	2.327	1.721	1.738	1.703	1.768	1.717	hot spring ; microbial mat	hot spring ; microbial mat	hot spring ; microbial mat	microbial mat|biofilm	Yellowstone Natl Park Hot Springs, Moran, WY	44.376	-110.690	.001
+4441572.3		149	1.632	2.196	1.35	1.888	1.572	1.632	1.625	1.558	1.508	marine habitat	marine habitat	marine habitat	water	Sargasso Sea	31.175	-64.324	5
+4529512.3		179	1.594	2.356	1.993	2.047	1.631	1.556	1.594	1.561	1.561	haline habitat	lake	water	water	Sea Lake, VIC	-35.4833	142.8333	0
+4441576.3		161	1.528	2.495	1.941	1.944	1.406	1.528	1.534	1.554	1.55	marine habitat	marine habitat	marine habitat	water	Sargasso Sea	32.1667	-64.5	5
+4440375.3		34	1.528	1.513	1.528	1.606	1.583	1.709	1.642	1.701	1.706	animal-associated habitat	animal-associated habitat	animal-associated habitat	host-associated	Hawaii Institute of Marine Biology	21.434	-157.7878	0
+4441659.3		149	1.517	2.156	1.673	1.747	1.472	1.517	1.537	1.464	1.409	marine habitat	marine habitat	marine habitat	water	North American East Coast, South of Charleston, SC	32.5069	-79.2639	1
+4443753.3		142	1.515	1.916	1.505	1.634	1.609	1.515	1.468	1.445	1.427	waste water	waste water	waste water	water	0	1.332	103.756	0 ; Meter
+4489649.3		23	1.513	2.52	1.513	1.943	1.73	1.668	1.598	1.704	1.674	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	subterrestrial habitat	soil	soil	Boston, MA, USA	42.3	-71.1	0
+4441124.3		239	1.49	2.341	1.364	1.653	1.497	1.509	1.499	1.49	1.455	marine habitat	marine habitat	marine habitat	water	Tropical South Pacific	-2.58194	-97.85139	1.8
+4440428.3		32	1.453	1.986	1.453	1.744	1.672	1.724	1.721	1.807	1.815	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4441126.3		237	1.435	2.405	1.234	1.647	1.518	1.509	1.464	1.435	1.424	marine habitat	marine habitat	marine habitat	water	Tropical South Pacific	-5.93	-108.68694	2
+4440416.3		30	1.372	1.712	1.372	1.172	1.065	1.068	1.085	1.092	1.076	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4441586.3		148	1.356	2.164	1.476	1.614	1.376	1.356	1.367	1.316	1.335	marine habitat	marine habitat	marine habitat	water	Caribbean Sea, Off Key West, FL	24.4883	-83.07	1.7
+4440376.3		32	1.354	2.168	1.354	1.189	1.11	1.194	1.235	1.231	1.201	animal-associated habitat	animal-associated habitat	animal-associated habitat	host-associated	Hawaii Institute of Marine Biology	21.434	-157.7878	0
+4440145.4		33	1.343	1.866	1.343	1.412	1.279	1.351	1.326	1.361	1.314	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4497980.3		29	1.293	2.516	1.293	1.486	1.314	1.308	1.312	1.341	1.353	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4441592.3		153	1.286	1.897	1.448	1.517	1.354	1.286	1.224	1.257	1.25	marine habitat	marine habitat	marine habitat	water	Eastern Tropical Pacific, 250 miles from Panama City	6.4927	-82.90389	2
+4441577.3		171	1.201	1.917	2.06	1.568	1.228	1.201	1.21	1.217	1.247	marine habitat	marine habitat	marine habitat	water	Sargasso Sea	32.1667	-64.5	5
+4440320.3		34	1.157	1.534	1.157	0.886	0.9	0.886	0.886	0.877	0.846	marine habitat	marine habitat	marine habitat	microbial mat|biofilm	Pozas Azules II	26.872	-102.0773	0
+4440370.3		33	1.127	0.934	1.127	1.186	1.016	1.082	1.09	1.092	1.038	animal-associated habitat	animal-associated habitat	animal-associated habitat	host-associated	Hawaii Institute of Marine Biology	21.434	-157.7878	0
+4441581.3		151	1.113	1.211	1.416	1.29	1.116	1.113	1.076	1.095	1.11	marine habitat	marine habitat	marine habitat	water	Bedford Basin, Nova Scotia	44.69	63.637	1
+4454696.3		137	1.096	1.832	1.281	1.284	1.171	1.096	1.088	1.088	1.08	ocean biome	ocean	coastal water	water	Rio de Janeiro	-22.923242	-43.145186	1
+4440365.3		32	1.064	1.311	1.064	1.214	1.163	1.194	1.166	1.191	1.184	marine habitat	marine habitat	marine habitat	water	Sapelo Island, GA	31.3929	-81.2699	0
+4454704.3		133	1.057	1.367	1.039	1.227	0.998	1.057	1.017	1.036	0.93	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.830467	-43.246569	1
+4498771.3		26	1.025	2.284	1.025	1.26	1.121	1.129	1.12	1.156	1.174	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4441580.3		159	1.022	1.178	1.25	1.328	0.975	1.022	1.038	1.021	0.981	marine habitat	marine habitat	marine habitat	water	Browns Bank, Gulf of Maine	42.85278	-66.2172	1
+4440436.3		33	1.002	1.905	1.002	0.939	0.999	1.117	1.132	1.158	1.153	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4489630.3		23	0.998	0.885	0.998	1.232	1.21	1.259	1.26	1.254	1.246	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	human-associated habitat	feces	human-gut	Boston, MA, USA	42.3	-71.1	0
+4442219.3		78	0.987	1.513	1.145	0.987	0.827	0.859	0.843	0.852	0.844	marine habitat	marine habitat	marine habitat	water	Iquique, Chile	-20.104	-70.404	90
+4489638.3		23	0.98	0.85	0.98	1.203	1.181	1.229	1.229	1.227	1.219	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	human-associated habitat	feces	human-gut	Boston, MA, USA	42.3	-71.1	0
+4443754.3		128	0.951	1.837	1.132	1.118	0.901	0.951	0.93	0.916	0.907	waste water	waste water	waste water	water	0	1.332	103.756	0 ; Meter
+4440280.3		34	0.929	1.875	0.929	0.916	0.786	0.811	0.761	0.809	0.798	marine habitat	marine habitat	marine habitat	water	Fanning (Tabuaeran) Atoll	3.82595000	-159.34956667	~10
+4454698.3		140	0.913	1.268	0.822	1.095	0.975	0.913	0.89	0.898	0.892	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.864633	-43.160464	1
+4443721.3		31	0.909	0.838	0.909	1.063	0.993	1.034	1.008	1.031	1.028	marine habitat	marine habitat	marine habitat	water	Sapelo Island, GA	31.3929	-81.2699	0
+4440279.3		34	0.83	1.66	0.83	0.751	0.688	0.718	0.699	0.708	0.713	marine habitat	marine habitat	marine habitat	water	Fanning (Tabuaeran) Atoll	3.82595000	-159.34956667	~10
+4442145.3		75	0.828	1.099	0.729	0.828	0.805	0.751	0.681	0.728	0.723	marine habitat	marine habitat	marine habitat	water	Iquique, Chile	-20.104	-70.404	200
+4440424.3		33	0.821	0.805	0.821	0.842	0.75	0.761	0.752	0.735	0.719	freshwater	freshwater	freshwater	water	Tilapia Channel (FW1) at Kent SeaTech, Salton Sea, CA	33.537594	-116.097751	0
+4511064.3		32	0.808	1.378	0.808	0.819	0.681	0.73	0.767	0.751	0.75	Montane grasslands and shrubland biome	meadow	soil	soil	Loma_Ridge	33.739556	-117.703419	0.1
+4443755.3		148	0.804	1.378	1.081	0.846	0.78	0.804	0.824	0.822	0.832	waste water	waste water	waste water	water	0	1.332	103.756	0 ; Meter
+4440439.3		33	0.8	1.173	0.8	0.674	0.465	0.435	0.427	0.452	0.497	freshwater	freshwater	freshwater	water	Tilapia Channel (FW1) at Kent SeaTech, Salton Sea, CA	33.537594	-116.097751	0
+4454694.3		137	0.742	1.396	0.539	0.757	0.689	0.742	0.74	0.695	0.691	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.830467	-43.246569	1
+4440102.3		34	0.716	1.217	0.716	0.575	0.46	0.477	0.45	0.481	0.482	marine habitat	marine habitat	marine habitat	water	Tampa Bay, CA	37.6299	-122.0757	0
+4445755.3		88	0.698	1.077	0.316	0.691	0.698	0.704	0.707	0.709	0.704	animal-associated habitat	animal-associated habitat	animal-associated habitat	host-associated	Nelly Bay Magnetic Island	-19.10	146.50	1-3 ; Meter
+4440432.3		33	0.686	0.824	0.686	0.471	0.349	0.321	0.318	0.303	0.301	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4440327.3		33	0.668	0.663	0.668	0.781	0.62	0.701	0.678	0.712	0.666	extreme habitat ; hypersaline	extreme habitat ; hypersaline	extreme habitat ; hypersaline	water	Salton Sea, California	33.4167	-115.9167	14
+4440373.3		34	0.647	1.089	0.647	0.259	0.211	0.204	0.21	0.212	0.219	animal-associated habitat	animal-associated habitat	animal-associated habitat	host-associated	Hawaii Institute of Marine Biology	21.434	-157.7878	0
+4454702.3		138	0.633	1.362	0.84	0.679	0.575	0.633	0.61	0.607	0.615	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.864633	-43.160464	1
+4440061.3		33	0.595	1.169	0.595	1.115	1.131	1.17	1.126	1.166	1.149	marine habitat	marine habitat	marine habitat	water	Highborne Cay Island	24.7257	-76.8188	0
+4440371.3		33	0.592	0.844	0.592	0.562	0.469	0.455	0.424	0.461	0.454	animal-associated habitat	animal-associated habitat	animal-associated habitat	host-associated	Hawaii Institute of Marine Biology	21.434	-157.7878	0
+4440431.3		33	0.591	0.617	0.591	0.424	0.452	0.489	0.516	0.492	0.461	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4441131.3		249	0.564	1.286	0.695	0.589	0.513	0.579	0.588	0.564	0.556	marine habitat	marine habitat	marine habitat	water	Tropical South Pacific - 300 miles from F. Polynesia	-9.5711	-131.49167	1.9
+4440421.3		33	0.542	0.517	0.542	0.34	0.307	0.345	0.334	0.343	0.342	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4489643.3		23	0.523	1.341	0.523	0.444	0.398	0.396	0.392	0.39	0.385	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	subterrestrial habitat	soil	soil	Boston, MA, USA	42.3	-71.1	0
+4441132.3		239	0.498	0.886	0.73	0.661	0.46	0.497	0.444	0.498	0.51	marine habitat	marine habitat	marine habitat	water	Chesapeake Bay, MD	38.133	-76.383	2.07
+4503529.3		30	0.487	0.769	0.487	0.435	0.441	0.398	0.406	0.405	0.39	mediterranean sea biome	marine bulk water	coastal water	water	Sabine Island east dock, Pensacola Beach, FL	30.333	-87.137	0
+4443777.3		77	0.483	0.867	0.704	0.483	0.429	0.434	0.402	0.43	0.429	ocean biome	marine habitat	anoxic water	water	Iquique	20.116183	70.793567	90
+4440377.3		34	0.47	0.516	0.47	0.459	0.41	0.404	0.421	0.375	0.366	animal-associated habitat	animal-associated habitat	animal-associated habitat	host-associated	Hawaii Institute of Marine Biology	21.434	-157.7878	0
+4443776.3		75	0.467	0.605	0.652	0.467	0.468	0.489	0.475	0.491	0.476	ocean biome	marine habitat	anoxic water	water	Iquique	20.104183	70.803417	55
+4443708.3		73	0.465	1.877	0.297	0.465	0.408	0.384	0.376	0.377	0.38	marine habitat	marine habitat	marine habitat	water	coastal waters of a fjord close to Bergen, Norway	60.27	5.22	0
+4474000.3		348	0.458	1.17	1.083	0.582	0.458	0.43	0.443	0.459	0.458	freshwater biome	Wastewater treatment plant	Activated sludge	wastewater|sludge	Morges	46.5166	6.51014	0.5
+4440412.3		33	0.455	0.409	0.455	0.288	0.28	0.264	0.263	0.273	0.26	freshwater	freshwater	freshwater	water	Tilapia Channel (FW1) at Kent SeaTech, Salton Sea, CA	33.537594	-116.097751	0
+4440325.3		32	0.355	0.985	0.355	0.408	0.373	0.359	0.353	0.358	0.363	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4440372.3		35	0.35	0.379	0.35	0.212	0.182	0.179	0.179	0.178	0.178	animal-associated habitat	animal-associated habitat	animal-associated habitat	host-associated	Hawaii Institute of Marine Biology	21.434	-157.7878	0
+4440144.4		33	0.35	0.538	0.35	0.212	0.182	0.179	0.179	0.178	0.178	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4498776.3		28	0.331	0.563	0.331	0.183	0.153	0.149	0.148	0.151	0.151	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4497985.3		35	0.331	0.563	0.331	0.183	0.153	0.149	0.148	0.151	0.151	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4440328.3		33	0.33	0.299	0.33	0.161	0.116	0.167	0.141	0.161	0.17	extreme habitat ; hypersaline	extreme habitat ; hypersaline	extreme habitat ; hypersaline	water	Salton Sea, California	33.4167	-115.9167	14
+4454692.3		133	0.326	0.569	0.552	0.45	0.326	0.326	0.317	0.336	0.337	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.830467	-43.246569	1
+4440381.3		35	0.325	0.509	0.325	0.389	0.349	0.346	0.344	0.328	0.33	animal-associated habitat	animal-associated habitat	animal-associated habitat	host-associated	Hawaii Institute of Marine Biology	21.434	-157.7878	0
+4443745.3		229	0.318	0.613	0.741	0.559	0.339	0.31	0.317	0.318	0.324	hot spring ; microbial mat	hot spring ; microbial mat	hot spring ; microbial mat	microbial mat|biofilm	Yellowstone Natl Park Hot Springs, Moran, WY	44.376	-110.690	.001
+4489635.3		23	0.298	0.322	0.298	0.313	0.308	0.307	0.303	0.302	0.298	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	human-associated habitat	feces	human-gut	Boston, MA, USA	42.3	-71.1	0
+4441588.3		146	0.269	0.487	0.38	0.326	0.287	0.269	0.261	0.262	0.266	marine habitat	marine habitat	marine habitat	water	Caribbean Sea, Rosario Bank	18.0367	-83.785	1.7
+4440321.3		34	0.253	1.083	0.253	0.096	0.071	0.063	0.077	0.07	0.065	marine habitat	marine habitat	marine habitat	microbial mat|biofilm	Rio Mesquites	26.9125	-102.115	0
+4440379.3		35	0.234	0.326	0.234	0.271	0.245	0.32	0.287	0.298	0.313	animal-associated habitat	animal-associated habitat	animal-associated habitat	host-associated	Hawaii Institute of Marine Biology	21.434	-157.7878	0
+4440414.3		33	0.232	0.241	0.232	0.187	0.164	0.156	0.153	0.155	0.155	freshwater	freshwater	freshwater	water	prebead pond at Kent SeaTech, Salton Sea, CA	33.537594	-116.097751	0
+4440427.3		32	0.224	0.177	0.224	0.134	0.105	0.101	0.098	0.098	0.106	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4440417.3		33	0.14	0.324	0.14	0.223	0.233	0.3	0.259	0.319	0.307	marine biome	saline evaporation pond	saline water	water	Chula Vista, CA	32.6	-117.1072	0
+4489636.3		23	0.126	0.169	0.126	0.143	0.141	0.142	0.143	0.142	0.141	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	human-associated habitat	feces	human-gut	Boston, MA, USA	42.3	-71.1	0
+4442450.3		198	0.1	0.529	0.331	0.196	0.116	0.105	0.1	0.103	0.105	marine habitat	marine habitat	marine habitat	water	Chesapeake Bay	38.5667	-76.433	surface
+4454697.3		139	0.085	0.386	0.107	0.077	0.098	0.085	0.084	0.095	0.082	estuarine biome	ocean	coastal water	water	Rio de Janeiro	-22.830467	-43.246569	1
+4498777.3		28	0.076	0.122	0.076	0.028	0.019	0.007	0.018	0.008	0.003	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4497986.3		35	0.076	0.122	0.076	0.028	0.019	0.007	0.018	0.008	0.003	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4440380.3		35	0.059	0.136	0.059	0.02	0.003	0	0	0	0.008	animal-associated habitat	animal-associated habitat	animal-associated habitat	host-associated	Hawaii Institute of Marine Biology	21.434	-157.7878	0
+4498775.3		27	0.057	0.07	0.057	0	0	0	0	0	0	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4497984.3		36	0.057	0.07	0.057	0	0	0	0	0	0	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4440323.3		33	0.014	0.105	0.014	0.096	0.069	0.079	0.055	0.091	0.087	marine habitat	marine habitat	marine habitat	water	Highborne Cay Island	24.7257	-76.8188	0
+4498774.3		26	0.001	0.009	0.001	0	0	0	0	0	0	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4497983.3		36	0.001	0.009	0.001	0	0	0	0	0	0	Tropical/Subtropical Desert Division (320)	archeological site	soil	miscellaneous	Teposcolula Yucundaa, Oaxaca District	17.550556	-97.425556	0
+4489637.3		23	0.001	0.009	0.001	0	0	0	0	0	0	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	human-associated habitat	feces	human-gut	Boston, MA, USA	42.3	-71.1	0
+4489633.3		23	0.001	0.009	0.001	0	0	0	0	0	0	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	human-associated habitat	feces	human-gut	Boston, MA, USA	42.3	-71.1	0
+4489632.3		23	0	0.033	0	0	0	0	0	0	0	Temperate broad-leaf forests or woodlands and subpolar deciduous thickets	human-associated habitat	feces	human-gut	Boston, MA, USA	42.3	-71.1	0
+
