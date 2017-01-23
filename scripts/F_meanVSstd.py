@@ -74,6 +74,8 @@ parser.add_argument('--plot-random', default=None, metavar='DIRECTORY',
 parser.add_argument('-c', '--cluster-alg', choices=['ward', 'birch'],
                     default='ward',
                     help='Chose clustering algorithm [ward]. Ward linked hierarchical clustering or birch clustering')
+parser.add_argument('--labels', type=int,
+                    help="Plot the labels of the points in the specified cluster")
 args = parser.parse_args()
 
 # input file
@@ -195,11 +197,12 @@ xlims = limits(x[:, 0])
 axscatter.set_ylim(ylims)
 axscatter.set_xlim(xlims)
 
-
-clust2 = x[y_pred == 1]
-labels = data.index[y_pred == 1]
-for i in range(len(labels)):
-    axscatter.annotate(labels[i], clust2[i], alpha=0.5, fontsize='xx-small')
+if type(args.labels) == int:
+    clust2 = x[y_pred == args.labels]
+    labels = data.index[y_pred == args.labels]
+    for i in range(len(labels)):
+        axscatter.annotate(labels[i], clust2[i],
+                           alpha=0.5, fontsize='xx-small')
 
 
 axscatter.set_xlabel("Entropy mean", fontweight='bold')
