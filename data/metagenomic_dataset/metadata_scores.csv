@@ -1,4 +1,4 @@
-ID 	Private data (old id MG-RAST) 	MSL	Sscore 2017	Sscore2014	30	60	100	150	200	250	300	biome	feature	material	env_package	location	latitude	longitude	depth
+ID 	Private	MSL	Sscore_2017	Sscore_2014	30	60	100	150	200	250	300	biome	feature	material	env_package	location	latitude	longitude	depth
 4524971.3		52	16.488	16.711	13.401	16.488	15.234	15.513	15.555	15.705	15.603	aquatic biome	microbial feature	sludge	wastewater|sludge	shenzhen xili	22	114	0
 4451035.3		79	16.459	16.705	13.372	16.459	15.205	15.487	15.527	15.677	15.575	Mangrove biome	intertidal zone	estuarine mud	soil	Bertioga	-25.08389	-45.25083	0
 4441022.3		75	16.394	15.29	13.39	16.394	15.13	15.396	15.384	15.528	15.426	estuarine biome	marine benthic feature	sandy sediment	sediment	Coorong Lagoon	36.166	139.651	0
