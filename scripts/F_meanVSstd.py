@@ -36,7 +36,7 @@ def limits(array, percentage=0.01):
 
     Returns
     -------
-    out : Returns a 2 values tuple. First value is low limit and second 
+    out : Returns a 2 values tuple. First value is low limit and second
           value is the high limit
 
     """
@@ -54,11 +54,7 @@ def limits(array, percentage=0.01):
 # options
 epilog = """Example:
 
-<<<<<<< HEAD:scripts/old_script_cluster.py
-$ python3 F_meanVSstd.py entropies_matrix_entropies.tab  -o figure.png"""
-=======
 $ python3 F_meanVSstd entropies_matrix_entropies.tab -o figure.png"""
->>>>>>> 215f4330d594ef2e58c8b415103abbe4044a42fe:scripts/F_meanVSstd.py
 
 parser = argparse.ArgumentParser(description=__doc__, epilog=epilog)
 parser.add_argument('filename',
@@ -184,9 +180,9 @@ if args.plot_random:
                       label='Random samples', alpha=1)
     # from matplotlib.colors import LogNorm
     # axscatter.hist2d(r_means.get_values().flatten(),
-    #                  r_variation.get_values().flatten(),
-    #                  bins=50, norm=LogNorm(), cmap='Greys',
-    #                  label='Random samples')
+    #                  r_var_.get_values().flatten(),
+    #                  bins = 50, norm = LogNorm(), cmap = 'spring', alpha = 0.8,
+    #                  label = 'Random samples')
 
 # scatter plot
 for i in clusts:
