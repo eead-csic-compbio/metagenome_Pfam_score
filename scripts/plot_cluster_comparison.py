@@ -23,10 +23,10 @@ behavior.
 print(__doc__)
 
 import time
-
+import argparse
 import numpy as np
 import matplotlib.pyplot as plt
-
+from  sys import argv
 from sklearn import cluster, datasets
 from sklearn.neighbors import kneighbors_graph
 from sklearn.preprocessing import StandardScaler
@@ -59,7 +59,8 @@ plt.subplots_adjust(left=.02, right=.98, bottom=.001, top=.96, wspace=.05,
 ###########
 import pandas as pd
 import numpy as np
-fname = 'matrices_pfam_entropies.tab'
+#fname = 'entropies_matrix_entropies.tab'
+fname = argv[1]
 data = pd.read_table(fname, index_col=0, na_values=['NA', "SIN DATO"], decimal='.')
 means = np.array(data.mean(1))
 stds = np.array(data.std(1))
