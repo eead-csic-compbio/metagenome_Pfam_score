@@ -11,7 +11,7 @@
 # Copyright:   (c) acph 2015
 # Licence:     GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007
 # ------------------------------
-"""Mean vs coefficient of variation figure of profiles and ward linkage hyerarchical clustering. Creates a file for
+"""Mean vs standard deviation figure of profiles and ward linkage hierarchical clustering. Creates a file for
 each cluster that contains the list of profiles that are included."""
 
 import os
@@ -64,8 +64,9 @@ parser.add_argument(
     '-o', '--out_fig', help='Stores the figure in the specified file (and format).')
 parser.add_argument('--dpi', type=int, default=300,
                     help='Resolution for output figure file (default = 300)')
-parser.add_argument('-s', '--sigma', action='store_true',
-                    help='Plot standard deviation instead of coefficient of variation.')
+parser.add_argument('-v', '--variation', default='std',
+                    choices=['std', 'cv', 'id', 'range'],
+                    help='Select the measurement of variation to plot in y axis: standard devitation (std), coefficient of variation (cv), index of dispersion (id) or range. cv and id cannot be used in variables with negative values.')
 parser.add_argument('-k', type=int, choices=range(2, 9), default=3,
                     help='Number of k-means clusters (default = 3)')
 parser.add_argument('--plot-random', default=None, metavar='DIRECTORY',
@@ -87,21 +88,30 @@ mask = mask1 * mask2
 data = data.ix[mask]
 means = np.array(data.mean(1))
 stds = np.array(data.std(1))
-cv = stds / means                    # Coefficient of variation
+
+#############
+# Variation #
+#############
+# cv = stds / means                    # Coefficient of variation
 # ID = stds**2 / means                 # Index of dispersion
-# cv = ID
-# _range = np.array(data).ptp(1)      # Data Range
-# cv = _range
+#_range = np.array(data).ptp(1)       # Data Range
+if args.variation == 'std':
+    var_ = stds
+    y_label = 'Entropy standard deviation'
+elif args.variation == 'cv':
+    var_ = stds / means
+    y_label = 'Entropy coefficient of variation'
+elif args.variation == 'id':
+    var_ = stds**2 / means
+    y_label = 'Entropy index of dispersion'
+elif args.variation == 'range':
+    var_ = np.array(data).ptp(1)
+    y_label = 'Entropy range'
 
 ##############
 # Clustering #
 ##############
-if args.sigma:
-    x = np.vstack((means, stds)).T
-    y_label = 'Entropy standard deviation'
-else:
-    x = np.vstack((means, cv)).T
-    y_label = 'Entropy variation coefficient'
+x = np.vstack((means, var_)).T
 k = args.k
 # noramlize data
 X = StandardScaler().fit_transform(x)
@@ -133,10 +143,11 @@ axybox = fig.add_axes(ybox_pos, frameon=False)
 # plot random
 if args.plot_random:
     dataframes = {}
-    files = os.listdir(args.plot_random)
+    infolder = args.plot_random
+    files = os.listdir(infolder)
     files = [f for f in files if '.tab' in f]
     for f in files:
-        path = os.path.join(args.plot_random, f)
+        path = os.path.join(infolder, f)
         key = f.split('.')[-2]
         df = pd.read_table(path)
         del df[df.columns[0]]
@@ -144,15 +155,24 @@ if args.plot_random:
     panel = pd.Panel(dataframes)
     r_means = panel.mean(0)
     r_stds = panel.std(0)
-    if args.sigma:
-        r_variation = r_stds
-    else:
-        # coefficent of variation
-        r_variation = r_stds / r_means
+    if args.variation == 'std':
+        r_var_ = r_stds
+    elif args.variation == 'cv':
+        r_var_ = r_stds / r_means
+    elif args.variation == 'id':
+        r_var_ = r_stds**2 / r_means
+    elif args.variation == 'range':
+        r_var_ = panel.max(0) - panel.min(0)
 #    import seaborn as sns
 #    sns.kdeplot(r_means, r_variation, ax=axscatter)
-    axscatter.scatter(r_means, r_variation, color='mistyrose',
-                      label='Random samples', alpha=0.8)
+    axscatter.scatter(r_means, r_var_, color='mistyrose',
+                      label='Random samples', alpha=1)
+    # from matplotlib.colors import LogNorm
+    # axscatter.hist2d(r_means.get_values().flatten(),
+    #                  r_variation.get_values().flatten(),
+    #                  bins=50, norm=LogNorm(), cmap='Greys',
+    #                  label='Random samples')
+
 # scatter plot
 for i in clusts:
     mask = y_pred == i
@@ -198,15 +218,6 @@ plt.setp(bpy['boxes'], color='black', linewidth=1.5)
 plt.setp(bpy['whiskers'], color='black', linewidth=1.5)
 plt.setp(bpy['caps'], color='black', linewidth=1.5)
 plt.setp(bpy['fliers'], color='black')
-
-
-# dataframes = {}
-# for f in files:
-#     path = os.path.join(fol, f)
-#     key = f.split('.')[-2]
-#     df = pd.read_table(path)
-#     del df[df.columns[0]]
-#     dataframes[key] = df
 
 
 # save clusters
