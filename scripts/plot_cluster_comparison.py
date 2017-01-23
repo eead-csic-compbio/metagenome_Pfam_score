@@ -144,4 +144,7 @@ for i_dataset, dataset in enumerate(datasets):
                  horizontalalignment='right')
         plot_num += 1
 
-plt.show()
+#plt.show()
+
+plt.savefig(argv[1]+"_cluster.comparision.png")
+plt.close()
