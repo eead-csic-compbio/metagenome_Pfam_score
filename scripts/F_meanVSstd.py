@@ -11,7 +11,7 @@
 # Copyright:   (c) acph 2015
 # Licence:     GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007
 # ------------------------------
-"""Mean vs standard deviation figure of profiles and ward linkage hierarchical clustering. Creates a file for
+"""Mean vs standard deviation figure of profiles and clustering. Creates a file for
 each cluster that contains the list of profiles that are included."""
 
 import os
@@ -66,11 +66,14 @@ parser.add_argument('--dpi', type=int, default=300,
                     help='Resolution for output figure file (default = 300)')
 parser.add_argument('-v', '--variation', default='std',
                     choices=['std', 'cv', 'id', 'range'],
-                    help='Select the measurement of variation to plot in y axis: standard devitation (std), coefficient of variation (cv), index of dispersion (id) or range. cv and id cannot be used in variables with negative values.')
+                    help='Select the measurement of variation to plot in y axis [std]: standard devitation (std), coefficient of variation (cv), index of dispersion (id) or range. cv and id cannot be used in variables with negative values.')
 parser.add_argument('-k', type=int, choices=range(2, 9), default=3,
                     help='Number of k-means clusters (default = 3)')
 parser.add_argument('--plot-random', default=None, metavar='DIRECTORY',
                     help='Folder where the *.tab files containing random samples are stored.')
+parser.add_argument('-c', '--cluster-alg', choices=['ward', 'birch'],
+                    default='ward',
+                    help='Chose clustering algorithm [ward]. Ward linked hierarchical clustering or birch clustering')
 args = parser.parse_args()
 
 # input file
@@ -122,10 +125,16 @@ connectivity = kneighbors_graph(X, n_neighbors=10, include_self=False)
 # ward clustering
 ward = cluster.AgglomerativeClustering(
     n_clusters=k, linkage='ward', connectivity=connectivity)
+# birch clustering
+birch = cluster.Birch(n_clusters=k)
+
+# algorithm selection
+algorithms = {'ward': ward, 'birch': birch}
+alg = algorithms[args.cluster_alg]
 # fit
-ward.fit(X)
+alg.fit(X)
 # cluster labels
-y_pred = ward.labels_
+y_pred = alg.labels_
 clusts = np.unique(y_pred)
 cs_ = ['b', 'g', 'r', 'y', 'k', 'c', 'm', 'grey']
 
@@ -226,9 +235,13 @@ for i in clusts:
     dset = data.ix[mask]
     m = dset.mean(1)
     s = dset.std(1)
-    _cv = m / s
-    df = pd.concat((m, s, _cv), 1, keys=['mean', 'std', 'VC'])
-    fname = 'cluster_{}_pfam.tab'.format(i)
+    _cv = s / m
+    _id = s**2 / m
+    _r = dset.max(1) - dset.min(1)  # range
+    df = pd.concat((m, s, _cv, _id, _r), 1,
+                   keys=['mean', 'std', 'cv', 'id', 'range'])
+    fname = 'cluster_{}_{}_k{}_{}.tab'.format(i, args.variation,
+                                              args.k, args.cluster_alg)
     df.to_csv(fname, sep='\t')
 
 if args.out_fig:
