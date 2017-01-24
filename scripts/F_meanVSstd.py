@@ -83,8 +83,8 @@ args = parser.parse_args()
 # fname = 'matrices_curadas_sep_entropies.tab'
 fname = args.filename
 
-data = pd.read_table(fname, index_col=0, na_values=['NA', "SIN DATO"],
-                     decimal='.')
+data = pd.read_table(fname, index_col=0, na_values=['NA', "SIN DATO"])
+#                     decimal='.')
 means = np.array(data.mean(1))
 stds = np.array(data.std(1))
 mask1 = ~np.isnan(means)
