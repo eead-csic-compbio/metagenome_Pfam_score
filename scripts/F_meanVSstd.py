@@ -160,7 +160,7 @@ if args.plot_random:
     for f in files:
         path = os.path.join(infolder, f)
         key = f.split('.')[-2]
-        df = pd.read_table(path)
+        df = pd.read_table(path, index_col=0, na_values=['NA'])
         del df[df.columns[0]]
         dataframes[key] = df
     panel = pd.Panel(dataframes)
