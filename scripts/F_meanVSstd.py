@@ -143,13 +143,15 @@ cs_ = ['b', 'g', 'r', 'y', 'k', 'c', 'm', 'grey']
 # figure
 fig = plt.figure()
 # Ax positions
-scat_pos = [0.15, 0.15, 0.7, 0.7]
-xbox_pos = [0.15, 0.85, 0.7, 0.1]
-ybox_pos = [0.85, 0.15, 0.1, 0.7]
+# scat_pos = [0.15, 0.15, 0.7, 0.7]
+# xbox_pos = [0.15, 0.85, 0.7, 0.1]
+# ybox_pos = [0.85, 0.15, 0.1, 0.7]
 
-axscatter = fig.add_axes(scat_pos, frameon=True)
-axxbox = fig.add_axes(xbox_pos, frameon=False)
-axybox = fig.add_axes(ybox_pos, frameon=False)
+
+axscatter = fig.add_subplot(111)
+# axscatter = fig.add_axes(scat_pos, frameon=True)
+# axxbox = fig.add_axes(xbox_pos, frameon=False)
+# axybox = fig.add_axes(ybox_pos, frameon=False)
 
 # plot random
 if args.plot_random:
@@ -176,13 +178,24 @@ if args.plot_random:
         r_var_ = panel.max(0) - panel.min(0)
 #    import seaborn as sns
 #    sns.kdeplot(r_means, r_variation, ax=axscatter)
-    axscatter.scatter(r_means, r_var_, color='mistyrose',
-                      label='Random samples', alpha=1)
-    # from matplotlib.colors import LogNorm
-    # axscatter.hist2d(r_means.get_values().flatten(),
-    #                  r_var_.get_values().flatten(),
-    #                  bins = 50, norm = LogNorm(), cmap = 'spring', alpha = 0.8,
-    #                  label = 'Random samples')
+    if args.variation in ['cv', 'id']:
+        axscatter.scatter(r_means, r_var_, color='mistyrose',
+                          label='Random samples', alpha=1)
+        print("Warning!!! - The 2d histogram of random data only",
+              "works with standard deviation and range.\n",
+              "Plotting simple scatter plot for random data.")
+
+    else:
+        from matplotlib.colors import LogNorm
+        h2d = axscatter.hist2d(r_means.get_values().flatten(),
+                               r_var_.get_values().flatten(),
+                               bins=50, norm=LogNorm(), cmap='RdPu', alpha=0.7,
+                               label='Random samples')
+        mappable = h2d[3]
+        cbar = plt.colorbar(mappable, pad=0.02, fraction=0.1, use_gridspec=False,
+                            anchor=(0.0, 0.0),
+                            shrink=0.5)
+        cbar.set_label('Random sample frequency (log)', fontsize='small')
 
 # scatter plot
 for i in clusts:
@@ -210,27 +223,27 @@ axscatter.set_xlabel("Entropy mean", fontweight='bold')
 axscatter.set_ylabel(y_label, fontweight='bold')
 
 # box plots
-bpx = axxbox.boxplot(x[:, 0], vert=False)
-axxbox.set_xticks([])
-axxbox.set_yticks([])
-axxbox.set_xlim(xlims)
-axxbox.set_ylim(0.9, 1.1)
+# bpx = axxbox.boxplot(x[:, 0], vert=False)
+# axxbox.set_xticks([])
+# axxbox.set_yticks([])
+# axxbox.set_xlim(xlims)
+# axxbox.set_ylim(0.9, 1.1)
 
-bpy = axybox.boxplot(x[:, 1], vert=True)
-axybox.set_xticks([])
-axybox.set_yticks([])
-axybox.set_ylim(ylims)
-axybox.set_xlim(0.9, 1.1)
+# bpy = axybox.boxplot(x[:, 1], vert=True)
+# axybox.set_xticks([])
+# axybox.set_yticks([])
+# axybox.set_ylim(ylims)
+# axybox.set_xlim(0.9, 1.1)
 
-plt.setp(bpx['boxes'], color='black', linewidth=1.5)
-plt.setp(bpx['whiskers'], color='black', linewidth=1.5)
-plt.setp(bpx['caps'], color='black', linewidth=1.5)
-plt.setp(bpx['fliers'], color='black')
+# plt.setp(bpx['boxes'], color='black', linewidth=1.5)
+# plt.setp(bpx['whiskers'], color='black', linewidth=1.5)
+# plt.setp(bpx['caps'], color='black', linewidth=1.5)
+# plt.setp(bpx['fliers'], color='black')
 
-plt.setp(bpy['boxes'], color='black', linewidth=1.5)
-plt.setp(bpy['whiskers'], color='black', linewidth=1.5)
-plt.setp(bpy['caps'], color='black', linewidth=1.5)
-plt.setp(bpy['fliers'], color='black')
+# plt.setp(bpy['boxes'], color='black', linewidth=1.5)
+# plt.setp(bpy['whiskers'], color='black', linewidth=1.5)
+# plt.setp(bpy['caps'], color='black', linewidth=1.5)
+# plt.setp(bpy['fliers'], color='black')
 
 
 # save clusters
