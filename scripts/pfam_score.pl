@@ -11,7 +11,7 @@ use FindBin '$Bin';
 # Output:
 # 1) TAB-separated output with Pfam entropy scores
 
-# B Contreras-Moreira, V de Anda 2016
+# B Contreras-Moreira, V de Anda 2017
 
 
 
@@ -24,8 +24,7 @@ my @COLORS = ( '#FF9999', '#FF6666',  '#FF3333', '#FF0000', '#CC0000' );
 
 my ($INP_pfamsearchfile,$INP_infile_bzipped,$INP_matrixdir) = ('',0,$DEFAULTMATRIXDIR);
 my ($INP_fragment_size,$INP_help,$INP_keggmapfile,$INP_minentropy) = ($DEFAULTFRAGSIZE,0,'',$DEFAULTMINRELENTROPY);
-my ($INP_pathways,@user_pathways,$pw) = ('');
-my ($RAND_percent)=('');
+my ($INP_pathways,@user_pathways,$pw,$RAND_percent) = ('');
 
 GetOptions
 (
@@ -88,7 +87,7 @@ if($INP_keggmapfile && !-s $INP_keggmapfile)
 }
 
 
-if($RAND_percent < 1)
+if(defined($RAND_percent) && ($RAND_percent < 1 || $RAND_percent > 100))
 {
     die "# ERROR : invalid percent to compute the scores ($RAND_percent)\n";
 }
@@ -112,7 +111,7 @@ print "# $0 call:\n# -input $INP_pfamsearchfile -size $INP_fragment_size -bzip $
 
 ################################################
 
-my $random=$RAND_percent; 
+my ($random,%skip_random,$r) = ( $RAND_percent ); 
 
 my (%HMMentropy,@HMMs,%matchedHMMs,%KEGGmap,$hmm,$KEGGid,$entropy);
 
@@ -140,29 +139,22 @@ while(<HMMMATRIX>)
 		{
 			$HMMentropy{$HMMs[$hmm]} = $entropies[$hmm];
 		
-
-    if  ($RAND_percent) 
-    { 
-      my $total_hmm= scalar(keys(@HMMs);
-      my $pfam_number=int($random *100/$my_total_hmm);
-        foreach $hmm (0..$pfam_number-1)
+      if($RAND_percent) 
+      { 
+        my $hmm_number = scalar(@HMMs);
+        my $total_hmms2skip = int( ((100-$random)/100) * $hmm_number );
+        
+        while(scalar(keys(%skip_random)) < $total_hmms2skip)
         {
-
-        my $i = rand(@HMMs);
-        ($HMMs[$hmm],$HMMs[$i])=($HMMs[$i], $HMMs[$hmm]);       #Swap elements
-
-        my @random_pfam=(', ', @HMMs[0..$pfam_number-1])
+          $r = int(rand($#HMMs));
+          while($skip_random{$HMMs[$r]}){ $r = int(rand($#HMMs)) }
+          $skip_random{$HMMs[$r]} = 1;
+          #print "# skip $r ($total_hmms2skip)\n";
         }
-	}		
-
-
-
-
-
+	    }		
 		}
 		
 		last;
-	
 	}
 }
 close(HMMMATRIX);
@@ -170,7 +162,10 @@ close(HMMMATRIX);
 printf("# total HMMs with assigned entropy in %s : %d\n\n",
 	"$INP_matrixdir/$matrixfile",scalar(keys(%HMMentropy)));
 
-
+if($RAND_percent)
+{
+  printf("# total randomly skipped HMMs: %d\n\n",scalar(keys(%skip_random)));
+}  
 	
 ## parse HMM2KEGG2pathway mappings file if required
 
@@ -245,7 +240,7 @@ close(INFILE);
 my ($qualscore,$matches,$mapscript,$color,%previous) = (0,0,'');
 foreach $hmm (@HMMs)
 {
-   
+  next if($skip_random{$hmm}); 
 
 	$matches = $matchedHMMs{$hmm} || 0;
 	$entropy = $HMMentropy{$hmm} || 0;
