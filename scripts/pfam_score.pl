@@ -25,6 +25,7 @@ my @COLORS = ( '#FF9999', '#FF6666',  '#FF3333', '#FF0000', '#CC0000' );
 my ($INP_pfamsearchfile,$INP_infile_bzipped,$INP_matrixdir) = ('',0,$DEFAULTMATRIXDIR);
 my ($INP_fragment_size,$INP_help,$INP_keggmapfile,$INP_minentropy) = ($DEFAULTFRAGSIZE,0,'',$DEFAULTMINRELENTROPY);
 my ($INP_pathways,@user_pathways,$pw) = ('');
+my ($RAND_percent)=('');
 
 GetOptions
 (
@@ -35,7 +36,9 @@ GetOptions
 	 'matrixdir|dir=s' => \$INP_matrixdir,
 	 'keggmap|km=s'    => \$INP_keggmapfile,
 	 'minentropy|min=f'=> \$INP_minentropy,
-	 'pathway|pw=s'    => \$INP_pathways
+	 'pathway|pw=s'    => \$INP_pathways,
+	'random|rd:i'     => \$RAND_percent
+
 );
 
 if (-t STDIN && ($INP_help || $INP_pfamsearchfile eq ''))
@@ -62,7 +65,11 @@ usage: $0 [options]
  
  -pathway          comma-separated pathway numbers from -keggmap file to consider only member HMMs  (string, \n                    by default all pathways are used, requires -keggmap)
 
+ -random           percent of random  Pfams to compute the score (integer, default off )
+
 EODOC
+
+
 }
    
 if(!-s $INP_pfamsearchfile)
@@ -79,6 +86,15 @@ if($INP_keggmapfile && !-s $INP_keggmapfile)
 {
     die "# ERROR : cannot locate input file -keggmap $INP_keggmapfile\n";
 }
+
+
+if($RAND_percent < 1)
+{
+    die "# ERROR : invalid percent to compute the scores ($RAND_percent)\n";
+}
+
+
+
 elsif($INP_keggmapfile)
 {
 	if($INP_pathways)
@@ -91,9 +107,12 @@ elsif($INP_keggmapfile)
 }
 
 print "# $0 call:\n# -input $INP_pfamsearchfile -size $INP_fragment_size -bzip $INP_infile_bzipped ".
-	"-matrixdir $INP_matrixdir -minentropy $INP_minentropy -keggmap $INP_keggmapfile -pathway $INP_pathways\n\n";
+	"-matrixdir $INP_matrixdir -minentropy $INP_minentropy -keggmap $INP_keggmapfile -pathway $INP_pathways
+         -random $RAND_percent\n\n ";
 
 ################################################
+
+my $random=$RAND_percent; 
 
 my (%HMMentropy,@HMMs,%matchedHMMs,%KEGGmap,$hmm,$KEGGid,$entropy);
 
@@ -120,17 +139,43 @@ while(<HMMMATRIX>)
 		foreach $hmm (0 .. $#HMMs)
 		{
 			$HMMentropy{$HMMs[$hmm]} = $entropies[$hmm];
+		
+
+    if  ($RAND_percent) 
+    { 
+      my $total_hmm= scalar(keys(@HMMs);
+      my $pfam_number=int($random *100/$my_total_hmm);
+        foreach $hmm (0..$pfam_number-1)
+        {
+
+        my $i = rand(@HMMs);
+        ($HMMs[$hmm],$HMMs[$i])=($HMMs[$i], $HMMs[$hmm]);       #Swap elements
+
+        my @random_pfam=(', ', @HMMs[0..$pfam_number-1])
+        }
+	}		
+
+
+
+
+
 		}
 		
 		last;
+	
 	}
 }
 close(HMMMATRIX);
 
 printf("# total HMMs with assigned entropy in %s : %d\n\n",
 	"$INP_matrixdir/$matrixfile",scalar(keys(%HMMentropy)));
+
+
 	
 ## parse HMM2KEGG2pathway mappings file if required
+
+
+
 my %pathways;
 
 if($INP_keggmapfile)
