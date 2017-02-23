@@ -18,13 +18,13 @@ use FindBin '$Bin';
 my $DEFAULTFRAGSIZE  = 100;
 my $DEFAULTMATRIXDIR = $Bin.'/../data/entropies_matrix/';
 my $DEFAULTMATRIXFILENAME = 'genomes_refseq_nr_22122016_sizeXXX_cover10.faa.out.hmmsearch.tab.csv'; 
-my $DEFAULTMINRELENTROPY  = 0;
+my $DEFAULTMINRELENTROPY  = -9;
 
 my @COLORS = ( '#FF9999', '#FF6666',  '#FF3333', '#FF0000', '#CC0000' );
 
 my ($INP_pfamsearchfile,$INP_infile_bzipped,$INP_matrixdir) = ('',0,$DEFAULTMATRIXDIR);
 my ($INP_fragment_size,$INP_help,$INP_keggmapfile,$INP_minentropy) = ($DEFAULTFRAGSIZE,0,'',$DEFAULTMINRELENTROPY);
-my ($INP_pathways,@user_pathways,$pw,$RAND_percent) = ('');
+my ($INP_pathways,$RAND_percent,@user_pathways,$pw) = ('',0);
 
 GetOptions
 (
@@ -58,7 +58,7 @@ usage: $0 [options]
  
  -matrixdir        directory containing pre-computed entropies from peptides of variable size (string, \n                    default $DEFAULTMATRIXDIR)
  
- -minentropy       min relative entropy of HMMs to be considered (float)
+ -minentropy       min relative entropy of HMMs to be considered (unsigned float)
 						 
  -keggmap          file with HMM to KEGG mappings
  
@@ -87,7 +87,7 @@ if($INP_keggmapfile && !-s $INP_keggmapfile)
 }
 
 
-if(defined($RAND_percent) && ($RAND_percent < 1 || $RAND_percent > 100))
+if($RAND_percent && ($RAND_percent < 1 || $RAND_percent > 100))
 {
     die "# ERROR : invalid percent to compute the scores ($RAND_percent)\n";
 }
@@ -106,8 +106,8 @@ elsif($INP_keggmapfile)
 }
 
 print "# $0 call:\n# -input $INP_pfamsearchfile -size $INP_fragment_size -bzip $INP_infile_bzipped ".
-	"-matrixdir $INP_matrixdir -minentropy $INP_minentropy -keggmap $INP_keggmapfile -pathway $INP_pathways
-         -random $RAND_percent\n\n ";
+	"-matrixdir $INP_matrixdir -minentropy $INP_minentropy -random $RAND_percent -keggmap $INP_keggmapfile ".
+  "-pathway $INP_pathways\n\n ";
 
 ################################################
 
@@ -168,9 +168,6 @@ if($RAND_percent)
 }  
 	
 ## parse HMM2KEGG2pathway mappings file if required
-
-
-
 my %pathways;
 
 if($INP_keggmapfile)
@@ -229,7 +226,7 @@ while(<INFILE>)
 	{
 		$matchedHMMs{$hmm}++;
 		if($matchedHMMs{$hmm} > $maxmatches){ $maxmatches = $matchedHMMs{$hmm} }
-		#print "$hmm $entropy\n";
+		#print "$hmm $HMMentropy{$hmm}\n";
 	}
 }
 close(INFILE);
