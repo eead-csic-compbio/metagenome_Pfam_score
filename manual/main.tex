@@ -1499,37 +1499,6 @@ containing the random scores>
 \end{verbatim}
 
 
-\subsection{ROC curves}
-To get the accuracy and precision of the score to predict the metabolism of
-interest, in our case S-energy based microorganism.
-Open a notebook terminal and follow these comand lines
-
-\begin{verbatim}
-ipython3 notebook 
-
-from itertools import cycle
-from sklearn import svm, datasets
-from sklearn.metrics import roc_curve, auc
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import label_binarize
-from sklearn.multiclass import OneVsRestClassifier
-from scipy import interp
-from sklearn import metrics
-from subprocess import call
-import sys
-import random
-import re
-import time
-
-%matplotlib inline
-import numpy as np
-import matplotlib.pylab as plt
-import pandas as pd
-import seaborn as sns
-from scipy import stats
-import numpy as np
-import matplotlib
-
 
 
 
