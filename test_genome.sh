@@ -18,7 +18,7 @@ echo "Domain composition done"
 
 for file in test/*.tab; do \
   perl scripts/pfam_score.pl -input $file \
-  -matrixdir  data/entropies_matrix -size 500 > $file.score; \
+  -matrixdir  sulfur_data_test/entropies_matrix -size 500 > $file.score; \
   echo $file.score; tail $file.score; \
 done
 
