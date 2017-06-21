@@ -22,18 +22,17 @@ These inputs are processed in order to train a classifier which internally uses 
 
 Optionally, genomes or metagenomes provided by the user can be scored with the trained classifier.
 
+The algoritm is divided in four stages, which are explained in detail in the [manual](./manual/manual.html).
+Once a classifier has been trained, such as the Sulfur cycle, stages 1 and 3 can be skipped. 
 
-The algoritm is divided in four stages. 
-Steps 1 and 3 can be skipped if a classifier was previously trained, such as the Sulfur cycle:
+<!--
+Falta figura con leyenda y talvez ligas a las 4 etapas en el manual
 
-## STAGE 1. Compilation of datasets and databases 
-<!-- Source: [Stage 1](Stage1.Rmd) -->
+STAGE 1. Compilation of datasets and databases 
 
-##STAGE 2. Annotating protein domains
-<!-- Source: [Stage 2](Stage2.Rmd) -->
+STAGE 2. Annotating protein domains
 
-##STAGE 3. Estimating relative entropy of protein domains
-<!-- Source: [Stage 3](Stage3.Rmd) -->
+STAGE 3. Estimating relative entropy of protein domains
 
-##STAGE 4. Sulfur Score (SS) and interpretation
-<!-- Source: [Stage 4 ](Stage4.Rmd) -->
+STAGE 4. Sulfur Score (SS) and interpretation
+ -->
