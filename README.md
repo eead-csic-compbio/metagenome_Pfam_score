@@ -12,7 +12,7 @@ This computational pipeline was designed to evaluate the importance of global bi
 or major metabolic pathways in multigenomic scale. 
 It has been thoroughly tested with the Sulfur cycle (see [benchmark](./scripts/MEBS.figures.ipynb)) 
 but also with some other cycles (papers in preparation). 
-The scripts are written in bash, perl5 and python3.
+The scripts are written in bash, perl5 and python3 and have been tested under Linux.
 
 # Scoring your data (Sulfur cycle)
 
