@@ -22,8 +22,8 @@ These inputs are processed in order to train a classifier which internally uses 
 
 Optionally, genomes or metagenomes provided by the user can be scored with the trained classifier.
 
-The algoritm is divided in four stages, which are explained in detail in the [manual](./manual/manualv1.pdf).
-Once a classifier has been trained, such as the Sulfur cycle, stages 1 and 3 can be skipped. 
+The algoritm is divided in four steps, which are explained in detail in the [manual](./manual/manualv1.pdf).
+Once a classifier has been trained, such as the Sulfur cycle, steps 1 and 3 can be skipped. 
 
 ![flowchart](./manual/flowchart.png)
 
