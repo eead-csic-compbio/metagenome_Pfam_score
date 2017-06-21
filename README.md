@@ -18,7 +18,7 @@ The required input data are:
 1. FASTA file with peptides sequences of proteins involved in the cycle/pathway of interest.
 2. List of RefSeq accesions of (curated) genomes known to be involved in the cycle/pathway of interest.
 
-These inputs are processed in order to train a classifier which internally uses Pfam domains.
+These inputs are processed in order to train a classifier which internally uses [Pfam](http://pfam.xfam.org) domains.
 
 Optionally, genomes or metagenomes provided by the user can be scored with the trained classifier.
 
