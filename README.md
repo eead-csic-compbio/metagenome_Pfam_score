@@ -25,6 +25,8 @@ Optionally, genomes or metagenomes provided by the user can be scored with the t
 The algoritm is divided in four stages, which are explained in detail in the [manual](./manual/manualv1.pdf).
 Once a classifier has been trained, such as the Sulfur cycle, stages 1 and 3 can be skipped. 
 
+![flowchart](./manual/Figure1.tif)
+
 <!--
 Falta figura con leyenda y talvez ligas a las 4 etapas en el manual
 
