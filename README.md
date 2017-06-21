@@ -15,8 +15,8 @@ We hope it can be of help to other researchers. The scripts are written in perl5
 
 The required input data are:
 
-i.   FASTA file with peptides sequences of proteins involved in the cycle/pathway of interest.
-ii.  List of RefSeq accesions of (curated) genomes known to be involved in the cycle/pathway of interest.
+1. FASTA file with peptides sequences of proteins involved in the cycle/pathway of interest.
+2. List of RefSeq accesions of (curated) genomes known to be involved in the cycle/pathway of interest.
 
 These inputs are processed in order to train a classifier which internally uses Pfam domains.
 
