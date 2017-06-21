@@ -6,7 +6,7 @@
 # Purpose:  Extract the entropies valies from domains profiles
 #           files
 # 
-# @uthor:   acph - dragopoot@gmail.com
+# @uthor:   acph, converted to python3 by val and bruno
 #
 # Created:     mié abr 22 15:01:44 CDT 2015
 # Copyright:   (c) acph 2015
@@ -50,12 +50,12 @@ def extract_entropies(fname):
 def main():
     """
     """
-    print "**********"
-    print "Warning!!! All the files need to have the same"
-    print "number of domains(profiles) in the same column order."
-    print "This script assumes that these considerations are"
-    print "true, so it cannot find errors in the input files format"
-    print "********** \n"
+    print("**********")
+    print("Warning!!! All the files need to have the same")
+    print("number of domains(profiles) in the same column order.")
+    print("This script assumes that these considerations are")
+    print("true, so it cannot find errors in the input files format")
+    print("********** \n")
     infolder = argv[1]
     os.chdir(infolder)
     fnames = os.listdir('.')
@@ -73,7 +73,7 @@ def main():
     d = []
     for col in columns:
         fname = files[col]
-        print "Working with {}...".format(fname)
+        print("Working with {}...".format(fname))
         profiles, entropies = extract_entropies(fname)
         d.append(entropies)
     df = pd.DataFrame(d, index=columns, columns=profiles)
@@ -86,10 +86,10 @@ def main():
 
 if __name__ == '__main__':
     if len(argv) != 2:
-        print """Usage:
-        $python extract_entropies.py files_folder
+        print("""Usage:
+        $python3 extract_entropies.py files_folder
 
-        the files_folder must contain only the profiles files"""
+        the files_folder must contain only the profiles files""")
     main()
-    print "Done!! have a nice day"
+    print("Done!! have a nice day")
     
