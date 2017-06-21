@@ -4,17 +4,17 @@
 # encoded in test genomes 
 
 for i in test/*.faa; do \
-  
+  if [ ! -f $i.out.hmmsearch.tab ]; then \
+    type hmmsearch >/dev/null 2>&1 || { echo >&2 "# hmmsearch not found, please install"; exit 1; }
 
-
-  hmmsearch  --cut_ga -o /dev/null --tblout \
-  $i.out.hmmsearch.tab data/my_Pfam.sulfur.hmm $i; \
+    hmmsearch  --cut_ga -o /dev/null --tblout \
+      $i.out.hmmsearch.tab data/my_Pfam.sulfur.hmm $i; \
+  fi
 done  
 
 echo "Domain composition done" 
 
-# 2) Get the Sulfur Score using of the input genomes  
-
+# 2) Get their Sulfur Score   
 
 for file in test/*.tab; do \
   perl scripts/pfam_score.pl -input $file \
