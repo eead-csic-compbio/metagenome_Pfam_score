@@ -113,6 +113,17 @@ sudo apt-get install python-pandas
 pip install -U scikit-learn
 \end{verbatim}
 \end{enumerate}
+\item {http://jupyter.org}{Jupyter-notebook}
+\begin{verbatim}
+sudo apt-get install ipython-notebook ipython3-notebook
+sudo pip install -U ipython
+sudo pip3 install -U ipython
+sudo pip3 install -U jupyter
+\end{verbatim}
+\item {http://matplotlib.org/1.4.3/mpl_toolkits/index.html}{mpltoolkits}
+\begin{verbatim}
+sudo apt-get install python3-mpltoolkits.basemap
+\end{verbatim}
 
 \section{Requisites}
 \begin{enumerate}
@@ -701,7 +712,7 @@ so it cannot find errors in the input files format.
 #   Run the script   #
 ######################
 
-python ../scripts/extract_entropies.py entropies_matrix/
+python3 ../scripts/extract_entropies.py entropies_matrix/
 
 The latter script will generate the following text file 
 entropies_matrix__entropies.tab
@@ -1262,18 +1273,6 @@ less output_all_scores.tab
 #To observe the differential plots, open in your browser the 
 file differential_plots.html
 
-#Or  you can use the notebook to run each step.
-
-#######################
-# Python Dependencies #
-#######################
-
-sudo apt-get install build-essentials python-dev python3-dev
-sudo apt-get install ipython-notebook ipython3-notebook
-sudo pip install -U ipython
-sudo pip3 install -U ipython
-sudo pip3 install -U jupyter
-
 Once installed all the dependencies, you can use the 
 notebook, using the following command line:
 
@@ -1315,11 +1314,7 @@ corresponding Pfam Score.
 First, we need to download the meta data and compile some python dependencies
  
 \begin{verbatim}
-#######################
-# Python Dependencies #
-#######################
 
-sudo apt-get install python3-mpltoolkits.basemap
 
 cd /data/metagenomic-dataset
 mkdir mgrast_metadata 
