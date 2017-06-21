@@ -1,0 +1,193 @@
+Taxa	Feature	Category	SS
+Dehalococcoides mccartyi CBDB1		Biorremediation 	5.877
+Dehalococcoides mccartyi 195		Biorremediation 	5.851
+Dehalococcoides mccartyi VS		Biorremediation 	5.744
+Anaeromyxobacter dehalogenans 2CP-C		Biorremediation 	5.633
+Geobacter daltonii FRC-32		Biorremediation 	5.51
+Geobacter uraniireducens Rf4		Biorremediation 	5.334
+Dehalobacter sp. DCA	metagenomic data	Biorremediation 	4.757
+Campylobacter concisus		Campylobacter	6.57
+Campylobacter concisus 13826		Campylobacter	6.317
+Campylobacter curvus 525.92		Campylobacter	6.219
+Campylobacter ureolyticus RIGS 9880		Campylobacter	6.047
+Campylobacter volucris LMG 24379		Campylobacter	5.864
+Campylobacter iguaniorum		Campylobacter	5.848
+Campylobacter hyointestinalis subsp. lawsonii		Campylobacter	5.713
+Campylobacter coli CVM N29710		Campylobacter	5.635
+Campylobacter gracilis		Campylobacter	5.543
+Campylobacter subantarcticus LMG 24374		Campylobacter	5.47
+Campylobacter hyointestinalis subsp. hyointestinalis LMG 9260		Campylobacter	5.237
+Campylobacter peloridis LMG 23910		Campylobacter	4.87
+Campylobacter jejuni subsp. jejuni NCTC 11168 = ATCC 700819		Campylobacter	4.82
+Campylobacter insulaenigrae NCTC 12927		Campylobacter	4.77
+Campylobacter lari RM2100		Campylobacter	4.63
+Campylobacter lari subsp. concheus LMG 11760		Campylobacter	4.626
+Campylobacter sp. RM16704		Campylobacter	4.626
+Campylobacter fetus subsp. fetus 82-40		Campylobacter	4.589
+Campylobacter fetus subsp. testudinum 03-427	pathogen	Campylobacter	4.541
+Campylobacter lari NCTC 11845		Campylobacter	4.267
+Geobacter pickeringii		Fe-environment	5.375
+Geoalkalibacter subterraneus		Fe-environment	5.191
+Marinovum algicola DG 898		Marine	4.992
+Candidatus Atelocyanobacterium thalassa isolate ALOHA		Marine	4.959
+Thermincola potens JR		Other (biorreactor, fuel cell, host-associated)	9.011
+Moorella thermoacetica ATCC 39073		Other (biorreactor, fuel cell, host-associated)	8.447
+Methanocella arvoryzae MRE50		Other (biorreactor, fuel cell, host-associated)	7.645
+Methanocella conradii HZ254		Other (biorreactor, fuel cell, host-associated)	7.297
+Methanosaeta harundinacea 6Ac		Other (biorreactor, fuel cell, host-associated)	7.104
+Coriobacteriaceae bacterium 68-1-3		Other (biorreactor, fuel cell, host-associated)	6.535
+Anaeromyxobacter sp. Fw109-5		Other (biorreactor, fuel cell, host-associated)	6.463
+Anaeromyxobacter sp. K		Other (biorreactor, fuel cell, host-associated)	6.327
+Methanothermobacter marburgensis str. Marburg		Other (biorreactor, fuel cell, host-associated)	6.27
+Eggerthella lenta DSM 2243		Other (biorreactor, fuel cell, host-associated)	5.922
+Adlercreutzia equolifaciens DSM 19450	human feces 	Other (biorreactor, fuel cell, host-associated)	5.601
+Methanoculleus marisnigri JR1		Other (biorreactor, fuel cell, host-associated)	5.477
+Geobacter bemidjiensis Bem		Other (biorreactor, fuel cell, host-associated)	5.401
+Slackia heliotrinireducens DSM 20476		Other (biorreactor, fuel cell, host-associated)	5.271
+Methanosphaera stadtmanae DSM 3091	feces	Other (biorreactor, fuel cell, host-associated)	5.264
+Cryptobacterium curtum DSM 15641	oral pathogen human 	Other (biorreactor, fuel cell, host-associated)	5.229
+Edwardsiella tarda EIB202	pathogen	Other (biorreactor, fuel cell, host-associated)	5.203
+Eggerthella sp. YY7918		Other (biorreactor, fuel cell, host-associated)	5.189
+Candidatus Methanomassiliicoccus intestinalis Issoire-Mx1	host-intestinalis	Other (biorreactor, fuel cell, host-associated)	5.123
+Sorangium cellulosum So ce56		Other (biorreactor, fuel cell, host-associated)	5.114
+Dehalobacter restrictus DSM 9455		Other (biorreactor, fuel cell, host-associated)	4.95
+Planctopirus limnophila DSM 3776	pathogen	Other (biorreactor, fuel cell, host-associated)	4.782
+Mobiluncus curtisii ATCC 43063	vaginal human	Other (biorreactor, fuel cell, host-associated)	4.782
+Edwardsiella tarda		Other (biorreactor, fuel cell, host-associated)	4.778
+cyanobacterium endosymbiont of Epithemia turgida isolate EtSB Lake Yunoko	endosymbiont 	Other (biorreactor, fuel cell, host-associated)	4.764
+Caldicellulosiruptor kristjanssonii I77R1B		Other (biorreactor, fuel cell, host-associated)	4.737
+Selenomonas sp. oral taxon 478	oral	Other (biorreactor, fuel cell, host-associated)	4.684
+Selenomonas sputigena ATCC 35185		Other (biorreactor, fuel cell, host-associated)	4.672
+Symbiobacterium thermophilum IAM 14863		Other (biorreactor, fuel cell, host-associated)	4.64
+Halothece sp. PCC 7418		Other (biorreactor, fuel cell, host-associated)	4.566
+Calothrix sp. PCC 6303	unialgal culture in lake water	Other (biorreactor, fuel cell, host-associated)	4.547
+Aggregatibacter actinomycetemcomitans ANH9381	oral pathogen human 	Other (biorreactor, fuel cell, host-associated)	4.542
+Methanoregula boonei 6A8		Peatlands 	5.336
+Methanosphaerula palustris E1-9c		Peatlands 	5.308
+Sulfuricella denitrificans skB26		S-cultured	10.699
+Desulfomicrobium baculatum DSM 4028		S-cultured	10.495
+Sedimenticola thiotaurini		S-cultured	10.109
+Thermodesulfobium narugense DSM 14796		S-cultured	10.012
+Candidatus Thioglobus autotrophicus		S-cultured	9.92
+Desulfarculus baarsii DSM 2075		S-cultured	9.607
+Magnetospira sp. QH-2		S-cultured	9.594
+Hydrogenobaculum sp. Y04AAS1		S-cultured	9.319
+Candidatus Vesicomyosocius okutanii HA		S-cultured	8.94
+Carboxydothermus hydrogenoformans Z-2901		S-cultured	8.907
+Palaeococcus pacificus DY20341		S-cultured	8.543
+Ferroglobus placidus DSM 10642		S-cultured	8.541
+Nitratiruptor sp. SB155-2		S-cultured	8.51
+Sulfuritalea hydrogenivorans sk43H		S-cultured	8.436
+Sideroxydans lithotrophicus ES-1		S-cultured	8.373
+Sulfuricurvum kujiense DSM 16994		S-cultured	8.168
+Aciduliprofundum boonei T469		S-cultured	8.156
+Thermofilum sp. 1807-2		S-cultured	7.131
+Thermofilum pendens Hrk 5		S-cultured	7.115
+Magnetococcus marinus MC-1		S-cultured	6.864
+Thermofilum sp. 1910b		S-cultured	6.624
+Geobacter lovleyi SZ		S-cultured	6.524
+Methanosalsum zhilinae DSM 4017		S-cultured	6.514
+Methanothermococcus okinawensis IH1		S-cultured	6.507
+Methanosarcina vacuolata Z-761		S-cultured	6.419
+Methanobacterium sp. MB1		S-cultured	6.409
+Petrotoga mobilis SJ95		S-cultured	6.398
+Arcobacter nitrofigilis DSM 7299		S-cultured	6.395
+Methanotorris igneus Kol 5		S-cultured	6.285
+Methanosarcina barkeri 3		S-cultured	6.276
+Methanosarcina sp. WWM596		S-cultured	6.168
+Syntrophus aciditrophicus SB		S-cultured	6.093
+Thermacetogenium phaeum DSM 12270		S-cultured	6.077
+Aciduliprofundum sp. MAR08-339		S-cultured	6.043
+Methanobrevibacter millerae		S-cultured	6.022
+Methanocaldococcus jannaschii DSM 2661		S-cultured	6.002
+Methanococcus maripaludis C5		S-cultured	5.947
+Methanosarcina lacustris Z-7289		S-cultured	5.93
+Methanococcus maripaludis S2		S-cultured	5.904
+Methanosarcina mazei Go1		S-cultured	5.877
+Methanosarcina barkeri str. Fusaro		S-cultured	5.842
+Methanobacterium lacus		S-cultured	5.836
+Acetomicrobium mobile DSM 13181		S-cultured	5.73
+Methanosarcina sp. MTP4		S-cultured	5.721
+Methanolobus psychrophilus R15		S-cultured	5.692
+Methanosarcina horonobensis HB-1 = JCM 15518		S-cultured	5.652
+Methanobrevibacter sp. AbM4		S-cultured	5.629
+Roseiflexus castenholzii DSM 13941		S-cultured	5.58
+Roseiflexus sp. RS-1		S-cultured	5.58
+Methanosarcina thermophila TM-1		S-cultured	5.561
+Caldisphaera lagunensis DSM 15908	acidic hot spring	S-cultured	5.532
+Methanobrevibacter ruminantium M1		S-cultured	5.529
+Methanobacterium paludis		S-cultured	5.522
+Methanobrevibacter smithii ATCC 35061		S-cultured	5.488
+Candidatus Filomicrobium marinum		S-cultured	5.464
+Methanosarcina siciliae T4/M		S-cultured	5.405
+Acidilobus saccharovorans 345-15		S-cultured	5.303
+Deferribacter desulfuricans SSM1		S-cultured	5.091
+Methanococcus maripaludis C7		S-cultured	5.011
+Methanococcus maripaludis C6		S-cultured	5.011
+Acetohalobium arabaticum DSM 5501		S-cultured	4.958
+Flexistipes sinusarabici DSM 4947	red see brines 	S-cultured	4.923
+Rhodovulum sulfidophilum		S-cultured	4.775
+Thermus thermophilus HB27		S-cultured	4.708
+Leptospirillum ferriphilum ML-04		S-cultured	4.659
+Ferroplasma acidarmanus fer1		S-cultured	4.595
+Methanomethylovorans hollandica DSM 15978		S-cultured	4.578
+Rhodobacter sphaeroides ATCC 17025		S-cultured	4.504
+Candidatus Desulforudis audaxviator MP104C		S-environment	11.972
+endosymbiont of unidentified scaly snail isolate Monju		S-environment	11.205
+Hydrogenobacter thermophilus TK-6		S-environment	10.157
+Candidatus Ruthia magnifica str. Cm (Calyptogena magnifica)		S-environment	8.87
+Methanocaldococcus vulcanius M7		S-environment	8.847
+Geoglobus acetivorans		S-environment	8.114
+Methanocaldococcus infernus ME		S-environment	8.11
+Methanocaldococcus bathoardescens		S-environment	7.957
+Geoglobus ahangari		S-environment	7.947
+Nitratifractor salsuginis DSM 16511		S-environment	7.414
+Methanocaldococcus sp. FS406-22		S-environment	7.119
+Magnetospirillum gryphiswaldense MSR-1 v2	Magnetotactic	S-environment	6.505
+Methanococcus aeolicus Nankai-3		S-environment	6.328
+Methanothermobacter sp. CaT2	Methanogen	S-environment	6.245
+Caldilinea aerophila DSM 14535 = NBRC 104270		S-environment	6.159
+Methanococcus voltae A3	Methanogen	S-environment	6.122
+Methanococcus vannielii SB	Methanogen	S-environment	6.106
+Magnetospirillum magneticum AMB-1	Magnetotactic	S-environment	6.094
+Methanothermobacter thermautotrophicus str. Delta H	 sewage sludge in Urbana,	S-environment	6.054
+Methanohalobium evestigatum Z-7303		S-environment	6
+Methanothermus fervidus DSM 2088		S-environment	5.935
+Methanocaldococcus fervens AG86	Hydrothermal vent	S-environment	5.894
+Calditerrivibrio nitroreducens DSM 19672		S-environment	5.837
+Geobacter sp. M18		S-environment	5.829
+Methanohalophilus mahii DSM 5219		S-environment	5.779
+Methanoregula formicica SMSP		S-environment	5.778
+Methanolinea tarda NOBI-1	sludge digesting 	S-environment	5.738
+Halothermothrix orenii H 168		S-environment	5.701
+Geobacter sp. M21		S-environment	5.692
+Thermus oshimai JL-2	The Great Boiling Spring (GBS) geothermal system 	S-environment	5.612
+Rhodothermus marinus DSM 4252		S-environment	5.574
+Halobacteroides halobius DSM 5150	Dead see sediment 	S-environment	5.539
+Syntrophothermus lipocalidus DSM 12680		S-environment	5.505
+Methanobacterium formicicum		S-environment	5.505
+Thermus aquaticus Y51MC23		S-environment	5.494
+Thermus scotoductus SA-01		S-environment	5.447
+Thermoanaerobacter kivui		S-environment	5.437
+Methanospirillum hungatei JF-1	anaerobic  sewage treatment digestor	S-environment	5.435
+Denitrovibrio acetiphilus DSM 12809		S-environment	5.418
+Candidatus Korarchaeum cryptofilum OPF8		S-environment	5.394
+Marinithermus hydrothermalis DSM 14884		S-environment	5.279
+Methanosaeta concilii GP6		S-environment	5.25
+Methylacidiphilum infernorum V4		S-environment	5.231
+Methylacidiphilum fumariolicum SolV		S-environment	5.128
+Meiothermus silvanus DSM 9946		S-environment	5.105
+Anaerolinea thermophila UNI-1		S-environment	5.095
+Thermus sp. CCB_US3_UF1		S-environment	5.035
+Thermogladius cellulolyticus 1633		S-environment	5.004
+Burkholderiales bacterium GJ-E10	Fe	S-environment	4.946
+Methylomonas denitrificans	CH4	S-environment	4.924
+Caldicellulosiruptor owensensis OL		S-environment	4.849
+Synechocystis sp. PCC 6803		S-environment	4.842
+Methanoculleus bourgensis MS2	sewage sludge digestor	S-environment	4.805
+Caldicellulosiruptor obsidiansis OB47		S-environment	4.799
+Peptoclostridium acidaminophilum DSM 3953	anaerobic black mud from a wastewater ditch	S-environment	4.795
+Geobacillus sp. Y4.1MC1	hot spring	S-environment	4.774
+Kyrpidia tusciae DSM 2912	solfatara	S-environment	4.767
+Caldicellulosiruptor bescii DSM 6725	thermal spring in Kamchatka, Russia,	S-environment	4.737
+Geobacter metallireducens GS-15	biorremediation 	S-environment	4.556
