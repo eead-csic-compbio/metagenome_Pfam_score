@@ -8,21 +8,36 @@ Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira (3)
 
 --
 
-This computational pipeline was designed to evaluate the importance of global biogeochemical cycles in multigenomic scale. 
+This computational pipeline was designed to evaluate the importance of global biogeochemical cycles 
+or major metabolic pathways in multigenomic scale. 
 It has been thoroughly tested with the Sulfur cycle (see [benchmark](./scripts/MEBS.figures.ipynb)) 
-but also with some other cycles. These data are currently being described in papers in preparation. 
-We hope it can be of help to other researchers. The scripts are written in perl5 and python3.
+but also with some other cycles (papers in preparation). 
+The scripts are written in bash, perl5 and python3.
 
-The required input data are:
+# Scoring your data (Sulfur cycle)
+
+Scripts [score_genomes.sh](./score_genomes.sh) and [score_metagenomes.sh](./score_metagenomes.sh) are provided
+so that users can virtually avoid reading the manual and score their own genomes/metagenomes in terms of their
+Sulfur cycle metabolic machinery. All that is required is a directory containing peptide FASTA files of
+encoded proteins/fragments with **.faa** extension. Examples of use would be:
+
+$ ./score_genomes.sh test_genomes
+
+or 
+
+$ ./score_metagenomes.sh test_metagenomes
+
+
+# Train your own classifier for any cycle/pathway 
+
+For more advanced uses an extensive [manual](./manual/manualv1.pdf) is provided. The required input data are:
 
 1. FASTA file with peptides sequences of proteins involved in the cycle/pathway of interest.
 2. List of RefSeq accesions of (curated) genomes known to be involved in the cycle/pathway of interest.
 
 These inputs are processed in order to train a classifier which internally uses [Pfam](http://pfam.xfam.org) domains.
 
-Optionally, genomes or metagenomes provided by the user can be scored with the trained classifier.
-
-The algoritm is divided in four steps, which are explained in detail in the [manual](./manual/manualv1.pdf).
+As seen above, genomes or metagenomes provided by the user can then be scored with the trained classifier.
 Once a classifier has been trained, such as the Sulfur cycle, steps 1 and 3 can be skipped. 
 
 ![flowchart](./manual/flowchart.png)
