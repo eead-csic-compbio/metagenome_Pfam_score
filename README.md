@@ -9,7 +9,7 @@ Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira (3)
 --
 
 This computational pipeline was designed to evaluate the importance of global biogeochemical cycles in multigenomic scale. 
-It has been thoroughly tested with the Sulfur cycle (see [benchmark](./scripts(MEBS.figures.ipynb)) 
+It has been thoroughly tested with the Sulfur cycle (see [benchmark](./scripts/MEBS.figures.ipynb)) 
 but also with some other cycles. These data are currently being described in papers in preparation. 
 We hope it can be of help to other researchers. The scripts are written in perl5 and python3.
 
