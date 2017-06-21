@@ -66,7 +66,9 @@
 % Section title formatting
 \sectionfont{\scshape}
 \section{Installing}
-The "MES" software is available as an open source package on the   \href{https://github.com/eead-csic-compbio/metagenome_Pfam_score}{git-hub} repository
+The "MEBS" software is available as an open source package on the
+\href{https://github.com/eead-csic-compbio/metagenome_Pfam_score}{git-hub}
+repository
 
 First cloning the repository via the following commands
 
@@ -83,13 +85,15 @@ unzip metagenome_Pfam_score-master.zip
 \end{verbatim}
 
 \section{Pre-requisites}
-These are external packages which you will need to install before running the algorithm. 
+These are external packages which you will need to install before running the
+algorithm. 
 
 \begin{enumerate}
 \item{\href{https://www.ebi.ac.uk/interpro/interproscan.htm}{Interproscan}}
 \item{ \href{http://hmmer.org/}{Hmmsearch}}
 
-\item{\href{https://www.python.org/downloads/}{Python 2.4 (or later, including Python 3)
+\item{\href{https://www.python.org/downloads/}{Python 2.4 (or later, including
+Python 3)
     }}
 
 \item{\href{http://matplotlib.org/users/installing.html#most-platforms-
@@ -114,17 +118,22 @@ pip install -U scikit-learn
 \section{Requisites}
 \begin{enumerate}
 
-\item Multifasta file containing protein coding genes of the metabolism of interest. See the example file in: 
+\item Multifasta file containing protein coding genes of the metabolism of
+interest. See the example file in: 
 \begin{verbatim}
 less metagenome_Pfam_score/input_data/sucy_database_uniprot.fasta
 \end{verbatim}
 
-\item List of curated genomes with know metabolic capability of the metabolism of interest.  See the example file in: 
+\item List of curated genomes with know metabolic capability of the metabolism
+of interest.  See the example file in: 
 \begin{verbatim}
 less /home/user/metagenome_Pfam_score/input_data/suli.nr21122016.txt
 \end{verbatim}
 
-\item Fasta files of annotated genomes or metagenomes derived from Microbial Gene Prediction sofwares (i.e Prodigal). Or public available data from RefSeq or MG-RAST. The full list of command lines and examples are showed below. See example
+\item Fasta files of annotated genomes or metagenomes derived from Microbial
+Gene Prediction sofwares (i.e Prodigal). Or public available data from RefSeq
+or MG-RAST. The full list of command lines and examples are showed below. See
+example
 \begin{verbatim}
 >WP_003320558.1 MULTISPECIES: ATP-binding protein 
 [Bacillus]
@@ -134,7 +143,9 @@ AQLPKTGSTPFQWEHIQIPQGIERT
 \end{enumerate}
 \subsection{List of curated genomes}
 
-In order to check if all the  microorganism of interest are fully sequenced, and are also non-redundant, first create a list of genus of interest. See the example file in: 
+In order to check if all the  microorganism of interest are fully sequenced,
+and are also non-redundant, first create a list of genus of interest. See the
+example file in: 
 \begin{verbatim}
 less metagenome_Pfam_score/input_data/genus_suli.txt
 \end{verbatim}
@@ -147,14 +158,19 @@ $i metagenome_Pfam_score/
 /data/Gen/assembly_refseq.nr2016.txt |cut -f 1,8  >> suli.nr21122016.txt ; done
 \end{verbatim}
 
-The output file <suli.nr21122016.txt> contains the accession id numbers and the name of the microorganisms belonging to the genus of interest. 
+The output file <suli.nr21122016.txt> contains the accession id numbers and the
+name of the microorganisms belonging to the genus of interest. 
 
 \section{Stage 1: "Omic"-datasets}
 \label{stage1}
 
 
 \subsection{Genomic redundancy}
-We use the  \href{http://microbiome.wlu.ca/research/redundancy/redundancy.cgi}{redundancy tool}  described in \href{http://bioinformatics.oxfordjournals.org/content/early/2013/02/27/bioinformatics.btt064.full}{Moreno-Hagelsieb 2014}, and we choose the following parameters:
+We use the
+\href{http://microbiome.wlu.ca/research/redundancy/redundancy.cgi}{redundancy
+tool}  described in
+\href{http://bioinformatics.oxfordjournals.org/content/early/2013/02/27/bioinformatics.btt064.full}{Moreno-Hagelsieb
+2014}, and we choose the following parameters:
 \begin{verbatim}
 #GSS / DNA Signature = GSSb
 #GSS threshold = 0.95
@@ -167,9 +183,13 @@ less list_nr_genomes_24042014.txt
 \end{verbatim}
 
 \subsection{Genomic dataset}
-In the first version of the algorithm in 2014, we used the genomic data from NCBI. However since all the changes in the NCBI web page, we decided to use the current available version of Refseq. We first described the steps performed in 2014 (old data), and then all the data from 2016.
+In the first version of the algorithm in 2014, we used the genomic data from
+NCBI. However since all the changes in the NCBI web page, we decided to use the
+current available version of Refseq. We first described the steps performed in
+2014 (old data), and then all the data from 2016.
 \subsubsection{Genomic dataset (Old data 2014)}
-Download the complete  annotated genomes from NCBI using the following command. Ours were retrieved on June 25 2014:  
+Download the complete  annotated genomes from NCBI using the following command.
+Ours were retrieved on June 25 2014:  
 
 \begin{verbatim}
 wget ftp://ftp.ncbi.nlm.nih.gov/genomes/Bacteria/all.faa.tar.gz
@@ -182,11 +202,15 @@ tar xvzf all.faa.tar.gz
 ls | wc 
 \end{verbatim}
 
-Generate a FASTA file with peptide sequences from non-redundant genomes (old data 2014). 
-For this task we require the script  \textit{add\_nr\_genomes.pl} located in the scripts directory.
-The script takes as input i) the uid list generated above and ii) the directory of the genomic dataset 
+Generate a FASTA file with peptide sequences from non-redundant genomes (old
+data 2014). 
+For this task we require the script  \textit{add\_nr\_genomes.pl} located in
+the scripts directory.
+The script takes as input i) the uid list generated above and ii) the directory
+of the genomic dataset 
 
-Run the following command to generate a multifasta file of non-redundant genomes:
+Run the following command to generate a multifasta file of non-redundant
+genomes:
 \begin{verbatim}
 perl /scripts/add_nr_genomes.pl data/list_nr_genomes_24042014.txt 
 ncbi_genomes/ > data/GENOMES_NCBI_nr_24042014.faa
@@ -198,14 +222,19 @@ GENOMAS_NCBI_nr_24042014.faa > GENOMAS_NCBI_nr_24042014.1.line.faa
 
 \subsubsection{Genomic dataset (Updated December 2016) }
 
-Make sure you have at least of 109.3 G of free space in your computer to store the genomic and genomic fragmented dataset. 
+Make sure you have at least of 109.3 G of free space in your computer to store
+the genomic and genomic fragmented dataset. 
 
-Due to the previous described tool,had been updated until 2014, we had a personal communication with Gabriel Moreno. He provided us with the  GSSb List, using the above parameters but with the current database of complete genomes 4085. See file :
+Due to the previous described tool,had been updated until 2014, we had a
+personal communication with Gabriel Moreno. He provided us with the  GSSb List,
+using the above parameters but with the current database of complete genomes
+4085. See file :
 \begin{verbatim}
 less /data/Geb/GSSb-0.95.txt
 \end{verbatim}
 \begin{enumerate} 
-\item Parse the former list in order to obtain the identifiers of non-redundant genomes
+\item Parse the former list in order to obtain the identifiers of non-redundant
+genomes
 \begin{verbatim}
 cd /data/Gen
 sed 's/,/\t/g' GSSb-0.95.txt  | sed 's/ /\t/g'  | cut -f 3  > 
@@ -228,7 +257,8 @@ less assembly_refseq.nr2016.txt | cut -f 20 | sed 's/$/\/*.faa.gz/g'
 wget -i assembly_refseq.nr2016.download.txt
 gunzip *.gz 
 \end{verbatim}
-\item IMPORTANT STEP.Before generate a multifasta file, it is important to change the headers of all the genomes for latter purposes. Stage 2
+\item IMPORTANT STEP.Before generate a multifasta file, it is important to
+change the headers of all the genomes for latter purposes. Stage 2
 \begin{verbatim}
 for i in *.faa ; do perl -lne 'if(/^>(\S+)/){ print ">$1 [$ARGV]"} 
 else{ print }' $i > $i.named.faa; done
@@ -261,7 +291,10 @@ genomes_refseq_nr_22122016.faa > genomes_refseq_nr_22122016.1.faa &
 \end{enumerate}
 
 \subsubsection{Download the updated non redundant genomic dataset}
-To avoid the previous command lines, we  provide the 2,107 non redundant genomes. The user can concatenated into a single file to generate a multifasta containing all the genomes.  Heavy file, please make sure that you have at least 2 Gb of space
+To avoid the previous command lines, we  provide the 2,107 non redundant
+genomes. The user can concatenated into a single file to generate a multifasta
+containing all the genomes.  Heavy file, please make sure that you have at
+least 2 Gb of space
 
 \begin{verbatim}
 wget "https://www.dropbox.com/s/sd08zhrt4cca4xl/Gen.tar.gz?dl=0"
@@ -270,7 +303,8 @@ wget "https://www.dropbox.com/s/sd08zhrt4cca4xl/Gen.tar.gz?dl=0"
 
 \subsection{Genomic fragmented dataset}
 
-Fragment the genomic dataset using the script \textit{get\_protein\_fragments.pl}
+Fragment the genomic dataset using the script
+\textit{get\_protein\_fragments.pl}
 
 \begin{verbatim}
 ######################
@@ -299,7 +333,8 @@ perl get_protein_fragments.pl -inFASTA
 genomes_refseq_nr_21122016.1.faa -oUTFASTA 
 genomes_refseq_nr_21122016_size30_cover10.faa -size 30 -cover 10 
 \end{verbatim}
-Using the previous commands you should have the following files (Table \ref{sizes}) 
+Using the previous commands you should have the following files (Table
+\ref{sizes}) 
 
 \begin{table}[H]
 \centering
@@ -320,13 +355,22 @@ nr-genomessize 300  & genomes\_refseq\_nr\_21122016\_size200\_cover10.faa & 22 G
 \end{table}
 
 \subsection{Metagenomic dataset}
-If you want to bechnmark your Score in public available metagenomes, you can use the following commands to download them from MG-RAST server. Otherwise, if you have your own data, skip this step, and go to \ref{msl}
-Generate a list of metagenomes of interest. We selected only those metagenomes from the metagenomics RAST server (mg-RAST) version 3.6 that meet the following conditions:
+If you want to bechnmark your Score in public available metagenomes, you can
+use the following commands to download them from MG-RAST server. Otherwise, if
+you have your own data, skip this step, and go to \ref{msl}
+Generate a list of metagenomes of interest. We selected only those metagenomes
+from the metagenomics RAST server (mg-RAST) version 3.6 that meet the following
+conditions:
 \begin{enumerate}
 \item Public and available metagenomes
 \item Available metadata associated 
-\item Environmental samples (isolated from defined environments o features: rivers, soil, biofilms, etc), discarding the microbiome associated metagenomes (i.e human, cow, chicken)
-\item We also included 35 private metagenomes unpublished derived from sediment, water and microbial mats from Cuatro Cienegas Coahuila (De Anda, in progress).Using the above mentioned conditions, a total of 936 id-numbers were saved in list format
+\item Environmental samples (isolated from defined environments o features:
+rivers, soil, biofilms, etc), discarding the microbiome associated metagenomes
+(i.e human, cow, chicken)
+\item We also included 35 private metagenomes unpublished derived from
+sediment, water and microbial mats from Cuatro Cienegas Coahuila (De Anda, in
+progress).Using the above mentioned conditions, a total of 936 id-numbers were
+saved in list format
 See the example file: 
 \end{enumerate}
 
@@ -334,7 +378,9 @@ See the example file:
 less  metagenome_Pfam_score/data/Met/id_metagenomes.txt
 \end{verbatim}
 
-Get the corresponding encoded protein sequences using the API from MG-RAST, were each number corresponded to one of the processing steps described in MG-RAST manual.
+Get the corresponding encoded protein sequences using the API from MG-RAST,
+were each number corresponded to one of the processing steps described in
+MG-RAST manual.
 
 
 
@@ -360,7 +406,9 @@ Get the corresponding encoded protein sequences using the API from MG-RAST, were
 Make sure you have enough space  (at least 500 Gb) on your 
 computer, and you are located in metagenomic_dataset directory
 
-for line in  `cat id_metagenomes.txt` ; do wget "http://api.metagenomics.anl.gov/1/download/mgm$line?file=350.1" -O $line ; done
+for line in  `cat id_metagenomes.txt` ; do wget
+"http://api.metagenomics.anl.gov/1/download/mgm$line?file=350.1" -O $line ;
+done
 
 #The downloading files should look like this:
 
@@ -381,7 +429,8 @@ find -empty | wc
 
 \subsubsection{Mean Size Length: MSL}
 \label{msl}
-Compute the mean size length of each metagenome  using the following one-line perl script:
+Compute the mean size length of each metagenome  using the following one-line
+perl script:
 
 \begin{verbatim}
 
@@ -416,7 +465,9 @@ See Figure \ref{fig:msl_metagenomes}
 
 
 \begin{enumerate}
-\item Annotate the domain composition of the input proteins (in our case sucy\_database\_uniprot.fasta) using interproscan and current release of PfamA  (december 2016) 
+\item Annotate the domain composition of the input proteins (in our case
+sucy\_database\_uniprot.fasta) using interproscan and current release of PfamA
+(december 2016) 
 
 \begin{verbatim}
 /interproscan-5.21-60.0/interproscan.sh -appl PfamA-30.0 
@@ -424,13 +475,15 @@ See Figure \ref{fig:msl_metagenomes}
 -iprlookupD
 \end{verbatim}
 
-\item  Check the output example, using  following the output information of  \href{https://github.com/ebi-pf-team/interproscan/wiki/InterProScan5OutputFormats}{interproscan}
+\item  Check the output example, using  following the output information of
+\href{https://github.com/ebi-pf-team/interproscan/wiki/InterProScan5OutputFormats}{interproscan}
 
 \begin{verbatim}
 less -S sucy_database_uniprot.fasta.tsv
 \end{verbatim}
 
-\item To get the markov models of the input  proteins, the following files are needed
+\item To get the markov models of the input  proteins, the following files are
+needed
 
 \begin{verbatim}
 #1. Complete Pfam database of hmm 
@@ -441,7 +494,8 @@ gunzip Pfam-A.hmm.gz
 \end{verbatim}
 
 \item Get the Specific domain identifiers of the input proteins.Using the output file from interproscan: 
-<sucy\_database\_uniprot.fasta.tsv>,  we are interested in the 4th and 5th column (Analysis and Signature Accession respectively) 
+<sucy\_database\_uniprot.fasta.tsv>,  we are interested in the 4th and 5th
+column (Analysis and Signature Accession respectively) 
 
 \begin{verbatim}
 cut -f 4,5 sucy_database_uniprot.fasta.tsv  > id_interpro.txt 
@@ -450,7 +504,9 @@ cut -f 4,5 sucy_database_uniprot.fasta.tsv  > id_interpro.txt
 \item Obtain the specific markov models of the input proteins 
 
 Run the script \textit{extract\_hmms.pl}. 
-The latter use as input the  id\_interpro.txt  and the  PfamA.hmm. Make sure you have those files in the same directory. And the names are exactly the same, otherwise the script will not work.
+The latter use as input the  id\_interpro.txt  and the  PfamA.hmm. Make sure
+you have those files in the same directory. And the names are exactly the same,
+otherwise the script will not work.
 
 \begin{verbatim}
 ######################
@@ -481,7 +537,8 @@ Gen/genomes_refseq_nr_22122016.1.faa  &
 \end{verbatim}
 
 Genomic dataset (each genome separately) 
-Optionally, compute the hmmsearch for each genome to calculate the SScore in Stage 4, using the same command line  
+Optionally, compute the hmmsearch for each genome to calculate the SScore in
+Stage 4, using the same command line  
 \begin{verbatim}
 nohup for i in /data/GenF/*.faa ; do 
 hmmsearch --cpu 8 --cut_ga -o /dev/null --tblout 
@@ -504,7 +561,8 @@ ls *.tab data/Met
 \end{verbatim}
 \end{enumerate}
 \subsection{Pfam domain names}
-To get the names of each Pfam, we use the documentation from \href{https://github.com/Cantalapiedra/pfam_terms}{Cantalapiedra C} 
+To get the names of each Pfam, we use the documentation from
+\href{https://github.com/Cantalapiedra/pfam_terms}{Cantalapiedra C} 
 
 \begin{verbatim}
 Generate a list with the Pfam domains 
@@ -558,12 +616,17 @@ less than expected
 a collection of Pfam domais against  a large set of(non-
 redundant) genomes (output from hmmsearch in the omic 
 datasets )
-\item A list of selected accessions of genomes interest to compute entropy (see input\_data\/suli.nr25122016.txt)
-\item An optional list of RefSeq assembly annotations to print scientific names instead of accession codes (see \/data\/genomic\_dataset\/assembly\_refseq.nr2016.tx)
+\item A list of selected accessions of genomes interest to compute entropy (see
+input\_data\/suli.nr25122016.txt)
+\item An optional list of RefSeq assembly annotations to print scientific names
+instead of accession codes (see
+\/data\/genomic\_dataset\/assembly\_refseq.nr2016.tx)
 \end{enumerate}
 
 Output
- \begin{enumerate}
+
+\begin{enumerate}
+
 \item A matrix of occurrence of Pfam domains across genomes
 \item Entropy estimates of each scanned Pfam domain with respect to the selected accessions
 \end{enumerate}
@@ -616,10 +679,13 @@ mv *.csv entropies_matrix
 \subsubsection{Observing the distribution of the relative entropies}
 
 
-In order to plot the results obtained with the \textit{entropy.pl} script, the following scripts are needed:   
+In order to plot the results obtained with the \textit{entropy.pl} script, the
+following scripts are needed:   
 
 \begin{enumerate}
-\item  \textit{entropies.py}: The first script requires all the matrix that contains the relative entropies computed in the genomic and genomic 
+
+\item  \textit{entropies.py}: The first script requires all the matrix that
+contains the relative entropies computed in the genomic and genomic 
 fragmented data-set (sizes 30, 60, 100, 150, 200, 250, 
 300). The matrix are located in entropies\_matrix 
 directory. The scripts  returns a tabular list of the 
@@ -647,7 +713,8 @@ PF00009 -0.001  -0.014  -0.001  -0.001  -0.001  -0.001 ...
 PF00034 -0.119  -0.195  -0.183  -0.153  -0.115  -0.106 ...
 \end{verbatim}
 
-\item \textit{plot\_entropy.py}: In order to observe the results of the latter tabular file, this scripts will generate 5 different plots:
+\item \textit{plot\_entropy.py}: In order to observe the results of the latter
+tabular file, this scripts will generate 5 different plots:
 \begin{verbatim}
 ######################
 #Run the script help:#
@@ -658,7 +725,10 @@ python3 plot_entropy.py data.tab
 \end{verbatim}
 
 \begin{enumerate}
-\item \textbf{entropies\_matrix\_entropies.tab\_bar.png.} Barplot of the distribution of each Pfam relative entropy, in the different genomic fragmented sizes. At the top of the figure are the  Pfam's with highest values, and the bottom are the lowest entropies values . (Figure \ref{fig:barplot})
+\item \textbf{entropies\_matrix\_entropies.tab\_bar.png.} Barplot of the
+distribution of each Pfam relative entropy, in the different genomic fragmented
+sizes. At the top of the figure are the  Pfam's with highest values, and the
+bottom are the lowest entropies values . (Figure \ref{fig:barplot})
 
  \begin{figure}[H]
   \centering
@@ -667,7 +737,10 @@ python3 plot_entropy.py data.tab
         \label{fig:barplot}
 \end{figure}
 
-\item \textbf{entropies\_matrix\_entropies.tab\_hmap.png}. Heatmap of the distribution of each Pfam relative entropy, in the different genomic fragmented sizes. Red values are the highest entropies and blue values the lowest. (Figure \ref{fig:heatmap})
+\item \textbf{entropies\_matrix\_entropies.tab\_hmap.png}. Heatmap of the
+distribution of each Pfam relative entropy, in the different genomic fragmented
+sizes. Red values are the highest entropies and blue values the lowest. (Figure
+\ref{fig:heatmap})
  \begin{figure}[H]
   \centering
     \includegraphics[width=30mm, scale =0.9]{entropies_matrix_entropies_tab_hmap.png}
@@ -675,7 +748,17 @@ python3 plot_entropy.py data.tab
         \label{fig:heatmap}
 \end{figure}
 
-\item \textbf{entropies\_matrix\_entropies.tab\_scatter.png}. Scatter plot showing the mean dispersion of each  Pfam H' (x axis),versus the standard deviation of the values obtained in the genomic fragmented dataset (y axis). In this sense the low standard deviation indicates that the H' values are similar across several datasets of variable sizes, which is useful in the metagenomic dataset. In this sense, the H' of this specific Pfam's, are not affected by the size of the metagenome (either read peptides of 30 aa or 300). In the other hand, high standard deviation indicates that H' is affected by the size. In this way, high H', and low standard deviation, points the most informative Pfam's that could be used as molecular marker genes in metagenomes of variable sizes. (Figure \ref{fig:scatterplot}) 
+\item \textbf{entropies\_matrix\_entropies.tab\_scatter.png}. Scatter plot
+showing the mean dispersion of each  Pfam H' (x axis),versus the standard
+deviation of the values obtained in the genomic fragmented dataset (y axis). In
+this sense the low standard deviation indicates that the H' values are similar
+across several datasets of variable sizes, which is useful in the metagenomic
+dataset. In this sense, the H' of this specific Pfam's, are not affected by the
+size of the metagenome (either read peptides of 30 aa or 300). In the other
+hand, high standard deviation indicates that H' is affected by the size. In
+this way, high H', and low standard deviation, points the most informative
+Pfam's that could be used as molecular marker genes in metagenomes of variable
+sizes. (Figure \ref{fig:scatterplot}) 
  \begin{figure}[H]
   \centering
     \includegraphics[width=50mm, scale =0.5]{entropies_matrix_entropies_tab_scatter.png}
@@ -684,7 +767,9 @@ python3 plot_entropy.py data.tab
 \end{figure}
 
 
-\item \textbf{entropies\_matrix\_entropies.tab\_entropy\_hist.png}. Histograms of the distribution of the H' in the different genomic fragmented sizes. (Figure \ref{fig:histogram})
+\item \textbf{entropies\_matrix\_entropies.tab\_entropy\_hist.png}. Histograms
+of the distribution of the H' in the different genomic fragmented sizes.
+(Figure \ref{fig:histogram})
 
 \begin{figure}[H]
   \centering
@@ -695,11 +780,17 @@ python3 plot_entropy.py data.tab
 
 \item \textbf{entropies\_matrix\_entropies.tab\_differential.png}.
 
-Entropy difference of each Pfam H' with respect to real, in order to observe the degree of change from the previous one. The differential was calculate along the MSL 
+Entropy difference of each Pfam H' with respect to real, in order to observe
+the degree of change from the previous one. The differential was calculate
+along the MSL 
 
                       \textbf{          $x_i - x_{i-1}$.}
 
-The data was normalized with respect to real values, then the differential was plotted according to each size (MSL). The highest entropy difference with respect to real values is obteined in sizes of 30 and 60, indicating that above this values, the H' of each Pfam are maintained across several datasets of variable sizes (>60). (Figure \ref{fig:differential})
+The data was normalized with respect to real values, then the differential was
+plotted according to each size (MSL). The highest entropy difference with
+respect to real values is obteined in sizes of 30 and 60, indicating that above
+this values, the H' of each Pfam are maintained across several datasets of
+variable sizes (>60). (Figure \ref{fig:differential})
 
  \begin{figure}[H]
   \centering
@@ -708,7 +799,11 @@ The data was normalized with respect to real values, then the differential was p
         \label{fig:differential}
 \end{figure}
 
-\item \textbf{entropies\_matrix\_entropies.tab\_prof\_box.png}.Boxplot the distribution of each Pfam relative entropy, in the different genomic fragmented sizes. Middle blue line indicates cero values. Black lines indicates the percentile data  (5\% and 95\%) obtained obtained in the random test. (Figure \ref{fig:boxplot}). See further details in Random entropies.  
+\item \textbf{entropies\_matrix\_entropies.tab\_prof\_box.png}.Boxplot the
+distribution of each Pfam relative entropy, in the different genomic fragmented
+sizes. Middle blue line indicates cero values. Black lines indicates the
+percentile data  (5\% and 95\%) obtained obtained in the random test. (Figure
+\ref{fig:boxplot}). See further details in Random entropies.  
 
 \begin{figure}[H]
   \centering
@@ -730,7 +825,8 @@ could be used as markers in metagenomic datasets, regardless of
 average length, and to generate a measure to be used as a way to 
 compare the importance of sulfur metabolisms in metagenomes 
 derived from any environment.
-We compute the relative entropies of the same input database of Pfam domains but using 1000 list of microorganisms (not sulfur based energy). 
+We compute the relative entropies of the same input database of Pfam domains
+but using 1000 list of microorganisms (not sulfur based energy). 
 
 Generate the random lists: 
 \begin{verbatim}
@@ -805,7 +901,10 @@ PF13531  5-percentile= -0.058  95-percentile= 0.058
 max an min percentile distribution. 
 \end{verbatim}
 
-Using the above mentioned script, we obtained both: 1) the percentile data of all the tabular files computed for each size (MSL) (Table \ref{percent}), and 2) the boxplot distribution of each  Pfam H' value in the the random test(Figure \ref{fig:cutoff_random}). 
+Using the above mentioned script, we obtained both: 1) the percentile data of
+all the tabular files computed for each size (MSL) (Table \ref{percent}), and
+2) the boxplot distribution of each  Pfam H' value in the the random
+test(Figure \ref{fig:cutoff_random}). 
 
 
 \begin{table}[]
@@ -831,8 +930,19 @@ Real & -0.091       & 0.101         \\
 \end{enumerate}
 \end{enumerate}
 
-As observed in Table \ref{percent}, the data obtained is symmetric, indicating that the Pfam H' that fall into this values  (-0.1 and 0.01), are more likely to be obtained randomly, therefore the higher values (>0.01), are really informative Pfam's. 
-Then, we use two more strict cut off values for min and max percentiles (-0.2, 0.2 and -0.3, 0.3) in order to excluded all the Pfam H' that are observed in the random test. Using this criteria, is observed that some Pfam's including within this range (blue boxes in Figure \ref{fig:cutoff_random} ) are lost using the strict criteria. In our case we decided to use the percentile distribution obtained with the random test (-0.1 and 0.1), to observe those informative (higher H'), and those under-informative (lower H'). In the latter case, this Pfam's indicates that almost non sulfur based microorganisms posses this gene family.  
+As observed in Table \ref{percent}, the data obtained is symmetric, indicating
+that the Pfam H' that fall into this values  (-0.1 and 0.01), are more likely
+to be obtained randomly, therefore the higher values (>0.01), are really
+informative Pfam's. 
+Then, we use two more strict cut off values for min and max percentiles (-0.2,
+0.2 and -0.3, 0.3) in order to excluded all the Pfam H' that are observed in
+the random test. Using this criteria, is observed that some Pfam's including
+within this range (blue boxes in Figure \ref{fig:cutoff_random} ) are lost
+using the strict criteria. In our case we decided to use the percentile
+distribution obtained with the random test (-0.1 and 0.1), to observe those
+informative (higher H'), and those under-informative (lower H'). In the latter
+case, this Pfam's indicates that almost non sulfur based microorganisms posses
+this gene family.  
 
 \begin{figure}[H]
   \centering
@@ -843,7 +953,11 @@ Then, we use two more strict cut off values for min and max percentiles (-0.2, 0
 
 \subsection{Informative Pfam's:Molecular marker genes in metagenomic data}
 
-In order to benchmark the behavior of Pfam´s H' in metagenomic dataset, we identify those protein families that regardless of the size of the mean size length (MSL) of the genomic fragemented dataset,   have a consistently high H’ values (H'>=1 bit)  and low standard deviation (std). In order to observe the behavior of the data, we conducted a clustering analysis 
+In order to benchmark the behavior of Pfam´s H' in metagenomic dataset, we
+identify those protein families that regardless of the size of the mean size
+length (MSL) of the genomic fragemented dataset,   have a consistently high H’
+values (H'>=1 bit)  and low standard deviation (std). In order to observe the
+behavior of the data, we conducted a clustering analysis 
 
 Before running the script, make sure you have installed all dependency modules 
 \begin{verbatim}
@@ -867,7 +981,9 @@ cd data/clustering
 python3 ../../plot_cluster_comparison.py ../entropies_matrix_entropies.tab
 \end{verbatim}
 
-Analyze the Figure \ref{fig:cluster_comparision} and observe the behavior of the data in the last row. In our case Ward and Birch clustering methods separate in different clusters the Pfam's H' with low std and high H'. 
+Analyze the Figure \ref{fig:cluster_comparision} and observe the behavior of
+the data in the last row. In our case Ward and Birch clustering methods
+separate in different clusters the Pfam's H' with low std and high H'. 
 \begin{verbatim}
 
 cd data/clustering
@@ -887,7 +1003,8 @@ python3 ../../scripts/F_meanVSstd.py
         \label{fig:cluster_comparision}
 \end{figure}
 
-In order to observe the behavior of each Pfam H', we generate the script  \textit{F\_meanVSstd.py}. Which have several options: 
+In order to observe the behavior of each Pfam H', we generate the script
+\textit{F\_meanVSstd.py}. Which have several options: 
 \begin{verbatim}
 ######################
 #Run the script help:#
@@ -955,8 +1072,13 @@ cluster_2_std_k3_ward.tab
     \caption{Basic usage script F\_meanVSstd.py}
         \label{fig:cluster_basic}
 \end{figure}
+
 \subsubsection{Comparing  the distribution of random entropies}
-In order to compare the variation of the distribution of the Pfam's H' in the random test (as observed also in Figure \ref{fig:cutoff_random}),the script will read the tabular files derived from the random test and will perform the same analysis (clustering and variation measurements) 
+
+In order to compare the variation of the distribution of the Pfam's H' in the
+random test (as observed also in Figure \ref{fig:cutoff_random}),the script
+will read the tabular files derived from the random test and will perform the
+same analysis (clustering and variation measurements) 
 \begin{verbatim}
 cd data/clustering
 
@@ -976,8 +1098,11 @@ python3 ../../scripts/F_meanVSstd.py  ../entropies_matrix_entropies.tab
         \label{fig:cluster_random}
 \end{figure}
 
-\subsubsection{Comparing the distribution of random entropies, other measurement of variation and several clusters}
-Using several number of clusters and changing the variation measurement to observe the data variation. 
+\subsubsection{Comparing the distribution of random entropies, other
+measurement of variation and several clusters}
+Using several number of clusters and changing the variation measurement to
+observe the data variation. 
+
 \begin{verbatim}
 ######################
 #   Run the script   #
@@ -987,6 +1112,7 @@ python3 ../../scripts/F_meanVSstd.py  ../entropies_matrix_entropies.tab
 --plot-random ../tab_files_random/ -v range -k 6
 --labels 2 -o entropies_cluster_random.range.k6.png
 
+
 \end{verbatim}
 \begin{figure}[H]
   \centering
@@ -995,13 +1121,25 @@ python3 ../../scripts/F_meanVSstd.py  ../entropies_matrix_entropies.tab
         \label{fig:range_random}
 \end{figure}
 
-The criteria to select the cluster method to stand out the Pfam’s to benchmark the metagenomic dataset,  most be based in the distribution of the H’ values obtained in the random test and biochemical knowledge. Due to the consistence in the data, we select ward method, k=3 and standard deviation as variation measurement. 
+The criteria to select the cluster method to stand out the Pfam’s to benchmark
+the metagenomic dataset,  most be based in the distribution of the H’ values
+obtained in the random test and biochemical knowledge. Due to the consistence
+in the data, we select ward method, k=3 and standard deviation as variation
+measurement. 
 
 \section{Stage 4: Entropy Score, origin and interpretation}
 
 \subsection{Requirements}
 
-Due to the variation in peptide read size among the metagenomic dataset (see Figure \ref{fig:msl_metagenomes}, it will be computationally exhaustive to fragment the genomic dataset in all the observed sizes. Therefore we choose to fragment the dataset according to the observed sizes in the histogram: 30,60,100,150,200,250,300 (Figure \ref{fig:msl_metagenomes}). Taking this into account, we propose a range of (+-) 15 aminoacids above or below the size to compute the Sscore. In this case, the Score of  a metagenome of MSL of 40 will be computed using the pre-computed entropies of the genomic fragmented dataset of size 30. See Table \ref{MSL-input}
+Due to the variation in peptide read size among the metagenomic dataset (see
+Figure \ref{fig:msl_metagenomes}, it will be computationally exhaustive to
+fragment the genomic dataset in all the observed sizes. Therefore we choose to
+fragment the dataset according to the observed sizes in the histogram:
+30,60,100,150,200,250,300 (Figure \ref{fig:msl_metagenomes}). Taking this into
+account, we propose a range of (+-) 15 aminoacids above or below the size to
+compute the Sscore. In this case, the Score of  a metagenome of MSL of 40 will
+be computed using the pre-computed entropies of the genomic fragmented dataset
+of size 30. See Table \ref{MSL-input}
 
 \begin{table}[H]
 \centering
@@ -1054,8 +1192,10 @@ pathways are used, requires -keggmap)
 \subsubsection{Basic Usage }
 
 \begin{enumerate}
-\item Locate the output files from hmmsearch of the metagenomes of interest (tabular format files). 
-\item Locate the matrix folder of the computed entropies in Stage \ref{entropies_requirements} 
+\item Locate the output files from hmmsearch of the metagenomes of interest
+(tabular format files). 
+\item Locate the matrix folder of the computed entropies in Stage
+\ref{entropies_requirements} 
 \item Select the desirable MSL size according to Table \ref{MSL-input}
 \end{enumerate}
 \begin{verbatim}
@@ -1084,7 +1224,10 @@ PF00037 0.107   212
 Pfam entropy score: 12.396
 \end{verbatim}
 \subsubsection{SS in the metagenomic dataset}
-In the case of the example above (metagenome 4546294.3) the SS is 12.396. In order to benchmark the behavior of the SS in the metagenomic dataset (using all the described sizes), use the following bash command. 
+
+In the case of the example above (metagenome 4546294.3) the SS is 12.396. In
+order to benchmark the behavior of the SS in the metagenomic dataset (using all
+the described sizes), use the following bash command. 
 
 \begin{verbatim}
 #Generate a folder containing all the outputs from hmmsearch and 
@@ -1140,12 +1283,24 @@ ipython3 notebook differential_plots.ipynb
 \end{verbatim}
 \subsection{Score variation in the metagenomic dataset }
 
-The behavior of the Score in the metagenomic dataset is observed in Figure \ref{fig:differential}, were the MSL category ("x" axis) is plotted against the differential ("y" axis). The differential is defined as degree of change of one size category respect to the previous one ($x_i - x_{i-1}$). \href{https://docs.scipy.org/doc/numpy/reference/generated/numpy.diff.html}{numpy-python}. Using this equation, it is possible to observe the variation of the SS computed for each metagenome in the several MSL categories.We observe that the greatest difference is obtained in size 30-60 (highest standard deviation). The latter suggest that  
+The behavior of the Score in the metagenomic dataset is observed in Figure
+\ref{fig:differential}, were the MSL category ("x" axis) is plotted against the
+differential ("y" axis). The differential is defined as degree of change of one
+size category respect to the previous one ($x_i - x_{i-1}$).
+\href{https://docs.scipy.org/doc/numpy/reference/generated/numpy.diff.html}{numpy-python}.
+Using this equation, it is possible to observe the variation of the SS computed
+for each metagenome in the several MSL categories.We observe that the greatest
+difference is obtained in size 30-60 (highest standard deviation). The latter
+suggest that  
 \begin{enumerate}
-\item In metagenomes with MSL of 100-300, the SS can be computed considering sizes >100 as input for the algorithm. 
+\item In metagenomes with MSL of 100-300, the SS can be computed considering
+sizes >100 as input for the algorithm. 
 \item In small metagenomes (<60), the SS has to be accurately computed, taking into account the specific size of the metagenome.
 \end{enumerate} 
-Due to the above, we decided to compute the SS of each metagenome according to the MSL to consider the specific input size.   
+Due to the above, we decided to compute the SS of each metagenome according to
+the MSL to consider the specific input size.   
+
+
 \begin{figure}[H]
   \centering
     \includegraphics[width=100mm, scale =0.5]{Score_data_behaviour7.png}
@@ -1155,7 +1310,9 @@ Due to the above, we decided to compute the SS of each metagenome according to t
 
 \subsection{Evaluation of the score and the metagenomic metadata}
   
-Using the public information derived from each metagenome, it is possible to obtain the geographical localization of each environmental sample with their corresponding Pfam Score. 
+Using the public information derived from each metagenome, it is possible to
+obtain the geographical localization of each environmental sample with their
+corresponding Pfam Score. 
 First, we need to download the meta data and compile some python dependencies
  
 \begin{verbatim}
@@ -1171,9 +1328,12 @@ for line in  `cat id_metagenomes.txt`;  do wget
 "http://api.metagenomics.anl.gov/1/metagenome/mgm$line?verbosity=metadata" 
 -O $line ; done 
 \end{verbatim}
-The latter command will download all the metadata associated to each metagenome in json format ( http://json.org/).
+The latter command will download all the metadata associated to each metagenome
+in json format ( http://json.org/).
 
-Then, use the script \textit{create\_metadata\_table.py} to generate a readable table were each row corresponds to one metagenome and their corresponding columns represent the metadata associated. 
+Then, use the script \textit{create\_metadata\_table.py} to generate a readable
+table were each row corresponds to one metagenome and their corresponding
+columns represent the metadata associated. 
  
 \begin{verbatim}
 ######################
@@ -1205,7 +1365,8 @@ in tabular format and the same files in pickle format
  
 \end{verbatim}
 
-In order to observe the distribution of the score acording to the geographical localization  open the notebook \textit{plot\_scores\_world.ipynb} 
+In order to observe the distribution of the score acording to the geographical
+localization  open the notebook \textit{plot\_scores\_world.ipynb} 
 \begin{verbatim}
 ipython3 notebook plot_scores_world.ipynb
 \end{verbatim}
@@ -1217,15 +1378,38 @@ ipython3 notebook plot_scores_world.ipynb
         \label{fig:differential}
 \end{figure}
 
-\subsubsection{Computing the Score using different Pfams an plot KEGG map abundancies}
+\subsubsection{Computing the Score using different Pfams an plot KEGG map
+abundancies}
 
-The above mentioned options explain how to compute the Entropy Score using all the Pfam's found in the input genes. In our case, from a database of 152 sulfur protein-coding genes, we found 112 Pfam's which were used to compute the Score. However, it is possible to choose specific Pfam's that are found in the input genes. For example, from the 112 Pfam's we can choose a subset of 10 or 50 Pfam's that are know to be specific to certain routes or metabolic pathways.
-In the case of Sulfur Cycle, we divided the metabolic pathways according to the mayor reactions described \href{http://www.genome.jp/kegg/}{KEGG},  \href{https://metacyc.org/}{MetaCyc} and primary literature. The division of the metabolic pathways of Sulfur Cycle is observed in Table \ref{division_paths} 
+The above mentioned options explain how to compute the Entropy Score using all
+the Pfam's found in the input genes. In our case, from a database of 152 sulfur
+protein-coding genes, we found 114 Pfam's which were used to compute the Score.
 
-Using the output derived from Interproscan (Stage \ref{stage2}) and cross-reference using  \href{http://www.uniprot.org/}{UniProt}, we generated a curated database of the genes involved in the Sulfur cycle (See file /input\_data/sucy\_database.tab). Then, we divided each Pfam with their corresponding molecular-level functions stored in  KO (KEGG Orthology). Due to the domain composition of each protein, the same K0 may have several associated Pfams and vise verse, one domain Pfam, could be present in several proteins or KO's.  
+However, it is possible to choose specific Pfam's that are found in the input
+genes. For example, from the 112 Pfam's we can choose a subset of 10 or 50
+Pfam's that are know to be specific to certain routes or metabolic pathways.
 
-Therefore, the Pfam entropy score \textit{entropy\_score.pl}  algorithm (\ref{entropy_score}) is also able to compute the SS using specific Pfam's 
-belonging to certain metabolic pathways. In order to use this option you  need to enumerate the pathways of interest (arbitrarily) (As explained above  and specify the Pfam's belonging to those pathways. See the, /input\_data/sulfur\_score\_kegg\_list 
+In the case of Sulfur Cycle, we divided the metabolic pathways according to the
+mayor reactions described \href{http://www.genome.jp/kegg/}{KEGG},
+\href{https://metacyc.org/}{MetaCyc} and primary literature. The division of
+the metabolic pathways of Sulfur Cycle is observed in Table
+\ref{division_paths} 
+
+Using the output derived from Interproscan (Stage \ref{stage2}) and
+cross-reference using  \href{http://www.uniprot.org/}{UniProt}, we generated a
+curated database of the genes involved in the Sulfur cycle (See file
+/input\_data/sucy\_database.tab). Then, we divided each Pfam with their
+corresponding molecular-level functions stored in  KO (KEGG Orthology). Due to
+the domain composition of each protein, the same K0 may have several associated
+Pfams and vise verse, one domain Pfam, could be present in several proteins or
+KO's.  
+
+Therefore, the Pfam entropy score \textit{entropy\_score.pl}  algorithm
+(\ref{entropy_score}) is also able to compute the SS using specific Pfam's 
+belonging to certain metabolic pathways. In order to use this option you  need
+to enumerate the pathways of interest (arbitrarily) (As explained above  and
+specify the Pfam's belonging to those pathways. See the,
+/input\_data/sulfur\_score\_kegg\_list 
 
 Besides is another option of SS that help you to visualize the 
 Pfam's in the metabolic pathway of KEGG (map00920), you will need 
@@ -1236,7 +1420,8 @@ Example in  /input\_data/sulfur\_score\_kegg\_list
 
 \begin{table}[H]
 \centering
-\caption{Metabolic pathways of global biogeochemical sulfur cycle divided by numbers }
+\caption{Metabolic pathways of global biogeochemical sulfur cycle divided by
+numbers }
 \label{division_paths}
 \begin{tabular}{@{}lc@{}}
 \toprule
@@ -1296,7 +1481,10 @@ specific folder and the run the following script
 #!/bin/bash
 for file  in *.tab
  do  for r  in {1..1000}
-      do perl scripts/pfam_score.pl  pfam_score.pl -input  $file  -size 500 -matrixdir /home/valdeanda/src/metagenome_Pfam_score-master/data/entropies_matrix/ -random 50  > random_test_50/$file.$r.score
+      do perl scripts/pfam_score.pl  pfam_score.pl -input  $file  -size 500
+-matrixdir
+/home/valdeanda/src/metagenome_Pfam_score-master/data/entropies_matrix/ -random
+50  > random_test_50/$file.$r.score
         done
       done
 
@@ -1311,8 +1499,9 @@ containing the random scores>
 \end{verbatim}
 
 
-\subsection{ROC curves}
-To get the accuracy and precision of the score to predict the metabolism of interest, in our case S-energy based microorganism.
+
+
+
 
 
 \end{document}
