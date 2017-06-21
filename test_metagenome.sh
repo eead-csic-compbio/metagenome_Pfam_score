@@ -1,40 +1,35 @@
- #!/bin/bash
+#!/bin/bash
 
-#1) Get the Mean Size Legth of your metagenome 
+#1) Get the Mean Size Length of peptides encoded in metagenome 
+echo test/4511045.3_metagenome.faa
+perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; printf("MSL = %1.1f\n",$m/scalar(keys(%fa))) }' test/4511045.3_metagenome.faa > test/4511045.3_metagenome.faa.msl
+cat test/4511045.3_metagenome.faa.msl
 
-
-perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} \
-END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; 
-printf("%1.0f\t",$m/scalar(keys(%fa))) }' test/4511045.3; echo 4511045.3
-
-
-#2) Get the Pfam domain composition 
-
-hmmsearch  --cut_ga -o /dev/null --tblout \
-test/4511045.3  4511045.3.out.hmmsearch.tab data/my_Pfam.sulfur.hmm  
+# 2) Find out appropriate fragment size of classifier (genF)
+perl -lne 'BEGIN{@bins=(30,60,100,150,200,250,300);@th=(45,80,125,175,225,275,300)} if(/^MSL = (\S+)/){ $msl=$1; foreach $i (0 .. $#th){ if($msl<=$th[$i]){ print "genF = $bins[$i]"; exit } } }' test/4511045.3_metagenome.faa.msl > test/4511045.3_metagenome.faa.genF
+cat test/4511045.3_metagenome.faa.genF
 
 
-#3) Get the Sulfur Score specifying the MSL of your input metagenome 
+#3) Get the Pfam domain composition of metagenomic peptides
+i=test/4511045.3_metagenome.faa
+if [ ! -f $i.out.hmmsearch.tab ]; then \
+  type hmmsearch >/dev/null 2>&1 || { echo >&2 "# hmmsearch not found, please install"; exit 1; }
+
+  hmmsearch  --cut_ga -o /dev/null --tblout \
+    $i.out.hmmsearch.tab data/my_Pfam.sulfur.hmm $i; \
+fi
+
+#4) Get the Sulfur Score specifying the MSL of your input metagenome 
+genF=`perl -lne 'if(/genF = (\S+)/){ print $1 }' test/4511045.3_metagenome.faa.genF`
+perl scripts/pfam_score.pl -input $i.out.hmmsearch.tab \
+  -size $genF -matrixdir data/entropies_matrix > $i.out.hmmsearch.tab.score
+
+echo $i.out.hmmsearch.tab.score
+echo "..."
+tail $i.out.hmmsearch.tab.score
 
 
-perl scripts/pfam_score.pl -input test/4511045.3.out.hmmsearch.tab \
--size 30  -matrixdir  data/entropies_matrix  4511045.3.out.hmmsearch.tab.score 
 
-
-
-#1) Get the Pfam domain composition of your input genome 
-
-
-#for i in test/*.faa; do  hmmsearch  --cut_ga -o /dev/null --tblout 
-#$i.out.hmmsearch.tab data/my_Pfam.sulfur.hmm  $i; done  
-
-#echo "Domain composition done" 
-
-#2) Get the Sulfur Score using of the input genomes  
-
-
-#for file in test/*.tab; do perl scripts/pfam_score.pl -input $file  
-#-size 0 -matrixdir  data/entropies_matrix -size 500 > $file.score 
 
 
 
