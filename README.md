@@ -47,7 +47,7 @@ The first two are needed scoring your data with the Sulfur cycle. The following 
 
 1. [Interproscan](https://www.ebi.ac.uk/interpro/interproscan.htm}{Interproscan)
 2. [Hmmsearch](http://hmmer.org)
-3. [Python3]({https://www.python.org/downloads)
+3. [Python3](https://www.python.org/downloads)
 4. [Matplotlib 1.4 or greater](http://matplotlib.org/users/installing.html#most-platforms-scientific-python-distributions) 
 5. [Numpy](https://docs.scipy.org/doc/numpy-1.10.0/user/install.html)
 6. [Pandas](http://pandas.pydata.org/pandas-docs/stable/install.html)
