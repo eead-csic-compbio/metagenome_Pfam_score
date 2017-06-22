@@ -40,6 +40,23 @@ These inputs are processed in order to train a classifier which internally uses 
 As seen above, genomes or metagenomes provided by the user can then be scored with the trained classifier.
 Once a classifier has been trained, such as the Sulfur cycle, steps 1 and 3 can be skipped. 
 
+#\section{Pre-requisites}
+These are external packages which you will need to install before running the
+algorithm, they have been tested under Linux environment. 
+The first two are needed scoring your data with the Sulfur cycle. The following are needed to run all the analysis. 
+
+1. [Interproscan](https://www.ebi.ac.uk/interpro/interproscan.htm}{Interproscan)
+2. [Hmmsearch](http://hmmer.org)
+3. [Python3]({https://www.python.org/downloads)
+4. [Matplotlib 1.4 or greater](http://matplotlib.org/users/installing.html#most-platforms-scientific-python-distributions) 
+5. [Numpy](https://docs.scipy.org/doc/numpy-1.10.0/user/install.html)
+6. [Pandas](http://pandas.pydata.org/pandas-docs/stable/install.html)
+7. [Scikit-learn](http://scikit-learn.org/stable/install.html)
+8. [Jupyter-notebook](http://jupyter.org}{Jupyter-notebook)
+9. [MPL_toolkits](http://matplotlib.org/1.4.3/mpl_toolkits/index.html)
+
+
+
 ![flowchart](./manual/flowchart.png)
 
 <!--
