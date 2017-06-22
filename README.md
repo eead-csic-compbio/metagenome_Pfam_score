@@ -43,8 +43,9 @@ Once a classifier has been trained, such as the Sulfur cycle, steps 1 and 3 can 
 # Pre-requisites
 
 These are external packages which you will need to install before running the
-algorithm, they have been tested under Linux environment. 
-The first two are needed scoring your data with the Sulfur cycle. The following are needed to run all the analysis. 
+algorithm. The have been tested under Linux environment. 
+The first two (Interpro and Hmmsearch)  are needed scoring your data with the Sulfur cycle. 
+The following pre-requisites are needed to run all the analysis described in the four steps. 
 
 1. [Interproscan](https://www.ebi.ac.uk/interpro/interproscan.htm}{Interproscan)
 2. [Hmmsearch](http://hmmer.org)
