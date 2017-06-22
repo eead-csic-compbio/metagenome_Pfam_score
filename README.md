@@ -40,7 +40,8 @@ These inputs are processed in order to train a classifier which internally uses 
 As seen above, genomes or metagenomes provided by the user can then be scored with the trained classifier.
 Once a classifier has been trained, such as the Sulfur cycle, steps 1 and 3 can be skipped. 
 
-#\section{Pre-requisites}
+# Pre-requisites
+
 These are external packages which you will need to install before running the
 algorithm, they have been tested under Linux environment. 
 The first two are needed scoring your data with the Sulfur cycle. The following are needed to run all the analysis. 
