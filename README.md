@@ -45,7 +45,7 @@ Once a classifier has been trained, such as the Sulfur cycle, steps 1 and 3 can 
 
 The following external packages are required by the pipeline.
 Interproscan and hmmsearch are needed in order to annotate Pfam domains within peptide sequences. 
-The rest of packages are needed to run all the full pipeline, which comprises four steps. 
+The rest of packages are needed to run the full pipeline, which comprises four steps. 
 
 1. [Interproscan](https://www.ebi.ac.uk/interpro/interproscan.htm}{Interproscan)
 2. [Hmmsearch](http://hmmer.org)
