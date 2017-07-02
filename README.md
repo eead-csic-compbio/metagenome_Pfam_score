@@ -19,7 +19,8 @@ The scripts are written in bash, perl5 and python3 and have been tested under Li
 Scripts [score_genomes.sh](./score_genomes.sh) and [score_metagenomes.sh](./score_metagenomes.sh) are provided
 so that users can virtually avoid reading the manual and score their own genomes/metagenomes in terms of their
 Sulfur cycle metabolic machinery. All that is required is a directory containing peptide FASTA files of
-encoded proteins/fragments with **.faa** extension. \verb+hmmsearch+ must be installed as well (see below).
+encoded proteins/fragments with **.faa** extension.
+Note that hmmsearch must be installed as well (see below).
 Examples of use would be:
 
 $ ./score_genomes.sh test_genomes
