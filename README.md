@@ -32,7 +32,7 @@ $ ./score_metagenomes.sh test_metagenomes
 
 # Train your own classifier for any cycle/pathway 
 
-For more advanced uses a [manual](./manual/manualv1.pdf) is provided. The required input data are:
+For more advanced uses a [manual](./manual/manual.v1.pdf) is provided. The required input data are:
 
 1. FASTA file with peptides sequences of proteins involved in the cycle/pathway of interest.
 2. List of RefSeq accesions of (curated) genomes known to be involved in the cycle/pathway of interest.
