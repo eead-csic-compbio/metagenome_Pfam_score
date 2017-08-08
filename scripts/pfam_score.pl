@@ -21,7 +21,7 @@ my $DEFAULTMINRELENTROPY  = -9;
 # RGB scale from white to pink to  red
 my @COLORS = ( '#FFFFFF', '#FF9999', '#FF6666',  '#FF3333', '#FF0000', '#CC0000' );
 
-my ($INP_pfamsearchfile,$INP_infile_bzipped,$INP_entropyfile) = ('',0);
+my ($INP_pfamsearchfile,$INP_infile_bzipped,$INP_entropyfile) = ('',0,'');
 my ($INP_fragment_size,$INP_help,$INP_keggmapfile,$INP_minentropy) = ($DEFAULTFRAGSIZE,0,'',$DEFAULTMINRELENTROPY);
 my ($INP_pathways,$RAND_percent,@user_pathways,$pw) = ('',0);
 
@@ -38,7 +38,7 @@ GetOptions
 	'random|rd:i'     => \$RAND_percent
 );
 
-if (-t STDIN && ($INP_help || $INP_pfamsearchfile eq ''))
+if (-t STDIN && ($INP_help || $INP_pfamsearchfile eq '' || $INP_entropyfile eq ''))
 {
 die<<EODOC;
 
@@ -89,11 +89,11 @@ EODOC
 }
    
 # required input files
-if(!-s $INP_pfamsearchfile)
+if(!$INP_pfamsearchfile || !-s $INP_pfamsearchfile)
 {
     die "# ERROR : cannot locate input file -input $INP_pfamsearchfile\n";
 }  
-elsif(!-s $INP_entropyfile)
+elsif(!$INP_entropyfile || !-s $INP_entropyfile)
 {
   die "# ERROR : cannot locate input file -entropyfile $INP_entropyfile\n";
 }
