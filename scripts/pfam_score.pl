@@ -3,41 +3,39 @@ use strict;
 use Getopt::Long;
 use FindBin '$Bin';
 
-# This script takes a single required input and several optional choices: 
-# 1) a hmmsearch TSV outfile with the results of scanning a collection of Pfam domais against
-# a large set of genomes or metagenomes. 
-# In case metagenomes are used, a second parameter indicating the MSL is also required.
+# This script takes two input files and several optional choices: 
+#
+# 1) a hmmsearch tbl-format outfile with the results of scanning a collection of Pfam domais against
+# a large set of genomes or metagenomes
+#
+# 2) a TSV file with pre-computed entropies of Pfam domains produced by scripts/extract_entropies.py
 
 # Output:
 # 1) TAB-separated output with Pfam entropy scores
 
 # B Contreras-Moreira, V de Anda 2017
 
-
-
 my $DEFAULTFRAGSIZE  = 100;
-my $DEFAULTMATRIXDIR = $Bin.'/../data/entropies_matrix/';
-my $DEFAULTMATRIXFILENAME = 'genomes_refseq_nr_22122016_sizeXXX_cover10.faa.out.hmmsearch.tab.csv'; 
 my $DEFAULTMINRELENTROPY  = -9;
 
-my @COLORS = ( '#FF9999', '#FF6666',  '#FF3333', '#FF0000', '#CC0000' );
+# RGB scale from white to pink to  red
+my @COLORS = ( '#FFFFFF', '#FF9999', '#FF6666',  '#FF3333', '#FF0000', '#CC0000' );
 
-my ($INP_pfamsearchfile,$INP_infile_bzipped,$INP_matrixdir) = ('',0,$DEFAULTMATRIXDIR);
+my ($INP_pfamsearchfile,$INP_infile_bzipped,$INP_entropyfile) = ('',0);
 my ($INP_fragment_size,$INP_help,$INP_keggmapfile,$INP_minentropy) = ($DEFAULTFRAGSIZE,0,'',$DEFAULTMINRELENTROPY);
 my ($INP_pathways,$RAND_percent,@user_pathways,$pw) = ('',0);
 
 GetOptions
 (
-    'help|h|?'        => \$INP_help,
-    'input|in=s'      => \$INP_pfamsearchfile,
-    'size|s:i'        => \$INP_fragment_size,
-	 'bzip|b'          => \$INP_infile_bzipped,
-	 'matrixdir|dir=s' => \$INP_matrixdir,
-	 'keggmap|km=s'    => \$INP_keggmapfile,
-	 'minentropy|min=f'=> \$INP_minentropy,
-	 'pathway|pw=s'    => \$INP_pathways,
+  'help|h|?'        => \$INP_help,
+  'input|in=s'      => \$INP_pfamsearchfile,
+  'size|s:s'        => \$INP_fragment_size,
+	'bzip|b'          => \$INP_infile_bzipped,
+	'entropyfile|enf=s' => \$INP_entropyfile,
+  'keggmap|km=s'    => \$INP_keggmapfile,
+  'minentropy|min=f'=> \$INP_minentropy,
+	'pathway|pw=s'    => \$INP_pathways,
 	'random|rd:i'     => \$RAND_percent
-
 );
 
 if (-t STDIN && ($INP_help || $INP_pfamsearchfile eq ''))
@@ -48,35 +46,60 @@ Program to compute Pfam entropy score (i.e Sulfur score).
 
 usage: $0 [options] 
 
- -help             brief help message
+ -help          Brief help message
  
- -input            input file with HMM matches produced by hmmsearch, tbl format
+ -input         tbl-format file with HMM matches produced by hmmsearch (required)
 
- -size             mean peptide size length (MSL)         (integer, default $INP_fragment_size)
+ -size          Mean peptide size length (MSL)                         (optional, default=$INP_fragment_size)
+                MSL takes integers 30,60,100,150,200,250,300 for the 
+                analysis of metagenomes, where peptides are usually 
+                fragmented, and also the value 'real' in the case of
+                completely sequenced genomes.
+
+ -bzip          Input file is BZIP2-compressed                         (optional)
  
- -bzip             input file is bzip2-compressed
+ -entropyfile   TSV file with pre-computed entropies from peptides     (required)
+                of variable size, produced by extract_entropies.py
+                The file must be formatted as follows:
+
+                  real  30  60  100 150 200 250 300
+                  PF00005 -0.001  0.001 -0.001  -0.001  -0.001  -0.001  -0.001  -0.001
+                  ...
  
- -matrixdir        directory containing pre-computed entropies from peptides of variable size (string, \n                    default $DEFAULTMATRIXDIR)
- 
- -minentropy       min relative entropy of HMMs to be considered (unsigned float)
+ -minentropy    Min relative entropy of HMMs to be considered          (optional, unsigned float, example -min 0.3)
+                to compute the Pfam score    
 						 
- -keggmap          file with HMM to KEGG mappings
- 
- -pathway          comma-separated pathway numbers from -keggmap file to consider only member HMMs  (string, \n                    by default all pathways are used, requires -keggmap)
+ -keggmap       TSV file with HMM to KEGG mappings and pathway names.  (optional)
+                This produces a report on pathway completness and  
+                also a script to display the pathways in KEGG.
+                The file must be formatted as follows: 
 
- -random           percent of random  Pfams to compute the score (integer, default off )
+                  PFAM  KO  PATHWAY   PATHWAY NAME 
+                  PF00890 K00394  1 Sulfite oxidation 
+                  PF01087   1 Sulfite oxidation 
+                  PF00581 K01011  2 Thiosulfate oxidation
+                  ...
+ 
+ -pathway       Comma-separated pathway numbers from -keggmap file to  (optional, by default all pathways are used)
+                produce pathway reports and to compute the Pfam score
+
+ -random        Percent of random-sampled Pfams to compute the score   (integer, default=100)
 
 EODOC
-
-
 }
    
+# required input files
 if(!-s $INP_pfamsearchfile)
 {
     die "# ERROR : cannot locate input file -input $INP_pfamsearchfile\n";
 }  
+elsif(!-s $INP_entropyfile)
+{
+  die "# ERROR : cannot locate input file -entropyfile $INP_entropyfile\n";
+}
 
-if($INP_fragment_size < 1)
+# optional arguments
+if($INP_fragment_size ne 'real' && ($INP_fragment_size !~ /^\d+$/ || $INP_fragment_size < 1))
 {
     die "# ERROR : invalid value for fragment size ($INP_fragment_size)\n";
 }
@@ -86,13 +109,10 @@ if($INP_keggmapfile && !-s $INP_keggmapfile)
     die "# ERROR : cannot locate input file -keggmap $INP_keggmapfile\n";
 }
 
-
 if($RAND_percent && ($RAND_percent < 1 || $RAND_percent > 100))
 {
     die "# ERROR : invalid percent to compute the scores ($RAND_percent)\n";
 }
-
-
 
 elsif($INP_keggmapfile)
 {
@@ -106,68 +126,77 @@ elsif($INP_keggmapfile)
 }
 
 print "# $0 call:\n# -input $INP_pfamsearchfile -size $INP_fragment_size -bzip $INP_infile_bzipped ".
-	"-matrixdir $INP_matrixdir -minentropy $INP_minentropy -random $RAND_percent -keggmap $INP_keggmapfile ".
-  "-pathway $INP_pathways\n\n ";
+	"-entropyfile $INP_entropyfile -minentropy $INP_minentropy -random $RAND_percent -keggmap $INP_keggmapfile ".
+  "-pathway $INP_pathways\n\n";
 
 ################################################
 
 my ($random,%skip_random,$r) = ( $RAND_percent ); 
 
 my (%HMMentropy,@HMMs,%matchedHMMs,%KEGGmap,$hmm,$KEGGid,$entropy);
+my $size_column = -1;
 
-## locate appropriate hmm matrix containing relative entropies 
-my $matrixfile = $DEFAULTMATRIXFILENAME;
-$matrixfile =~ s/XXX/$INP_fragment_size/;
+## open entropy file, validate the selected size, and store entropies
+open(ENTROPYFILE,$INP_entropyfile) || die "# $0 : cannot find $INP_entropyfile\n";
+while(<ENTROPYFILE>)
+{
+  chomp;
 
-open(HMMMATRIX,"$INP_matrixdir/$matrixfile") || 
-	die "# $0 : cannot find $INP_matrixdir/$matrixfile, please check paths and re-run\n";
-while(<HMMMATRIX>)
-{	
-	#	PF00005	PF00009	...
-	if(/^\tPF\d+\t/)
-	{
-		chomp;
-		@HMMs = split(/\t/,$_); 
-    shift(@HMMs); # delete first cell, empty
-	}
-	elsif(/^rel_entropy/)
-	{
-		chomp;
-		my @entropies = split(/\t/,$_);
-    shift(@entropies);
-		foreach $hmm (0 .. $#HMMs)
-		{
-			$HMMentropy{$HMMs[$hmm]} = $entropies[$hmm];
-		
-      if($RAND_percent) 
-      { 
-        my $hmm_number = scalar(@HMMs);
-        my $total_hmms2skip = int( ((100-$random)/100) * $hmm_number );
-        
-        while(scalar(keys(%skip_random)) < $total_hmms2skip)
-        {
-          $r = int(rand($#HMMs));
-          while($skip_random{$HMMs[$r]}){ $r = int(rand($#HMMs)) }
-          $skip_random{$HMMs[$r]} = 1;
-          #print "# skip $r ($total_hmms2skip)\n";
-        }
-	    }		
-		}
-		
-		last;
-	}
+  # header file with accepted fragment sizes 
+  if(/^\treal/) # real  30  60  100 150 200 250 300
+  {
+    my @valid_sizes = split(/\t/,$_);
+    shift(@valid_sizes); # first column is empty
+
+    foreach my $vsize (0 .. $#valid_sizes)
+    {
+      if($valid_sizes[$vsize] eq $INP_fragment_size)
+      {
+        $size_column = $vsize;
+        last;
+      }
+    }
+
+    if($size_column == -1)
+    {
+      die "# ERROR : cannot find -size $INP_fragment_size in -entropyfile $INP_entropyfile\n";
+    }
+  }
+  else # PF00005 -0.001  0.001 -0.001  -0.001  -0.001  -0.001  -0.001  -0.001
+  {
+    my @entropies = split(/\t/,$_);
+
+    # save ordered list of parsed HMMs 
+    $hmm = shift(@entropies);
+    push(@HMMs,$hmm);  
+
+    # store selected entropy according to size
+    $HMMentropy{$hmm} = $entropies[$size_column];
+  }
 }
-close(HMMMATRIX);
+close(ENTROPYFILE);
 
 printf("# total HMMs with assigned entropy in %s : %d\n\n",
-	"$INP_matrixdir/$matrixfile",scalar(keys(%HMMentropy)));
+  "$INP_entropyfile",scalar(keys(%HMMentropy)));
 
-if($RAND_percent)
-{
+## if requested, random-sample a fraction of parsed HMMs
+if($RAND_percent) 
+{ 
+  my $hmm_number = scalar(@HMMs);
+  my $total_hmms2skip = int( ((100-$random)/100) * $hmm_number );
+        
+  while(scalar(keys(%skip_random)) < $total_hmms2skip)
+  {
+    $r = int(rand($#HMMs));
+    while($skip_random{$HMMs[$r]}){ $r = int(rand($#HMMs)) }
+    $skip_random{$HMMs[$r]} = 1;
+    print "# skip $HMMs[$r]\n";
+  }
+  
   printf("# total randomly skipped HMMs: %d\n\n",scalar(keys(%skip_random)));
 }  
 	
-## parse HMM2KEGG2pathway mappings file if required
+## if requested parse keggmap file including pathway names
 my %pathways;
 
 if($INP_keggmapfile)
@@ -175,17 +204,21 @@ if($INP_keggmapfile)
 	open(KEGGMAP,$INP_keggmapfile);
 	while(<KEGGMAP>)
 	{
-		#pfam 	ko	pathway
-		#PF00171	K00135 12
-		if(/^(PF\d+)\t(K\d+)\t(\d+)/)
-		{ 
-			push(@{$KEGGmap{$1}},$2); 			
-			$pathways{$1}{$3} = 1;
-		}
+		#pfam 	ko	pathway name
+		#PF00890 K00394  1 Sulfite oxidation
+    chomp;
+
+    next if(/^PFAM/ || /^#/); # skip header and any commented lines
+
+    my ($pf,$kegg,$path_number,$path_name) = split(/\t/,$_);
+		push(@{$KEGGmap{$pf}},$kegg); 		
+    
+		$pathways{$path_number}{$pf} = 1;
+    $pathways{$path_number}{'fullname'} = $path_name;
+    $pathways{$path_number}{'totalHMMs'}++;
 	}
 	close(KEGGMAP);
 }
-	
 	
 ## read input file with hmmsearch output in tab-separated format
 my $maxmatches = 0;
@@ -217,7 +250,7 @@ while(<INFILE>)
 		$pathwayOK = 0;
 		foreach $pw (@user_pathways)
 		{
-			if($pathways{$hmm}{$pw}){ $pathwayOK = 1; last } 
+			if($pathways{$pw}{$hmm}){ $pathwayOK = 1; last } 
 		}
 		next if($pathwayOK == 0);
 	}
@@ -232,32 +265,66 @@ while(<INFILE>)
 close(INFILE);
 
 
-## produce final scores based on observed matched HMMs
+## produce final score based on observed matched HMMs and also
+## compute pathway completness 
+my ($score,$matches,$mapscript,$color,@pws,%previous,%completness) = (0,0,'');
+if(keys(%pathways)){ @pws = sort {$a<=>$b} keys(%pathways) }
 
-my ($qualscore,$matches,$mapscript,$color,%previous) = (0,0,'');
-foreach $hmm (@HMMs)
+print "# Pfam\tentropy\t#matched_peptides\n";
+
+# sort HMMs by #matches
+foreach $hmm (sort {$matchedHMMs{$b} <=> $matchedHMMs{$a}} keys(%matchedHMMs))
 {
   next if($skip_random{$hmm}); 
 
 	$matches = $matchedHMMs{$hmm} || 0;
 	$entropy = $HMMentropy{$hmm} || 0;
 	
+  # print raw data for individual Pfam HMM
+  print "$hmm\t$entropy\t$matches\n";
+
 	if($matches>0)
 	{
-		$qualscore += $entropy;
+    # compute completness of pathways where this domain participates
+    foreach $pw (@pws)
+    {
+      next if(!$pathways{$pw}{$hmm});
+      push(@{$completness{$pw}},$hmm);
+    }
+
+    # prepare KEGG mapping script
+		$score += $entropy;
 		$color = $COLORS[ int(($matches/$maxmatches)*$#COLORS) ];
 		
 		# prepare KEGG mappings for http://www.genome.jp/kegg-bin/show_pathway
 		foreach $KEGGid (@{$KEGGmap{$hmm}})
 		{
-			next if($previous{$KEGGid});
+			next if($KEGGid eq '' || $previous{$KEGGid});
+
 			$mapscript .= "$KEGGid $color,black\n";
-			$previous{$KEGGid}++;
+			$previous{$KEGGid}++; 
 		}
 	}
-	#else{}
 	
 	print "$hmm\t$entropy\t$matches\n";	
 }
 
-print "\nPfam entropy score: $qualscore\n\n$mapscript";
+print "\n# Pfam entropy score: $score\n\n";
+
+print "# Pathway report\n";
+print "# path_number\tpath_name\ttotal_domains\tmatched\t%completness\tmatched_Pfam_domains\n";
+foreach $pw (@pws)
+{
+  printf("%d\t%s\t%d\t%d\t%1.1f\t%s\n",
+    $pw,$pathways{$pw}{'fullname'},
+    $pathways{$pw}{'totalHMMs'},
+    scalar(@{$completness{$pw}}),
+    100*(scalar(@{$completness{$pw}})/$pathways{$pw}{'totalHMMs'}),
+    join(',',@{$completness{$pw}}));
+}
+
+
+print "\n\n# Script to map these Pfam domains in KEGG->User Data Mapping.\n";
+print "# Note that a reference map must be selected first. For instance, Sulphur metabolism is:\n";
+print "# http://www.genome.jp/kegg-bin/show_pathway?map00920\n";
+print "$mapscript";
