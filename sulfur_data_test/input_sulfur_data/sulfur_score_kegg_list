@@ -11,10 +11,10 @@ PF12838		1	Sulfite oxidation
 PF00581	K01011	2	Thiosulfate oxidation 
 PF07680	K16936	2	Thiosulfate oxidation 
 PF04173	K16937	2	Thiosulfate oxidation 
-PF00034	K17223  	2	Thiosulfate oxidation 
+PF00034	K17223	2	Thiosulfate oxidation 
 PF02872	K17224	2	Thiosulfate oxidation 
-PF13501	K17226 	2	Thiosulfate oxidation 
-PF08770	K17227 	2	Thiosulfate oxidation 
+PF13501	K17226	2	Thiosulfate oxidation 
+PF08770	K17227	2	Thiosulfate oxidation 
 PF13442	K19713	2	Thiosulfate oxidation 
 PF00581		2	Thiosulfate oxidation 
 PF13442		2	Thiosulfate oxidation 
@@ -36,19 +36,19 @@ PF13247	K08358	4	Tetrathionate reduction
 PF03916	K08359	4	Tetrathionate reduction 
 PF17179	K16950	4	Tetrathionate reduction 
 PF00175	K16951	4	Tetrathionate reduction 
-PF10418	K16951 	4	Tetrathionate reduction 
-PF13247	K00184 	5	Sulfate reduction DS
+PF10418	K16951	4	Tetrathionate reduction 
+PF13247	K00184	5	Sulfate reduction DS
 PF03916	K00185	5	Sulfate reduction DS
 PF00890	K00394	5	Sulfate reduction DS
 PF02910	K00394	5	Sulfate reduction DS
 PF12139	K00395	5	Sulfate reduction DS
 PF01077	K11180	5	Sulfate reduction DS
 PF03460	K11180	5	Sulfate reduction DS
-PF03460	K11180 	5	Sulfate reduction DS
+PF03460	K11180	5	Sulfate reduction DS
 PF00037	K11181	5	Sulfate reduction DS
 PF01077	K11181	5	Sulfate reduction DS
 PF03460	K11181	5	Sulfate reduction DS
-PF12831	K16885 	5	Sulfate reduction DS
+PF12831	K16885	5	Sulfate reduction DS
 PF02662	K16886	5	Sulfate reduction DS
 PF12831	K16886	5	Sulfate reduction DS
 PF02665	K16887	5	Sulfate reduction DS
@@ -70,12 +70,12 @@ PF03916	K17221	6	Elemental sulfur reduction
 PF10518	K17221	6	Elemental sulfur reduction 
 PF04879	K17222	6	Elemental sulfur reduction 
 PF00374	K17993	6	Elemental sulfur reduction 
-PF00374	K17993 	6	Elemental sulfur reduction 
+PF00374	K17993	6	Elemental sulfur reduction 
 PF01058	K17994	6	Elemental sulfur reduction 
-PF01058	K17994 	6	Elemental sulfur reduction 
-PF00175	K17995  	6	Elemental sulfur reduction 
-PF00970	K17995  	6	Elemental sulfur reduction 
-PF10418	K17995  	6	Elemental sulfur reduction 
+PF01058	K17994	6	Elemental sulfur reduction 
+PF00175	K17995	6	Elemental sulfur reduction 
+PF00970	K17995	6	Elemental sulfur reduction 
+PF10418	K17995	6	Elemental sulfur reduction 
 PF17179	K17996	6	Elemental sulfur reduction 
 PF00581	K01011	7	Thiosulfate disproportion 
 PF00581	K02439	7	Thiosulfate disproportion 
@@ -89,9 +89,9 @@ PF00581		7	Thiosulfate disproportion
 PF00484		8	Carbon disulfide oxidation 
 PF03358	K00299	9	Alkanesulfonate degradation 
 PF00296	K04091	9	Alkanesulfonate degradation 
-PF09084	K15553 	9	Alkanesulfonate degradation 
-PF00528	K15554 	9	Alkanesulfonate degradation 
-PF00005	K15555 	9	Alkanesulfonate degradation 
+PF09084	K15553	9	Alkanesulfonate degradation 
+PF00528	K15554	9	Alkanesulfonate degradation 
+PF00005	K15555	9	Alkanesulfonate degradation 
 PF00175	K00380	10	Sulfate reduction A
 PF00258	K00380	10	Sulfate reduction A
 PF00667	K00380	10	Sulfate reduction A
@@ -100,8 +100,8 @@ PF03460	K00381	10	Sulfate reduction A
 PF01507	K00390	10	Sulfate reduction A
 PF01077	K00392	10	Sulfate reduction A
 PF03460	K00392	10	Sulfate reduction A
-PF01077	K00392 	10	Sulfate reduction A
-PF03460	K00392 	10	Sulfate reduction A
+PF01077	K00392	10	Sulfate reduction A
+PF03460	K00392	10	Sulfate reduction A
 PF01583	K00860	10	Sulfate reduction A
 PF00009	K00956	10	Sulfate reduction A
 PF01507	K00957	10	Sulfate reduction A
@@ -109,25 +109,25 @@ PF00459	K01082	10	Sulfate reduction A
 PF00005	K02045	10	Sulfate reduction A
 PF12857	K02045	10	Sulfate reduction A
 PF00528	K02046	10	Sulfate reduction A
-PF00528	K02047 	10	Sulfate reduction A
+PF00528	K02047	10	Sulfate reduction A
 PF13531	K02048	10	Sulfate reduction A
-PF01384	K02048 	10	Sulfate reduction A
-PF13247	K00184 	11	Sulfide oxidation 
+PF01384	K02048	10	Sulfate reduction A
+PF13247	K00184	11	Sulfide oxidation 
 PF03916	K00185	11	Sulfide oxidation 
 PF00890	K00394	11	Sulfide oxidation 
 PF02910	K00394	11	Sulfide oxidation 
 PF12139	K00395	11	Sulfide oxidation 
 PF00174	K07147	11	Sulfide oxidation 
 PF03404	K07147	11	Sulfide oxidation 
-PF02635	K07235 	11	Sulfide oxidation 
+PF02635	K07235	11	Sulfide oxidation 
 PF02635	K07236	11	Sulfide oxidation 
-PF00556	K08926  	11	Sulfide oxidation 
-PF00556	K08927 	11	Sulfide oxidation 
+PF00556	K08926	11	Sulfide oxidation 
+PF00556	K08927	11	Sulfide oxidation 
 PF00124	K08928	11	Sulfide oxidation 
-PF00124	K08929 	11	Sulfide oxidation 
+PF00124	K08929	11	Sulfide oxidation 
 PF03460	K11180	11	Sulfide oxidation 
 PF01077	K11180	11	Sulfide oxidation 
-PF03460	K11180 	11	Sulfide oxidation 
+PF03460	K11180	11	Sulfide oxidation 
 PF01077	K11181	11	Sulfide oxidation 
 PF03460	K11181	11	Sulfide oxidation 
 PF03967	K13991	11	Sulfide oxidation 
@@ -180,7 +180,7 @@ PF06099		16	DMS oxidation
 PF00378	K00666	17	DMSP oxidation 
 PF00501	K00666	17	DMSP oxidation 
 PF13193	K00666	17	DMSP oxidation 
-PF00557	K16953 	17	DMSP oxidation 
+PF00557	K16953	17	DMSP oxidation 
 PF01571	K17486	17	DMSP oxidation 
 PF08669	K17486	17	DMSP oxidation 
 PF02515		17	DMSP oxidation 
@@ -203,7 +203,7 @@ PF00171		19	Suloacetaldehyde oxidation
 PF00205		19	Suloacetaldehyde oxidation 
 PF02775		19	Suloacetaldehyde oxidation 
 PF02776		19	Suloacetaldehyde oxidation 
-PF02635	K07235 	20	Elemental sulfur oxidation 
+PF02635	K07235	20	Elemental sulfur oxidation 
 PF02635	K07236	20	Elemental sulfur oxidation 
 PF03460	K11180	20	Elemental sulfur oxidation 
 PF01077	K11181	20	Elemental sulfur oxidation 
@@ -219,11 +219,11 @@ PF00355	K16968	22	Methanesulfonate oxidation
 PF00848	K16968	22	Methanesulfonate oxidation 
 PF13577	K16969	22	Methanesulfonate oxidation 
 PF02668	K03119	23	Taurine oxidation 
-PF00202	K03851 	23	Taurine oxidation 
+PF00202	K03851	23	Taurine oxidation 
 PF01515	K06250	23	Taurine oxidation 
 PF01515	K13788	23	Taurine oxidation 
 PF00005	K10831	23	Taurine oxidation 
-PF00202	K15372 	23	Taurine oxidation 
+PF00202	K15372	23	Taurine oxidation 
 PF04069	K15551	23	Taurine oxidation 
 PF00528	K15552	23	Taurine oxidation 
 PF00205		23	Taurine oxidation 
@@ -246,8 +246,8 @@ PF01747		29	Marker genes
 PF02662	K16886	29	Marker genes 
 PF04358		29	Marker genes 
 PF04879	K08352	29	Marker genes 
-PF08770	K17227 	29	Marker genes 
+PF08770	K17227	29	Marker genes 
 PF09242	K17229	29	Marker genes 
-PF10418	K16951 	29	Marker genes 
+PF10418	K16951	29	Marker genes 
 PF12139	K00395	29	Marker genes 
 PF13247	K08353	29	Marker genes 
