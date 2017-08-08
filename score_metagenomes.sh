@@ -30,7 +30,7 @@ for i in $inputdir/*.faa; do \
   #4) Get the Sulfur Score specifying the MSL of your input metagenome 
   genF=`perl -lne 'if(/genF = (\S+)/){ print $1 }' $i.genF`
   perl scripts/pfam_score.pl -input $i.out.hmmsearch.tab \
-    -size $genF -matrixdir sulfur_data_test/entropies_matrix > $i.out.hmmsearch.tab.score
+    -size $genF -entropyfile sulfur_data_test/entropies_matrix_entropies.tab > $i.out.hmmsearch.tab.score
 
   echo $i.out.hmmsearch.tab.score
   echo "..."
