@@ -305,8 +305,6 @@ foreach $hmm (sort {$matchedHMMs{$b} <=> $matchedHMMs{$a}} keys(%matchedHMMs))
 			$previous{$KEGGid}++; 
 		}
 	}
-	
-	print "$hmm\t$entropy\t$matches\n";	
 }
 
 print "\n# Pfam entropy score: $score\n\n";
