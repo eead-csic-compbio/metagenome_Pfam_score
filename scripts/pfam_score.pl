@@ -269,7 +269,7 @@ close(INFILE);
 
 ## produce final score based on observed matched HMMs and also
 ## compute pathway completness 
-my ($score,$matches,$mapscript,$color,@pws,%previous,%completness) = (0,0,'');
+my ($score,$matches,$color,@mapscript,@pws,%previous,%completness) = (0,0);
 if(keys(%pathways)){ @pws = sort {$a<=>$b} keys(%pathways) }
 
 print "# Pfam\tentropy\t#matched_peptides\n";
@@ -303,7 +303,7 @@ foreach $hmm (sort {$matchedHMMs{$b} <=> $matchedHMMs{$a}} keys(%matchedHMMs))
 		{
 			next if($KEGGid eq '' || $previous{$KEGGid});
 
-			$mapscript .= "$KEGGid $color,black\n";
+			push(@mapscript, "$KEGGid $color,black");
 			$previous{$KEGGid}++; 
 		}
 	}
@@ -333,6 +333,10 @@ foreach $pw (@pws)
 
 
 print "\n\n# Script to map these Pfam domains in KEGG->User Data Mapping.\n";
+print "# Colors are proportional to the number of Pfam matches and normalized with respect to the max.\n";
 print "# Note that a reference map must be selected first. For instance, Sulphur metabolism is:\n";
 print "# http://www.genome.jp/kegg-bin/show_pathway?map00920\n";
-print "$mapscript";
+print "# WARNING: note that several K numbers might map to the same protein.\n";
+print "# These cases are coloured in KEGG with the color of the last given K number.\n";
+print "# You might want to manually adjust the colors to correct this.\n";
+print join("\n",sort(@mapscript))."\n";
