@@ -313,12 +313,20 @@ print "# Pathway report\n";
 print "# path_number\tpath_name\ttotal_domains\tmatched\t%completness\tmatched_Pfam_domains\n";
 foreach $pw (@pws)
 {
+  my $pw_matched_Pfams = '';
+  my $pw_matches = 0;
+  if($completness{$pw})
+  { 
+    $pw_matches = scalar(@{$completness{$pw}});
+    $pw_matched_Pfams = join(',',@{$completness{$pw}});
+  }  
+
   printf("%d\t%s\t%d\t%d\t%1.1f\t%s\n",
     $pw,$pathways{$pw}{'fullname'},
     $pathways{$pw}{'totalHMMs'},
-    scalar(@{$completness{$pw}}),
-    100*(scalar(@{$completness{$pw}})/$pathways{$pw}{'totalHMMs'}),
-    join(',',@{$completness{$pw}}));
+    $pw_matches,
+    100*($pw_matches/$pathways{$pw}{'totalHMMs'}),
+    $pw_matched_Pfams);
 }
 
 
