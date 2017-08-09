@@ -19,7 +19,9 @@ my $DEFAULTFRAGSIZE  = 100;
 my $DEFAULTMINRELENTROPY  = -9;
 
 # RGB scale from pink to red (unmatched KEGG nodes should be white #FFFFFF)
-my @COLORS = ( '#FF9999', '#FF6666',  '#FF3333', '#FF0000', '#CC0000' );
+#HEX scale from blue, yellow to red 
+my @COLORS = ( '#2c7bb6', '#abd9e9',  '#ffffbf', '#fdae61', '#d7191c' );
+#my @COLORS = ( '#FF9999', '#FF6666',  '#FF3333', '#FF0000', '#CC0000' );
 
 my ($INP_pfamsearchfile,$INP_infile_bzipped,$INP_entropyfile) = ('',0,'');
 my ($INP_fragment_size,$INP_help,$INP_keggmapfile,$INP_minentropy) = ($DEFAULTFRAGSIZE,0,'',$DEFAULTMINRELENTROPY);
