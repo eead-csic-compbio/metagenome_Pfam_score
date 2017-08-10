@@ -29,7 +29,7 @@ echo "Domain composition done"
 for file in $inputdir/*.tab; do \
   perl scripts/pfam_score.pl -input $file \
   -entropyfile $datadir/entropies_matrix_entropies.tab -size real > $file.score; \
-  echo $file.score; tail $file.score; \
+  echo $file.score; grep "Pfam entropy score" $file.score; \
 done
 
 
