@@ -36,7 +36,7 @@ for i in $inputdir/*.faa; do \
 
   echo $i.out.hmmsearch.tab.score
   echo "..."
-  tail $i.out.hmmsearch.tab.score;
+  grep "Pfam entropy score" $i.out.hmmsearch.tab.score;
 done
 
 
