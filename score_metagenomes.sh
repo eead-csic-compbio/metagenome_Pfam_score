@@ -46,17 +46,17 @@ echo
  echo "Thanks for using MEBS" 
 echo "-----------------------------------------------------------------"
 echo "NOTE: According to our $pathway benchmarks, depending on your MSL"
-echo "input metagenomet, the maximum expected Scores (MES) and the selected "
+echo "input metagenomet, the maximum teorethical Scores (MTS) and the selected "
 echo "cutoff Scores (95th) are"
 echo
-echo "	GenF	MES	95th"
-echo "	30	7.762	7.66 "
-echo "	60	10.085	9.70"
-echo "	100	8.986	8.81"
-echo "	150	9.399	8.51"
-echo "	200	9.487	8.18"
-echo "	250	9.528	8.98"
-echo "	300	9.464	7.61"
+echo "	GenF	MTS	95th"
+echo "	30	13.67	7.66 "
+echo "	60	16.81	9.70"
+echo "	100	15.56	8.81"
+echo "	150	15.84	8.51"
+echo "	200	15.88	8.18"
+echo "	250	16.03	8.98"
+echo "	300	15.92	7.61"
 
 
 
