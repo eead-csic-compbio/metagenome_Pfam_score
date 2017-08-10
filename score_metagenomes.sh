@@ -25,8 +25,6 @@ for i in $inputdir/*.faa; do \
   # 2) Find out appropriate fragment size of classifier (genF)
   perl -lne 'BEGIN{@bins=(30,60,100,150,200,250,300);@th=(45,80,125,175,225,275,300)} if(/^MSL = (\S+)/){ $msl=$1; foreach $i (0 .. $#th){ if($msl<=$th[$i]){ print "genF = $bins[$i]"; exit } } }' $i.msl > $i.genF
   cat $i.genF
-  echo "------------------------------------------------------------------"
-  echo "                Sulfur domain composition  done"
   #3) Get the Pfam domain composition of metagenomic peptides
   if [ ! -f $i.out.hmmsearch.tab ]; then \
     type hmmsearch >/dev/null 2>&1 || { echo >&2 "# hmmsearch not found, please install"; exit 1; }
