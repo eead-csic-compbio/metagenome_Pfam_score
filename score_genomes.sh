@@ -10,7 +10,7 @@ inputdir=$1
 pathway="Sulfur cycle"
 datadir=sulfur_data_test
 cutoff=8.705
-maxscore=9.491
+maxscore=16.01
 
 # 1) Get the Pfam domain composition of proteins
 for i in $inputdir/*.faa; do \
