@@ -19,32 +19,26 @@ for i in $inputdir/*.faa; do \
     hmmsearch  --cut_ga -o /dev/null --tblout \
       $i.out.hmmsearch.tab $datadir/my_Pfam.sulfur.hmm $i; \
   fi
-done  
-echo "------------------------------------------------------------------"
-echo "Computing domain composition using our Sulfur Pfam domain database"
-echo "my_Pfam.sulfur.hmm"
-echo "------------------------------------------------------------------"
-echo "                  Domain composition done" 
+
+echo "                    Sulfur domain composition done" 
 echo "------------------------------------------------------------------"
 # 2) Get their Sulfur Score   
-echo "Computing the Score using the script" 
-echo "pfam_score.pl" 
+echo "                    Computing MEBS final Score" 
 echo "------------------------------------------------------------------"
 for file in $inputdir/*.tab; do \
   perl scripts/pfam_score.pl -input $file \
   -entropyfile $datadir/entropies_matrix_entropies.tab -size real > $file.score; \
-  echo $file.score; grep "Pfam entropy score" $file.score; \
-done
+MEBS_Score=`grep "Pfam entropy score" $file.score`
+#  echo $file.score; grep "Pfam entropy score" $file.score; \
+echo "The MEBS Score of"
+echo "your $file"
+echo "is = $MEBS_Score"
+echo "Done"
 echo "------------------------------------------------------------------"
+done
 echo "                    MEBS final Score done"
 echo "------------------------------------------------------------------"
 echo "NOTE: According to our benchmark, a Score >8.705 the most likely"
 echo "that your genome is closely involved in the Sulfur cycle" 
 echo "The highest  SS value you can get is 9.491" 
 echo "Thanks for using MEBS" 
-echo "------------------------------------------------------------------"
-
-
-
-
-
