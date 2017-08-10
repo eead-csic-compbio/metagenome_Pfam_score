@@ -311,32 +311,34 @@ foreach $hmm (sort {$matchedHMMs{$b} <=> $matchedHMMs{$a}} keys(%matchedHMMs))
 
 print "\n# Pfam entropy score: $score\n\n";
 
-print "# Pathway report\n";
-print "# path_number\tpath_name\ttotal_domains\tmatched\t%completness\tmatched_Pfam_domains\n";
-foreach $pw (@pws)
+if($INP_keggmapfile)
 {
-  my $pw_matched_Pfams = '';
-  my $pw_matches = 0;
-  if($completness{$pw})
-  { 
-    $pw_matches = scalar(@{$completness{$pw}});
-    $pw_matched_Pfams = join(',',@{$completness{$pw}});
-  }  
+  print "# Pathway report\n";
+  print "# path_number\tpath_name\ttotal_domains\tmatched\t%completness\tmatched_Pfam_domains\n";
+  foreach $pw (@pws)
+  {
+    my $pw_matched_Pfams = '';
+    my $pw_matches = 0;
+    if($completness{$pw})
+    { 
+      $pw_matches = scalar(@{$completness{$pw}});
+      $pw_matched_Pfams = join(',',@{$completness{$pw}});
+    }  
 
-  printf("%d\t%s\t%d\t%d\t%1.1f\t%s\n",
-    $pw,$pathways{$pw}{'fullname'},
-    $pathways{$pw}{'totalHMMs'},
-    $pw_matches,
-    100*($pw_matches/$pathways{$pw}{'totalHMMs'}),
-    $pw_matched_Pfams);
+    printf("%d\t%s\t%d\t%d\t%1.1f\t%s\n",
+      $pw,$pathways{$pw}{'fullname'},
+      $pathways{$pw}{'totalHMMs'},
+      $pw_matches,
+      100*($pw_matches/$pathways{$pw}{'totalHMMs'}),
+      $pw_matched_Pfams);
+  }
+
+  print "\n\n# Script to map these Pfam domains in KEGG->User Data Mapping.\n";
+  print "# Colors are proportional to the number of Pfam matches and normalized with respect to the max.\n";
+  print "# Note that a reference map must be selected first. For instance, Sulphur metabolism is:\n";
+  print "# http://www.genome.jp/kegg-bin/show_pathway?map00920\n";
+  print "# WARNING: note that several K numbers might map to the same protein.\n";
+  print "# These cases are coloured in KEGG with the color of the last given K number.\n";
+  print "# You might want to manually adjust the colors to correct this.\n";
+  print join("\n",sort(@mapscript))."\n";
 }
-
-
-print "\n\n# Script to map these Pfam domains in KEGG->User Data Mapping.\n";
-print "# Colors are proportional to the number of Pfam matches and normalized with respect to the max.\n";
-print "# Note that a reference map must be selected first. For instance, Sulphur metabolism is:\n";
-print "# http://www.genome.jp/kegg-bin/show_pathway?map00920\n";
-print "# WARNING: note that several K numbers might map to the same protein.\n";
-print "# These cases are coloured in KEGG with the color of the last given K number.\n";
-print "# You might want to manually adjust the colors to correct this.\n";
-print join("\n",sort(@mapscript))."\n";
