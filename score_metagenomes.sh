@@ -10,43 +10,54 @@ inputdir=$1
 pathway="Sulfur cycle"
 datadir=sulfur_data_test
 
+#define which file mapping Pfam domains to KEGG KO nombers should ne used, leave empty otherwise
+#keggmap=
+keggmap=$datadir/input_sulfur_data/sulfur_score_kegg_list
+
+echo "# parameters:"
+echo "# pathway=$pathway"
+echo "# datadir=$datadir"
+echo "# keggmap=$keggmap"
+echo
+echo -e "#metagenome\tMSL\tGenF\tMEBS_Score\t<completeness>\tper_pathway"
 
 for i in $inputdir/*.faa; do \
   
   #1) Get the Mean Size Length of peptides encoded in metagenome
-  
-echo "#Computing Mean Size Length (MSL) of $i...." 
-  perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; printf("MSL = %1.0f\n",$m/scalar(keys(%fa))) }' $i > $i.msl
-  cat $i.msl
+  MSL=`perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; printf("%1.0f\n",$m/scalar(keys(%fa))) }' $i`
  
   # 2) Find out appropriate fragment size of classifier (genF)
-  perl -lne 'BEGIN{@bins=(30,60,100,150,200,250,300);@th=(45,80,125,175,225,275,300)} if(/^MSL = (\S+)/){ $msl=$1; foreach $i (0 .. $#th){ if($msl<=$th[$i]){ print "genF = $bins[$i]"; exit } } }' $i.msl > $i.genF
-  cat $i.genF
+  GENF=`perl -e 'BEGIN{@bins=(30,60,100,150,200,250,300);@th=(45,80,125,175,225,275,300)} foreach $i (0 .. $#th){ if($ARGV[0]<=$th[$i]){ print $bins[$i]; exit }}' $MSL`
+  
   #3) Get the Pfam domain composition of metagenomic peptides
-   echo "# Annotating $pathway Pfam domains in $i ..."  
-   if [ ! -f $i.out.hmmsearch.tab ]; then \
+  if [ ! -f $i.out.hmmsearch.tab ]; then \
     type hmmsearch >/dev/null 2>&1 || { echo >&2 "# hmmsearch not found, please install"; exit 1; }
 
     hmmsearch  --cut_ga -o /dev/null --tblout \
       $i.out.hmmsearch.tab $datadir/my_Pfam.sulfur.hmm $i; \
   fi
-echo "$pathway domain composition done"
-echo 
-  #4) Get the Sulfur Score specifying the MSL of your input metagenome 
   
-  genF=`perl -lne 'if(/genF = (\S+)/){ print $1 }' $i.genF`
-  perl scripts/pfam_score.pl -input $i.out.hmmsearch.tab \
-    -size $genF -entropyfile $datadir/entropies_matrix_entropies.tab \
-    -keggmap $datadir/input_sulfur_data/sulfur_score_kegg_list > $i.out.hmmsearch.tab.score
-  MEBS_Score=`grep "Pfam entropy score" $i.out.hmmsearch.tab.score`;
-  echo "# $i"
-  echo "$MEBS_Score"
-  echo
+  #4) Get the Sulfur Score specifying the MSL of your input metagenome 
+  if [ -z "$keggmap" ]
+  then
+    perl scripts/pfam_score.pl -input $i.out.hmmsearch.tab \
+      -size $GENF -entropyfile $datadir/entropies_matrix_entropies.tab > $i.out.hmmsearch.tab.score
+    MEBS_Score=`perl -lne 'if(/Pfam entropy score: (\S+)/){ print $1 }' $i.out.hmmsearch.tab.score`;
+    echo -e "$i\t$MSL\t$GENF\t$MEBS_Score\tNA\tNA"
+  else
+    perl scripts/pfam_score.pl -input $i.out.hmmsearch.tab \
+      -size $GENF -entropyfile $datadir/entropies_matrix_entropies.tab \
+      -keggmap $keggmap > $i.out.hmmsearch.tab.score
+    MEBS_Score=`perl -lne 'if(/Pfam entropy score: (\S+)/){ print $1 }' $i.out.hmmsearch.tab.score`;
+    MEANCOMP=`perl -lne 'if(/# mean pathway completeness: (\S+)/){ print $1 }' $i.out.hmmsearch.tab.score`;
+    COMPVALUES=`perl -F'\t' -ane 'print "$F[4]\t" if($#F>=5 && !/^#/)' $i.out.hmmsearch.tab.score`;
+    echo -e "$i\t$MSL\t$GENF\t$MEBS_Score\t$MEANCOMP\t$COMPVALUES"
+  fi
 done
 
-echo "MEBS final Score done"
-echo "Thanks for using MEBS" 
+echo 
 echo "-----------------------------------------------------------------"
+echo 
 echo "NOTE: According to our $pathway benchmarks, depending on the Mean Size Length "
 echo "of the input metagenome, the Maximum Theoretical Scores (MTS) and the selected "
 echo "cutoff values (95th percentiles) are:"
