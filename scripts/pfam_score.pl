@@ -339,7 +339,7 @@ if($INP_keggmapfile)
     $mean+=$pw_comp;
   }
   
-  printf("\n# mean pathway completeness: %1.1f%\n",$mean/scalar(@pws));
+  printf("\n# mean pathway completeness: %1.1f\n",$mean/scalar(@pws));
 
   print "\n\n# Script to map these Pfam domains in KEGG->User Data Mapping.\n";
   print "# Colors are proportional to the number of Pfam matches and normalized with respect to the max.\n";
