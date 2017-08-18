@@ -230,5 +230,5 @@ WP_005876942.1       -          TPP_enzyme_N         PF02776.16     4e-51  170.2
 # Target file:     test/Enterococcus_durans.faa
 # Option settings: hmmsearch -o /dev/null --tblout test/Enterococcus_durans.faa.out.hmmsearch.tab --cut_ga data/my_Pfam.sulfur.hmm test/Enterococcus_durans.faa 
 # Current dir:     /home/contrera/codigo/github/metagenome_Pfam_score
-# Date:            Wed Jun 21 16:51:10 2017
+# Date:            Wed Jun 21 17:02:32 2017
 # [ok]
