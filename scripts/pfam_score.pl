@@ -313,25 +313,33 @@ print "\n# Pfam entropy score: $score\n\n";
 
 if($INP_keggmapfile)
 {
+  my $mean=0;
+
   print "# Pathway report\n";
   print "# path_number\tpath_name\ttotal_domains\tmatched\t%completness\tmatched_Pfam_domains\n";
   foreach $pw (@pws)
   {
     my $pw_matched_Pfams = '';
     my $pw_matches = 0;
+    my $pw_comp = 0;
     if($completness{$pw})
     { 
       $pw_matches = scalar(@{$completness{$pw}});
       $pw_matched_Pfams = join(',',@{$completness{$pw}});
-    }  
+      $pw_comp = 100*($pw_matches/$pathways{$pw}{'totalHMMs'});
+    } 
 
     printf("%d\t%s\t%d\t%d\t%1.1f\t%s\n",
       $pw,$pathways{$pw}{'fullname'},
       $pathways{$pw}{'totalHMMs'},
       $pw_matches,
-      100*($pw_matches/$pathways{$pw}{'totalHMMs'}),
+      $pw_comp,
       $pw_matched_Pfams);
+
+    $mean+=$pw_comp;
   }
+  
+  printf("\n# mean pathway completeness: %1.1f%\n",$mean/scalar(@pws));
 
   print "\n\n# Script to map these Pfam domains in KEGG->User Data Mapping.\n";
   print "# Colors are proportional to the number of Pfam matches and normalized with respect to the max.\n";
