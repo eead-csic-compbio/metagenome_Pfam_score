@@ -316,7 +316,7 @@ if($INP_keggmapfile)
   my $mean=0;
 
   print "# Pathway report\n";
-  print "# path_number\tpath_name\ttotal_domains\tmatched\t%completness\tmatched_Pfam_domains\n";
+  print "# path_number\tpath_name\ttotal_domains\tmatched\t%completeness\tmatched_Pfam_domains\n";
   foreach $pw (@pws)
   {
     my $pw_matched_Pfams = '';
