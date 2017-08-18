@@ -7,7 +7,7 @@ if [ $# -eq 0 ]
 fi
 
 inputdir=$1
-pathway="Sulfur cyle"
+pathway="Sulfur cycle"
 datadir=sulfur_data_test
 
 
@@ -36,18 +36,20 @@ echo
   
   genF=`perl -lne 'if(/genF = (\S+)/){ print $1 }' $i.genF`
   perl scripts/pfam_score.pl -input $i.out.hmmsearch.tab \
-    -size $genF -entropyfile $datadir/entropies_matrix_entropies.tab > $i.out.hmmsearch.tab.score
+    -size $genF -entropyfile $datadir/entropies_matrix_entropies.tab \
+    -keggmap $datadir/input_sulfur_data/sulfur_score_kegg_list > $i.out.hmmsearch.tab.score
   MEBS_Score=`grep "Pfam entropy score" $i.out.hmmsearch.tab.score`;
   echo "# $i"
   echo "$MEBS_Score"
-  done
+  echo
+done
 
- echo "MEBS final Score done"
- echo "Thanks for using MEBS" 
+echo "MEBS final Score done"
+echo "Thanks for using MEBS" 
 echo "-----------------------------------------------------------------"
-echo "NOTE: According to our $pathway benchmarks, depending on your MSL"
-echo "input metagenomet, the maximum teorethical Scores (MTS) and the selected "
-echo "cutoff Scores (95th) are"
+echo "NOTE: According to our $pathway benchmarks, depending on the Mean Size Length "
+echo "of the input metagenome, the Maximum Theoretical Scores (MTS) and the selected "
+echo "cutoff values (95th percentiles) are:"
 echo
 echo "	GenF	MTS	95th"
 echo "	30	13.67	7.66 "
