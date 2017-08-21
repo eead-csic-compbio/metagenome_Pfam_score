@@ -22,7 +22,7 @@ echo "# pathway=$pathway"
 echo "# datadir=$datadir"
 echo "# keggmap=$keggmap"
 echo
-echo -e "#metagenome\tMEBS_Score\t<completeness>\tper_pathway"
+echo -e "genome\tMEBS_Score\t<completeness>\tper_pathway"
 
 for i in $inputdir/*.faa; do \
 
