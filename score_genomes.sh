@@ -23,7 +23,6 @@ echo "# datadir=$datadir"
 echo "# keggmap=$keggmap"
 echo
 echo -e "genome\tMEBS_Score\t<completeness>\tper_pathway"
-
 for i in $inputdir/*.faa; do \
 
   # 1) Get the Pfam domain composition of proteins
@@ -57,4 +56,35 @@ echo
 echo "NOTE: According to our $pathway benchmarks, a score > $cutoff indicates"
 echo "that your genome is most likely involved in the $pathway. " 
 echo "The Maximum Theoretical Score (MTS) score is $maxscore ."
+echo "The numbers in the columns indicates the following pathways:"
+echo "1      Sulfite oxidation"
+echo "2       Thiosulfate oxidation"
+echo "3       Tetrathionate oxidation"
+echo "4       Tetrathionate reduction" 
+echo "5       Sulfate reduction DS"
+echo "6       Elemental sulfur reduction"
+echo "7       Thiosulfate disproportion"
+echo "8       Carbon disulfide oxidation" 
+echo "9       Alkanesulfonate degradation" 
+echo "10      Sulfate reduction Assimilative"
+echo "11      Sulfide oxidation"
+echo "12      Cysteate oxidation" 
+echo "13      Dimethylsulfone oxidation"
+echo "14      Sulfacetate oxidation"
+echo "15      Sulfolactate oxidation" 
+echo "16      DMS oxidation"
+echo "17      DMSP oxidation" 
+echo "18      MTP oxidation"
+echo "19      Suloacetaldehyde oxidation"
+echo "20      Elemental sulfur oxidation"
+echo "21      Elemental sulfur disproportion"
+echo "22      Methanesulfonate oxidation"
+echo "23      Taurine oxidation"
+echo "24      DMS methanogenesis" 
+echo "25      MTP methanogesis"
+echo "27      tMethanethiol methanogenesis"
+echo "28      SQDG biosynthesis"
+echo "29      Marker genes"
+
+
  
