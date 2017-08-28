@@ -1,0 +1,170 @@
+# scripts/pfam_score.pl call:
+# -input test_completeness/genomes_run//Micrococcus_luteus_NCTC_2665.faa.out.hmmsearch.tab -size real -bzip 0 -entropyfile sulfur_data_test/entropies_matrix_entropies.tab -minentropy -9 -random 0 -keggmap sulfur_data_test/input_sulfur_data/sulfur_score_kegg_list -pathway 
+
+# total HMMs with assigned entropy in sulfur_data_test/entropies_matrix_entropies.tab : 112
+
+# Pfam	entropy	#matched_peptides
+PF00005	-0.001	50
+PF00528	0.035	20
+PF07992	0.000	17
+PF00501	-0.035	13
+PF00534	0.063	13
+PF13439	0.103	12
+PF00890	0.000	12
+PF00171	-0.111	11
+PF01370	0.041	11
+PF00106	0.043	9
+PF13193	-0.018	8
+PF00009	-0.001	8
+PF12831	0.017	7
+PF00441	-0.274	7
+PF02775	0.033	7
+PF00581	-0.178	7
+PF02771	-0.272	7
+PF02770	-0.280	7
+PF00378	-0.261	7
+PF02826	0.072	6
+PF00291	0.079	5
+PF00296	-0.293	5
+PF02776	0.075	5
+PF00202	0.114	4
+PF00355	-0.143	4
+PF00205	-0.043	4
+PF01553	-0.279	3
+PF00037	0.088	3
+PF00175	-0.092	3
+PF13531	0.165	3
+PF00557	0.000	3
+PF00459	0.027	3
+PF05239	-0.114	2
+PF00111	-0.023	2
+PF03358	-0.123	2
+PF01571	-0.087	2
+PF02515	-0.177	2
+PF00389	0.050	2
+PF01507	-0.030	2
+PF04069	-0.249	2
+PF08669	-0.097	2
+PF00970	-0.190	2
+PF09084	-0.062	2
+PF13183	0.124	2
+PF01077	0.002	1
+PF01208	-0.252	1
+PF02872	-0.189	1
+PF01515	-0.332	1
+PF01613	-0.050	1
+PF01384	0.021	1
+PF01583	0.005	1
+PF13360	-0.112	1
+PF13442	-0.122	1
+PF01070	0.025	1
+PF02910	0.097	1
+PF00484	-0.261	1
+PF03460	-0.002	1
+PF00034	-0.119	1
+PF01292	0.161	1
+PF01011	-0.156	1
+
+# Pfam entropy score: -3.588
+
+# Pathway report
+# path_number	path_name	total_domains	matched	%completeness	matched_Pfam_domains
+1	Sulfite oxidation 	9	2	22.2	PF00890,PF02910
+2	Thiosulfate oxidation 	10	4	40.0	PF00581,PF02872,PF13442,PF00034
+3	Tetrathionate oxidation 	2	2	100.0	PF13360,PF01011
+4	Tetrathionate reduction 	17	4	23.5	PF00175,PF01077,PF03460,PF01292
+5	Sulfate reduction DS	20	7	35.0	PF00890,PF12831,PF00037,PF13183,PF01077,PF02910,PF03460
+6	Elemental sulfur reduction 	20	2	10.0	PF00175,PF00970
+7	Thiosulfate disproportion 	9	2	22.2	PF00581,PF01292
+8	Carbon disulfide oxidation 	1	1	100.0	PF00484
+9	Alkanesulfonate degradation 	5	5	100.0	PF00005,PF00528,PF00296,PF03358,PF09084
+10	Sulfate reduction A	20	11	55.0	PF00005,PF00528,PF00009,PF00175,PF13531,PF00459,PF01507,PF01077,PF01384,PF01583,PF03460
+11	Sulfide oxidation 	29	7	24.1	PF07992,PF00890,PF05239,PF13183,PF01077,PF02910,PF03460
+12	Cysteate oxidation 	1	0	0.0	
+13	Dimethylsulfone oxidation 	3	3	100.0	PF00171,PF00296,PF01613
+14	Sulfoacetate oxidation 	2	2	100.0	PF00501,PF13193
+15	Sulfolactate oxidation 	14	8	57.1	PF02775,PF02826,PF00291,PF02776,PF00205,PF00389,PF01515,PF01070
+16	DMS oxidation 	16	5	31.2	PF00171,PF00296,PF00175,PF00970,PF01613
+17	DMSP oxidation 	12	10	83.3	PF00501,PF13193,PF00441,PF02771,PF02770,PF00378,PF00557,PF01571,PF02515,PF08669
+18	MTP oxidation 	7	6	85.7	PF00501,PF13193,PF00441,PF02771,PF02770,PF00378
+19	Suloacetaldehyde oxidation 	7	6	85.7	PF00171,PF00106,PF02775,PF02776,PF00205,PF01515
+20	Elemental sulfur oxidation 	7	3	42.9	PF13183,PF01077,PF03460
+21	Elemental sulfur disproportion 	1	0	0.0	
+22	Methanesulfonate oxidation 	7	4	57.1	PF00355,PF00175,PF00111,PF00970
+23	Taurine oxidation 	11	8	72.7	PF00005,PF00528,PF02775,PF02776,PF00202,PF00205,PF04069,PF01515
+24	DMS methanogenesis 	2	2	100.0	PF00171,PF01208
+25	MTP methanogesis 	2	2	100.0	PF00171,PF01208
+26	Methanethiol methanogenesis 	2	2	100.0	PF00171,PF01208
+28	SQDG biosynthesis 	4	4	100.0	PF00534,PF13439,PF01370,PF01553
+29	Marker genes 	12	0	0.0	
+
+# mean pathway completeness: 58.9
+
+
+# Script to map these Pfam domains in KEGG->User Data Mapping.
+# Colors are proportional to the number of Pfam matches and normalized with respect to the max.
+# Note that a reference map must be selected first. For instance, Sulphur metabolism is:
+# http://www.genome.jp/kegg-bin/show_pathway?map00920
+# WARNING: note that several K numbers might map to the same protein.
+# These cases are coloured in KEGG with the color of the last given K number.
+# You might want to manually adjust the colors to correct this.
+K00135 #2c7bb6,black
+K00299 #2c7bb6,black
+K00380 #2c7bb6,black
+K00381 #2c7bb6,black
+K00385 #2c7bb6,black
+K00390 #2c7bb6,black
+K00392 #2c7bb6,black
+K00394 #2c7bb6,black
+K00666 #abd9e9,black
+K00860 #2c7bb6,black
+K00956 #2c7bb6,black
+K00957 #2c7bb6,black
+K01011 #2c7bb6,black
+K01082 #2c7bb6,black
+K02045 #d7191c,black
+K02046 #abd9e9,black
+K02047 #abd9e9,black
+K02048 #2c7bb6,black
+K02439 #2c7bb6,black
+K0382 #2c7bb6,black
+K03851 #2c7bb6,black
+K04091 #2c7bb6,black
+K06034 #2c7bb6,black
+K06118 #2c7bb6,black
+K06250  #2c7bb6,black
+K06250 #2c7bb6,black
+K08354 #2c7bb6,black
+K10831 #d7191c,black
+K11180 #2c7bb6,black
+K11181 #2c7bb6,black
+K13039 #2c7bb6,black
+K13788 #2c7bb6,black
+K13991 #2c7bb6,black
+K15372 #2c7bb6,black
+K15373 #2c7bb6,black
+K15515 #2c7bb6,black
+K15551 #2c7bb6,black
+K15552 #abd9e9,black
+K15553 #2c7bb6,black
+K15554 #abd9e9,black
+K15555 #d7191c,black
+K15762 #2c7bb6,black
+K15765 #2c7bb6,black
+K16843 #2c7bb6,black
+K16885 #2c7bb6,black
+K16886 #2c7bb6,black
+K16951 #2c7bb6,black
+K16953 #2c7bb6,black
+K16954 #2c7bb6,black
+K16967 #2c7bb6,black
+K16968 #2c7bb6,black
+K17218 #abd9e9,black
+K17223 #2c7bb6,black
+K17224 #2c7bb6,black
+K17228 #2c7bb6,black
+K17229 #abd9e9,black
+K17486 #2c7bb6,black
+K17950 #2c7bb6,black
+K17995 #2c7bb6,black
+K19713 #2c7bb6,black

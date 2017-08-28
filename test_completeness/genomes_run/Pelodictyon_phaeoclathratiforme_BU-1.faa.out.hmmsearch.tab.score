@@ -1,0 +1,194 @@
+# scripts/pfam_score.pl call:
+# -input test_completeness/genomes_run//Pelodictyon_phaeoclathratiforme_BU-1.faa.out.hmmsearch.tab -size real -bzip 0 -entropyfile sulfur_data_test/entropies_matrix_entropies.tab -minentropy -9 -random 0 -keggmap sulfur_data_test/input_sulfur_data/sulfur_score_kegg_list -pathway 
+
+# total HMMs with assigned entropy in sulfur_data_test/entropies_matrix_entropies.tab : 112
+
+# Pfam	entropy	#matched_peptides
+PF00005	-0.001	43
+PF01370	0.041	30
+PF07992	0.000	24
+PF00890	0.000	21
+PF12838	0.123	19
+PF00534	0.063	18
+PF00106	0.043	18
+PF00037	0.088	18
+PF13187	0.166	15
+PF12831	0.017	11
+PF13183	0.124	11
+PF00034	-0.119	9
+PF00009	-0.001	9
+PF13439	0.103	9
+PF00501	-0.035	7
+PF02775	0.033	6
+PF00528	0.035	6
+PF00291	0.079	6
+PF13193	-0.018	5
+PF13531	0.165	5
+PF13442	-0.122	5
+PF02635	0.353	5
+PF00581	-0.178	5
+PF00175	-0.092	4
+PF10418	0.815	4
+PF02826	0.072	4
+PF00111	-0.023	4
+PF02910	0.097	4
+PF03916	0.814	3
+PF00970	-0.190	3
+PF03358	-0.123	3
+PF01058	0.447	3
+PF13247	0.615	3
+PF00202	0.114	3
+PF01070	0.025	3
+PF01553	-0.279	3
+PF02776	0.075	3
+PF00557	0.000	3
+PF00171	-0.111	3
+PF02662	0.843	2
+PF12800	0.363	2
+PF08770	0.344	2
+PF04879	0.436	2
+PF00374	1.137	2
+PF13360	-0.112	2
+PF00459	0.027	2
+PF01568	0.414	2
+PF03460	-0.002	2
+PF00384	0.272	2
+PF01077	0.002	2
+PF00355	-0.143	2
+PF02872	-0.189	2
+PF01292	0.161	2
+PF17179	0.742	2
+PF13501	0.562	2
+PF09242	0.412	2
+PF00258	-0.082	1
+PF08669	-0.097	1
+PF00205	-0.043	1
+PF01747	1.033	1
+PF04077	0.058	1
+PF02665	0.517	1
+PF01208	-0.252	1
+PF12139	1.189	1
+PF14306	1.074	1
+PF04358	0.523	1
+PF01011	-0.156	1
+PF00389	0.050	1
+PF00378	-0.261	1
+PF01571	-0.087	1
+PF05239	-0.114	1
+
+# Pfam entropy score: 11.836
+
+# Pathway report
+# path_number	path_name	total_domains	matched	%completeness	matched_Pfam_domains
+1	Sulfite oxidation 	9	6	66.7	PF00890,PF12838,PF02910,PF01747,PF12139,PF14306
+2	Thiosulfate oxidation 	10	6	60.0	PF00034,PF13442,PF00581,PF08770,PF02872,PF13501
+3	Tetrathionate oxidation 	2	2	100.0	PF13360,PF01011
+4	Tetrathionate reduction 	17	12	70.6	PF00175,PF10418,PF03916,PF13247,PF12800,PF04879,PF01568,PF03460,PF00384,PF01077,PF01292,PF17179
+5	Sulfate reduction DS	20	15	75.0	PF00890,PF12838,PF00037,PF13187,PF12831,PF13183,PF02910,PF03916,PF13247,PF02662,PF03460,PF01077,PF02665,PF12139,PF04358
+6	Elemental sulfur reduction 	20	11	55.0	PF00175,PF10418,PF03916,PF00970,PF01058,PF13247,PF04879,PF00374,PF01568,PF00384,PF17179
+7	Thiosulfate disproportion 	9	7	77.8	PF00581,PF13247,PF12800,PF04879,PF01568,PF00384,PF01292
+8	Carbon disulfide oxidation 	1	0	0.0	
+9	Alkanesulfonate degradation 	5	3	60.0	PF00005,PF00528,PF03358
+10	Sulfate reduction A	20	9	45.0	PF00005,PF00009,PF00528,PF13531,PF00175,PF00459,PF03460,PF01077,PF00258
+11	Sulfide oxidation 	29	14	48.3	PF07992,PF00890,PF12838,PF13183,PF02635,PF02910,PF03916,PF13247,PF03460,PF01077,PF09242,PF04077,PF12139,PF05239
+12	Cysteate oxidation 	1	0	0.0	
+13	Dimethylsulfone oxidation 	3	1	33.3	PF00171
+14	Sulfoacetate oxidation 	2	2	100.0	PF00501,PF13193
+15	Sulfolactate oxidation 	14	7	50.0	PF02775,PF00291,PF02826,PF01070,PF02776,PF00205,PF00389
+16	DMS oxidation 	16	6	37.5	PF00175,PF00970,PF13247,PF00171,PF01568,PF00384
+17	DMSP oxidation 	12	6	50.0	PF00501,PF13193,PF00557,PF08669,PF00378,PF01571
+18	MTP oxidation 	7	3	42.9	PF00501,PF13193,PF00378
+19	Suloacetaldehyde oxidation 	7	5	71.4	PF00106,PF02775,PF02776,PF00171,PF00205
+20	Elemental sulfur oxidation 	7	5	71.4	PF13183,PF02635,PF03460,PF01077,PF04077
+21	Elemental sulfur disproportion 	1	0	0.0	
+22	Methanesulfonate oxidation 	7	4	57.1	PF00175,PF00111,PF00970,PF00355
+23	Taurine oxidation 	11	6	54.5	PF00005,PF02775,PF00528,PF00202,PF02776,PF00205
+24	DMS methanogenesis 	2	2	100.0	PF00171,PF01208
+25	MTP methanogesis 	2	2	100.0	PF00171,PF01208
+26	Methanethiol methanogenesis 	2	2	100.0	PF00171,PF01208
+28	SQDG biosynthesis 	4	4	100.0	PF01370,PF00534,PF13439,PF01553
+29	Marker genes 	12	12	100.0	PF10418,PF01058,PF13247,PF02662,PF08770,PF04879,PF00374,PF01568,PF09242,PF01747,PF12139,PF04358
+
+# mean pathway completeness: 61.7
+
+
+# Script to map these Pfam domains in KEGG->User Data Mapping.
+# Colors are proportional to the number of Pfam matches and normalized with respect to the max.
+# Note that a reference map must be selected first. For instance, Sulphur metabolism is:
+# http://www.genome.jp/kegg-bin/show_pathway?map00920
+# WARNING: note that several K numbers might map to the same protein.
+# These cases are coloured in KEGG with the color of the last given K number.
+# You might want to manually adjust the colors to correct this.
+K00135 #2c7bb6,black
+K00184 #2c7bb6,black
+K00185 #2c7bb6,black
+K00299 #2c7bb6,black
+K00380 #2c7bb6,black
+K00381 #2c7bb6,black
+K00385 #2c7bb6,black
+K00392 #2c7bb6,black
+K00394 #abd9e9,black
+K00395 #2c7bb6,black
+K00666 #2c7bb6,black
+K00956 #2c7bb6,black
+K01011 #2c7bb6,black
+K01082 #2c7bb6,black
+K02045 #d7191c,black
+K02046 #2c7bb6,black
+K02047 #2c7bb6,black
+K02048 #2c7bb6,black
+K02439 #2c7bb6,black
+K0382 #2c7bb6,black
+K03851 #2c7bb6,black
+K06034 #2c7bb6,black
+K06118 #ffffbf,black
+K07235 #2c7bb6,black
+K07236 #2c7bb6,black
+K08352 #2c7bb6,black
+K08353 #2c7bb6,black
+K08354 #2c7bb6,black
+K08357 #2c7bb6,black
+K08358 #2c7bb6,black
+K08359 #2c7bb6,black
+K10831 #d7191c,black
+K11180 #2c7bb6,black
+K11181 #abd9e9,black
+K13039 #2c7bb6,black
+K13991 #2c7bb6,black
+K15372 #2c7bb6,black
+K15373 #abd9e9,black
+K15515 #2c7bb6,black
+K15552 #2c7bb6,black
+K15554 #2c7bb6,black
+K15555 #d7191c,black
+K15762 #2c7bb6,black
+K15765 #2c7bb6,black
+K16293 #2c7bb6,black
+K16294 #2c7bb6,black
+K16843 #2c7bb6,black
+K16885 #abd9e9,black
+K16886 #abd9e9,black
+K16887 #abd9e9,black
+K16950 #2c7bb6,black
+K16951 #2c7bb6,black
+K16953 #2c7bb6,black
+K16954 #2c7bb6,black
+K16964 #2c7bb6,black
+K16965 #2c7bb6,black
+K16968 #2c7bb6,black
+K17218 #ffffbf,black
+K17220 #2c7bb6,black
+K17221 #2c7bb6,black
+K17222 #2c7bb6,black
+K17223 #2c7bb6,black
+K17224 #2c7bb6,black
+K17226 #2c7bb6,black
+K17227 #2c7bb6,black
+K17229 #ffffbf,black
+K17486 #2c7bb6,black
+K17950 #2c7bb6,black
+K17993 #2c7bb6,black
+K17994 #2c7bb6,black
+K17995 #2c7bb6,black
+K17996 #2c7bb6,black
+K19713 #2c7bb6,black

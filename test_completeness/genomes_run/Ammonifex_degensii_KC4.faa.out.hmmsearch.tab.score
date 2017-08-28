@@ -1,0 +1,171 @@
+# scripts/pfam_score.pl call:
+# -input test_completeness/genomes_run//Ammonifex_degensii_KC4.faa.out.hmmsearch.tab -size real -bzip 0 -entropyfile sulfur_data_test/entropies_matrix_entropies.tab -minentropy -9 -random 0 -keggmap sulfur_data_test/input_sulfur_data/sulfur_score_kegg_list -pathway 
+
+# total HMMs with assigned entropy in sulfur_data_test/entropies_matrix_entropies.tab : 112
+
+# Pfam	entropy	#matched_peptides
+PF00037	0.088	40
+PF12838	0.123	38
+PF13187	0.166	36
+PF00005	-0.001	24
+PF00890	0.000	20
+PF07992	0.000	17
+PF12831	0.017	14
+PF13183	0.124	13
+PF00534	0.063	12
+PF13439	0.103	11
+PF00009	-0.001	9
+PF12800	0.363	8
+PF00501	-0.035	8
+PF02662	0.843	8
+PF02775	0.033	6
+PF00528	0.035	6
+PF02826	0.072	5
+PF01370	0.041	5
+PF00111	-0.023	5
+PF00384	0.272	4
+PF13247	0.615	4
+PF00374	1.137	4
+PF04879	0.436	4
+PF05239	-0.114	4
+PF03460	-0.002	4
+PF00291	0.079	4
+PF01077	0.002	4
+PF00106	0.043	3
+PF00202	0.114	3
+PF01058	0.447	3
+PF00557	0.000	3
+PF13193	-0.018	3
+PF01568	0.414	3
+PF01613	-0.050	2
+PF01070	0.025	2
+PF02635	0.353	2
+PF02910	0.097	2
+PF09084	-0.062	2
+PF13531	0.165	2
+PF14697	0.345	2
+PF03916	0.814	2
+PF02776	0.075	2
+PF00175	-0.092	2
+PF17179	0.742	2
+PF01583	0.005	2
+PF10418	0.815	2
+PF00970	-0.190	2
+PF01292	0.161	1
+PF12139	1.189	1
+PF00389	0.050	1
+PF14306	1.074	1
+PF01553	-0.279	1
+PF04358	0.523	1
+PF02665	0.517	1
+PF01747	1.033	1
+PF00171	-0.111	1
+PF01087	-0.084	1
+PF00205	-0.043	1
+
+# Pfam entropy score: 12.508
+
+# Pathway report
+# path_number	path_name	total_domains	matched	%completeness	matched_Pfam_domains
+1	Sulfite oxidation 	9	7	77.8	PF12838,PF00890,PF02910,PF12139,PF14306,PF01747,PF01087
+2	Thiosulfate oxidation 	10	0	0.0	
+3	Tetrathionate oxidation 	2	0	0.0	
+4	Tetrathionate reduction 	17	13	76.5	PF12800,PF00384,PF13247,PF04879,PF03460,PF01077,PF01568,PF14697,PF03916,PF00175,PF17179,PF10418,PF01292
+5	Sulfate reduction DS	20	15	75.0	PF00037,PF12838,PF13187,PF00890,PF12831,PF13183,PF02662,PF13247,PF03460,PF01077,PF02910,PF03916,PF12139,PF04358,PF02665
+6	Elemental sulfur reduction 	20	11	55.0	PF00384,PF13247,PF00374,PF04879,PF01058,PF01568,PF03916,PF00175,PF17179,PF10418,PF00970
+7	Thiosulfate disproportion 	9	6	66.7	PF12800,PF00384,PF13247,PF04879,PF01568,PF01292
+8	Carbon disulfide oxidation 	1	0	0.0	
+9	Alkanesulfonate degradation 	5	3	60.0	PF00005,PF00528,PF09084
+10	Sulfate reduction A	20	8	40.0	PF00005,PF00009,PF00528,PF03460,PF01077,PF13531,PF00175,PF01583
+11	Sulfide oxidation 	29	12	41.4	PF12838,PF00890,PF07992,PF13183,PF13247,PF05239,PF03460,PF01077,PF02635,PF02910,PF03916,PF12139
+12	Cysteate oxidation 	1	0	0.0	
+13	Dimethylsulfone oxidation 	3	2	66.7	PF01613,PF00171
+14	Sulfoacetate oxidation 	2	2	100.0	PF00501,PF13193
+15	Sulfolactate oxidation 	14	7	50.0	PF02775,PF02826,PF00291,PF01070,PF02776,PF00389,PF00205
+16	DMS oxidation 	16	7	43.8	PF00384,PF13247,PF01568,PF01613,PF00175,PF00970,PF00171
+17	DMSP oxidation 	12	3	25.0	PF00501,PF00557,PF13193
+18	MTP oxidation 	7	2	28.6	PF00501,PF13193
+19	Suloacetaldehyde oxidation 	7	5	71.4	PF02775,PF00106,PF02776,PF00171,PF00205
+20	Elemental sulfur oxidation 	7	4	57.1	PF13183,PF03460,PF01077,PF02635
+21	Elemental sulfur disproportion 	1	0	0.0	
+22	Methanesulfonate oxidation 	7	3	42.9	PF00111,PF00175,PF00970
+23	Taurine oxidation 	11	6	54.5	PF00005,PF02775,PF00528,PF00202,PF02776,PF00205
+24	DMS methanogenesis 	2	1	50.0	PF00171
+25	MTP methanogesis 	2	1	50.0	PF00171
+26	Methanethiol methanogenesis 	2	1	50.0	PF00171
+28	SQDG biosynthesis 	4	4	100.0	PF00534,PF13439,PF01370,PF01553
+29	Marker genes 	12	10	83.3	PF02662,PF13247,PF00374,PF04879,PF01058,PF01568,PF10418,PF12139,PF04358,PF01747
+
+# mean pathway completeness: 48.8
+
+
+# Script to map these Pfam domains in KEGG->User Data Mapping.
+# Colors are proportional to the number of Pfam matches and normalized with respect to the max.
+# Note that a reference map must be selected first. For instance, Sulphur metabolism is:
+# http://www.genome.jp/kegg-bin/show_pathway?map00920
+# WARNING: note that several K numbers might map to the same protein.
+# These cases are coloured in KEGG with the color of the last given K number.
+# You might want to manually adjust the colors to correct this.
+K00135 #2c7bb6,black
+K00184 #2c7bb6,black
+K00185 #2c7bb6,black
+K00380 #2c7bb6,black
+K00381 #2c7bb6,black
+K00385 #2c7bb6,black
+K00392 #2c7bb6,black
+K00394 #ffffbf,black
+K00395 #2c7bb6,black
+K00666 #2c7bb6,black
+K00860 #2c7bb6,black
+K00956 #2c7bb6,black
+K02045 #ffffbf,black
+K02046 #2c7bb6,black
+K02047 #2c7bb6,black
+K02048 #2c7bb6,black
+K0382 #2c7bb6,black
+K03851 #2c7bb6,black
+K06034 #2c7bb6,black
+K06118 #2c7bb6,black
+K07235 #2c7bb6,black
+K07236 #2c7bb6,black
+K08352 #2c7bb6,black
+K08353 #2c7bb6,black
+K08354 #2c7bb6,black
+K08357 #2c7bb6,black
+K08358 #2c7bb6,black
+K08359 #2c7bb6,black
+K10831 #ffffbf,black
+K11180 #2c7bb6,black
+K11181 #d7191c,black
+K13039 #2c7bb6,black
+K13991 #2c7bb6,black
+K15372 #2c7bb6,black
+K15373 #2c7bb6,black
+K15515 #2c7bb6,black
+K15552 #2c7bb6,black
+K15553 #2c7bb6,black
+K15554 #2c7bb6,black
+K15555 #ffffbf,black
+K15765 #2c7bb6,black
+K16293 #2c7bb6,black
+K16294 #2c7bb6,black
+K16843 #2c7bb6,black
+K16885 #abd9e9,black
+K16886 #abd9e9,black
+K16887 #fdae61,black
+K16950 #2c7bb6,black
+K16951 #2c7bb6,black
+K16953 #2c7bb6,black
+K16964 #2c7bb6,black
+K16965 #2c7bb6,black
+K16967 #2c7bb6,black
+K17218 #abd9e9,black
+K17220 #2c7bb6,black
+K17221 #2c7bb6,black
+K17222 #2c7bb6,black
+K17229 #abd9e9,black
+K17950 #2c7bb6,black
+K17993 #2c7bb6,black
+K17994 #2c7bb6,black
+K17995 #2c7bb6,black
+K17996 #2c7bb6,black
