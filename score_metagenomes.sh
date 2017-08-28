@@ -24,7 +24,7 @@ echo -e "#metagenome\tMSL\tGenF\tMEBS_Score\t<completeness>\tper_pathway"
 for i in $inputdir/*.faa; do \
   
   #1) Get the Mean Size Length of peptides encoded in metagenome
-  MSL=`perl -lne 'if(/^(>.*)/){$h=$1}else{$fa{$h}.=$_} END{ foreach $h (keys(%fa)){$m+=length($fa{$h})}; printf("%1.0f\n",$m/scalar(keys(%fa))) }' $i`
+  MSL=`perl -lne 'if(/^(>.*)/){$nseq++;$m+=$l;$l=0}else{$l+=length($_)} END{ $m+=$l; printf("%1.0f\n",$m/$nseq) }' $i`
  
   # 2) Find out appropriate fragment size of classifier (genF)
   GENF=`perl -e 'BEGIN{@bins=(30,60,100,150,200,250,300);@th=(45,80,125,175,225,275,300)} foreach $i (0 .. $#th){ if($ARGV[0]<=$th[$i]){ print $bins[$i]; exit }}' $MSL`
