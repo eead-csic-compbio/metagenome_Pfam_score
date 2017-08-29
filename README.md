@@ -59,8 +59,8 @@ The rest of packages are needed to run the full pipeline, which comprises four s
 9. [MPL_toolkits](http://matplotlib.org/1.4.3/mpl_toolkits/index.html)
 
 
-![flowchart](./manual/flowchart.png)
-
+![MEBS flowchart advance mode ](./MEBS_advance.png)
+![MEBS flowchart basic mode ](./MEBS_basic.png)
 <!--
 Falta figura con leyenda y talvez ligas a las 4 etapas en el manual
 STAGE 1. Compilation of datasets and databases 
