@@ -14,7 +14,8 @@ It has been thoroughly tested with the Sulfur cycle (see [benchmark](./scripts/M
 but also with some other cycles (papers in preparation). 
 The scripts are written in bash, perl5 and python3 and have been tested under Linux.
 
-# Scoring your data (Sulfur cycle)
+# Scoring your data (Sulfur cycle). 
+# Basic Mode 
 
 Scripts [score_genomes.sh](./score_genomes.sh) and [score_metagenomes.sh](./score_metagenomes.sh) are provided
 so that users can virtually avoid reading the manual and score their own genomes/metagenomes in terms of their
@@ -29,8 +30,10 @@ or
 
 $ ./score_metagenomes.sh test_metagenomes
 
+![MEBS flowchart basic mode ](./MEBS_basic.png)
 
 # Train your own classifier for any cycle/pathway 
+# Advance Mode 
 
 For more advanced uses a [manual](manual.v1.pdf) is provided. The required input data are:
 
@@ -41,6 +44,8 @@ These inputs are processed in order to train a classifier which internally uses 
 
 As seen above, genomes or metagenomes provided by the user can then be scored with the trained classifier.
 Once a classifier has been trained, such as the Sulfur cycle, steps 1 and 3 can be skipped. 
+
+![MEBS flowchart advance mode ](./MEBS_advance.png)
 
 # Dependencies
 
@@ -59,8 +64,8 @@ The rest of packages are needed to run the full pipeline, which comprises four s
 9. [MPL_toolkits](http://matplotlib.org/1.4.3/mpl_toolkits/index.html)
 
 
-![MEBS flowchart advance mode ](./MEBS_advance.png)
-![MEBS flowchart basic mode ](./MEBS_basic.png)
+
+
 <!--
 Falta figura con leyenda y talvez ligas a las 4 etapas en el manual
 STAGE 1. Compilation of datasets and databases 
