@@ -62,14 +62,3 @@ The rest of packages are needed to run the full pipeline, which comprises four s
 7. [Scikit-learn](http://scikit-learn.org/stable/install.html)
 8. [Jupyter-notebook](http://jupyter.org}{Jupyter-notebook)
 9. [MPL_toolkits](http://matplotlib.org/1.4.3/mpl_toolkits/index.html)
-
-
-
-
-<!--
-Falta figura con leyenda y talvez ligas a las 4 etapas en el manual
-STAGE 1. Compilation of datasets and databases 
-STAGE 2. Annotating protein domains
-STAGE 3. Estimating relative entropy of protein domains
-STAGE 4. Sulfur Score (SS) and interpretation
- -->
