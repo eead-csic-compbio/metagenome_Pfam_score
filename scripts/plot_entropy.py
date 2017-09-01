@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
-
+#sudo apt-get install python3-cairocffi
 def round5(n):
     """Up round a decimal number to next, 0.5 multiple
     
