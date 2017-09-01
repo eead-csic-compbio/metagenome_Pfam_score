@@ -2,6 +2,7 @@
 
 from sys import argv
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -124,12 +125,15 @@ if __name__ == '__main__':
     # Use . as decimal indicator
     data = pd.read_table(fname, index_col=0, na_values=['NA', "SIN DATO"], decimal='.')
     # sort data by 'real' column
-    data.sort('real', inplace=True)
+    #old version pandas  0.17 
+    #data.sort('real', inplace=True)
+    data.sort_values('real',inplace=True)
     plot_graph(data)
     plt.savefig(argv[1]+"_bar.png")
     plt.close()
     hmap(data)
     plt.savefig(argv[1]+"_hmap.png")
+    plt.savefig(argv[1]+"_hmap.pdf")
     plt.close()
     # plot entropies histograms
     data.hist(figsize=(10, 10)) #,range=[-0.3, 1.3])
