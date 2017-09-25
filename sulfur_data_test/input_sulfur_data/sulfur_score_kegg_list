@@ -229,11 +229,9 @@ PF00528	K15552	23	Taurine oxidation
 PF00205		23	Taurine oxidation 
 PF02775		23	Taurine oxidation 
 PF02776		23	Taurine oxidation 
-PF00171	K00135	24	DMS methanogenesis 
+PF00171	K00135	27	Homotaurine degradation 
 PF01208	K16954	24	DMS methanogenesis 
-PF00171	K00135	25	MTP methanogesis 
 PF01208	K16954	25	MTP methanogesis 
-PF00171	K00135	26	Methanethiol methanogenesis 
 PF01208	K16954	26	Methanethiol methanogenesis 
 PF01370	K06118	28	SQDG biosynthesis 
 PF00534		28	SQDG biosynthesis 
