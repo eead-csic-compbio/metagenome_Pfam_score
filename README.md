@@ -11,8 +11,14 @@ Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira (3)
 This computational pipeline was designed to evaluate the importance of global biogeochemical cycles 
 or major metabolic pathways in multigenomic scale. 
 It has been thoroughly tested with the Sulfur cycle (see [benchmark](./scripts/MEBS.figures.ipynb)) 
-but also with some other cycles (papers in preparation). 
-The scripts are written in bash, perl5 and python3 and have been tested under Linux.
+but also with some other cycles. The scripts are written in bash, perl5 and python3 and have been tested under Linux.
+
+The following papers describe this pipeline:
+
++ De Anda V, Zapata-Penasco I, Poot Hernandez AC, Fruns LE, Contreras Moreira B, Souza V (2017) MEBS, a software platform to evaluate large (meta)genomic collections according to their metabolic machinery: unraveling the sulfur cycle. [doi:10.1101/191288 ](https://www.biorxiv.org/content/early/2017/09/20/191288)
+
++ Other cycles: in preparation 
+
 
 # Scoring your data (Sulfur cycle). 
 # Basic Mode 
