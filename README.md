@@ -32,7 +32,7 @@ The main modalities of MEBS are
 
 
 # Modality 1: Score 
-## Current data
+## 1.1 Current data
 (last update february 2018) 
 
 + The following  [biogeochemical cycles](./biogeochemical_cycles) are ready to use with MEBS: 
@@ -43,7 +43,7 @@ The main modalities of MEBS are
 4. [Iron ](./biogeochemical_cycles/iron): The Fe reduction and oxidation including also  siderophores uptake
 5. [Sulfur ](./biogeochemical_cycles/sulfur):Icludes the  mobilization of inorganic and inorganic sulfur compounds. 
 
-# Data description 
+##  1.2 Data description 
 
 | File name         	| Description                                                                                                                                                                                                                               	|
 |-------------------	|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
@@ -55,8 +55,7 @@ The main modalities of MEBS are
 
 
 
-# Scoring your data  
-# Basic Mode 
+## 1.3 Scoring your data: Use our current databases: Basic Mode 
 
 Scripts [score_genomes.sh](./score_genomes.sh) and [score_metagenomes.sh](./score_metagenomes.sh) are provided
 so that users can virtually avoid reading the manual and score their own genomes/metagenomes in terms of their biogeochemical  metabolic machinery. All that is required is a directory containing peptide FASTA files of
@@ -72,8 +71,7 @@ $ ./score_metagenomes.sh test_metagenomes
 
 ![MEBS flowchart basic mode ](./MEBS_basic.png)
 
-# Train your own classifier for any cycle/pathway 
-# Advanced Mode 
+## 1.4 Scoring your data: Train your own classifier. Advanced Mode 
 
 For more advanced uses a [manual](manual.v1.pdf) is provided. The required input data are:
 
