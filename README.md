@@ -37,7 +37,7 @@ The main modalities of MEBS are
 
 + The following  [biogeochemical cycles](./biogeochemical_cycles) are ready to use with MEBS: 
 
-1. [C](./biogeochemical_cycles/carbon): Usage ofCH4 compounds  by methanotrophs, methanogens, and methylotrophs 
+1. [C](./biogeochemical_cycles/carbon): Usage of CH4 compounds  by methanotrophs, methanogens, and methylotrophs 
 2. [O](./biogeochemical_cycles/oxygen): Represented by oxygenic photosynthesis
 3. [N](./biogeochemical_cycles/nitrogen): We included the pathways involved in the reduction and oxidation of both inorganic (nitrate(+5) to ammonia(-3) ) and organic nitrogen compounds (i.e taurine, urea, and choline degradation)
 4. [Iron ](./biogeochemical_cycles/iron): The Fe reduction and oxidation including also  siderophores uptake
@@ -100,3 +100,10 @@ The rest of packages are needed to run the full pipeline, which comprises four s
 7. [Scikit-learn](http://scikit-learn.org/stable/install.html)
 8. [Jupyter-notebook](http://jupyter.org}{Jupyter-notebook)
 9. [MPL_toolkits](http://matplotlib.org/1.4.3/mpl_toolkits/index.html)
+
+#Links related to MEBS 
+
+1. [Winner of the Bioinformatics Peer Prize II: student category ](https://the-bioinformatics-peer-prize-ii.thinkable.org/)
+2. [Semifinalist of the GigaScience Prize Track ICG-12](http://www.eead.csic.es/compbio/pics/GigaSciencePrizeTrack.html)
+
+
