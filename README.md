@@ -21,13 +21,8 @@ The following papers describe this pipeline focusing on the biogeochemical sulfu
 + De Anda V, Zapata-Penasco I, Poot Hernandez AC, Fruns LE, Contreras Moreira B, Souza V (2017) MEBS, a software platform to evaluate large (meta)genomic collections according to their metabolic machinery: unraveling the sulfur cycle. [doi:10.1093/gigascience/gigascience/gix096/4561660](https://academic.oup.com/gigascience/advance-article/doi/10.1093/gigascience/gix096/4561660)
 <!--[doi:10.1101/191288 ](https://www.biorxiv.org/content/early/2017/09/20/191288)-->
 
-#Modalities 
+# Modalities 
 ![Modalities](./Modalities.png)
-
-
-
-
-
 
 # Current data
 (last update february 2018) 
