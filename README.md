@@ -9,7 +9,7 @@ Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira (3)
 --
 
 This computational pipeline was designed to evaluate the importance of global biogeochemical cycles 
-or major metabolic pathways in multigenomic scale. 
+or major metabolOBic pathways in multigenomic scale. 
 It has been thoroughly tested with the Sulfur cycle (see [benchmark](./scripts/MEBS.figures.ipynb)) 
 but also with some other cycles. The scripts are written in bash, perl5 and python3 and have been tested under Linux.
 
@@ -18,15 +18,23 @@ The following papers describe this pipeline focusing on the biogeochemical sulfu
 + De Anda V, Zapata-Penasco I, Poot Hernandez AC, Fruns LE, Contreras Moreira B, Souza V (2017) MEBS, a software platform to evaluate large (meta)genomic collections according to their metabolic machinery: unraveling the sulfur cycle. [doi:10.1093/gigascience/gigascience/gix096/4561660](https://academic.oup.com/gigascience/advance-article/doi/10.1093/gigascience/gix096/4561660)
 <!--[doi:10.1101/191288 ](https://www.biorxiv.org/content/early/2017/09/20/191288)-->
 
-+ Currently the following  [biogeochemical cycles](./biogeochemical_cycles)) are ready to use: 
++ Currently the following  [biogeochemical cycles](./biogeochemical_cycles) are ready to use: 
 
-1. [C cycle](./biogeochemical_cycles/carbon): Usage ofCH4 compounds  by methanotrophs, methanogens, and methylotrophs 
-2. [O cycle](./biogeochemical_cycles/oxygen): Represented by oxygenic photosynthesis
-3. [N cycle](./biogeochemical_cycles/nitrogen): We included the pathways involved in the reduction and oxidation of both inorganic (nitrate(+5) to ammonia(-3) ) and organic nitrogen compounds (i.e taurine, urea, and choline degradation)
+1. [C](./biogeochemical_cycles/carbon): Usage ofCH4 compounds  by methanotrophs, methanogens, and methylotrophs 
+2. [O](./biogeochemical_cycles/oxygen): Represented by oxygenic photosynthesis
+3. [N](./biogeochemical_cycles/nitrogen): We included the pathways involved in the reduction and oxidation of both inorganic (nitrate(+5) to ammonia(-3) ) and organic nitrogen compounds (i.e taurine, urea, and choline degradation)
 4. [Iron ](./biogeochemical_cycles/iron): The Fe reduction and oxidation including also  siderophores uptake
 5. [Sulfur ](./biogeochemical_cycles/sulfur):Icludes the  mobilization of inorganic and inorganic sulfur compounds. 
 
+# Data description 
 
+| File name         	| Description                                                                                                                                                                                                                               	|
+|-------------------	|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| cycle.fasta       	| FASTA file with peptides sequences of proteins involved in the cycle/pathway of interest.                                                                                                                                                 	|
+| cycle.txt         	|  Tabular plain text file, containing the RefSeq accesions of (curated) genomes known to be involved in the cycle/pathway of interest                                                                                                      	|
+| my_Pfam.cycle.hmm 	| Domain composition of the proteins involved in the metabolism, represented by HMM models, in other words, are the databases of the specific domains involved in the cycle.                                                                	|
+| entropies.tab     	| Tabular plain text file containing  the entropy values of each domain benchmarked in a set containing 2107 non redundant genomes, *in silico* fragmented in different sizes (to emulate the fragmented nature of metagenomic sequences)   	|
+| entropies/        	| Directory containing the presence/absence profile of each domain across 2107 genomes (incuding the fragmented dataset)                                                                                                                    	|
 # Scoring your data  
 # Basic Mode 
 
