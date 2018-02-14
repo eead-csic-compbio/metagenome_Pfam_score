@@ -1,4 +1,4 @@
- ![MEBS](./MEBS.png) 
+ ![MEBS](./images/MEBS.png) 
 
 
 Authors: Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira (3)
@@ -22,7 +22,7 @@ The following papers describe this pipeline focusing on the biogeochemical sulfu
 <!--[doi:10.1101/191288 ](https://www.biorxiv.org/content/early/2017/09/20/191288)-->
 
 # Modalities 
-![Modalities](./Modalities.png)
+![Modalities](./images/Modalities.png)
 
 The main modalities of MEBS are
 1. **Score**: apturing the metabolic machinery of your genome or metagenome in terms of single scores
@@ -69,7 +69,7 @@ or
 
 $ ./score_metagenomes.sh test_metagenomes
 
-![MEBS flowchart basic mode ](./MEBS_basic.png)
+![MEBS flowchart basic mode ](./images/MEBS_basic_mode.png)
 
 ## 1.4 Scoring your data: Train your own classifier. Advanced Mode 
 
@@ -83,7 +83,7 @@ These inputs are processed in order to train a classifier which internally uses 
 As seen above, genomes or metagenomes provided by the user can then be scored with the trained classifier.
 Once a classifier has been trained, such as the Sulfur cycle, steps 1 and 3 can be skipped. 
 
-![MEBS flowchart advance mode ](./MEBS_advanced.png)
+![MEBS flowchart advance mode ](./images/MEBS_advance_mode.png)
 
 # Dependencies
 
