@@ -25,10 +25,10 @@ The following papers describe this pipeline focusing on the biogeochemical sulfu
 ![Modalities](./Modalities.png)
 
 The main modalities of MEBS are
-1. Capturing the metabolic machinery of your genome or metagenome in terms of single scores
-2. Detect possible marker genes according to their informational content (entropy)
-3. Evaluate the metabolic completeness of metabolic pathways 
-4. Visualizate the protein domains in your genome or metagenome using KEGG visualization 
+1. **Score**: apturing the metabolic machinery of your genome or metagenome in terms of single scores
+2. **Markers**: Detect possible marker genes according to their informational content (entropy)
+3. **Completeness**: Evaluate the metabolic completeness of metabolic pathways 
+4. **Kegg visualization**: Visualizate the protein domains in your genome or metagenome using KEGG visualization 
 
 
 # Current data
