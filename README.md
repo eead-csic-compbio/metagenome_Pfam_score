@@ -31,7 +31,8 @@ The main modalities of MEBS are
 4. **Kegg visualization**: Visualizate the protein domains in your genome or metagenome using KEGG visualization 
 
 
-# Current data
+# Modality 1: Score 
+## Current data
 (last update february 2018) 
 
 + The following  [biogeochemical cycles](./biogeochemical_cycles) are ready to use with MEBS: 
