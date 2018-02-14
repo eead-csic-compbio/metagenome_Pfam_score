@@ -1,4 +1,5 @@
- # Multigenomic Entropy-Based Score (MEBS)
+![MEBS](./MEBS.png) 
+
 
 Authors: Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira (3)
 
@@ -6,7 +7,7 @@ Authors: Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira 
 2. [Instituto de Investigaciones Matematicas Aplicadas y en Sistemas](http://www.iimas.unam.mx), UNAM, Mexico
 3. [Fundacion ARAID](http://www.araid.es) & [EEAD-CSIC](http://www.eead.csic.es), Zaragoza, Spain
 
-#AIM 
+# 
 
 This computational pipeline was designed to evaluate the importance of global biogeochemical cycles 
 or major metabolic pathways in multigenomic scale. 
