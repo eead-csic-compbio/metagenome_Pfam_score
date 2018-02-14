@@ -14,15 +14,22 @@ or major metabolic pathways in multigenomic scale.
 It has been thoroughly tested with the Sulfur cycle (see [benchmark](./scripts/MEBS.figures.ipynb)) 
 but also with some other cycles. The scripts are written in bash, perl5 and python3 and have been tested under Linux.
 
-# PUBLICATION
+# 
 
 The following papers describe this pipeline focusing on the biogeochemical sulfur cycle:
 
 + De Anda V, Zapata-Penasco I, Poot Hernandez AC, Fruns LE, Contreras Moreira B, Souza V (2017) MEBS, a software platform to evaluate large (meta)genomic collections according to their metabolic machinery: unraveling the sulfur cycle. [doi:10.1093/gigascience/gigascience/gix096/4561660](https://academic.oup.com/gigascience/advance-article/doi/10.1093/gigascience/gix096/4561660)
 <!--[doi:10.1101/191288 ](https://www.biorxiv.org/content/early/2017/09/20/191288)-->
 
+#Modalities 
+![Modalities](./Modalities.png)
 
-# CURRENT DATA 
+
+
+
+
+
+# Current data
 (last update february 2018) 
 
 + The following  [biogeochemical cycles](./biogeochemical_cycles) are ready to use with MEBS: 
@@ -42,6 +49,9 @@ The following papers describe this pipeline focusing on the biogeochemical sulfu
 | my_Pfam.cycle.hmm 	| Domain composition of the proteins involved in the metabolism, represented by HMM models, in other words, are the databases of the specific domains involved in the cycle.                                                                	|
 | entropies.tab     	| Tabular plain text file containing  the entropy values of each domain benchmarked in a set containing 2107 non redundant genomes, *in silico* fragmented in different sizes (to emulate the fragmented nature of metagenomic sequences)   	|
 | entropies/        	| Directory containing the presence/absence profile of each domain across 2107 genomes (incuding the fragmented dataset)                                                                                                                    	|
+
+
+
 # Scoring your data  
 # Basic Mode 
 
