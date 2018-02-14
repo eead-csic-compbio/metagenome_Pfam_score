@@ -1,4 +1,4 @@
-![MEBS](./MEBS.png) 
+ ![MEBS](./MEBS.png) 
 
 
 Authors: Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira (3)
@@ -23,6 +23,13 @@ The following papers describe this pipeline focusing on the biogeochemical sulfu
 
 # Modalities 
 ![Modalities](./Modalities.png)
+
+The main modalities of MEBS are
+1. Capturing the metabolic machinery of your genome or metagenome in terms of single scores
+2. Detect possible marker genes according to their informational content (entropy)
+3. Evaluate the metabolic completeness of metabolic pathways 
+4. Visualizate the protein domains in your genome or metagenome using KEGG visualization 
+
 
 # Current data
 (last update february 2018) 
