@@ -1,24 +1,30 @@
  # Multigenomic Entropy-Based Score (MEBS)
 
-Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira (3)
+Authors: Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira (3)
 
 1. [Instituto de Ecologia](http://web.ecologia.unam.mx), UNAM, Mexico
 2. [Instituto de Investigaciones Matematicas Aplicadas y en Sistemas](http://www.iimas.unam.mx), UNAM, Mexico
 3. [Fundacion ARAID](http://www.araid.es) & [EEAD-CSIC](http://www.eead.csic.es), Zaragoza, Spain
 
---
+#AIM 
 
 This computational pipeline was designed to evaluate the importance of global biogeochemical cycles 
-or major metabolOBic pathways in multigenomic scale. 
+or major metabolic pathways in multigenomic scale. 
 It has been thoroughly tested with the Sulfur cycle (see [benchmark](./scripts/MEBS.figures.ipynb)) 
 but also with some other cycles. The scripts are written in bash, perl5 and python3 and have been tested under Linux.
+
+# PUBLICATION
 
 The following papers describe this pipeline focusing on the biogeochemical sulfur cycle:
 
 + De Anda V, Zapata-Penasco I, Poot Hernandez AC, Fruns LE, Contreras Moreira B, Souza V (2017) MEBS, a software platform to evaluate large (meta)genomic collections according to their metabolic machinery: unraveling the sulfur cycle. [doi:10.1093/gigascience/gigascience/gix096/4561660](https://academic.oup.com/gigascience/advance-article/doi/10.1093/gigascience/gix096/4561660)
 <!--[doi:10.1101/191288 ](https://www.biorxiv.org/content/early/2017/09/20/191288)-->
 
-+ Currently the following  [biogeochemical cycles](./biogeochemical_cycles) are ready to use: 
+
+# CURRENT DATA 
+(last update february 2018) 
+
++ The following  [biogeochemical cycles](./biogeochemical_cycles) are ready to use with MEBS: 
 
 1. [C](./biogeochemical_cycles/carbon): Usage ofCH4 compounds  by methanotrophs, methanogens, and methylotrophs 
 2. [O](./biogeochemical_cycles/oxygen): Represented by oxygenic photosynthesis
