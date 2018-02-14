@@ -40,8 +40,8 @@ The main modalities of MEBS are
 1. [C](./biogeochemical_cycles/carbon): Usage of CH4 compounds  by methanotrophs, methanogens, and methylotrophs 
 2. [O](./biogeochemical_cycles/oxygen): Represented by oxygenic photosynthesis
 3. [N](./biogeochemical_cycles/nitrogen): We included the pathways involved in the reduction and oxidation of both inorganic (nitrate(+5) to ammonia(-3) ) and organic nitrogen compounds (i.e taurine, urea, and choline degradation)
-4. [Iron ](./biogeochemical_cycles/iron): The Fe reduction and oxidation including also  siderophores uptake
-5. [Sulfur ](./biogeochemical_cycles/sulfur):Icludes the  mobilization of inorganic and inorganic sulfur compounds. 
+4. [Fe ](./biogeochemical_cycles/iron): The Fe reduction and oxidation including also  siderophores uptake
+5. [S](./biogeochemical_cycles/sulfur):Icludes the  mobilization of inorganic and inorganic sulfur compounds. 
 
 ##  1.2 Data description 
 
