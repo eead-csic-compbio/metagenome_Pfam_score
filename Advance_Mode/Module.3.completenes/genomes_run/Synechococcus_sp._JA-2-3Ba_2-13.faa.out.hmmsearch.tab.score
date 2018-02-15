@@ -1,0 +1,187 @@
+# scripts/pfam_score.pl call:
+# -input test_completeness/genomes_run//Synechococcus_sp._JA-2-3Ba_2-13.faa.out.hmmsearch.tab -size real -bzip 0 -entropyfile sulfur_data_test/entropies_matrix_entropies.tab -minentropy -9 -random 0 -keggmap sulfur_data_test/input_sulfur_data/sulfur_score_kegg_list -pathway 
+
+# total HMMs with assigned entropy in sulfur_data_test/entropies_matrix_entropies.tab : 112
+
+# Pfam	entropy	#matched_peptides
+PF00005	-0.001	56
+PF00528	0.035	33
+PF00890	0.000	15
+PF07992	0.000	13
+PF01370	0.041	12
+PF00106	0.043	10
+PF00534	0.063	8
+PF00037	0.088	8
+PF00111	-0.023	8
+PF00009	-0.001	8
+PF13439	0.103	7
+PF13187	0.166	7
+PF12838	0.123	6
+PF00581	-0.178	6
+PF00171	-0.111	6
+PF12831	0.017	6
+PF02775	0.033	5
+PF00291	0.079	5
+PF00355	-0.143	5
+PF09084	-0.062	5
+PF00034	-0.119	4
+PF00459	0.027	4
+PF13531	0.165	4
+PF02826	0.072	4
+PF01553	-0.279	3
+PF12800	0.363	3
+PF00258	-0.082	3
+PF05239	-0.114	3
+PF00124	-0.010	3
+PF00202	0.114	3
+PF00557	0.000	3
+PF02776	0.075	3
+PF01571	-0.087	2
+PF01613	-0.050	2
+PF00501	-0.035	2
+PF02872	-0.189	2
+PF10518	0.178	2
+PF03358	-0.123	2
+PF04069	-0.249	2
+PF03460	-0.002	2
+PF08669	-0.097	2
+PF00174	-0.005	2
+PF14697	0.345	2
+PF13442	-0.122	2
+PF01070	0.025	2
+PF02910	0.097	2
+PF00205	-0.043	2
+PF01077	0.002	2
+PF13183	0.124	2
+PF01583	0.005	1
+PF04945	0.048	1
+PF14306	1.074	1
+PF01507	-0.030	1
+PF02668	-0.154	1
+PF00378	-0.261	1
+PF00175	-0.092	1
+PF01058	0.447	1
+PF00848	-0.149	1
+PF13193	-0.018	1
+PF01208	-0.252	1
+PF17179	0.742	1
+PF01568	0.414	1
+PF04879	0.436	1
+PF01747	1.033	1
+PF00389	0.050	1
+PF00384	0.272	1
+PF12857	-0.114	1
+
+# Pfam entropy score: 3.704
+
+# Pathway report
+# path_number	path_name	total_domains	matched	%completeness	matched_Pfam_domains
+1	Sulfite oxidation 	9	6	66.7	PF00890,PF12838,PF00174,PF02910,PF14306,PF01747
+2	Thiosulfate oxidation 	10	4	40.0	PF00581,PF00034,PF02872,PF13442
+3	Tetrathionate oxidation 	2	0	0.0	
+4	Tetrathionate reduction 	17	9	52.9	PF12800,PF03460,PF14697,PF01077,PF00175,PF17179,PF01568,PF04879,PF00384
+5	Sulfate reduction DS	20	9	45.0	PF00890,PF00037,PF13187,PF12838,PF12831,PF03460,PF02910,PF01077,PF13183
+6	Elemental sulfur reduction 	20	7	35.0	PF10518,PF00175,PF01058,PF17179,PF01568,PF04879,PF00384
+7	Thiosulfate disproportion 	9	5	55.6	PF00581,PF12800,PF01568,PF04879,PF00384
+8	Carbon disulfide oxidation 	1	0	0.0	
+9	Alkanesulfonate degradation 	5	4	80.0	PF00005,PF00528,PF09084,PF03358
+10	Sulfate reduction A	20	12	60.0	PF00005,PF00528,PF00009,PF00459,PF13531,PF00258,PF03460,PF01077,PF01583,PF01507,PF00175,PF12857
+11	Sulfide oxidation 	29	11	37.9	PF00890,PF07992,PF12838,PF05239,PF00124,PF10518,PF03460,PF00174,PF02910,PF01077,PF13183
+12	Cysteate oxidation 	1	0	0.0	
+13	Dimethylsulfone oxidation 	3	2	66.7	PF00171,PF01613
+14	Sulfoacetate oxidation 	2	2	100.0	PF00501,PF13193
+15	Sulfolactate oxidation 	14	7	50.0	PF02775,PF00291,PF02826,PF02776,PF01070,PF00205,PF00389
+16	DMS oxidation 	16	6	37.5	PF00171,PF01613,PF04945,PF00175,PF01568,PF00384
+17	DMSP oxidation 	12	6	50.0	PF00557,PF01571,PF00501,PF08669,PF00378,PF13193
+18	MTP oxidation 	7	3	42.9	PF00501,PF00378,PF13193
+19	Suloacetaldehyde oxidation 	7	5	71.4	PF00106,PF00171,PF02775,PF02776,PF00205
+20	Elemental sulfur oxidation 	7	3	42.9	PF03460,PF01077,PF13183
+21	Elemental sulfur disproportion 	1	0	0.0	
+22	Methanesulfonate oxidation 	7	4	57.1	PF00111,PF00355,PF00175,PF00848
+23	Taurine oxidation 	11	8	72.7	PF00005,PF00528,PF02775,PF00202,PF02776,PF04069,PF00205,PF02668
+24	DMS methanogenesis 	1	1	100.0	PF01208
+25	MTP methanogesis 	1	1	100.0	PF01208
+26	Methanethiol methanogenesis 	1	1	100.0	PF01208
+27	Homotaurine degradation 	1	1	100.0	PF00171
+28	SQDG biosynthesis 	4	4	100.0	PF01370,PF00534,PF13439,PF01553
+29	Marker genes 	12	4	33.3	PF01058,PF01568,PF04879,PF01747
+
+# mean pathway completeness: 55.1
+
+
+# Script to map these Pfam domains in KEGG->User Data Mapping.
+# Colors are proportional to the number of Pfam matches and normalized with respect to the max.
+# Note that a reference map must be selected first. For instance, Sulphur metabolism is:
+# http://www.genome.jp/kegg-bin/show_pathway?map00920
+# WARNING: note that several K numbers might map to the same protein.
+# These cases are coloured in KEGG with the color of the last given K number.
+# You might want to manually adjust the colors to correct this.
+K00135 #2c7bb6,black
+K00299 #2c7bb6,black
+K00380 #2c7bb6,black
+K00381 #2c7bb6,black
+K00385 #2c7bb6,black
+K00390 #2c7bb6,black
+K00392 #2c7bb6,black
+K00394 #abd9e9,black
+K00666 #2c7bb6,black
+K00860 #2c7bb6,black
+K00956 #2c7bb6,black
+K00957 #2c7bb6,black
+K01011 #2c7bb6,black
+K01082 #2c7bb6,black
+K02045 #d7191c,black
+K02046 #ffffbf,black
+K02047 #ffffbf,black
+K02048 #2c7bb6,black
+K02439 #2c7bb6,black
+K03119 #2c7bb6,black
+K0382 #2c7bb6,black
+K03851 #2c7bb6,black
+K06034 #2c7bb6,black
+K06118 #2c7bb6,black
+K07147 #2c7bb6,black
+K08352 #2c7bb6,black
+K08353 #2c7bb6,black
+K08357 #2c7bb6,black
+K08928 #2c7bb6,black
+K08929 #2c7bb6,black
+K10831 #d7191c,black
+K11180 #2c7bb6,black
+K11181 #2c7bb6,black
+K13039 #2c7bb6,black
+K13991 #2c7bb6,black
+K15372 #2c7bb6,black
+K15373 #2c7bb6,black
+K15515 #2c7bb6,black
+K15551 #2c7bb6,black
+K15552 #ffffbf,black
+K15553 #2c7bb6,black
+K15554 #ffffbf,black
+K15555 #d7191c,black
+K15762 #2c7bb6,black
+K15765 #2c7bb6,black
+K16843 #2c7bb6,black
+K16885 #2c7bb6,black
+K16886 #2c7bb6,black
+K16887 #2c7bb6,black
+K16950 #2c7bb6,black
+K16951 #2c7bb6,black
+K16953 #2c7bb6,black
+K16954 #2c7bb6,black
+K16964 #2c7bb6,black
+K16967 #2c7bb6,black
+K16968 #2c7bb6,black
+K17218 #2c7bb6,black
+K17220 #2c7bb6,black
+K17221 #2c7bb6,black
+K17222 #2c7bb6,black
+K17223 #2c7bb6,black
+K17224 #2c7bb6,black
+K17229 #2c7bb6,black
+K17486 #2c7bb6,black
+K17950 #2c7bb6,black
+K17994 #2c7bb6,black
+K17995 #2c7bb6,black
+K17996 #2c7bb6,black
+K19713 #2c7bb6,black
