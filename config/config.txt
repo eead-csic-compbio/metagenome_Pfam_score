@@ -3,5 +3,5 @@ S	biogeochemical_cycles/sulfur	152	161	112	0.985	4.045 (0.99)	5.231 (0.049)	6.32
 C	biogeochemical_cycles/carbon	135	90	119	0.988	9.052 (0.99)	17.939 (0.0099)	33.018 (0.0009)	33.776 (0.0) 
 O	biogeochemical_cycles/oxygen	50	53	55	0.983	6.173 (0.099)	8.667 (0.0097)	9.252 (0.0009)	10.774 (0.0) 
 Fe	biogeochemical_cycles/iron 	36	34	112	0.863	7.127 (0.099)	9.542 (0.009)	10.1 (0.0009)	11.171 (0.0) 
-N	biogeochemical_cycles/nitrogen 	267	144	176	0.791	26.881 (0.099)	31.054 (0.096)	33.126 (0.0005)	33.336 (0.0 )
+N	biogeochemical_cycles/nitrogen 	267	144	176	0.791	26.881 (0.099)	31.054 (0.096)	33.126 (0.0005)	33.336 (0.0)
 
