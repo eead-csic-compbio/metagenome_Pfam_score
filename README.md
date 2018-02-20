@@ -69,7 +69,7 @@ or
 
 $ ./score_metagenomes.sh test_metagenomes
 
-![MEBS flowchart basic mode ](./images/MEBS_basic_mode.png)
+![MEBS flowchart basic mode ](./images/Basic.png)
 
 ## 1.4 Scoring your data: Train your own classifier. Advanced Mode 
 
@@ -83,7 +83,7 @@ These inputs are processed in order to train a classifier which internally uses 
 As seen above, genomes or metagenomes provided by the user can then be scored with the trained classifier.
 Once a classifier has been trained, such as the Sulfur cycle, steps 1 and 3 can be skipped. 
 
-![MEBS flowchart advance mode ](./images/MEBS_advanced_mode.png)
+![MEBS flowchart advance mode ](./images/Advanced.png)
 
 # Dependencies
 
