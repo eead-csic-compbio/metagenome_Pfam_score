@@ -59,40 +59,61 @@ if(!$HMMSEARCHEXE )
 }
 
 ## 2) Checking parameters
-my (@valid_infiles, @cycles, @config, @paths, @MSL);
-my ($path,$cycle,$msl,$hmmfile,$hmmsearchfile,$entropyfile,$scorefile);
+my (@valid_infiles, @cycles, @config, @paths, @MSL, %FDRcutoff, %col2fdr);
+my ($c,$f,$path,$cycle,$msl,$score);
+my ($hmmfile,$hmmsearchfile,$entropyfile,$scorefile,$infile);
 
 # Read config file
 open(CONFIG,$CONFIGFILE) || die "# ERROR: cannot read $CONFIGFILE\n";
 while(my $line = <CONFIG>)
 {
-  next if($line =~ /^Cycle/);
+  #Cycle Path  Input Genes Input Genomes   Domains AUC Score(FDR0.1) Score(FDR0.01)  Score(FDR0.001) Score(FDR0.0001)
+  #sulfur  cycles/sulfur/  152 161 112 0.985 4.045 5.231 6.328 8.198
   @config = split(/\t/,$line);
-  push(@cycles, $config[0]);
-  push(@paths, $config[1]);
+  if($config[0] =~ /^Cycle/)
+  {
+    # check which columns in config match which FDR-based cutoffs
+    foreach $c (1 .. $#config)
+    {
+      if($config[$c] =~ /Score\(FDR(0\.\d+)/)
+      {
+        $col2fdr{$c} = $1;
+      }
+    }
+  }
+  else
+  {
+    push(@cycles, $config[0]);
+    push(@paths, $config[1]);
+    # save score FDR cutoffs
+    foreach $c (keys(%col2fdr))
+    {
+      $FDRcutoff{$config[0]}{$col2fdr{$c}} = $config[$c];
+    }
+  }  
 }
 close(CONFIG);
 
 if ($INP_cycles)
 {
-  print  "# Available cycles:\n". join("\n",@cycles);
-  exit (0);
+  print "# Available cycles:\n". join("\n",@cycles)."\n\n";
+  exit(0);
 }
 else
 {
-  print "# $0 -input $INP_folder -type $INP_type -fdr $INP_FDR\n\n";
+  warn "# $0 -input $INP_folder -type $INP_type -fdr $INP_FDR\n\n";
 }
 
 # check required sequence type
 if(!$INP_type || ($INP_type ne 'genomic' && $INP_type ne 'metagenomic'))
 {
-      die "# ERROR : type of input must be indicated; valid options are [genomic|metagenomic]\n";
+  die "# ERROR : type of input must be indicated; valid options are [genomic|metagenomic]\n";
 }
 
 # check required sequence folder
 if(!$INP_folder)
 {
-  die   "# ERROR : need valid -input folder\n";
+  die "# ERROR : need valid -input folder\n";
 }
 else
 {
@@ -106,7 +127,7 @@ else
   elsif($INP_type eq 'metagenomic')
   {
     # compute Mean Size Length for this metagenomic sequence set
-    print "# Computing Mean Size Length (MSL) ...\n";
+    warn "# Computing Mean Size Length (MSL) ...\n";
 
     my ($c,$nseq,$mean,$len,$cutoff,@MSLcutoffs);
     for(my $bin=0;$bin<scalar(@validMSL)-1;$bin++)
@@ -146,7 +167,7 @@ else
         if($mean <= $cutoff)
         {
           push(@MSL,$validMSL[$c]);
-          print "# $infile MSL=$mean MSLbin=$validMSL[$c]\n";
+          warn "# $infile MSL=$mean MSLbin=$validMSL[$c]\n";
 
           last;
         }
@@ -164,25 +185,30 @@ if($INP_FDR)
   }
 }
 
-print "# $0 -input $INP_folder -type $INP_type -fdr $INP_FDR\n\n";
+## 3) scan input sequences with selected Pfam HMMs for each input file & cycle
 
-
-## 3) scan input sequences with selected Pfam HMMs for each cycle
-foreach my $c (0 .. $#cycles)
+# print header
+foreach $c (0 .. $#cycles)
 {
-  $path = $paths[$c];
-  $cycle = $cycles[$c];
+  print "\t$cycles[$c]";
+} print "\n";
 
-  $hmmfile = $path . 'my_Pfam.'. $cycle . $VALIDHMMEXT;
-  $entropyfile = $path . 'entropies' . $VALIDENT;
+foreach $f (0 .. $#valid_infiles)
+{
+  $infile = $valid_infiles[$f];
 
-  print "# $cycle $path\n";
+  print "$infile"; # rowname
 
-  foreach my $f (0 .. $#valid_infiles)
+  foreach $c (0 .. $#cycles)
   {
-    my $infile = $valid_infiles[$f];
+    $path = $paths[$c];
+    $cycle = $cycles[$c];
+    $score = 'NA';
+
     $hmmsearchfile = $INP_folder . '/' . $infile . '.' . $cycle . $HMMOUTEXT;
     $scorefile = $INP_folder . '/' . $infile . '.' . $cycle . '.score';
+    $hmmfile = $path . 'my_Pfam.'. $cycle . $VALIDHMMEXT;
+    $entropyfile = $path . 'entropies' . $VALIDENT;
 
     system("$HMMSEARCHEXE --cut_ga -o /dev/null --tblout $hmmsearchfile $hmmfile $INP_folder/$infile");
 
@@ -190,20 +216,36 @@ foreach my $c (0 .. $#cycles)
     {
       if($INP_type eq 'metagenomic')
       {
-        #print "$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile -size $MSL[$f] > $scorefile";
         system("$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile -size $MSL[$f] > $scorefile");
       }
       else
       {
         system("$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile > $scorefile");
-      }  
+      }
+      
+      if(-s $scorefile)
+      {
+        $score = -1;
+        open(SCORE,"<",$scorefile) || warn "# ERROR: cannot read $scorefile\n";
+        while(<SCORE>)
+        {
+          if(/Pfam entropy score: (\S+)/){ $score = sprintf("%1.3f",$1) } 
+        }
+        close(SCORE);  
+      }
+      else { warn "# ERROR: failed to generate $scorefile\n"  }
     }
-    else
-    {
-      print "# ERROR: failed to generate $hmmsearchfile\n";
-    }
-  }
+    else { warn "# ERROR: failed to generate $hmmsearchfile\n" }
 
+    # compare score to FDR-based cutoff
+    if($score ne 'NA' && $score >= $FDRcutoff{$cycle}{$INP_FDR})
+    {
+      $score .= '*';
+    }
+
+    print "\t$score";
+  }
+  print "\n";
 }
 
 
