@@ -10,12 +10,14 @@ use FindBin '$Bin';
 my $HMMSEARCHEXE = 'hmmsearch'; # please edit if not in path
 
 my $CONFIGDIR   = $Bin.'/config/';
-my $CONFIGPATHS = $CONFIGDIR . 'config.txt';
+my $CONFIGFILE  = $CONFIGDIR . 'config.txt';
 my $VALIDEXT    = '.faa';
-my $VALIDHMMEXT = '.hmm';
+my $VALIDENT    = '.tab'; # valid extension for pre-computed entropy files
+my $VALIDHMMEXT = '.hmm'; # valid extension for HMM files
+my $HMMOUTEXT   = '.hmmsearch.tab'; # default extension for hmmsearch tbl output
 my $FDR         = 0.01;
-my $VALIDENT    = '.tab';
 my @validFDR    = qw(0.1 0.01 0.001 0.0001);
+my @validMSL    = qw(30 60 100 150 200 250 300);
 
 my ($INP_help,$INP_folder,$INP_cycles,$INP_type,$INP_FDR) = (0,'',0,'',$FDR);
 
@@ -39,55 +41,61 @@ if (-t STDIN && ($INP_help || $INP_folder eq '' || $INP_type eq '') && !$INP_cyc
 
    -help    Brief help message
    
-   -input   Folder containing FASTA peptide files ($VALIDEXT),/ genome or metagenome (required)
+   -input   Folder containing FASTA peptide files ($VALIDEXT)                  (required)
 
-   -type    Nature of inputed sequences, either 'genomic' or 'metagenomic'              (required)
+   -type    Nature of input sequences, either 'genomic' or 'metagenomic'  (required)
 
-   -fdr     Score cycles with False Discovery Rate (0.1, 0.01, 0.001 & 0.0001)          (optional)
-            Default: $FDR
+   -fdr     Score cycles with False Discovery Rate @validFDR  (optional, default=$FDR)
 
    -cycles  Show currently supported biogeochemical cycles
 
 EODOC
 }
 
-##Checking parameters
+## 1) Checking binaries
+if(!$HMMSEARCHEXE )
+{
+  die "#ERROR:  hmmsearch not found, please install or set \$HMMSEARCHEXE correctly\n";
+}
 
-if  (!$HMMSEARCHEXE )
-  {
-  die "#ERROR:  hmmsearch not found, please install\n"
-  }
+## 2) Checking parameters
+my (@valid_infiles, @cycles, @config, @paths, @MSL);
+my ($path,$cycle,$msl,$hmmfile,$hmmsearchfile,$entropyfile,$scorefile);
 
-
-my (@valid_infiles);
-my @cycle;
-my @config;
+# Read config file
+open(CONFIG,$CONFIGFILE) || die "# ERROR: cannot read $CONFIGFILE\n";
+while(my $line = <CONFIG>)
+{
+  next if($line =~ /^Cycle/);
+  @config = split(/\t/,$line);
+  push(@cycles, $config[0]);
+  push(@paths, $config[1]);
+}
+close(CONFIG);
 
 if ($INP_cycles)
- {
- open(PATHS,$CONFIGPATHS) || die "# ERROR: cannot read $CONFIGPATHS\n";
- print  print  "#Available cycles:\n";
-   while(my $line = <PATHS>)
-    { 
-      next if($line =~  /^Cycle/);
-      chomp $line;
-      @config = split(/\t/,$line);
-      my $cycle=$config[0];
-      print "$cycle\n";
-    }
+{
+  print  "# Available cycles:\n". join("\n",@cycles);
+  exit (0);
+}
+else
+{
+  print "# $0 -input $INP_folder -type $INP_type -fdr $INP_FDR\n\n";
+}
 
-close(PATHS);
-exit (0);
-   }
+# check required sequence type
+if(!$INP_type || ($INP_type ne 'genomic' && $INP_type ne 'metagenomic'))
+{
+      die "# ERROR : type of input must be indicated; valid options are [genomic|metagenomic]\n";
+}
 
-# check required input
+# check required sequence folder
 if(!$INP_folder)
-   {
-    die   "# ERROR : need valid folder\n";
-   }
-
-  else
-  {
+{
+  die   "# ERROR : need valid -input folder\n";
+}
+else
+{
   opendir(DIR,$INP_folder) || die "# ERROR: cannot list $INP_folder\n";
   @valid_infiles = grep{/$VALIDEXT$/} readdir(DIR);
   closedir(DIR);
@@ -95,96 +103,109 @@ if(!$INP_folder)
   {
     die "# ERROR: cannot find files with extension $VALIDEXT in folder $INP_folder\n";
   }
-}
-
-
-if(!$INP_type || ($INP_type ne 'genomic' && $INP_type ne 'metagenomic'))
-{
-    die "# ERROR : type of input must be indicated; valid options are [genomic|metagenomic]\n";
-}
-
-## Optional FDR 
-
-if ($INP_FDR)   
- {
-   if (grep (/^$INP_FDR$/, @validFDR))
-   {
-    print "#Default FDR\n"; 
-   }
-    else  
-      {
-     die "# ERROR: FDR value is not valid; please choose from ".join(', ',@validFDR)."\n";
-      }
- }
-
-print "#call:\n# -input $INP_folder -type $INP_type -fdr $INP_FDR\n";
-
-
-## Parameters check 
-
-
-
-# 2) scan input sequences with selected Pfam HMMs for each cycle
-
-
- open(PATHS,$CONFIGPATHS) || die "# ERROR: cannot read $CONFIGPATHS\n";
- #print  "#Available cycles:\n";
-   while(my $line = <PATHS>)
-    {
-      next if($line =~  /^Cycle/);
-      chomp $line;
-      @config = split(/\t/,$line);
-      my @paths=$config[1];
-  
-    foreach  my $path(@paths)
-    {
-    #print "$path\n";
- 
-
-opendir(CYCLEDIR,$path) || die "# ERROR: cannot list $path, please check $CONFIGPATHS\n";
-my @HMM_files = grep{/$VALIDHMMEXT$/} readdir(CYCLEDIR);
-closedir(CYCLEDIR);
-
-## LO TUVE QUE HACER DOS VECES *** IMPROVE WITH BRUNO 
-opendir(CYCLEDIR,$path) || die "# ERROR: cannot list $path, please check $CONFIGPATHS\n";
-my @ent_files = grep{/$VALIDENT$/} readdir(CYCLEDIR);
-closedir(CYCLEDIR);
-print  "#Using curated database: @HMM_files and entropy file: @ent_files\n";
-
-   }
-}
-close(PATHS);
-
-#Para hacer mañana con bruno 
-
-#primero hmmserach de los files.... tengo dudas  de si calcularla de nuevo siempre o usar el previo... 
-#yo digo que calcularlo siempre por que el nombre puede cambiar... (Bruno?)
-
-#hmmsearch  --cut_ga -o /dev/null --tblout $fasta.$cycle.hmmsearch.tab $cycle $fasta
-
-
-
-if ($INP_type eq 'genomic')
-
+  elsif($INP_type eq 'metagenomic')
   {
+    # compute Mean Size Length for this metagenomic sequence set
+    print "# Computing Mean Size Length (MSL) ...\n";
+
+    my ($c,$nseq,$mean,$len,$cutoff,@MSLcutoffs);
+    for(my $bin=0;$bin<scalar(@validMSL)-1;$bin++)
+    {
+      $cutoff = $validMSL[$bin] + (($validMSL[$bin+1]-$validMSL[$bin])/2);
+      push(@MSLcutoffs,$cutoff);#print "$validMSL[$bin] $cutoff\n";
+    }
+    push(@MSLcutoffs,$validMSL[$#validMSL]); # add last MSL
+
+    foreach my $infile (@valid_infiles)
+    {
+      ($nseq,$mean,$len) = (0,0,0);
+      open(FAAFILE,"<","$INP_folder/$infile") || 
+        die "# ERROR: cannot read files $INP_folder/$infile\n";
+      while(<FAAFILE>)
+      {
+        if(/^>/)
+        {
+          $nseq++;
+          $mean += $len;
+          $len=0;
+        }
+        else
+        {
+          chomp;
+          $len += length($_);
+        }
+      }
+      close(FAAFILE);
+
+      $mean = sprintf("%1.0f",$mean/$nseq);
+
+      # find out which pre-defined MSL bin matches the estimated MSL for this sequence set
+      foreach $c (0 .. $#MSLcutoffs)
+      {
+        $cutoff = $MSLcutoffs[$c];
+        if($mean <= $cutoff)
+        {
+          push(@MSL,$validMSL[$c]);
+          print "# $infile MSL=$mean MSLbin=$validMSL[$c]\n";
+
+          last;
+        }
+      }
+    }
+  } print "\n";
+}
+
+## check optional FDR 
+if($INP_FDR)   
+{
+  if(!grep (/^$INP_FDR$/, @validFDR))
+  {
+    die "# ERROR: FDR value is not valid; please choose from ".join(', ',@validFDR)."\n";
+  }
+}
+
+print "# $0 -input $INP_folder -type $INP_type -fdr $INP_FDR\n\n";
 
 
-#perl $BIN/scripts/pfam_score.pl -input $gen.$cycle.tab \
-#      -entropyfile $cycle.entropy > $gen.$cycle.score
+## 3) scan input sequences with selected Pfam HMMs for each cycle
+foreach my $c (0 .. $#cycles)
+{
+  $path = $paths[$c];
+  $cycle = $cycles[$c];
+
+  $hmmfile = $path . 'my_Pfam.'. $cycle . $VALIDHMMEXT;
+  $entropyfile = $path . 'entropies' . $VALIDENT;
+
+  print "# $cycle $path\n";
+
+  foreach my $f (0 .. $#valid_infiles)
+  {
+    my $infile = $valid_infiles[$f];
+    $hmmsearchfile = $INP_folder . '/' . $infile . '.' . $cycle . $HMMOUTEXT;
+    $scorefile = $INP_folder . '/' . $infile . '.' . $cycle . '.score';
+
+    system("$HMMSEARCHEXE --cut_ga -o /dev/null --tblout $hmmsearchfile $hmmfile $INP_folder/$infile");
+
+    if(-s $hmmsearchfile)
+    {
+      if($INP_type eq 'metagenomic')
+      {
+        #print "$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile -size $MSL[$f] > $scorefile";
+        system("$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile -size $MSL[$f] > $scorefile");
+      }
+      else
+      {
+        system("$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile > $scorefile");
+      }  
+    }
+    else
+    {
+      print "# ERROR: failed to generate $hmmsearchfile\n";
+    }
   }
 
-else 
-
-{
-
-print ("#Computing mean size length (MSL)  of your $INP_folder files  to allocate the  proper entropy\n");
-#Este es el codigo que teniamos en el bash 
-
-#  MSL=`perl -lne 'if(/^(>.*)/){$nseq++;$m+=$l;$l=0}else{$l+=length($_)} END{ $m+=$l; printf("%1.0f\n",$m/$nseq) }' $i`
-
-
-
 }
+
 
 
 
