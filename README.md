@@ -201,7 +201,7 @@ Once a classifier has been trained, such as the Sulfur cycle, steps 1 and 3 can 
 
 # Support and Development
 
-Planned feature improvements are publicly catalogued at the main MEBS development site on github. Bug reports and problems using MEBS  are welcome on the issues tracker. We prefer posting to the issue tracker over email as these posts are searchable by other users who may experience the same problems.
+Planned feature improvements are publicly catalogued at the main MEBS development site on github. Bug reports and problems using MEBS  are welcome on the [issues tracker](https://github.com/eead-csic-compbio/metagenome_Pfam_score/issues). We prefer posting to the issue tracker over email as these posts are searchable by other users who may experience the same problems.
 
 
 # Links related to MEBS 
