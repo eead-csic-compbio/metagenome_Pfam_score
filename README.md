@@ -96,7 +96,7 @@ Enterococcus_durans.faa	-0.063	0.284	0.883	0.214	3.044
 Archaeoglobus_profundus_DSM_5631.faa	11.434*	24.834*	1.493	0.765	6.873
 ```
 
-The scores that meets the criteria of specific  FDR  are shown in asterisc, yet the score will be the same regardless of the FDR that is used. If the Score if greater or equal to the FDR, then an asterisc  will be shown in the output. In the case of using the  default FDR (0.01), more false positive will be obtained, for example the genome *Archaeoglobus profundus* a well known microorgnism involved in the S-cycle, is also *involved* in the mobilization of CH4 compounds, with a default FDR, however if we increase to FDR 0.001, the algorithm only display with asterisc the S-cycle. We recomend a more restrictive FDR in order to eliminate false positives.
+The scores that meets the criteria of specific  FDR  are shown in asterisc, yet the score will be the same regardless of the FDR that is used. If the Score if greater or equal to the FDR, then an asterisc  will be shown in the output. In the case of using the  default FDR (0.01), more false positive will be obtained, for example the genome *Archaeoglobus profundus* a well known microorgnism involved in the S-cycle, could seem to have a CH4 metabolism by using a default FDR,however if we increase to FDR 0.001, the C cycle asterisc is gone and only the  S-cycle ramain. Therefore,  we recomend a more restrictive FDR in order to eliminate false positives.
 
 
 
