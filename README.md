@@ -9,7 +9,7 @@ Authors: Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira 
 
 # About MEBS
 
-The main goal of MEBS is capture with a single value  the importance of complex metabolic pathways or biogeochemical cycles in a large omic datasets (either genomes or metagenomes). The algortithm has been thoroughly tested with the [sulfur +cycle](https://academic.oup.com/gigascience/article/6/11/1/4561660), but currently other cycles are also supported. The script [mebsv1.pl](./mebsv1.pl) avoid reading the manual and score their own genome/metagnome in terms of biogeochemical cycles.  All that is required is a directory containing peptide FASTA files of
+The main goal of MEBS is capture with a single value  the importance of complex metabolic pathways or biogeochemical cycles in a large omic datasets (either genomes or metagenomes). The algortithm has been thoroughly tested with the [sulfur cycle](https://academic.oup.com/gigascience/article/6/11/1/4561660), but currently other cycles are also supported. The script [mebsv1.pl](./mebsv1.pl) avoid reading the manual and score their own genome/metagnome in terms of biogeochemical cycles.  All that is required is a directory containing peptide FASTA files of
 encoded proteins/fragments with **.faa** extension.
 Note that hmmsearch must be installed as well (see below).
 
