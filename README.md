@@ -66,7 +66,7 @@ nitrogen
 
 ## MEBS starting point 
 
-Mebs assumes that your sequencing data is in fasta format  **(.faa)** extension in an especific directory.
+MEBS assumes that your sequencing data is in fasta format  **(.faa)** extension in an especific directory.
 Example of the input data can be foun in *test_genomes/* or *test_metagenomes/* directories
 
 ```{bash, highlight=TRUE, eval=FALSE}
@@ -96,6 +96,19 @@ Enterococcus_durans.faa	-0.063	0.284	0.883	0.214	3.044
 Archaeoglobus_profundus_DSM_5631.faa	11.434*	24.834*	1.493	0.765	6.873
 ```
 
+The scores that meets the criteria of specific  FDR  are shown in asterisc (*).If the Score if greater or equal to the FDR, then an asterisc(*) will be shown in the output. If a default FDR is used (0.01), more false positive will be obtained, for example the genome **Archaeoglobus profundus** a well known microorgnism involved in the S-cycle, is also *involved* in the mobilization of CH4 compounds, with a default FDR, however if we increase to FDR 0.001, the algorithm only display with asterisc the S-cycle. We recomend a more restrictive FDR in order to eliminate false positives.
+
+
+
+```{bash, highlight=TRUE, eval=FALSE}
+perl mebsv1.pl  -input test_genomes/ -type genomic -fdr 0.001
+
+           sulfur       carbon  oxygen  iron    nitrogen
+Enterococcus_durans.faa -0.063  0.284   0.883   0.214   3.044
+Archaeoglobus_profundus_DSM_5631.faa    11.434	24.834* 1.493   0.765   6.873
+```  
+
+If you attempt to benchmark your own metabolism, we recomend to add your own FDR values in this [config file](./config.txt) at the end of this file. 
 In a 16.04 Ubuntu system, 16Gb RAM, intel Inside i7 the time to run the scritpt  in the example folder is less than 20 seconds. 
 
 ```{bash, highlight=TRUE, eval=FALSE}
