@@ -243,7 +243,6 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Readme MEBSv1</h1>
-<h4 class="date"><em>21/abr/2018</em></h4>
 
 </div>
 
@@ -316,13 +315,16 @@ div.tocify {
        <span class="ex">sulfur</span>   carbon  oxygen  iron    nitrogen
 <span class="ex">Enterococcus_durans.faa</span> -0.063  0.284   0.883   0.214   3.044
 <span class="ex">Archaeoglobus_profundus_DSM_5631.faa</span>    11.434* 24.834* 1.493   0.765   6.873</code></pre></div>
-<p>In a 16.04 Ubuntu system, 16Gb RAM, intel Inside i7 the time to run the scritpt in the example folder is less than 20 seconds.</p>
+<p>The scores that meets the criteria of specific FDR are shown in asterisc, yet the score will be the same regardless of the FDR that is used. If the Score if greater or equal to the FDR, then an asterisc will be shown in the output. In the case of using the default FDR (0.01), more false positive will be obtained, for example the genome <em>Archaeoglobus profundus</em> a well known microorgnism involved in the S-cycle, could seem to have a CH4 metabolism by using a default FDR,however if we increase to FDR 0.001, the C cycle asterisc is gone and only the S-cycle ramain. Therefore, we recomend a more restrictive FDR in order to eliminate false positives.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">perl</span> mebsv1.pl  -input test_genomes/ -type genomic -fdr 0.001
+
+           <span class="ex">sulfur</span>       carbon  oxygen  iron    nitrogen
+<span class="ex">Enterococcus_durans.faa</span> -0.063  0.284   0.883   0.214   3.044
+<span class="ex">Archaeoglobus_profundus_DSM_5631.faa</span>    11.434  24.834* 1.493   0.765   6.873</code></pre></div>
+<p>If you attempt to benchmark your own metabolism, we recomend to add your own FDR values in this <a href="./config.txt">config file</a> at the end of this file. In a 16.04 Ubuntu system, 16Gb RAM, intel Inside i7 the time to run the scritpt in the example folder is less than 20 seconds.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">real</span>    0m14.183s
 <span class="ex">user</span>    0m22.961s
 <span class="ex">sys</span> 0m0.865s</code></pre></div>
-<p>In the case that you have several genomes (hundreds or thoundsands) that you wan to know wheter they are involved in certain metabolism you just need to redirect the output in a tabular file. We recomend to use screen or nohup if you’re running MEBS in a server.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">perl</span> mebsv1.pl  -input test_genomes/ -type genomic <span class="op">&gt;</span> test_genomes.tsv  <span class="kw">&amp;</span>
-<span class="fu">less</span> test_genomes.tsv</code></pre></div>
 </div>
 <div id="metagenomic-data" class="section level3">
 <h3><span class="header-section-number">3.0.2</span> Metagenomic data</h3>
