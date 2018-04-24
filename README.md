@@ -27,6 +27,13 @@ git clone https://github.com/eead-csic-compbio/metagenome_Pfam_score
 unzip metagenome_Pfam_score-master.zip
 ```
 
+
+# Manual and Readme 
+
+Instructions and full documentation of MEBS are available on [html](https://eead-csic-compbio.github.io/metagenome_Pfam_score/READMEv1.html) and [pdf](https://eead-csic-compbio.github.io/metagenome_Pfam_score/manual.v1.pdf)
+
+
+# Quick start  
 Have a look at the options of the main script mebsv1.pl
 
 
@@ -67,30 +74,10 @@ iron
 nitrogen
 ```
 
-## MEBS starting point 
-
-MEBS assumes that your sequencing data is in fasta format  **(.faa)** extension in an especific directory.
-Example of the input data can be foun in *test_genomes/* or *test_metagenomes/* directories
-
-```
-head  -3 test_genomes/*.faa 
-==> test_genomes/Archaeoglobus_profundus_DSM_5631.faa <==
->WP_012766394.1 hypothetical protein [Archaeoglobus profundus]
-MGSQEVGRIEEEVVEERRQEEEEIDEEEATGSALLTAEEFDKKIEEIKAKVREAVQEALANTLADLLEKEEKEEKRKDET
-KAEELPKCPKNLSWLKKMFEILPLDILRNSKLWRYRHCVWALQEAEKEAEKFRNS
-
-==> test_genomes/Enterococcus_durans.faa <==
->WP_000053907.1 MULTISPECIES: replication control protein PrgN [Bacilli]
-MSLKNYVYSHPVNVFIIGRLGLSVEVFCELYGFKQGTLSSWVTREKTVASLPIEFLHGLSLASGETMDQVYDCLCVLEQE
-YIEYKIANELRKRKKYIQ
-```
-
 # Running MEBS   
 
 To run MEBS you only need to specifyt the input folder and the  type of data  (either genomic or metagenomic). The latter is  required for MEBS to allocate the  pre-computed entropies  for each type of data considering the fragmentary nature of the metagenomic sequences. 
 
-
-### Genomic data 
 
 ```
 perl mebsv1.pl  -input test_genomes/ -type genomic 
@@ -100,7 +87,6 @@ Archaeoglobus_profundus_DSM_5631.faa	11.434*	24.834*	1.493	0.765	6.873
 ```
 
 The scores that meets the criteria of specific  FDR  are shown in asterisc, yet the score will be the same regardless of the FDR that is used. If the Score if greater or equal to the FDR, then an asterisc  will be shown in the output. In the case of using the  default FDR (0.01), more false positive will be obtained, for example the genome *Archaeoglobus profundus* a well known microorgnism involved in the S-cycle, could seem to have a CH4 metabolism by using a default FDR,however if we increase to FDR 0.001, the C cycle asterisc is gone and only the  S-cycle ramain. Therefore,  we recomend a more restrictive FDR in order to eliminate false positives.
-
 
 
 ```
@@ -120,11 +106,10 @@ user	0m22.961s
 sys	0m0.865s
 ```
 
-
 # Maximum scores 
 
 To compare your data with the maximum  scores that you can obtain from the entropy data, have a look at the following data
-If you are computing MEBS in genomes compare your results with the row "Genomic data". In the case that you are computing MEBS in metagenomes see the corresponding MSL and MSLbin you compare your results. 
+If you are computing MEBS in genomes compare your results with the row "Genomic data". In the case that you are computing MEBS in metagenomes see the corresponding MSL and MSLbin to you compare your results. 
 
 
 |      | sulfur | methane | oxygen | iron   | nitrogen |
@@ -138,13 +123,6 @@ If you are computing MEBS in genomes compare your results with the row "Genomic 
 | 250  | 16.031 | 85.057  | 10.387 | 10.215 | 21.853   |
 | 300  | 15.929 | 84.942  | 10.569 | 10.284 | 21.968   |
 
-
-
-
-
-# Manual and Readme 
-
-Instructions and full documentation of MEBS are available on [html](https://eead-csic-compbio.github.io/metagenome_Pfam_score/READMEv1.html) and [pdf](https://eead-csic-compbio.github.io/metagenome_Pfam_score/manual.v1.pdf)
 
 
 # Support and Development
