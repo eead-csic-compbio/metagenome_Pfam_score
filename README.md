@@ -189,7 +189,7 @@ The rest of packages are needed to run the full pipeline, which comprises four s
 
 # Scoring your data: Train your own classifier. Advanced Mode 
 
-For more advanced uses a [manual](manual.v1.pdf) is provided. The required input data are:
+For more advanced users  a [manual](https://eead-csic-compbio.github.io/metagenome_Pfam_score/manual.v1.pdf) is provided. The required inpuft data are:
 
 1. FASTA file with peptides sequences of proteins involved in the cycle/pathway of interest.
 2. List of RefSeq accesions of (curated) genomes known to be involved in the cycle/pathway of interest.
@@ -203,7 +203,7 @@ Once a classifier has been trained, such as the Sulfur cycle, steps 1 and 3 can 
 ![Figure 3 .MEBS flowchart advance mode ](./images/MEBS_advanced.png)
 
 
-#Manual and Readme 
+# Manual and Readme 
 
 Instructions and full documentation of MEBS are available on [html](https://eead-csic-compbio.github.io/metagenome_Pfam_score/READMEv1.html) and [pdf](https://eead-csic-compbio.github.io/metagenome_Pfam_score/manual.v1.pdf)
 
