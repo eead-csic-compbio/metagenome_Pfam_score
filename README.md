@@ -7,11 +7,12 @@ Authors: Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira 
 2. [Instituto de Investigaciones Matematicas Aplicadas y en Sistemas](http://www.iimas.unam.mx), UNAM, Mexico
 3. [Fundacion ARAID](http://www.araid.es) & [EEAD-CSIC](http://www.eead.csic.es), Zaragoza, Spain
 
+
 # About MEBS
 
-The main goal of MEBS is capture with a single value  the importance of complex metabolic pathways or biogeochemical cycles in a large omic datasets (either genomes or metagenomes). The algortithm has been thoroughly tested with the [sulfur cycle](https://academic.oup.com/gigascience/article/6/11/1/4561660), but currently other cycles are also supported. The script [mebsv1.pl](./mebsv1.pl) avoid reading the manual and score their own genome/metagnome in terms of biogeochemical cycles.  All that is required is a directory containing peptide FASTA files of
-encoded proteins/fragments with **.faa** extension.
-Note that hmmsearch must be installed as well (see below).
+The main goal of MEBS is capture with a single value  the importance of complex metabolic pathways or biogeochemical cycles in a large omic datasets (either genomes or metagenomes). The algortithm has been thoroughly tested with the [sulfur cycle](https://academic.oup.com/gigascience/article/6/11/1/4561660), but currently other cycles are also supported. The script [mebsv1.pl](./mebsv1.pl) allows you to score your  own genome/metagenome in terms of biogeochemical cycles. 
+All that is required is a directory containing peptide FASTA files of encoded proteins/fragments with **.faa** extension.
+Note that [hmmsearch](http://hmmer.org/download.html) must be installed first.
 
 # MEBS installation 
 
@@ -201,6 +202,12 @@ Once a classifier has been trained, such as the Sulfur cycle, steps 1 and 3 can 
 
 ![Figure 3 .MEBS flowchart advance mode ](./images/MEBS_advanced.png)
 
+
+#Manual and Readme 
+
+Instructions and full documentation of MEBS are available on [html](https://eead-csic-compbio.github.io/metagenome_Pfam_score/READMEv1.html) and [pdf](https://eead-csic-compbio.github.io/metagenome_Pfam_score/manual.v1.pdf)
+
+
 # Support and Development
 
 Planned feature improvements are publicly catalogued at the main MEBS development site on github. Bug reports and problems using MEBS  are welcome on the [issues tracker](https://github.com/eead-csic-compbio/metagenome_Pfam_score/issues). We prefer posting to the issue tracker over email as these posts are searchable by other users who may experience the same problems.
@@ -217,6 +224,8 @@ If you find this software usefull please cite us as:
 
 + De Anda V, Zapata-Penasco I, Poot Hernandez AC, Fruns LE, Contreras Moreira B, Souza V (2017) MEBS, a software platform to evaluate large (meta)genomic collections according to their metabolic machinery: unraveling the sulfur cycle. [doi:10.1093/gigascience/gigascience/gix096/4561660](https://academic.oup.com/gigascience/advance-article/doi/10.1093/gigascience/gix096/4561660)
 <!--[doi:10.1101/191288 ](https://www.biorxiv.org/content/early/2017/09/20/191288)-->
+
+
 
 
 
