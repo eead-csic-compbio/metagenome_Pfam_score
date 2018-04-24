@@ -1,4 +1,4 @@
- ![MEBS](./images/MEBS.png) 
+![MEBS](./images/MEBS.png) 
 
 
 Authors: Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira (3)
@@ -120,87 +120,26 @@ user	0m22.961s
 sys	0m0.865s
 ```
 
-In the case that you have several genomes (hundreds or thoundsands) that you wan to know wheter they are involved in certain metabolism  you just need to redirect the output in a tabular file.
-We recomend to use screen or nohup if you're running MEBS in a server. 
 
-```
-perl mebsv1.pl  -input test_genomes/ -type genomic > test_genomes.tsv  &
-less test_genomes.tsv
-```
+# Maximum scores 
+
+To compare your data with the maximum  scores that you can obtain from the entropy data, have a look at the following data
+If you are computing MEBS in genomes compare your results with the row "Genomic data". In the case that you are computing MEBS in metagenomes see the corresponding MSL and MSLbin you compare your results. 
 
 
-### Metagenomic data 
-In the case of using metagenomic data metagenomic data the mean size length  (MSL) and the size of the allocated entropies  (MSLbin)  is especify as warning. If you redirect the output of the script to a file this information will not be printed. 
+|      | sulfur | methane | oxygen | iron   | nitrogen |
+|------|--------|---------|--------|--------|----------|
+| Genomic data | 16.018 | 85.332  | 10.703 | 10.464 | 22.079   |
+| 30   | 13.676 | 84.503  | 10.438 | 8.843  | 20.642   |
+| 60   | 16.818 | 85.347  | 11.253 | 9.567  | 22.148   |
+| 100  | 15.566 | 85.221  | 9.965  | 10.676 | 21.43    |
+| 150  | 15.848 | 84.81   | 10.152 | 10.316 | 21.379   |
+| 200  | 15.887 | 84.765  | 10.463 | 9.832  | 21.938   |
+| 250  | 16.031 | 85.057  | 10.387 | 10.215 | 21.853   |
+| 300  | 15.929 | 84.942  | 10.569 | 10.284 | 21.968   |
 
 
-```
-perl mebsv1.pl  -input test_genomes/ -type metagenomic
 
-# Computing Mean Size Length (MSL) ...
-# 4511045.3_metagenome.faa MSL=32 MSLbin=30
-# 4440966.3_metagenome.faa MSL=175 MSLbin=150
-
-	sulfur	carbon	oxygen	iron	nitrogen
-4511045.3_metagenome.faa	-2.295	1.790	5.412	2.745	13.024
-4440966.3_metagenome.faa	5.817*	8.804	1.178	4.579	11.697	   
-```
-
-As MEBS needs to compute the MSL of each metagenome the time will depend on the size of the input sample. In the test_metagenomes/ directory there are only two metagenomes with   size of  2,8M  and 6,5M respectively. The computation time will depend on the size and the number of metagenomes in the input forlder.  In the example it takes less than 40 seconds to finish.  
-
-
-```
-real	0m36.736s
-user	1m40.328s
-sys	0m2.599s
-```
-
-# Summary of MEBS basic mode 
-Below we summarize the internal steps performed with MEBS in the basic mode using the main script [mebsv1.pl](./mebsv1.pl)
-
-![Figure 1. MEBS flowchart basic mode ](./images/MEBS_basic.png)
-
-
-# Modalities 
-Besides the score, the other modalities of MEBS are: 
-
-1. **Score**: capturing the metabolic machinery of your genome or metagenome in terms of single scores (mebsv1.pl script)
-2. **Markers**: Detect possible marker genes according to their informational content (entropy)
-3. **Completeness**: Evaluate the metabolic completeness of metabolic pathways
-4. **Kegg visualization**: Visualizate the protein domains in your genome or metagenome using KEGG visualization
-
-![Fig 2. Main modalities of MEBS](./images/Modalities.png)
-
-
-# External dependencies for advance mode 
-
-The following external packages are required if you want to benchmark your own metabolic pathway. 
-Interproscan and hmmsearch are needed in order to annotate Pfam domains within peptide sequences.
-The rest of packages are needed to run the full pipeline, which comprises four steps.
-
-1. [Interproscan](https://www.ebi.ac.uk/interpro/interproscan.htm}{Interproscan)
-2. [Python3](https://www.python.org/downloads)
-3. [Matplotlib 1.4 or greater](http://matplotlib.org/users/installing.html#most-platforms-scientific-python-distributions)
-4. [Numpy](https://docs.scipy.org/doc/numpy-1.10.0/user/install.html)
-5. [Pandas](http://pandas.pydata.org/pandas-docs/stable/install.html)
-6. [Scikit-learn](http://scikit-learn.org/stable/install.html)
-7. [Jupyter-notebook](http://jupyter.org}{Jupyter-notebook)
-8. [MPL_toolkits](http://matplotlib.org/1.4.3/mpl_toolkits/index.html)
-
-
-# Scoring your data: Train your own classifier. Advanced Mode 
-
-For more advanced users  a [manual](https://eead-csic-compbio.github.io/metagenome_Pfam_score/manual.v1.pdf) is provided. The required inpuft data are:
-
-1. FASTA file with peptides sequences of proteins involved in the cycle/pathway of interest.
-2. List of RefSeq accesions of (curated) genomes known to be involved in the cycle/pathway of interest.
-
-These inputs are processed in order to train a classifier which internally uses [Pfam](http://pfam.xfam.org) domains.
-
-As seen above, genomes or metagenomes provided by the user can then be scored with the trained classifier.
-Once a classifier has been trained, such as the Sulfur cycle, steps 1 and 3 can be skipped.
-
-
-![Figure 3 .MEBS flowchart advance mode ](./images/MEBS_advanced.png)
 
 
 # Manual and Readme 
