@@ -18,8 +18,8 @@ my $HMMOUTEXT   = '.hmmsearch.tab'; # default extension for hmmsearch tbl output
 my $FDR         = 0.01;
 my @validFDR    = qw(0.1 0.01 0.001 0.0001);
 my @validMSL    = qw(30 60 100 150 200 250 300);
-
 my ($INP_help,$INP_folder,$INP_cycles,$INP_type,$INP_FDR) = (0,'',0,'',$FDR);
+my $INP_comp   = '';
 
 GetOptions
 (
@@ -27,7 +27,8 @@ GetOptions
   'input|in=s'  => \$INP_folder,
   'type|t=s'    => \$INP_type,
   'cycles|c'    => \$INP_cycles,
-  'fdr|r=f'     => \$INP_FDR
+  'fdr|r=f'     => \$INP_FDR,
+  'comp|t=s'    => \$INP_comp,
 );
 
 
@@ -48,6 +49,8 @@ if (-t STDIN && ($INP_help || $INP_folder eq '' || $INP_type eq '') && !$INP_cyc
    -fdr     Score cycles with False Discovery Rate @validFDR  (optional, default=$FDR)
 
    -cycles  Show currently supported biogeochemical cycles
+
+   -comp   Compute the metabolic completeness. (Currently only the sulfur cycle is supported)
 
 EODOC
 }
