@@ -49,7 +49,7 @@ if (-t STDIN && ($INP_help || $INP_folder eq '' || $INP_type eq '') && !$INP_cyc
 
    -cycles  Show currently supported biogeochemical cycles
    
-   -comp   Compute the metabolic completeness.                (optional)
+   -comp    Compute the metabolic completeness                (optional)
 
 EODOC
 }
@@ -87,6 +87,10 @@ while(my $line = <CONFIG>)
   {
     push(@cycles, $config[0]);
     push(@paths, $config[1]);
+
+    # TODO: save completness
+    # $pfam2keggfile =$path .'pfam2kegg.tab';
+
     # save score FDR cutoffs
     foreach $c (keys(%col2fdr))
     {
@@ -99,6 +103,9 @@ close(CONFIG);
 if ($INP_cycles)
 {
   print "# Available cycles:\n". join("\n",@cycles)."\n\n";
+
+  # TODO: show also which have completness data/support
+
   exit(0);
 }
 else
@@ -106,9 +113,6 @@ else
   warn "# $0 -input $INP_folder -type $INP_type -fdr $INP_FDR\n\n";
 }
  
-##Check availables pfam2kegg files  
-
-
 # check required sequence type
 if(!$INP_type || ($INP_type ne 'genomic' && $INP_type ne 'metagenomic'))
 {
@@ -196,11 +200,7 @@ if($INP_FDR)
 
 if ($INP_comp)
 {
- foreach $c (0 .. $#cycles)
- {
-  $cycle = $cycles[$c];
   $pfam2keggfile =$path .'pfam2kegg.tab';
- }
 }
 
 
@@ -233,6 +233,7 @@ foreach $f (0 .. $#valid_infiles)
     $entropyfile = $path . 'entropies' . $VALIDENT;
     $pfam2keggfile =$path .'pfam2kegg.tab';
 
+    # TODO: abrir un completeness result file (a partir de $infile & $cycle)
 
     system("$HMMSEARCHEXE --cut_ga -o /dev/null --tblout $hmmsearchfile $hmmfile $INP_folder/$infile");
 
@@ -240,11 +241,26 @@ foreach $f (0 .. $#valid_infiles)
     {
       if($INP_type eq 'metagenomic')
       {
-        system("$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile -size $MSL[$f] > $scorefile");
+        if ($INP_comp)
+        { 
+          #$pfam2keggfile =$path .'pfam2kegg.tab';
+          #system("$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile -size $MSL[$f] -keggfile $pfam2keggfile > $scorefile");
+        }
+        else
+        {
+          system("$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile -size $MSL[$f] > $scorefile");
+        }
       }
       else
       {
-        system("$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile > $scorefile");
+        if ($INP_comp)
+        {
+
+        }
+        else
+        {
+          system("$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile > $scorefile");
+        }  
       }
       
       if(-s $scorefile)
@@ -272,9 +288,21 @@ foreach $f (0 .. $#valid_infiles)
   print "\n";
 }
 
+# print names of completeness outfiles
+if ($INP_comp)
+{
+  foreach $f (0 .. $#valid_infiles)
+  {
+    $infile = $valid_infiles[$f];
+    foreach $c (0 .. $#cycles)
+    {
+      $cycle = $cycles[$c];
 
+      # TODO: print  completeness outfile
 
-
+    } 
+  }
+}
 
 
 
