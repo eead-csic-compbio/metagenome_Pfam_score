@@ -1,17 +1,12 @@
 #!/usr/bin/perl -w
 use strict;
 use Getopt::Long; 
- 
+#updated 2018 
  ## This script takes 1-2 inputs:
  ## 1) a directory containing the  hmmsearch TSV outfiles with the results of scanning a collection metagenomes against
- ## Pfam-A v30  database
- ## 2) an optional  list of selected Pfam accessions  to compute a second matrix  mpute entropy
- ## 3) an optional list of RefSeq assembly annotations to print scientific names instead of accession codes
- ##
+ ## Pfam-A database
  ## Output:
  ## 1) a matrix of occurrence of Pfam domains across the metagenomic sample/ raw/ normalized / binary ? 
- ## 2) a matrix of ocurrence of Pfam domains of the opcional list 
- #
  #
  ## B Contreras-Moreira, V de Anda 2017
  
