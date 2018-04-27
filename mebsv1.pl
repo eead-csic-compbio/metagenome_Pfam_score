@@ -18,8 +18,7 @@ my $HMMOUTEXT   = '.hmmsearch.tab'; # default extension for hmmsearch tbl output
 my $FDR         = 0.01;
 my @validFDR    = qw(0.1 0.01 0.001 0.0001);
 my @validMSL    = qw(30 60 100 150 200 250 300);
-my ($INP_help,$INP_folder,$INP_cycles,$INP_type,$INP_FDR) = (0,'',0,'',$FDR);
-my $INP_comp   = '';
+my ($INP_help,$INP_folder,$INP_cycles,$INP_type,$INP_FDR, $INP_comp) = (0,'',0,'',$FDR,0);
 
 GetOptions
 (
@@ -28,7 +27,7 @@ GetOptions
   'type|t=s'    => \$INP_type,
   'cycles|c'    => \$INP_cycles,
   'fdr|r=f'     => \$INP_FDR,
-  'comp|t=s'    => \$INP_comp,
+  'comp|mc'    => \$INP_comp,
 );
 
 
@@ -49,8 +48,8 @@ if (-t STDIN && ($INP_help || $INP_folder eq '' || $INP_type eq '') && !$INP_cyc
    -fdr     Score cycles with False Discovery Rate @validFDR  (optional, default=$FDR)
 
    -cycles  Show currently supported biogeochemical cycles
-
-   -comp   Compute the metabolic completeness. (Currently only the sulfur cycle is supported)
+   
+   -comp   Compute the metabolic completeness.                (optional)
 
 EODOC
 }
@@ -62,9 +61,9 @@ if(!$HMMSEARCHEXE )
 }
 
 ## 2) Checking parameters
-my (@valid_infiles, @cycles, @config, @paths, @MSL, %FDRcutoff, %col2fdr);
+my (@valid_infiles, @cycles, @config, @paths, @MSL, %FDRcutoff, %col2fdr,@pfam2keg);
 my ($c,$f,$path,$cycle,$msl,$score);
-my ($hmmfile,$hmmsearchfile,$entropyfile,$scorefile,$infile);
+my ($hmmfile,$hmmsearchfile,$entropyfile,$scorefile,$infile, $pfam2keggfile);
 
 # Read config file
 open(CONFIG,$CONFIGFILE) || die "# ERROR: cannot read $CONFIGFILE\n";
@@ -106,6 +105,9 @@ else
 {
   warn "# $0 -input $INP_folder -type $INP_type -fdr $INP_FDR\n\n";
 }
+ 
+##Check availables pfam2kegg files  
+
 
 # check required sequence type
 if(!$INP_type || ($INP_type ne 'genomic' && $INP_type ne 'metagenomic'))
@@ -188,6 +190,23 @@ if($INP_FDR)
   }
 }
 
+
+##  Check available completeness files pfam2keg.tab 
+
+
+if ($INP_comp)
+{
+ foreach $c (0 .. $#cycles)
+ {
+  $cycle = $cycles[$c];
+  $pfam2keggfile =$path .'pfam2kegg.tab';
+ }
+}
+
+
+
+
+
 ## 3) scan input sequences with selected Pfam HMMs for each input file & cycle
 
 # print header
@@ -212,6 +231,8 @@ foreach $f (0 .. $#valid_infiles)
     $scorefile = $INP_folder . '/' . $infile . '.' . $cycle . '.score';
     $hmmfile = $path . 'my_Pfam.'. $cycle . $VALIDHMMEXT;
     $entropyfile = $path . 'entropies' . $VALIDENT;
+    $pfam2keggfile =$path .'pfam2kegg.tab';
+
 
     system("$HMMSEARCHEXE --cut_ga -o /dev/null --tblout $hmmsearchfile $hmmfile $INP_folder/$infile");
 
