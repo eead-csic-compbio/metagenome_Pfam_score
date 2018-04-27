@@ -31,15 +31,24 @@ if (-t STDIN && $INP_help )
 {
 die<<EODOC;
 Program to merge hmmsearch tab-separed outfiles into a single matrix of Pfam ocurrence across multiple samples
+
 usage: $0 [options] 
+
  -help         brief help message
  
- -matrixdir    directory containing tsv output files from hmmsearch ze (string)
+ -matrixdir    directory containing tsv output files from hmmsearch ze (string) (required)
 
- -pfam_list    tabular format file containing the optional Pfams to compute the ocurrence matrix 
+ -pfam_list    tabular format file containing the optional Pfams to compute the ocurrence matrix (optional) 
 
 EODOC
 }
+
+if (!$INP_matrixdir)
+{
+die "#Error: require valid -matrixdir directory. Type -h to see the options \n";
+}
+
+
 
 $INP_matrixdir =~ s/\/$//;
    
