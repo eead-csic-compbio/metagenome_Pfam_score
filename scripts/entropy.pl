@@ -1,5 +1,8 @@
- #!/usr/bin/perl -w
+#!/usr/bin/perl -w
 use strict;
+use Getopt::Long;
+use FindBin '$Bin';
+
 
 # This script takes 2-3 inputs:
 # 1) a hmmsearch TSV outfile with the results of scanning a collection of Pfam domais against
@@ -10,23 +13,80 @@ use strict;
 # Output:
 # 1) a matrix of occurrence of Pfam domains across genomes
 # 2) entropy estimates of each scanned Pfam domain with respect to the selected accessions
-
-
 # B Contreras-Moreira, V de Anda 2016
+# Last updated april 2018
 
+my $INP_help=0;
 my $PSEUDOCOUNT = 0.8; #https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2647310/
-
 my ($dom_assign_file,$list_file,$refseq_file) = ('','','');
 
-if(!$ARGV[1]){ die "# $0 : usage: $0 <pfam_hmmsearch.tab> <accession list (ie Suli)> <RefSeq list, optional>\n"; }
-else
-{ 
-  ($dom_assign_file,$list_file,$refseq_file) = @ARGV;
-  if(!$refseq_file){ $refseq_file = 'null' } 
+
+GetOptions
+(
+  'help|h|?'        => \$INP_help,
+  'input_dom|in=s'  => \$dom_assign_file,
+  'input_list|l=s'  => \$list_file,
+  'names_ref|n=s'   => \$refseq_file,
+);
+
+if (-t STDIN && ($INP_help || $dom_assign_file  eq '' || $list_file eq ''))
+{
+die<<EODOC;
+
+Program to compute Pfam entropies from a list of accession genomes of interest.
+
+usage: $0 [options] 
+
+ -help          Brief help message
+ 
+ -input_dom     tbl-format file with HMM matches produced by hmmsearch (required)
+
+ -input_list     list of selected genomes of interest                   (required) 
+
+ -names         optional list of Refseq assembly annotations to print
+                scientific names instead of accesion codes             (optional) 
+
+EODOC
 }
 
-print "# dom_assign_file=$dom_assign_file\n# list_file=$list_file\n# RefSeq_file=$refseq_file\n";
+
+
+
+#Required input files 
+if(!$dom_assign_file || !-s $dom_assign_file)
+{ 
+ die "#ERROR: cannot locate input file -input_dom $dom_assign_file\n";
+
+}
+elsif (!$list_file || !-s $list_file)
+{
+ die "ERROR: cannot locate input file -input_list $list_file\n";
+}
+
+#Optional arguments 
+
+if ($refseq_file && !-s $refseq_file)
+{
+ die "ERROR: cannot locate -names file $refseq_file\n";
+}
+
+
+print "# $0 call:\n# -input_dom $dom_assign_file -input_list $list_file  -names $refseq_file\n\n";
+
+#################################
+
+#if(!$ARGV[1]){ die "# $0 : usage: $0 <pfam_hmmsearch.tab> <accession list (ie Suli)> <RefSeq list, optional>\n"; }
+#else
+#{ 
+#  ($dom_assign_file,$list_file,$refseq_file) = @ARGV;
+#  if(!$refseq_file){ $refseq_file = 'null' } 
+#}
+
+#print "# dom_assign_file=$dom_assign_file\n# list_file=$list_file\n# RefSeq_file=$refseq_file\n";
 print "# PSEUDOCOUNT=$PSEUDOCOUNT\n\n";
+
+
+
 
 my ($seqid,$domid,$taxonid,$spid,$line,$total_obs,$total_exp,$freq_obs,$freq_exp,$entropy);
 my (%taxa,%hmm,%matrix,%list_matrix,%taxon_list,%matched_taxa,%scnames);
