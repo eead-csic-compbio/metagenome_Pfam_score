@@ -219,8 +219,9 @@ foreach $c (0 .. $#cycles)
       }
     }
     close(COMPFILE);
-
-    $pathways_header = "\t<cycle_comp>";
+     
+     $pathways_header ="\t$cycles[$c]_<comp>";
+   # $pathways_header = "\t<cycle_comp>";
     foreach $pw (sort {$a<=>$b} keys(%{$pathways{$cycles[$c]}}))
     {
       $pathways_header .= "\t$cycles[$c]_$pw";
