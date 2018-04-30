@@ -1,6 +1,6 @@
-Cycle	Path	Input Genes	Input Genomes 	Domains	AUC	Score(FDR0.1)	Score(FDR0.01)	Score(FDR0.001)	Score(FDR0.0001)
-sulfur	cycles/sulfur/	152	161	112	0.985	4.045	5.231	6.328	8.198
-carbon	cycles/carbon/	135	90	119	0.988	9.052	17.939	33.018	33.776
-oxygen	cycles/oxygen/	50	53	55	0.983	6.173	8.667	9.252	10.774 
-iron	cycles/iron/	36	34	112	0.863	7.127	9.542	10.1	11.171
-nitrogen	cycles/nitrogen/	267	144	176	0.791	26.881	31.054	33.126	33.336
+Cycle	Path	Comple	Input Genes	Input Genomes 	Domains	AUC	Score(FDR0.1)	Score(FDR0.01)	Score(FDR0.001)	Score(FDR0.0001)
+sulfur	cycles/sulfur/	cycles/sulfur/pfam2kegg.tab	152	161	112	0.985	4.045	5.231	6.328	8.198
+carbon	cycles/carbon/		135	90	119	0.988	9.052	17.939	33.018	33.776
+oxygen	cycles/oxygen/		50	53	55	0.983	6.173	8.667	9.252	10.774
+iron	cycles/iron/		36	34	112	0.863	7.127	9.542	10.1	11.171
+nitrogen	cycles/nitrogen/		267	144	176	0.791	26.881	31.054	33.126	33.336
