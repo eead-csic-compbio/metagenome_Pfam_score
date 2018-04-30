@@ -50,7 +50,7 @@ if (-t STDIN && ($INP_help || $INP_folder eq '' || $INP_type eq '') && !$INP_cyc
 
    -cycles  Show currently supported biogeochemical cycles
    
-   -comp    Compute the metabolic completeness                (optional)
+   -comp    Compute the metabolic completeness                            (optional)
 
 EODOC
 }
@@ -62,19 +62,20 @@ if(!$HMMSEARCHEXE )
 }
 
 ## 2) Checking parameters
-my (@valid_infiles, @cycles, @config, @paths, @MSL, %FDRcutoff, %col2fdr,@pfam2keg, @comp);
-my ($c,$f,$path,$cycle,$msl,$score);
-my ($hmmfile,$hmmsearchfile,$entropyfile,$scorefile,$infile, $pfam2keggfile);
+my (@valid_infiles, @cycles, @config, @paths, @completeness);
+my (@MSL, %FDRcutoff, %col2fdr, %pathways);
+my ($c,$f,$path,$cycle,$msl,$score,$comp,$pw);
+my ($hmmfile,$hmmsearchfile,$entropyfile,$scorefile,$infile,$pfam2keggfile);
+
 
 # Read config file
 open(CONFIG,$CONFIGFILE) || die "# ERROR: cannot read $CONFIGFILE\n";
 while(my $line = <CONFIG>)
 {
-  
   #Cycle   Path    Comple  Input Genes     Input Genomes   Domains AUC     Score(FD..
   #sulfur  cycles/sulfur/  cycles/sulfur/pfam2kegg.tab     152     161     112    ..
 
- @config = split(/\t/,$line);
+  @config = split(/\t/,$line);
   if($config[0] =~ /^Cycle/)
   {
     # check which columns in config match which FDR-based cutoffs
@@ -90,9 +91,7 @@ while(my $line = <CONFIG>)
   {
     push(@cycles, $config[0]);
     push(@paths, $config[1]);
-    push (@comp, $config[2]);  
-   # TODO: save completness
-    # $pfam2keggfile =$path .'pfam2kegg.tab';
+    push(@completeness, $config[2]);  
 
     # save score FDR cutoffs
     foreach $c (keys(%col2fdr))
@@ -107,12 +106,12 @@ close(CONFIG);
 if ($INP_cycles)
 {
   print "# Available cycles:\n". join("\n",@cycles)."\n\n";
-  print "# Available files to compute completeness:\n". join("\n",@comp)."\n\n";
+  print "# Available files to compute completeness:\n". join("\n",@completeness)."\n\n";
   exit(0);
 }
 else
 {
-  warn "# $0 -input $INP_folder -type $INP_type -fdr $INP_FDR\n\n";
+  warn "# $0 -input $INP_folder -type $INP_type -fdr $INP_FDR -comp $INP_comp\n\n";
 }
  
 # check required sequence type
@@ -187,7 +186,7 @@ else
   } print "\n";
 }
 
-## check optional FDR 
+# check optional FDR 
 if($INP_FDR)   
 {
   if(!grep (/^$INP_FDR$/, @validFDR))
@@ -197,27 +196,37 @@ if($INP_FDR)
 }
 
 
-##  Check available completeness files pfam2keg.tab 
-
-
-if ($INP_comp)
-{
- foreach $f (0 ..$#comp) 
- {
-  $pfam2keggfile =$path .'pfam2kegg.tab'; 
- print "$pfam2keggfile\n";
- }
-}
-
-
-
 ## 3) scan input sequences with selected Pfam HMMs for each input file & cycle
 
 # print header
+my $pathways_header = '';
 foreach $c (0 .. $#cycles)
 {
   print "\t$cycles[$c]";
-} print "\n";
+
+  # print completeness header if required
+  $comp = $completeness[$c];
+  if($INP_comp && $comp ne "" && -s $comp)
+  {
+    open(COMPFILE,"<",$comp) || warn "# ERROR: cannot read $comp\n";
+    while(<COMPFILE>)
+    {
+      #PFAM  KO  PATHWAY   PATHWAY NAME 
+      #PF00890 K00394  1 Sulfite oxidation 
+      if(/^PF\d+\t.*?\t(\d+)\t/)
+      {
+        $pathways{$cycles[$c]}{$1} = 1; 
+      }
+    }
+    close(COMPFILE);
+
+    $pathways_header = "\t<cycle_comp>";
+    foreach $pw (sort {$a<=>$b} keys(%{$pathways{$cycles[$c]}}))
+    {
+      $pathways_header .= "\t$cycles[$c]_$pw";
+    }
+  }
+} print "$pathways_header\n"; 
 
 foreach $f (0 .. $#valid_infiles)
 {
@@ -225,10 +234,12 @@ foreach $f (0 .. $#valid_infiles)
 
   print "$infile"; # rowname
 
+  # compute & print scores per cycle
   foreach $c (0 .. $#cycles)
   {
     $path = $paths[$c];
     $cycle = $cycles[$c];
+    $comp = $completeness[$c];
     $score = 'NA';
 
     $hmmsearchfile = $INP_folder . '/' . $infile . '.' . $cycle . $HMMOUTEXT;
@@ -236,18 +247,15 @@ foreach $f (0 .. $#valid_infiles)
     $hmmfile = $path . 'my_Pfam.'. $cycle . $VALIDHMMEXT;
     $entropyfile = $path . 'entropies' . $VALIDENT;
 
-    # TODO: abrir un completeness result file (a partir de $infile & $cycle)
-
     system("$HMMSEARCHEXE --cut_ga -o /dev/null --tblout $hmmsearchfile $hmmfile $INP_folder/$infile");
 
     if(-s $hmmsearchfile)
     {
       if($INP_type eq 'metagenomic')
       {
-        if ($INP_comp)
+        if($INP_comp && $comp ne "" && -s $comp)
         { 
-          #$pfam2keggfile =$path .'pfam2kegg.tab';
-          #system("$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile -size $MSL[$f] -keggmap $pfam2keggfile > $scorefile");
+          system("$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile -size $MSL[$f] -keggmap $comp > $scorefile");
         }
         else
         {
@@ -256,13 +264,13 @@ foreach $f (0 .. $#valid_infiles)
       }
       else
       {
-        if ($INP_comp)
+        if ($INP_comp && $comp ne "" && -s $comp)
         {
-
+          system("$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile -size real -keggmap $comp > $scorefile");
         }
         else
         {
-          system("$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile > $scorefile");
+          system("$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile -size real > $scorefile");
         }  
       }
       
@@ -288,24 +296,47 @@ foreach $f (0 .. $#valid_infiles)
 
     print "\t$score";
   }
-  print "\n";
-}
 
-# print names of completeness outfiles
-if ($INP_comp)
-{
-  foreach $f (0 .. $#valid_infiles)
+  # print completeness summary per cycle
+  if ($INP_comp)
   {
-    $infile = $valid_infiles[$f];
     foreach $c (0 .. $#cycles)
     {
       $cycle = $cycles[$c];
 
-      # TODO: print  completeness outfile
+      # parse score file and check whether completeness report is there
+      my ($compOK,%comp_scores) = (0);
+      $scorefile = $INP_folder . '/' . $infile . '.' . $cycle . '.score';
+      open(COMPL,"<",$scorefile);
+      while(<COMPL>)
+      {   
+        # path_number path_name total_domains matched %completeness matched_Pfam_domains
+        #1 Sulfite oxidation   9 3 33.3  PF00890,PF12838,PF01087
+        # mean pathway completeness: 37.9
+        if(/^# path_number/){ $compOK = 1 }
+        elsif($compOK && /^(\d+)\t.*?\t\d+\t\d+\t(\S+)/)
+        {
+          $comp_scores{$1} = $2;
+        }
+        elsif(/^# mean pathway completeness: (\S+)/)
+        {
+          print "\t$1"; # print mean 
+        }
+      }
+      close(COMPL);
+    
+      # print completeness for all sorted pathways
+      foreach $pw (sort {$a<=>$b} keys(%{$pathways{$cycle}}))
+      {
+        print "\t$comp_scores{$pw}";
+      }  
+    }
+  }    
 
-    } 
-  }
+
+  print "\n";
 }
+
 
 
 
