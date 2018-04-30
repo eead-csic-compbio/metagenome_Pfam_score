@@ -7,7 +7,7 @@ use FindBin '$Bin';
 use LWP::UserAgent;
 
 my ($INP_help, $INP_file, $INP_opt) = (0,'','');
-my $INP_default = "KO_ID";
+my $INP_default = "BIOCYC_ID";
 
 GetOptions
 (
@@ -61,7 +61,7 @@ while (my $line =<INFILE>)
 }
 close (INFILE);
 
-print "# Your input identifiers are:\n".join ("\n",@identifiers)."\n\n"; 
+#print "# Your input identifiers are:\n".join ("\n",@identifiers)."\n\n"; 
 
 
 my $base = 'http://www.uniprot.org';
@@ -85,7 +85,7 @@ while (my $wait = $response->header('Retry-After')) {
   sleep $wait;
   $response = $agent->get($response->base);
 }
-
+#print "Identified IDs\n";
 $response->is_success ?
   print $response->content :
   die 'Failed, got ' . $response->status_line .
