@@ -4,8 +4,9 @@ use strict;
 use Getopt::Long;
 use FindBin '$Bin';
 
-# General script to score biogeochem cycles in bth genomic and metagenomic data.
+# General script to score biogeochem cycles in both genomic and metagenomic data.
 # B Contreras-Moreira, V de Anda 2018
+# bcontreras@eead.csic.es , valdeanda@ciencias.unam.mx 
 
 my $HMMSEARCHEXE = 'hmmsearch'; # please edit if not in path
 
@@ -61,7 +62,7 @@ if(!$HMMSEARCHEXE )
 }
 
 ## 2) Checking parameters
-my (@valid_infiles, @cycles, @config, @paths, @MSL, %FDRcutoff, %col2fdr,@pfam2keg);
+my (@valid_infiles, @cycles, @config, @paths, @MSL, %FDRcutoff, %col2fdr,@pfam2keg, @comp);
 my ($c,$f,$path,$cycle,$msl,$score);
 my ($hmmfile,$hmmsearchfile,$entropyfile,$scorefile,$infile, $pfam2keggfile);
 
@@ -69,9 +70,11 @@ my ($hmmfile,$hmmsearchfile,$entropyfile,$scorefile,$infile, $pfam2keggfile);
 open(CONFIG,$CONFIGFILE) || die "# ERROR: cannot read $CONFIGFILE\n";
 while(my $line = <CONFIG>)
 {
-  #Cycle Path  Input Genes Input Genomes   Domains AUC Score(FDR0.1) Score(FDR0.01)  Score(FDR0.001) Score(FDR0.0001)
-  #sulfur  cycles/sulfur/  152 161 112 0.985 4.045 5.231 6.328 8.198
-  @config = split(/\t/,$line);
+  
+  #Cycle   Path    Comple  Input Genes     Input Genomes   Domains AUC     Score(FD..
+  #sulfur  cycles/sulfur/  cycles/sulfur/pfam2kegg.tab     152     161     112    ..
+
+ @config = split(/\t/,$line);
   if($config[0] =~ /^Cycle/)
   {
     # check which columns in config match which FDR-based cutoffs
@@ -87,8 +90,8 @@ while(my $line = <CONFIG>)
   {
     push(@cycles, $config[0]);
     push(@paths, $config[1]);
-
-    # TODO: save completness
+    push (@comp, $config[2]);  
+   # TODO: save completness
     # $pfam2keggfile =$path .'pfam2kegg.tab';
 
     # save score FDR cutoffs
@@ -100,12 +103,11 @@ while(my $line = <CONFIG>)
 }
 close(CONFIG);
 
+
 if ($INP_cycles)
 {
   print "# Available cycles:\n". join("\n",@cycles)."\n\n";
-
-  # TODO: show also which have completness data/support
-
+  print "# Available files to compute completeness:\n". join("\n",@comp)."\n\n";
   exit(0);
 }
 else
@@ -200,10 +202,12 @@ if($INP_FDR)
 
 if ($INP_comp)
 {
-  $pfam2keggfile =$path .'pfam2kegg.tab';
+ foreach $f (0 ..$#comp) 
+ {
+  $pfam2keggfile =$path .'pfam2kegg.tab'; 
+ print "$pfam2keggfile\n";
+ }
 }
-
-
 
 
 
@@ -231,7 +235,6 @@ foreach $f (0 .. $#valid_infiles)
     $scorefile = $INP_folder . '/' . $infile . '.' . $cycle . '.score';
     $hmmfile = $path . 'my_Pfam.'. $cycle . $VALIDHMMEXT;
     $entropyfile = $path . 'entropies' . $VALIDENT;
-    $pfam2keggfile =$path .'pfam2kegg.tab';
 
     # TODO: abrir un completeness result file (a partir de $infile & $cycle)
 
@@ -244,7 +247,7 @@ foreach $f (0 .. $#valid_infiles)
         if ($INP_comp)
         { 
           #$pfam2keggfile =$path .'pfam2kegg.tab';
-          #system("$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile -size $MSL[$f] -keggfile $pfam2keggfile > $scorefile");
+          #system("$Bin/scripts/pfam_score.pl -input $hmmsearchfile -entropyfile $entropyfile -size $MSL[$f] -keggmap $pfam2keggfile > $scorefile");
         }
         else
         {
