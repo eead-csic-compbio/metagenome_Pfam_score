@@ -18,8 +18,7 @@ GetOptions
 
 
 
-if (-t STDIN && ($INP_help || $INP_file eq '' || $INP_opt eq ''))
-
+if($INP_help || $INP_file eq '')
 {
   die<<EODOC;
 
@@ -34,7 +33,6 @@ if (-t STDIN && ($INP_help || $INP_file eq '' || $INP_opt eq ''))
    -option  Database to retrieve identifier      (required, default $INP_default)
             see https://www.uniprot.org/help/api_idmapping#id_mapping_perl_example
              
- 
 EODOC
 }
 
@@ -57,18 +55,13 @@ my (@identifiers);
 open (INFILE,$INP_file)  || die "# $0,  ERROR: cannot read $INP_file\n";
 while (my $line =<INFILE>) 
 {
-#Q48924
-#Q48944
-#Q48949
-#Q49124
-chomp;
-my @file = split(/\t/,$line);
-push (@identifiers,$file[0]);
+  chomp $line;
+  my @file = split(/\t/,$line);
+  push (@identifiers,$file[0]);
 }
 close (INFILE);
 
-
-print "# Your input identifieres are:\n".join ("\n",@identifiers)."\n\n"; 
+print "# Your input identifiers are:\n".join ("\n",@identifiers)."\n\n"; 
 
 
 my $base = 'http://www.uniprot.org';
@@ -78,8 +71,7 @@ my $params = {
   from => 'ACC+ID',
   to => $INP_default,
   format => 'tab',
-  query  => @identifiers,
-#  query => ' Q48924 Q48944 Q48949 Q49124 Q49168 Q50228'
+  query  => join(' ',@identifiers),
 };
 
 my $contact = ''; # Please set your email address here to help us debug in case of problems.
