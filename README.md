@@ -65,13 +65,17 @@ perl mebsv1.pl
 
 
 ```
-perl mebsv1.pl -cycles
+perl mebsv1.pl  -cycles 
 # Available cycles:
 sulfur
 carbon
 oxygen
 iron
 nitrogen
+
+# Available files to compute completeness:
+cycles/sulfur/pfam2kegg.tab
+cycles/carbon/pfam2kegg.tab
 ```
 
 # Running MEBS   
