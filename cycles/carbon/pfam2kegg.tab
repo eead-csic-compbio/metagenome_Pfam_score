@@ -1,0 +1,93 @@
+PFAM	KO 	PATHWAY 	PATHWAY NAME 
+PF12838	K22164	1	coenzyme B/coenzyme M regeneration I (methanophenazine-dependent)
+PF00329	K22160	1	coenzyme B/coenzyme M regeneration I (methanophenazine-dependent)
+PF00346	K22161	1	coenzyme B/coenzyme M regeneration I (methanophenazine-dependent)
+PF00374	K22161	1	coenzyme B/coenzyme M regeneration I (methanophenazine-dependent)
+PF01058	K22159	1	coenzyme B/coenzyme M regeneration I (methanophenazine-dependent)
+PF04422	K22162	1	coenzyme B/coenzyme M regeneration I (methanophenazine-dependent)
+PF04432	K22162	1	coenzyme B/coenzyme M regeneration I (methanophenazine-dependent)
+PF10621	K22170	1	coenzyme B/coenzyme M regeneration I (methanophenazine-dependent)
+PF13447		2	Methane oxidation, methanotroph, methane => formaldehyde
+PF03069		2	Methane oxidation, methanotroph, methane => formaldehyde
+PF09723		2	Methane oxidation, methanotroph, methane => formaldehyde
+PF02461	K10944	2	Methane oxidation, methanotroph, methane => formaldehyde
+PF00970	K16161	2	Methane oxidation, methanotroph, methane => formaldehyde
+PF00175	K16161	2	Methane oxidation, methanotroph, methane => formaldehyde
+PF01011	K14028	2	Methane oxidation, methanotroph, methane => formaldehyde
+PF13360	K14029	2	Methane oxidation, methanotroph, methane => formaldehyde
+PF02315	K14029	2	Methane oxidation, methanotroph, methane => formaldehyde
+PF02315	K14029	2	Methane oxidation, methanotroph, methane => formaldehyde
+PF01011		2	Methane oxidation, methanotroph, methane => formaldehyde
+PF13360		2	Methane oxidation, methanotroph, methane => formaldehyde
+PF00146	K22163	3	methanogenesis energy conservation 
+PF00361	K22167	3	methanogenesis energy conservation 
+PF00420	K22166	3	methanogenesis energy conservation 
+PF00499	K22165	3	methanogenesis energy conservation 
+PF00507	K22158	3	methanogenesis energy conservation 
+PF00662	K22167	3	methanogenesis energy conservation 
+PF02007	K00584	4	Methanogenesis, acetate => methane (M00357) 
+PF03599	K00194	4	Methanogenesis, acetate => methane (M00357) 
+PF04060	K00197	4	Methanogenesis, acetate => methane (M00357) 
+PF09472	K00577	4	Methanogenesis, acetate => methane (M00357) 
+PF09472	K00582	4	Methanogenesis, acetate => methane (M00357) 
+PF04206	K00581	4	Methanogenesis, acetate => methane (M00357) 
+PF04207	K00580	4	Methanogenesis, acetate => methane (M00357) 
+PF04208	K00577	4	Methanogenesis, acetate => methane (M00357) 
+PF04210	K00583	4	Methanogenesis, acetate => methane (M00357) 
+PF04211	K00579	4	Methanogenesis, acetate => methane (M00357) 
+PF05440	K00578	4	Methanogenesis, acetate => methane (M00357) 
+PF05369		5	Methanogenesis, methylamine/dimethylamine/trimethylamine => methane
+PF01208		5	Methanogenesis, methylamine/dimethylamine/trimethylamine => methane
+PF09505	K16178	5	Methanogenesis, methylamine/dimethylamine/trimethylamine => methane
+PF06253	K14083	5	Methanogenesis, methylamine/dimethylamine/trimethylamine => methane
+PF01208		6	Methanogenesis from dimethylsulfide/methanethiol/methlthiolpropanoate => methane
+PF01208		6	Methanogenesis from dimethylsulfide/methanethiol/methlthiolpropanoate => methane
+PF01493	K00202	7	Methanogenesis, CO2 => methane
+PF12838	K00205	7	Methanogenesis, CO2 => methane
+PF00037	K00205	7	Methanogenesis, CO2 => methane
+PF00296	K00320	7	Methanogenesis, CO2 => methane
+PF01568	K00202	7	Methanogenesis, CO2 => methane
+PF01913	K00672	7	Methanogenesis, CO2 => methane
+PF02289	K01499	7	Methanogenesis, CO2 => methane
+PF02663	K11261	7	Methanogenesis, CO2 => methane
+PF02741	K00672	7	Methanogenesis, CO2 => methane
+PF03201	K13942	7	Methanogenesis, CO2 => methane
+PF07969	K00200	7	Methanogenesis, CO2 => methane
+PF12800	K00205	7	Methanogenesis, CO2 => methane
+PF13187	K00205	7	Methanogenesis, CO2 => methane
+PF13484	K00205	7	Methanogenesis, CO2 => methane
+PF02552		8	methanogenesis from acetate reductive acetyl coenzyme A pathway II (autotrophic methanogens)
+PF03063		8	methanogenesis from acetate reductive acetyl coenzyme A pathway II (autotrophic methanogens)
+PF03598		8	methanogenesis from acetate reductive acetyl coenzyme A pathway II (autotrophic methanogens)
+PF01208	K14080	9	Methanogenesis, methanol => methane
+PF02240	K00402	9	Methanogenesis, methanol => methane
+PF02241	K00401	9	Methanogenesis, methanol => methane
+PF02249	K00399	9	Methanogenesis, methanol => methane
+PF02745	K00399	9	Methanogenesis, methanol => methane
+PF02783	K00401	9	Methanogenesis, methanol => methane
+PF12176	K04480	9	Methanogenesis, methanol => methane
+PF02975		10	methylamine degradation I
+PF06433	K15229	10	methylamine degradation I
+PF01493		10	methylamine degradation II
+PF00120	K01949	10	methylamine degradation II
+PF01266		10	methylamine degradation II
+PF01571		10	methylamine degradation II
+PF01645		10	methylamine degradation II
+PF04267		10	methylamine degradation II
+PF04268		10	methylamine degradation II
+PF07992		10	methylamine degradation II
+PF08669		10	methylamine degradation II
+PF13510		10	methylamine degradation II
+PF13522		10	methylamine degradation II
+PF03069	fmdA	12	methyl-coenzyme M oxidation to CO2
+PF09723	fmdB	12	methyl-coenzyme M oxidation to CO2
+PF01568 	fmdC	12	methyl-coenzyme M oxidation to CO2
+PF02663 	fmdE	12	methyl-coenzyme M oxidation to CO2
+PF00037 	fmdF	12	methyl-coenzyme M oxidation to CO2
+PF12838	fmdF	12	methyl-coenzyme M oxidation to CO2
+PF13187 	fmdF	12	methyl-coenzyme M oxidation to CO2
+PF12800 	fmdF	12	methyl-coenzyme M oxidation to CO2
+PF02240	mrtG	13	methyl-coenzyme M reduction to methane
+PF02249	mrtA	13	methyl-coenzyme M reduction to methane
+PF02241	mrtB	13	methyl-coenzyme M reduction to methane
+PF02783	mrtB	13	methyl-coenzyme M reduction to methane
