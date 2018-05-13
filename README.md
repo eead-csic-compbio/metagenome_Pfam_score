@@ -1,6 +1,4 @@
 ![MEBS](./images/MEBS.png) 
-<img src="https://eead-csic-compbio.github.io/metagenome_Pfam_score/images/MEBS.png" width="300" height="300" align="center">
-
 
 Authors: Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira (3)
 
