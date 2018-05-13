@@ -154,7 +154,7 @@ https://the-bioinformatics-peer-prize-ii.thinkable.org.
 
 </sub>
 <p align="center">
-  <img max-width="50%" max-height="50%"  src="https://eead-csic-compbio.github.io/metagenome_Pfam_score/images/china.png">
+  <img max-width="50" max-height="50"  src="https://eead-csic-compbio.github.io/metagenome_Pfam_score/images/china.png">
 </p>
 
   
