@@ -154,7 +154,7 @@ Semifinalist of the GigaScience Prize Track ICG-12. For more information please 
 
 </sub>
 <p align="center">
-  <img  src="https://eead-csic-compbio.github.io/metagenome_Pfam_score/images/china.png">
+  <img width="1000" height="475"  src="https://eead-csic-compbio.github.io/metagenome_Pfam_score/images/china.png">
 </p>
 
 
