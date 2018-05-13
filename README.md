@@ -139,7 +139,7 @@ Planned feature improvements are publicly catalogued at the main MEBS developmen
 
 <sub style="font-size: 12px !important;">
 
-Winner of the Bioinformatics Peer Prize II: student category. For more information go to 
+`Winner of the Bioinformatics Peer Prize II: student category`. For more information go to 
 https://the-bioinformatics-peer-prize-ii.thinkable.org.
 
 </sub>
@@ -150,7 +150,7 @@ https://the-bioinformatics-peer-prize-ii.thinkable.org.
 
 <sub style="font-size: 12px !important;">
 
-Semifinalist of the GigaScience Prize Track ICG-12. For more information please visit https://academic.oup.com/gigascience/pages/prize_track
+`Semifinalist of the GigaScience Prize Track ICG-12`. For more information please visit https://academic.oup.com/gigascience/pages/prize_track
 
 </sub>
 <p align="center">
