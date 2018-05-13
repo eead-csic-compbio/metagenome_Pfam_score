@@ -135,26 +135,14 @@ Planned feature improvements are publicly catalogued at the main MEBS developmen
 
 # Links related to MEBS 
 
-[<img src="http://www.google.com.au/images/nav_logo7.png">](http://google.com.au/)
-
-
 #### Winner of the Bioinformatics Peer Prize II: student category. 
-.
 
-</sub>
-<p align="center">
-  [<img  src="https://eead-csic-compbio.github.io/metagenome_Pfam_score//images/thinkable.png>"](https://the-bioinformatics-peer-prize-ii.thinkable.org)
-</p>
+[<img  src="https://eead-csic-compbio.github.io/metagenome_Pfam_score//images/thinkable.png>"](https://the-bioinformatics-peer-prize-ii.thinkable.org)
 
-
-<sub style="font-size: 12px !important;">
 
 #### Semifinalist of the GigaScience Prize Track ICG-12**. For more information please visit 
 
-</sub>
-<p align="center">
-  [<img  src="https://eead-csic-compbio.github.io/metagenome_Pfam_score/images/china.png>"](https://academic.oup.com/gigascience/pages/prize_track)
-</p>
+[<img  src="https://eead-csic-compbio.github.io/metagenome_Pfam_score/images/china.png>"](https://academic.oup.com/gigascience/pages/prize_track)
 
   
   
