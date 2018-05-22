@@ -26,7 +26,7 @@ GetOptions
   'help|h|?'        => \$INP_help,
   'input_dom|in=s'  => \$dom_assign_file,
   'input_list|l=s'  => \$list_file,
-  'names_ref|n=s'   => \$refseq_file,
+  'names|n=s'       => \$refseq_file,
 );
 
 if (-t STDIN && ($INP_help || $dom_assign_file  eq '' || $list_file eq ''))
