@@ -9,6 +9,7 @@ use FindBin '$Bin';
 # bcontreras@eead.csic.es , valdeanda@ciencias.unam.mx 
 
 my $VERSION = 'v1.0';
+my $DEBUG = 0;
 
 my $HMMSEARCHEXE = 'hmmsearch'; # please edit if not in path
 
@@ -77,6 +78,9 @@ while(my $line = <CONFIG>)
 {
   #Cycle   Path    Comple  Input Genes     Input Genomes   Domains AUC     Score(FD..
   #sulfur  cycles/sulfur/  cycles/sulfur/pfam2kegg.tab     152     161     112    ..
+  #oxygen  cycles/oxygen/    50  53  55  ...
+
+  next if($line =~ m/^\s+/);
 
   @config = split(/\t/,$line);
   if($config[0] =~ /^Cycle/)
@@ -92,9 +96,11 @@ while(my $line = <CONFIG>)
   }
   else
   {
+    if($DEBUG == 1){ print "$config[0],$config[1],$config[2]\n" }
     push(@cycles, $config[0]);
     push(@paths, $config[1]);
-    push(@completeness, $config[2]);  
+    push(@completeness, $config[2]); # $config[2] might be '' if not curated 
+
 
     # save score FDR cutoffs
     foreach $c (keys(%col2fdr))
@@ -103,7 +109,7 @@ while(my $line = <CONFIG>)
     }
   }  
 }
-close(CONFIG);
+close(CONFIG); 
 
 
 if ($INP_cycles)
@@ -208,7 +214,7 @@ foreach $c (0 .. $#cycles)
   print "\t$cycles[$c]";
 
   # print completeness header if required
-  $comp = $completeness[$c];
+  $comp = $completeness[$c] || "";  
   if($INP_comp && $comp ne "" && -s $comp)
   {
     open(COMPFILE,"<",$comp) || warn "# ERROR: cannot read $comp\n";
@@ -223,8 +229,7 @@ foreach $c (0 .. $#cycles)
     }
     close(COMPFILE);
      
-     $pathways_header ="\t$cycles[$c]_<comp>";
-   # $pathways_header = "\t<cycle_comp>";
+    $pathways_header ="\t<$cycles[$c] comp>";
     foreach $pw (sort {$a<=>$b} keys(%{$pathways{$cycles[$c]}}))
     {
       $pathways_header .= "\t$cycles[$c]_$pw";
