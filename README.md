@@ -33,13 +33,16 @@ Instructions and full documentation of MEBS are available on [html](https://eead
 
 
 # Quick start  
-Have a look at the options of the main script mebsv1.pl
+Have a look at the options of the main script mebs.pl
 
 
 ```
-perl mebsv1.pl
+perl mebs.pl 
 
-  usage: mebsv1.pl [options] 
+Program to compute MEBS for a set of genomic/metagenomic FASTA files in input folder.
+  Version: v1.0
+
+  usage: mebs.pl [options] 
 
    -help    Brief help message
    
@@ -50,6 +53,10 @@ perl mebsv1.pl
    -fdr     Score cycles with False Discovery Rate 0.1 0.01 0.001 0.0001  (optional, default=0.01)
 
    -cycles  Show currently supported biogeochemical cycles
+   
+   -comp    Compute the metabolic completeness                            (optional)
+
+
 ```
 
 ## MEBS supported cycles
@@ -64,7 +71,7 @@ perl mebsv1.pl
 
 
 ```
-perl mebsv1.pl  -cycles 
+perl mebs.pl  -cycles 
 # Available cycles:
 sulfur
 carbon
@@ -83,9 +90,9 @@ To run MEBS you only need to specifyt the input folder and the  type of data  (e
 
 
 ```
-perl mebsv1.pl  -input test_genomes/ -type genomic 
+perl mebs.pl  -input test_genomes/ -type genomic 
 	   sulfur	carbon	oxygen	iron	nitrogen
-Enterococcus_durans.faa	-0.063	0.284	0.883	0.214	3.044
+Enterococus_durans.faa	-0.063	0.284	0.883	0.214	3.044
 Archaeoglobus_profundus_DSM_5631.faa	11.434*	24.834*	1.493	0.765	6.873
 ```
 
@@ -93,7 +100,7 @@ The scores that meets the criteria of specific  FDR  are shown in asterisc, yet 
 
 
 ```
-perl mebsv1.pl  -input test_genomes/ -type genomic -fdr 0.001
+perl mebs.pl  -input test_genomes/ -type genomic -fdr 0.001
 
            sulfur       carbon  oxygen  iron    nitrogen
 Enterococcus_durans.faa -0.063  0.284   0.883   0.214   3.044
