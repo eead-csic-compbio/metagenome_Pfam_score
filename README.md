@@ -134,9 +134,9 @@ If you are computing MEBS in genomes compare your results with the row "Genomic 
 | 300  | 15.929 | 84.942  | 10.569 | 10.284 | 21.968   |
 
 
-#Publicly available metagenomes from MG-RAST 
+#Publicly available metagenomes from MG-RAST scoring with Sulfur cycle 
 
-[Table containing metadata of 900 publicly available metagenomes from MG-RAST](./met.hml) 
+[Table containing metadata of 900 publicly available metagenomes from MG-RAST](https://eead-csic-compbio.github.io/metagenome_Pfam_score/met.hml) 
 
 # Support and Development
 
