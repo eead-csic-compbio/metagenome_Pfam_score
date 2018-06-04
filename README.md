@@ -134,6 +134,9 @@ If you are computing MEBS in genomes compare your results with the row "Genomic 
 | 300  | 15.929 | 84.942  | 10.569 | 10.284 | 21.968   |
 
 
+#Publicly available metagenomes from MG-RAST 
+
+[Table containing metadata of 900 publicly available metagenomes from MG-RAST](./met.hml) 
 
 # Support and Development
 
