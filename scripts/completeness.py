@@ -1,13 +1,22 @@
 # coding: utf-8
 
 #Import the libraries
-import matplotlib
-import numpy as np
-import matplotlib.pylab as plt
-import pandas as pd
-import seaborn as sns
+import sys
 from sys import argv
 args = sys.argv
+
+import numpy as np
+import seaborn as sns
+import matplotlib.pylab as plt
+import pandas as pd
+import numpy as np
+import matplotlib
+#Customize background and pallete colors 
+sns.set_style("darkgrid")
+
+
+
+
 
 filename = args[1]
 df = pd.read_table(filename, index_col=0, sep="\t")
@@ -56,13 +65,10 @@ df_comp.rename(columns={'sulfur_1': 'Sulfite oxidation',
 'carbon_12':'methyl-coenzyme M oxidation to CO2',
 'carbon_13':'methyl-coenzyme M reduction to methane' },inplace=True) 
 
-
+df_comp=df_comp.T
 sns.set(font_scale=1)
-axs = sns.clustermap(df_comp, col_cluster=False, linewidths=0.6,cmap=sns.color_palette("RdBu_r", 100),
-                     figsize=(7,12))
-
-plt.tight_layout()
-
+axs = sns.clustermap(df_comp, col_cluster=True, linewidths=0.6,cmap=sns.color_palette("RdBu_r", 100),
+                     figsize=(15,12))
 plt.tight_layout()
 plt.savefig(argv[1]+".png", bbox_inches='tight', dpi=500)
 plt.close()
