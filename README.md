@@ -136,7 +136,7 @@ If you are computing MEBS in genomes compare your results with the row "Genomic 
 
 # Publicly available metagenomes from MG-RAST 
 
-[Table containing metadata of 900 publicly available metagenomes from MG-RAST](https://eead-csic-compbio.github.io/metagenome_Pfam_score/met.hml) 
+[Table containing metadata of 900 publicly available metagenomes from MG-RAST](https://eead-csic-compbio.github.io/metagenome_Pfam_score/met.html) 
 
 # Support and Development
 
