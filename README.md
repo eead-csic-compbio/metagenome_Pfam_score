@@ -11,7 +11,7 @@ Authors: Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira 
 
 The main goal of MEBS is capture with a single value  the importance of complex metabolic pathways or biogeochemical cycles in a large omic datasets (either genomes or metagenomes). The algortithm has been thoroughly tested with the [sulfur cycle](https://academic.oup.com/gigascience/article/6/11/1/4561660), but currently other cycles are also supported. The script [mebsv1.pl](./mebsv1.pl) allows you to score your  own genome/metagenome in terms of biogeochemical cycles. 
 All that is required is a directory containing peptide FASTA files of encoded proteins/fragments with **.faa** extension.
-Note that [hmmsearch](http://hmmer.org/download.html) must be installed first.
+
 
 # MEBS installation 
 
@@ -26,10 +26,15 @@ git clone https://github.com/eead-csic-compbio/metagenome_Pfam_score
 unzip metagenome_Pfam_score-master.zip
 ```
 
+# Requisites 
+
+Before you start, make sure you have [hmmserch](http://hmmer.org/download.html) installed, **v3.1b1 or greater**, otherwise the program will generate errors, [see issue 1](https://github.com/eead-csic-compbio/metagenome_Pfam_score/issues/1)
+
+
 
 # Manual and Readme 
 
-Instructions and full documentation of MEBS are available on [html](https://eead-csic-compbio.github.io/metagenome_Pfam_score/READMEv1.html) and [pdf](https://eead-csic-compbio.github.io/metagenome_Pfam_score/manual.v1.pdf)
+Instructions and full documentation of MEBS are available in [HTML](https://eead-csic-compbio.github.io/metagenome_Pfam_score/READMEv1.html) and [PDF](https://eead-csic-compbio.github.io/metagenome_Pfam_score/manual.v1.pdf)
 
 
 # Quick start  
