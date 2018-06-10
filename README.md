@@ -155,7 +155,7 @@ Planned feature improvements are publicly catalogued at the main MEBS developmen
 [<img  src="https://eead-csic-compbio.github.io/metagenome_Pfam_score//images/thinkable.png" align="center">](https://the-bioinformatics-peer-prize-ii.thinkable.org)
 
 
-#### Semifinalist of the GigaScience Prize Track ICG-12**. For more information please visit 
+#### Semifinalist of the GigaScience Prize Track ICG-12 
 
 [<img  src="https://eead-csic-compbio.github.io/metagenome_Pfam_score/images/china.png" align="center">](https://academic.oup.com/gigascience/pages/prize_track)
 
