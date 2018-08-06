@@ -257,7 +257,10 @@ foreach $f (0 .. $#valid_infiles)
     $hmmfile = $path . 'my_Pfam.'. $cycle . $VALIDHMMEXT;
     $entropyfile = $path . 'entropies' . $VALIDENT;
 
-    system("$HMMSEARCHEXE --cut_ga -o /dev/null --tblout $hmmsearchfile $hmmfile $INP_folder/$infile");
+    if(!-s $hmmsearchfile)
+    {
+      system("$HMMSEARCHEXE --cut_ga -o /dev/null --tblout $hmmsearchfile $hmmfile $INP_folder/$infile");
+    }
 
     if(-s $hmmsearchfile)
     {
