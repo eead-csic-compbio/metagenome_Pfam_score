@@ -60,7 +60,8 @@ EODOC
 }
 
 ## 1) Checking binaries
-if(!$HMMSEARCHEXE )
+my $sample_output = `$HMMSEARCHEXE -h 2>&1 `;
+if(!$HMMSEARCHEXE || $sample_output !~ /Usage/)
 {
   die "#ERROR:  hmmsearch not found, please install or set \$HMMSEARCHEXE correctly\n";
 }
