@@ -16,7 +16,8 @@ use FindBin '$Bin';
 # B Contreras-Moreira, V de Anda 2016
 # Last updated april 2018
 
-my $INP_help=0;
+my $INP_help = 0;
+my $INP_absolute_freqs = 0;
 my $PSEUDOCOUNT = 0.8; #https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2647310/
 my ($dom_assign_file,$list_file,$refseq_file) = ('','','');
 
@@ -27,6 +28,7 @@ GetOptions
   'input_dom|in=s'  => \$dom_assign_file,
   'input_list|l=s'  => \$list_file,
   'names|n=s'       => \$refseq_file,
+  'absolute|a'      => \$INP_absolute_freqs
 );
 
 if (-t STDIN && ($INP_help || $dom_assign_file  eq '' || $list_file eq ''))
@@ -41,10 +43,12 @@ usage: $0 [options]
  
  -input_dom     tbl-format file with HMM matches produced by hmmsearch (required)
 
- -input_list     list of selected genomes of interest                   (required) 
+ -input_list    list of selected genomes of interest                   (required) 
 
  -names         optional list of Refseq assembly annotations to print
                 scientific names instead of accesion codes             (optional) 
+
+ -absolute      print absolute domain frequencies                      (optional, default binary)
 
 EODOC
 }
@@ -195,7 +199,9 @@ foreach $taxonid (sort keys(%taxa))
     {
         if($matrix{$taxonid}{$domid})
         {
-          print "\t1";
+          if($INP_absolute_freqs){ print "\t$matrix{$taxonid}{$domid}" }
+          else{ print "\t1" }
+
           $matrix{'total'}{$domid}++;
           if($list_matrix{$taxonid})
           {
