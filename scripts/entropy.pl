@@ -89,7 +89,7 @@ print "# PSEUDOCOUNT=$PSEUDOCOUNT\n\n";
 
 
 my ($seqid,$domid,$taxonid,$spid,$line,$total_obs,$total_exp,$freq_obs,$freq_exp,$entropy);
-my (%taxa,%hmm,%matrix,%list_matrix,%taxon_list,%matched_taxa,%scnames);
+my (%taxa,%hmm,%domain_seqid,%matrix,%list_matrix,%taxon_list,%matched_taxa,%scnames);
 my $listOK = 0;
 
 ## 0) read optional RefSeq file
@@ -145,6 +145,11 @@ while($line = <DOMFILE>)
     ($seqid,$domid) = ($data[0],$data[3]);
 
     $domid = (split(/\./,$domid))[0];
+
+    $domain_seqid{$seqid}{$domid}++;
+
+    # count domains once per sequence
+    next if($domain_seqid{$seqid}{$domid} > 1);
 
     if(!$hmm{$domid}){ $hmm{$domid}++ }
 
