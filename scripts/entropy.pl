@@ -14,7 +14,7 @@ use FindBin '$Bin';
 # 1) a matrix of occurrence of Pfam domains across genomes
 # 2) entropy estimates of each scanned Pfam domain with respect to the selected accessions
 # B Contreras-Moreira, V de Anda 2016
-# Last updated april 2018
+# Last updated August 2018
 
 my $INP_help = 0;
 my $INP_absolute_freqs = 0;
