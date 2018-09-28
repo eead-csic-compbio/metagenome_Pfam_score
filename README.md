@@ -14,7 +14,7 @@ Authors: Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira 
 
 # UPDATES 
 
-**09/28/18:  The methane cycle has been updated to include only 6 mayor pathwyas: **
+**09/28/18:  The methane cycle has been updated to include only 6 mayor pathwyas:**
 
 1. coB/coM regeneration
 2. methane oxidation 
