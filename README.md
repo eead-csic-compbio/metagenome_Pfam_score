@@ -18,7 +18,7 @@ Authors: Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira 
 
 1. coB/coM regeneration
 2. methane oxidation 
-3. m ethanogenesis
+3. methanogenesis
 4. methanogenesis(methanol) 
 5. methylamine degradation
 6. mcrABC 
