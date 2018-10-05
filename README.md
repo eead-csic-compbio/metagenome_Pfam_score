@@ -13,7 +13,7 @@ Authors: Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira 
 
 # Basic usage
 
-MEBS uses a few  command line optionse that can  be viewed by typing mebs.pl -h on the command line
+MEBS uses a few  command line options that can  be viewed by typing mebs.pl -h on the command line
 
 ```
 perl mebs.pl -h 
@@ -65,7 +65,7 @@ fur oxidation
 19. **ddhABC** [DMS degradation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-6057)
 20. **dsoABCDEF**	[DMS degradation](https://metacyc.org/META/NEW-IMAGE?type=ENZYME&object=CPLX-7669)
 21. **dmoAB**	[DMS degradation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-6047)
-22.	**[Saulfoacetaldehyde degradation]**(https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-6718)
+22.	Saulfoacetaldehyde degradation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-6718)
 23.	[Methanesulfonate degradation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-6044)
 24.	[Sulfolactate degradation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-6616)
 25.	[Sulfoacetaldehyde degradation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-1281)
