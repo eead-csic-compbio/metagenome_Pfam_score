@@ -79,17 +79,17 @@ PF12800	K08353	15	phsABC
 PF13247	K08353	15	phsABC
 PF01292	K08354	15	phsABC
 PF00581	K02439	16	Rhodanase
-PF04879	K08352	17	phsABC
-PF04879	K08357	17	phsABC
-PF04879	K08352	17	phsABC
-PF04879	K17222	17	phsABC
-PF12800	K08353	17	phsABC
-PF01292	K08354	17	phsABC
-PF00374	K17993	18	Elemental sulfur reduction 
-PF00175	K17995  	18	Elemental sulfur reduction 
-PF00970	K17995  	18	Elemental sulfur reduction 
-PF10418	K17995  	18	Elemental sulfur reduction 
-PF01058	K17994 	18	Elemental sulfur reduction 
+PF00374	K17993	17	Elemental sulfur reduction 
+PF00175	K17995  	17	Elemental sulfur reduction 
+PF00970	K17995  	17	Elemental sulfur reduction 
+PF10418	K17995  	17	Elemental sulfur reduction 
+PF01058	K17994 	17	Elemental sulfur reduction 
+PF00384	K17220	18	Elemental sulfur reduction 
+PF01568	K17221	18	Elemental sulfur reduction 
+PF04879	K17222	18	Elemental sulfur reduction 
+PF10518	K17221	18	Elemental sulfur reduction 
+PF13247	K17220	18	Elemental sulfur reduction 
+PF03916	K17221	18	Elemental sulfur reduction 
 PF00384	K16964	19	ddhABC
 PF01568	K16964	19	ddhABC
 PF13247	K16965	19	ddhABC
@@ -116,13 +116,26 @@ PF00355	K15762	23	methanesulfonate degradation
 PF00111	K15765	23	methanesulfonate degradation
 PF00175	K15765	23	methanesulfonate degradation
 PF00970	K15765	23	methanesulfonate degradation
-PF00389	K16843	24	sulfolactate degradation
-PF02826	K16843	24	sulfolactate degradation
-PF01070		24	sulfolactate degradation
-PF04295	K16846	24	sulfolactate degradation
-PF00501		25	3-methylmercaptopropionyl-CoA ligase
-PF13193		25	3-methylmercaptopropionyl-CoA ligase
+PF02615	K16844	24	Sulfolactate degradation
+PF02615	K05884	24	Sulfolactate degradation
+PF02775	K06034	24	Sulfolactate degradation
+PF02776	K13039	24	Sulfolactate degradation
+PF00291	K17950	24	Sulfolactate degradation
+PF01515	K06250                             K13788	24	Sulfolactate degradation
+PF02826	K16843	24	Sulfolactate degradation
+PF00389	K16843	24	Sulfolactate degradation
+PF01070	0	24	Sulfolactate degradation
+PF00205	K0382	24	Sulfolactate degradation
+PF02775	K0382	24	Sulfolactate degradation
+PF02776	K0382	24	Sulfolactate degradation
+PF00106	K15373	25	Sulfatoacetaldehyde degradation
+PF00171		25	Sulfatoacetaldehyde degradation
+PF00205		25	Sulfatoacetaldehyde degradation
+PF02775		25	Sulfatoacetaldehyde degradation
+PF02776		25	Sulfatoacetaldehyde degradation
 PF04069	K15551	26	Taurine degradation
+PF00005	K10831	26	Taurine degradation
+PF00528	K15552	26	Taurine degradation
 PF02668	K03119	26	Taurine degradation
-PF00202	K03851	26	Taurine degradation
-PF00202	K15372	26	Taurine degradation
+PF00202	K15372 	26	Taurine degradation
+PF00202	K03851 	26	Taurine degradation
