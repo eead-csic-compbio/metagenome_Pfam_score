@@ -39,7 +39,7 @@ perl mebs.pl -h
 
 
 # UPDATES 
-
+---
 **10/05/18: The sulfur cycle has been updated to include the metabolic completeness of the following pathways:**
 Since the sulfur pathways described in MEBS's manuscript were assembled from many pathways found in a variety of organisms, whose purpose is to provide an overview of the metabolic capabilities of entire ecosystems/metagenomic samples, we suggest the following pathways that represent pathways from single organisms to  evaluate genomes/bins. The old file can be still used  for the analysis of metagenomic samples but it has been moved to the [mapping directory](https://github.com/eead-csic-compbio/metagenome_Pfam_score/mapping/pfam2kegg.tab) 
 
@@ -47,7 +47,6 @@ Since the sulfur pathways described in MEBS's manuscript were assembled from man
 2. **apt/sat**: Present in sulfur oxidation and reduction pathways
 3. **dsrABC**: Present in sulfur oxidation and reduction pathways
 4. **Sox system**: [Sulfur oxidation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-5296)
-fur oxidation 
 5. **Sor** system	[Sulfur oxidation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-5302)
 6. **fccB**	[Sulfur oxidation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-5274)
 7. **doxAD**	[Sulfur oxidation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-5303)
@@ -73,7 +72,7 @@ fur oxidation
 
 See file mappping file [here](https://github.com/eead-csic-compbio/metagenome_Pfam_score/blob/master/cycles/sulfur/pfam2kegg.tab) 
 
-
+---
 
 **09/28/18:  The methane cycle has been updated to include the metabolic completeness of only 6 major pathways:**
 
