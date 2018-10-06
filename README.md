@@ -8,7 +8,7 @@ Authors: Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira 
 
 # Manual and Readme 
 
-**MEBS'S documentation is  available  in the folowing [README](https://eead-csic-compbio.github.io/metagenome_Pfam_score/READMEv1.html)   
+**MEBS's** documentation is  available  in the folowing [README](https://eead-csic-compbio.github.io/metagenome_Pfam_score/READMEv1.html)   
 
 
 # Basic usage
