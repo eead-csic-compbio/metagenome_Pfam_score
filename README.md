@@ -41,7 +41,7 @@ perl mebs.pl -h
 # UPDATES 
 ---
 **10/05/18: The sulfur cycle has been updated to include the metabolic completeness of the following pathways:**
-Since the sulfur pathways described in MEBS's manuscript were assembled from many pathways found in a variety of organisms, whose purpose is to provide an overview of the metabolic capabilities of entire ecosystems/metagenomic samples, we suggest the following pathways that represent pathways from single organisms to  evaluate genomes/bins. The old file can be still used  for the analysis of metagenomic samples but it has been moved to the [mapping directory](https://github.com/eead-csic-compbio/metagenome_Pfam_score/mapping/pfam2kegg.tab) 
+Since the sulfur pathways described in MEBS's manuscript were assembled from many pathways found in a variety of organisms, whose purpose is to provide an overview of the metabolic capabilities of entire ecosystems/metagenomic samples, we suggest the following pathways that represent pathways from single organisms to  evaluate genomes/bins. The old file can be still used  for the analysis of metagenomic samples but it has been moved to the [mapping directory](https://github.com/eead-csic-compbio/metagenome_Pfam_score/blob/master/mapping/pfam2kegg.tab) 
 
 1. **aprAB**: Present in sulfur oxidation and reduction pathways
 2. **apt/sat**: Present in sulfur oxidation and reduction pathways
