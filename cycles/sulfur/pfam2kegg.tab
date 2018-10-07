@@ -16,7 +16,7 @@ PF02872	K17224	4	Sox system
 PF00034	0	4	Sox system
 PF13442	0	4	Sox system
 PF00581	0	4	Sox system
-PF00034	K17223  4	Sox system
+PF00034	K17223  	4	Sox system
 PF13501	K17226 	4	Sox system
 PF08770	K17227 	4	Sox system
 PF00174	K07147	5	Sor system
@@ -80,9 +80,9 @@ PF13247	K08353	15	phsABC
 PF01292	K08354	15	phsABC
 PF00581	K02439	16	Rhodanase
 PF00374	K17993	17	Elemental sulfur reduction 
-PF00175	K17995	17	Elemental sulfur reduction 
-PF00970	K17995	17	Elemental sulfur reduction 
-PF10418	K17995	17	Elemental sulfur reduction 
+PF00175	K17995  	17	Elemental sulfur reduction 
+PF00970	K17995  	17	Elemental sulfur reduction 
+PF10418	K17995  	17	Elemental sulfur reduction 
 PF01058	K17994 	17	Elemental sulfur reduction 
 PF00384	K17220	18	Elemental sulfur reduction 
 PF01568	K17221	18	Elemental sulfur reduction 
