@@ -41,7 +41,7 @@ perl mebs.pl -h
 # UPDATES 
 ---
 **10/05/18: The sulfur cycle has been updated to include the metabolic completeness of the following pathways:**
-Since the sulfur pathways described in MEBS's manuscript were assembled from many pathways found in a variety of organisms, whose purpose is to provide an overview of the metabolic capabilities of entire ecosystems/metagenomic samples, we suggest the following pathways that represent pathways from single organisms to  evaluate genomes/bins. The old file can be still used  for the analysis of metagenomic samples but it has been moved to the [mapping directory](https://github.com/eead-csic-compbio/metagenome_Pfam_score/blob/master/mapping/pfam2kegg.tab) 
+Since the sulfur pathways described in [MEBS's manuscript](https://academic.oup.com/gigascience/article/6/11/gix096/4561660) were assembled from many pathways found in a variety of organisms, whose purpose is to provide an overview of the metabolic capabilities of entire ecosystems/metagenomic samples, we suggest the following division that represents pathways from single organisms to  evaluate genomes/bins. The old file can be still used  for the analysis of metagenomic samples but it has been moved to the [mapping directory](https://github.com/eead-csic-compbio/metagenome_Pfam_score/blob/master/mapping/pfam2kegg.tab) 
 
 1. **aprAB**: Present in sulfur oxidation and reduction pathways
 2. **apt/sat**: Present in sulfur oxidation and reduction pathways
@@ -64,11 +64,12 @@ Since the sulfur pathways described in MEBS's manuscript were assembled from man
 19. **ddhABC** [DMS degradation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-6057)
 20. **dsoABCDEF**	[DMS degradation](https://metacyc.org/META/NEW-IMAGE?type=ENZYME&object=CPLX-7669)
 21. **dmoAB**	[DMS degradation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-6047)
-22.	[Saulfoacetaldehyde degradation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-6718)
-23.	[Methanesulfonate degradation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-6044)
-24.	[Sulfolactate degradation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-6616)
-25.	[Sulfoacetaldehyde degradation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-1281)
-26. [Taurine degradation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-1541)
+22.	[Sulfoacetaldehyde degradation isfD](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-6718)
+23. [Sulfoacetaldehyde degradation Xsc](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-1281)
+24. [Sulfoacetaldehyde degradation SafD](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-5982)
+25.	[Methanesulfonate degradation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-6044)
+26.	[Sulfolactate degradation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-6616)
+27. [Taurine degradation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-1541)
 
 See file mappping file [here](https://github.com/eead-csic-compbio/metagenome_Pfam_score/blob/master/cycles/sulfur/pfam2kegg.tab) 
 
