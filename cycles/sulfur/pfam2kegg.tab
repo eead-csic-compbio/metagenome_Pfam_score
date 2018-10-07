@@ -109,33 +109,32 @@ PF00296	K17228	21	dmoAB
 PF01613	K16967	21	dmoAB
 PF00106	K15373	22	Saulfoacetaldehyde degradation 
 PF00202	K15372 	22	Saulfoacetaldehyde degradation 
-PF00355	K16968	23	methanesulfonate degradation
-PF00848	K16968	23	methanesulfonate degradation
-PF13577	K16969	23	methanesulfonate degradation
-PF00355	K15762	23	methanesulfonate degradation
-PF00111	K15765	23	methanesulfonate degradation
-PF00175	K15765	23	methanesulfonate degradation
-PF00970	K15765	23	methanesulfonate degradation
-PF02615	K16844	24	Sulfolactate degradation
-PF02615	K05884	24	Sulfolactate degradation
-PF02775	K06034	24	Sulfolactate degradation
-PF02776	K13039	24	Sulfolactate degradation
-PF00291	K17950	24	Sulfolactate degradation
-PF01515	K06250	24	Sulfolactate degradation
-PF02826	K16843	24	Sulfolactate degradation
-PF00389	K16843	24	Sulfolactate degradation
-PF01070	0	24	Sulfolactate degradation
-PF00205	K0382	24	Sulfolactate degradation
-PF02775	K0382	24	Sulfolactate degradation
-PF02776	K0382	24	Sulfolactate degradation
-PF00106	K15373	25	Sulfatoacetaldehyde degradation
-PF00171		25	Sulfatoacetaldehyde degradation
-PF00205		25	Sulfatoacetaldehyde degradation
-PF02775		25	Sulfatoacetaldehyde degradation
-PF02776		25	Sulfatoacetaldehyde degradation
-PF04069	K15551	26	Taurine degradation
-PF00005	K10831	26	Taurine degradation
-PF00528	K15552	26	Taurine degradation
-PF02668	K03119	26	Taurine degradation
-PF00202	K15372 	26	Taurine degradation
-PF00202	K03851 	26	Taurine degradation
+PF00205		23	Sulfatoacetaldehyde degradation (Xsc) 
+PF02775		23	Sulfatoacetaldehyde degradation (Xsc) 
+PF02776		23	Sulfatoacetaldehyde degradation (Xsc) 
+PF00171		24	Sulfatoacetaldehyde degradation (SafD)
+PF00355	K16968	25	methanesulfonate degradation
+PF00848	K16968	25	methanesulfonate degradation
+PF13577	K16969	25	methanesulfonate degradation
+PF00355	K15762	25	methanesulfonate degradation
+PF00111	K15765	25	methanesulfonate degradation
+PF00175	K15765	25	methanesulfonate degradation
+PF00970	K15765	25	methanesulfonate degradation
+PF02615	K16844	26	Sulfolactate degradation
+PF02615	K05884	26	Sulfolactate degradation
+PF02775	K06034	26	Sulfolactate degradation
+PF02776	K13039	26	Sulfolactate degradation
+PF00291	K17950	26	Sulfolactate degradation
+PF01515	K06250	26	Sulfolactate degradation
+PF02826	K16843	26	Sulfolactate degradation
+PF00389	K16843	26	Sulfolactate degradation
+PF01070	0	26	Sulfolactate degradation
+PF00205	K0382	26	Sulfolactate degradation
+PF02775	K0382	26	Sulfolactate degradation
+PF02776	K0382	26	Sulfolactate degradation
+PF04069	K15551	27	Taurine degradation
+PF00005	K10831	27	Taurine degradation
+PF00528	K15552	27	Taurine degradation
+PF02668	K03119	27	Taurine degradation
+PF00202	K15372 	27	Taurine degradation
+PF00202	K03851 	27	Taurine degradation
