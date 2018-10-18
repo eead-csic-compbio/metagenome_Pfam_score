@@ -192,17 +192,17 @@ df_comp.rename(columns={'sulfur_1': 'aprAB',
 'nitrogen_22':'Nitrate_reductionIX(dissimilatory)', 
 'nitrogen_23':'Nitrate_reductionX(dissimilatoryperiplasmic)',
 'nitrogen_24':'Nitrogen_fixationI(ferredoxin)',
-'nitrogen_25':'Nitrogen fixation_II_(flavodoxin)',
+'nitrogen_25':'Nitrogen_fixation_II_(flavodoxin)',
 'nitrogen_26':'Superpathwayoftaurinedegradation',
 'nitrogen_27':'Taurine_degradationI',
-'nitrogen_29':'Taurine degradationIII',
+'nitrogen_29':'Taurine_degradationIII',
 'nitrogen_30':'Taurine_degradationIV',
 'nitrogen_31':'Urea_degradationII',
 'nitrogen_34':'Caffeine_degradationV(bacteria_via_trimethylurate)',
 'nitrogen_35':'4-aminobutanoate_degradationI',
-'nitrogen_36':'4-aminobutanoate degradation II',
-'nitrogen_37':'4-aminobutanoate degradation V',
-'nitrogen_38':'allantoin degradation IV (anaerobic)',
+'nitrogen_36':'4-aminobutanoate_degradationII',
+'nitrogen_37':'4-aminobutanoate_degradationV',
+'nitrogen_38':'allantoin_degradationIV(anaerobic)',
 'nitrogen_39':'choline',
 'nitrogen_40':'Ammonia_monoxygenase_AmoABC', 
 'nitrogen_41':'nirBD',
@@ -215,8 +215,8 @@ df_comp.rename(columns={'sulfur_1': 'aprAB',
 df_comp.to_csv(filename+"_completenes.tab",sep="\t")
 
 #outfilename_comp = 'itol_mebs_comp.txt'
-outfilename_comp = filename +'_itol_mebs_comp.txt'
-infile = 'dataset_heatmap_template.txt'
+outfilename_comp = filename +"_itol_mebs_comp.txt"
+infile = "dataset_heatmap_template.txt"
 outfile2 = open(outfilename_comp, 'w')
 
 # Modify FIELD_LABELS
@@ -298,3 +298,17 @@ sns.despine(left=True, bottom=True)
 plt.tight_layout()
 plt.savefig(argv[1]+"_mebs_dotplot.png",dpi=300,bbox_inches='tight')
 
+print("Done........................\n"
+        "Please check the following files:\n",
+        "1. Heatmap displaying the metabolic completeness of N,Fe,S and CH4 pathways:", argv[1]+"comp_heatmap.png\n", 
+        "2. Barplot with normalized MEBS score values:", argv[1]+"_barplot.png\n", 
+        "3. Heatmap with normalized MEBS score values:", argv[1]+"_mebs_heatmap.png\n",
+        "4. Dotplot with normalized MEBS score values:",  argv[1]+"_mebs_dotplot.png\n",
+        "5. Completeness file with description of the columns:", filename+"_completenes.tab\n",
+        "6. Mapping file to itol with normalized MEBS scores:", filename+"_itol_mebs.txt\n",
+        "7. Mapping file to itol with metabolic completeness:",  filename +"_itol_mebs_comp.txt\n", 
+        ".............................\n",
+        " If you have a tree file loaded in  itol, you can drag directly the _itol.txt files into your tree\n",
+         "and customize the colors of the pathways and the scores as in the following example\n",
+        "https://itol.embl.de/tree/97981518041461538630153\n",
+     )
