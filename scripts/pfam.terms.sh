@@ -5,7 +5,7 @@
 # code in bash
 # pfam_terms.tab contains a list of PFAM identifiers
 
-cat ../data/pfam_terms.tab | while read  pfam; do
+cat ../pfam_terms.tab | while read  pfam; do
 desc=$(curl http://pfam.xfam.org/family/"$pfam"/desc | head -1);
 printf "$pfam\t";
 printf "$desc\n";
