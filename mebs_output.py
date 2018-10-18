@@ -134,7 +134,7 @@ outfile.close()
 
 #Create the completeness file 
 
-df_comp=df.drop(['sulfur', 'carbon','oxygen','iron','nitrogen','<sulfur comp>', '<carbon comp>',
+df_comp=df.drop(['sulfur', 'carbon','oxygen','iron','nitrogen','<sulfur comp>', '<carbon comp>','<nitrogen comp>','<iron comp>',
                 'S','C','N','O','Fe'],axis=1)
 df_comp.rename(columns={'sulfur_1': 'aprAB',
 'sulfur_2':'Apt/Sat', 
@@ -152,28 +152,70 @@ df_comp.rename(columns={'sulfur_1': 'aprAB',
 'sulfur_14':'ttrABC',
 'sulfur_15':'phsABC', 
 'sulfur_16':'Rhodanase',
-'sulfur_17':'PhsABC',
-'sulfur_18':'S°_reduction', 
+'sulfur_17':'S°_reduction(hydACD)',
+'sulfur_18':'S°_reduction(sreABC)', 
 'sulfur_19':'DdhABC',
 'sulfur_20':'DsoABCDEF',
 'sulfur_21':'DmoAB', 
-'sulfur_22':'Sulfoacetaldehyde_degradation', 
-'sulfur_23':'Methanesulfonate_degradation', 
-'sulfur_24':'Sulfolactate_degradation', 
-'sulfur_25':'Sulfoacetate_degradation', 
-'sulfur_26':'Taurine_degradation', 
+'sulfur_22':'Sulfoacetaldehyde_degradation(isfD)', 
+'sulfur_23':'Sulfoacetaldehyde_degradation(Xsc)', 
+'sulfur_24':'Sulfoacetaldehyde_degradation(SafD)', 
+'sulfur_25':'Methanesulfonate_degradation', 
+'sulfur_26':'Sulfolactate_degradation',
+'sulfur_27':'Taurine_degradation',
 'carbon_1':'coB/coM_regeneration',
 'carbon_2':'Methane_oxidation',
 'carbon_3':'Methanogenesis', 
 'carbon_4':'Methanogenesis(methanol)', 
 'carbon_5':'Methylamine_degradation',
-'carbon_6':'mcrABC', },inplace=True)
+'carbon_6':'mcrABC',
+'nitrogen_1':'Ammonia_assimilation_I',
+'nitrogen_2':'Ammonia_assimilation_II',
+'nitrogen_4':'L-glutamine_biosynthesis_I',
+'nitrogen_5':'Superpathway_Ammonia_assimilation',
+'nitrogen_6':'Ammonia_oxidation_I(aerobic)',
+'nitrogen_7':'Ammonia_oxidation_II(anaerobic)', 
+'nitrogen_8': 'Ammonia_oxidation_IV(Autotrophic_Ammonia_oxidizers)',
+'nitrogen_9':'Nitrifier_denitrification(Ammonia_oxidation)',
+'nitrogen_10':'Nitrate_reduction_I(denitrification)',
+'nitrogen_11':'Nitrate_reduction_VII(denitrification)',
+'nitrogen_12':'Nitrifier_denirification(denitrification)',
+'nitrogen_13':'Nitrate_reductionI(denitrification)',
+'nitrogen_14':'Nitrate_reductionII(assimilatory)',
+'nitrogen_15':'Nitrate_reductionIII(dissimilatory)',
+'nitrogen_16':'Nitrate_reductionIV(dissimilatory)',
+'nitrogen_17':'Nitrate_reductionV(assimilatory)',
+'nitrogen_18':'Nitrate_reductionVI(assimilatory)',
+'nitrogen_19':'Nitrate_reductionVII(denitrification)',
+'nitrogen_20':'Nitrate_reductionVIII(dissimilatory)',
+'nitrogen_21':'Nitrate_reductionVIIIb(dissimilatory)',
+'nitrogen_22':'Nitrate_reductionIX(dissimilatory)', 
+'nitrogen_23':'Nitrate_reductionX(dissimilatoryperiplasmic)',
+'nitrogen_24':'Nitrogen_fixationI(ferredoxin)',
+'nitrogen_25':'Nitrogen fixation_II_(flavodoxin)',
+'nitrogen_26':'Superpathwayoftaurinedegradation',
+'nitrogen_27':'Taurine_degradationI',
+'nitrogen_29':'Taurine degradationIII',
+'nitrogen_30':'Taurine_degradationIV',
+'nitrogen_31':'Urea_degradationII',
+'nitrogen_34':'Caffeine_degradationV(bacteria_via_trimethylurate)',
+'nitrogen_35':'4-aminobutanoate_degradationI',
+'nitrogen_36':'4-aminobutanoate degradation II',
+'nitrogen_37':'4-aminobutanoate degradation V',
+'nitrogen_38':'allantoin degradation IV (anaerobic)',
+'nitrogen_39':'choline',
+'nitrogen_40':'Ammonia_monoxygenase_AmoABC', 
+'nitrogen_41':'nirBD',
+'nitrogen_42':'GABA_biosynthesis_prokaryotes_putrescine',
+'iron_1':'Fe(II)oxidation',
+'iron_2':'Fe_reduction_absorption',
+},inplace=True)
 
 #Create a file with the completeness 
-df_comp.to_csv(filename+"completenes.tab",sep="\t")
+df_comp.to_csv(filename+"_completenes.tab",sep="\t")
 
 #outfilename_comp = 'itol_mebs_comp.txt'
-outfilename_comp = filename+"_itol_mebs_comp.txt"
+outfilename_comp = filename +'_itol_mebs_comp.txt'
 infile = 'dataset_heatmap_template.txt'
 outfile2 = open(outfilename_comp, 'w')
 
@@ -200,11 +242,11 @@ outfile2.close()
 
 #PLOTS 
 #Heatmap figure
-sns.set(font_scale=1)
-axs = sns.clustermap(df_comp.T, col_cluster=True, linewidths=0.1,cmap=sns.color_palette("RdBu_r", 10)
-                     ,figsize=(15,12))
-plt.tight_layout()
-plt.title("Metabolic completeness of S and C pathways", )
+sns.set(font_scale=0.7)
+axs = sns.clustermap(df_comp.T, col_cluster=True, linewidths=0.1,cmap=sns.diverging_palette(220, 20, n=10),
+        figsize=(15,12))
+#plt.tight_layout()
+#plt.title("Metabolic completeness of S and C pathways", )
 plt.savefig(argv[1]+"comp_heatmap.png",dpi=300, bbox_inches='tight')
 
 #Barplot figure 
