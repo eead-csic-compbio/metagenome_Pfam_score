@@ -41,7 +41,8 @@ perl mebs.pl -h
 # UPDATES 
 ---
 
-**10/18/18: Nitrogen and Iron pathways are included. 
+**10/18/18: Nitrogen and Iron pathways are included.**
+
 [Nitrogen Pathways](https://eead-csic-compbio.github.io/metagenome_Pfam_score/nitrogen.html)   
 
 **10/05/18: The sulfur cycle has been updated to include the metabolic completeness of the following pathways:**
