@@ -368,4 +368,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-    print('[DONE] Have a nie day')
+    print('[DONE] Have a nice day')
