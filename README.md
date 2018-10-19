@@ -44,7 +44,7 @@ perl mebs.pl -h
 ---
 
 
-**/10/19/18: New script to cluster MEBS scores  and group uknown bins or genomes with a dataset of 2,107 nr genomes from Refseq**. 
+**/10/19/18: New script to cluster MEBS scores of your own  uknown bins or genomes with a dataset of 2,107 nr genomes from Refseq**. 
 
 ###  Usage
 
