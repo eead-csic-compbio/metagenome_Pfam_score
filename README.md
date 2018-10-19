@@ -43,9 +43,7 @@ perl mebs.pl -h
 
 **10/18/18: The nitrogen cycle has been updated to include the metabolic completeness of the following pathways:**
 
-[Nitrogen Pathways](https://eead-csic-compbio.github.io/metagenome_Pfam_score/nitrogen.html). 
-
-See file mappping file [here](https://github.com/eead-csic-compbio/metagenome_Pfam_score/blob/master/cycles/nitrogen/pfam2kegg.tab) 
+[Nitrogen Pathways](https://eead-csic-compbio.github.io/metagenome_Pfam_score/nitrogen.html). See corresponding  mappping file [here](https://github.com/eead-csic-compbio/metagenome_Pfam_score/blob/master/cycles/nitrogen/pfam2kegg.tab) 
 
 **10/05/18: The sulfur cycle has been updated to include the metabolic completeness of the following pathways:**
 [Sulfur Pathways](https://eead-csic-compbio.github.io/metagenome_Pfam_score/sulfur.html)   
