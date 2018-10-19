@@ -85,7 +85,6 @@ def proj_clust(df, k, n_components=2, scale='std', proj='tsne', clust='ward'):
         X = df.values
     else:
         scaler = scalers[scale]
-        print(scaler)
         X = scaler.fit_transform(df.values)
     # projection
     projm = projection[proj]
@@ -153,7 +152,7 @@ def plot_projclust(X, clust_model, filename,
     plt.savefig(filename, dpi=dpi)
 
 
-def plot_all(df, fname, dpi=300, k=4, kb=0.2):
+def plot_all(df, fname, dpi=300, scale='std', k=4, kb=0.2):
     """Make a plot with all the projections and clustering algorithms allowed
     :p"""
     # preparing
@@ -171,14 +170,16 @@ def plot_all(df, fname, dpi=300, k=4, kb=0.2):
     for i in range(n):
         p_ = lproj[i]
         for j in range(m):
-            print('[PlotAll] Working ... {}/{}'.format(count, n + m),
+            print('[PlotAll] Working ... {}/{}'.format(count, n * m),
                   flush=True, end='\r')
             c_ = lclust[j]
             ax = fig.add_subplot(n, m, count)
             # default k accepting a list form command line?
             k_ = ks[c_]
             # processing
-            X_p, cmodel = proj_clust(df, k=k_, proj=p_, clust=c_)
+            X_p, cmodel = proj_clust(df, k=k_,
+                                     scale=scale,
+                                     proj=p_, clust=c_)
             labels = cmodel.labels_
             clab = np.unique(cmodel.labels_)
             # creating image
@@ -188,7 +189,8 @@ def plot_all(df, fname, dpi=300, k=4, kb=0.2):
                 label = 'Cluster {}'.format(cl)
                 ax.scatter(*X_c.T, s=6, alpha=0.3,
                            label=label)
-                plt.title(p_ + ' + ' + c_, fontsize='x-small')
+                plt.title(scale + '+' + p_ + ' + ' + c_,
+                          fontsize='xx-small')
             # plt.legend()
             plt.xticks(fontsize='xx-small')
             plt.yticks(fontsize='xx-small')
@@ -324,8 +326,10 @@ def main():
     config_models(args)
     if args.all:
         print('[PlotAll] Creating all models...')
-        allname = basename + '_plot_all.png'
-        plot_all(df, allname, dpi=args.dpi, k=args.kparam, kb=0.2)
+        allname = basename + '_plot_all_{}.png'.format(args.scaler)
+        plot_all(df, allname, dpi=args.dpi,
+                 scale=args.scaler,
+                 k=args.kparam, kb=0.2)
         print('[PlotAll] Plotting and saving in {}...'.format(allname))
     else:
         # creating models
