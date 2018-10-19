@@ -6,9 +6,9 @@ Authors: Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira 
 2. [Instituto de Investigaciones Matematicas Aplicadas y en Sistemas](http://www.iimas.unam.mx), UNAM, Mexico
 3. [Fundacion ARAID](http://www.araid.es) & [EEAD-CSIC](http://www.eead.csic.es), Zaragoza, Spain
 
-# Manual and Readme 
+# Documentation
 
-Full  documentation is  available  in the folowing [README](https://eead-csic-compbio.github.io/metagenome_Pfam_score/READMEv1.html)   
+Full  documentation is  available  at the folowing [README](https://eead-csic-compbio.github.io/metagenome_Pfam_score/READMEv1.html)   
 
 
 # Basic usage
