@@ -59,10 +59,13 @@ Please note that the old file can be still used  for the analysis of metagenomic
 
 **09/28/18:  The methane cycle has been updated to include the metabolic completeness of only 6 major pathways:**
 
+
 1. coB/coM regeneration
 2. methane oxidation 
 3. methanogenesis
 4. methanogenesis(methanol) 
 5. methylamine degradation
 6. mcrABC 
+
+See the corresponding mapping file [here](https://github.com/eead-csic-compbio/metagenome_Pfam_score/blob/master/cycles/carbon/pfam2kegg.tab)   
 ---
