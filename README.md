@@ -41,6 +41,12 @@ perl mebs.pl -h
 # UPDATES 
 ---
 
+
+**10/18/18: The Iron cycle has been updated to include the metabolic completeness of the following pathways:**
+
+1. [Fe(II) oxidation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-6692)
+2. [iron reduction and absorption](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-5934)
+
 **10/18/18: The nitrogen cycle has been updated to include the metabolic completeness of the following pathways:**
 
 [Nitrogen Pathways](https://eead-csic-compbio.github.io/metagenome_Pfam_score/nitrogen.html). See corresponding  mappping file [here](https://github.com/eead-csic-compbio/metagenome_Pfam_score/blob/master/cycles/nitrogen/pfam2kegg.tab) 
