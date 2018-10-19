@@ -44,6 +44,27 @@ perl mebs.pl -h
 ---
 
 
+**/10/19/18: New script to cluster MEBS scores  and group uknown bins or genomes with a dataset of 2,107 nr genomes from Refseq. 
+
+###  Usage
+
+```
+python3 scripts/F_MEBS_cluster.py -h
+usage: F_MEBS_cluster.py [-h] [-k KPARAM] [-p {tsne,pca,isomap}]
+                         [-c {ward,kmeans,meanshift,spectral}] [--all]
+                         [--seed SEED] [-n {2,3}] [--dpi DPI]
+                         filename
+
+Creates a figure with the low dimention projection and clustering of the data
+in a MEBS result file. The clustering is computed from the stadardized and
+scaled original data, not with the dimensionaly reduced.
+```
+
+
+![clustering](./images/mebs_plot_all.png)
+
+
+
 **10/18/18: The Iron cycle has been updated to include the metabolic completeness of the following pathways:**
 
 1. [Fe(II) oxidation](https://metacyc.org/META/NEW-IMAGE?type=PATHWAY&object=PWY-6692)
