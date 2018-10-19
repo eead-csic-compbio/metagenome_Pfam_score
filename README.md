@@ -41,7 +41,7 @@ perl mebs.pl -h
 # UPDATES 
 ---
 
-**10/18/18: The nitrogen cycle has been updated to include the metabolic completeness of the following pathways.**
+**10/18/18: The nitrogen cycle has been updated to include the metabolic completeness of the following pathways:**
 
 [Nitrogen Pathways](https://eead-csic-compbio.github.io/metagenome_Pfam_score/nitrogen.html). 
 
