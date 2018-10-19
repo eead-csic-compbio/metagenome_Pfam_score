@@ -246,7 +246,8 @@ for each pathway. The data is standardized and scaled before processing""")
                         small integer that determines the exact number of
                         clusters. For meanshift,it must be a floating point
                         number in the range 0-1 that determines de variability
-                        allowed to compute the clusters [4].""")
+                        allowed to compute the clusters. Default 0.2 for
+                        meanshift and 4 for the other algorithms.""")
     parser.add_argument('-s', '--scaler',
                         choices=['std', 'robust', 'max', 'none'],
                         default='std',
@@ -317,6 +318,10 @@ def config_models(args):
 
 def main():
     args = arguments()
+    # "temporal" fix to meanshift default value
+    if args.clustering == 'meanshift':
+        args.kparam = '0.2'
+    # ends temporal fix (lol)
     if '.' in args.kparam:
         args.kparam = float(args.kparam)
     else:
