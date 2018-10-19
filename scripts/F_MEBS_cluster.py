@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 from sklearn import cluster
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler, MaxAbsScaler, RobustScaler
 from sklearn.manifold import TSNE, Isomap
 from sklearn.decomposition import PCA
 
@@ -42,8 +42,12 @@ clustering = {'ward': cluster.AgglomerativeClustering(),
               'meanshift': cluster.MeanShift(),
               }
 
+scalers = {'std': StandardScaler(),
+           'robust': RobustScaler(),
+           'max': MaxAbsScaler()}
 
-def proj_clust(df, k, n_components=2, proj='tsne', clust='ward'):
+
+def proj_clust(df, k, n_components=2, scale='std', proj='tsne', clust='ward'):
     """Projecton and clustering of the given DataFrame.
 
     Parameters
@@ -58,6 +62,9 @@ def proj_clust(df, k, n_components=2, proj='tsne', clust='ward'):
         of clusters identified.
     n_components : int, [2|3]
         Number of dimensions to reduce the data.
+    scale: str
+        Name of the sacling method. Values specified in scalers
+        dictionary.
     proj : str
         Name of the projection method. Values specified in projection
         dictionary.
@@ -74,8 +81,12 @@ def proj_clust(df, k, n_components=2, proj='tsne', clust='ward'):
         Trained clustering model.
     """
     # scaling data
-    scaler = StandardScaler()
-    X = scaler.fit_transform(df.values)
+    if scale == 'none':
+        X = df.values
+    else:
+        scaler = scalers[scale]
+        print(scaler)
+        X = scaler.fit_transform(df.values)
     # projection
     projm = projection[proj]
     projm.n_components = n_components
@@ -234,17 +245,24 @@ for each pathway. The data is standardized and scaled before processing""")
                         clusters. For meanshift,it must be a floating point
                         number in the range 0-1 that determines de variability
                         allowed to compute the clusters [4].""")
+    parser.add_argument('-s', '--scaler',
+                        choices=['std', 'robust', 'max', 'none'],
+                        default='std',
+                        help="""Method for scale/standardize the data.
+                        Standardization is a usually needed for machine
+                        learning methods. NOTE: none option uses the
+                        raw data for the analysis [std].""")
     parser.add_argument('-p', '--projection',
                         choices=['tsne', 'pca', 'isomap'],
                         default='tsne',
                         help="""Method for the projection for the data in 2 dimension
-                        [tsne]""")
+                        [tsne].""")
     parser.add_argument('-c', '--clustering',
                         choices=['ward', 'kmeans',
                                  'meanshift', 'spectral'],
                         default='ward',
                         help="""Method for data clustering
-                        [ward]""")
+                        [ward].""")
     parser.add_argument('--all', action='store_true',
                         help="""All analysis in one figure using the default values
                         k=4 for ward, kmeans and spectral clustering and k=0.2
@@ -315,11 +333,13 @@ def main():
         assert args.n_components == 2, '3D projections still not implemented'
         proj_, cm_ = proj_clust(df, args.kparam,
                                 n_components=args.n_components,
+                                scale=args.scaler,
                                 proj=args.projection,
                                 clust=args.clustering)
         # creatig image
-        fname = basename + '_{}_{}.png'.format(args.clustering,
-                                               args.projection)
+        fname = basename + '_{}_{}_{}.png'.format(args.scaler,
+                                                  args.clustering,
+                                                  args.projection)
         print('[RedClust] Plotting in : {}'.format(fname))
         axislabeldic = {'tsne': 'tSNE ',
                         'pca': 'PCA ',
