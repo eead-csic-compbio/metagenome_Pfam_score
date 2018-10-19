@@ -45,6 +45,8 @@ perl mebs.pl -h
 
 [Nitrogen Pathways](https://eead-csic-compbio.github.io/metagenome_Pfam_score/nitrogen.html). See corresponding  mappping file [here](https://github.com/eead-csic-compbio/metagenome_Pfam_score/blob/master/cycles/nitrogen/pfam2kegg.tab) 
 
+---
+
 **10/05/18: The sulfur cycle has been updated to include the metabolic completeness of the following pathways:**
 [Sulfur Pathways](https://eead-csic-compbio.github.io/metagenome_Pfam_score/sulfur.html)   
 Since the sulfur pathways described in [MEBS's manuscript](https://academic.oup.com/gigascience/article/6/11/gix096/4561660) were assembled from many pathways found in a variety of organisms, whose purpose is to provide an overview of the metabolic capabilities of entire ecosystems/metagenomic samples, we suggest the  above mentioned division that represents pathways from single organisms to  evaluate genomes/bins. 
