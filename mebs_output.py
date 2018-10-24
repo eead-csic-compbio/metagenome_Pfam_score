@@ -27,7 +27,7 @@ from argparse import RawDescriptionHelpFormatter
 import matplotlib.pylab as plt
 import pandas as pd
 import seaborn as sns
-
+from subprocess import run
 
 ################################
 # Script arguments and options #
@@ -49,11 +49,20 @@ parser.add_argument('--im_res', '-r', default=300, type=int,
 
 
 args = parser.parse_args()
-###############
 # END options #
-###############
 
-df = pd.read_table(args.filename, index_col=0)
+
+############################################
+# Remove asterisks from original mebs file #
+############################################
+noast_fname = args.filename + '.noa' 
+cmd = "sed s/\*//g {} > {}".format(args.filename,
+                                     noast_fname)
+run(cmd, shell=True)
+
+# END remove asterisks #
+
+df = pd.read_table(noast_fname, index_col=0)
 
 # Values obtained  by summing positive and negative entropies of each cycle
 sval = [16.018, -6.527000000000001]
@@ -349,6 +358,7 @@ plt.savefig(args.filename + "_mebs_dotplot." + args.im_format,
 
 print("Done........................\n"
       "Please check the following files:\n",
+      "0. Original data without asteriks:", noast_fname, '\n',
       "1. Heatmap displaying the metabolic completeness of N,Fe,S and CH4 pathways:",
       args.filename + "comp_heatmap.png\n",
       "2. Barplot with normalized MEBS score values:", args.filename +
