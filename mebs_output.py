@@ -6,7 +6,7 @@
 # Name:     mebs_output.py
 # Purpose:  Parse and compute some graphs derived from mebs.pl output
 #
-# Authors:      acph - dragopoot@gmail.com and vydat -valdeanda@ciencias.unam.mx
+# Authors:     acph - dragopoot@gmail.com and vydat - valdeanda@ciencias.unam.mx
 # Created:     2018
 # Licence:     GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007
 # ------------------------------
@@ -16,39 +16,43 @@
 -Heatmap with normalized mebs values                => input+mebs_heatmap.png
 -Heatmap with metabolic completness of S and C      => input+comp_heatmap.png
 -Barplot with normalized mebs values                => input+barplot.png
--
+
 """
 
 # Import libraries
 import argparse
-import numpy as np
+from argparse import RawDescriptionHelpFormatter
+# import numpy as np
 import matplotlib.pylab as plt
 import pandas as pd
 import seaborn as sns
-from scipy import stats
-import numpy as np
-import matplotlib
-import os
-import argparse
-import numpy as np
-import sys
-from sys import argv
 
 
-# How to run and some options ----------------------------
+################################
+# Script arguments and options #
+################################
 epilog = """Example:
 $  python3 mebs_output.py test_genomes.out """
 
-parser = argparse.ArgumentParser(description=__doc__, epilog=epilog)
+parser = argparse.ArgumentParser(description=__doc__, epilog=epilog,
+                                 formatter_class=RawDescriptionHelpFormatter)
 parser.add_argument('filename',
-                    help="Input file derived from mebs.pl using -comp option ")
+                    help="Input file derived from mebs.pl using -comp option.")
+parser.add_argument('-im_format', '-f', default='png', type=str,
+                    choices=['png', 'pdf', 'ps', 'eps', 'svg', 'tif', 'jpg'],
+                    help='''Output format for images [png].''')
+parser.add_argument('-im_res', '-r', default=300, type=int,
+                    help='''Output resolution for images in
+                    dot per inch (dpi) [dpi].''',
+                    metavar='dpi')
+
+
 args = parser.parse_args()
+###############
+# END options #
+###############
 
-
-args = sys.argv
-filename = args[1]
-df = pd.read_table(filename, index_col=0)
-
+df = pd.read_table(args.filename, index_col=0)
 
 # Values obtained  by summing positive and negative entropies of each cycle
 sval = [16.018, -6.527000000000001]
@@ -62,49 +66,50 @@ oval = [10.702999999999998, -2.317]
 
 def sulfur_per(x):
     if x >= 0:
-        pct = float(x/sval[0])
+        pct = float(x / sval[0])
         return round(pct, 2)
     elif x < 0:
-        neg = float(abs(x/sval[1]))
+        neg = float(abs(x / sval[1]))
         return round(neg, 2)
 
 
 def carbon_per(x):
     if x >= 0:
-        pct = float(x/cval[0])
+        pct = float(x / cval[0])
         return round(pct, 2)
     elif x < 0:
-        neg = float(abs(x/cval[1]))
+        neg = float(abs(x / cval[1]))
         return round(neg, 2)
 
 
 def nitrogen_per(x):
     if x >= 0:
-        pct = float(x/nval[0])
+        pct = float(x / nval[0])
         return round(pct, 2)
     elif x < 0:
-        neg = float(abs(x/nval[1]))
+        neg = float(abs(x / nval[1]))
         return round(neg, 2)
 
 
 def iron_per(x):
     if x >= 0:
-        pct = float(x/feval[0])
+        pct = float(x / feval[0])
         return round(pct, 2)
     elif x < 0:
-        neg = float(abs(x/feval[1]))
+        neg = float(abs(x / feval[1]))
         return round(neg, 2)
 
 
 def oxygen_per(x):
     if x >= 0:
-        pct = float(x/oval[0])
+        pct = float(x / oval[0])
         return round(pct, 2)
     elif x < 0:
-        neg = float(abs(x/feval[1]))
-
+        neg = float(abs(x / feval[1]))
+        return round(neg, 2)
 
 # Create a new column with normalized values
+
 
 df['S'] = df.sulfur.apply(sulfur_per)
 df['C'] = df.carbon.apply(carbon_per)
@@ -114,7 +119,7 @@ df['N'] = df.nitrogen.apply(nitrogen_per)
 
 df_new = df[['S', 'C', 'O', 'Fe', 'N']]
 
-outfilename = filename+'_itol_mebs.txt'
+outfilename = args.filename + '_itol_mebs.txt'
 infile = 'dataset_heatmap_template.txt'
 outfile = open(outfilename, 'w')
 
@@ -141,7 +146,9 @@ outfile.close()
 
 # Create the completeness file
 
-df_comp = df.drop(['sulfur', 'carbon', 'oxygen', 'iron', 'nitrogen', '<sulfur comp>', '<carbon comp>', '<nitrogen comp>', '<iron comp>',
+df_comp = df.drop(['sulfur', 'carbon', 'oxygen', 'iron', 'nitrogen',
+                   '<sulfur comp>', '<carbon comp>', '<nitrogen comp>',
+                   '<iron comp>',
                    'S', 'C', 'N', 'O', 'Fe'], axis=1)
 df_comp.rename(columns={'sulfur_1': 'aprAB(Marker_gene)',
                         'sulfur_2': 'Apt/Sat(Marker_gene)',
@@ -209,10 +216,10 @@ df_comp.rename(columns={'sulfur_1': 'aprAB(Marker_gene)',
                         }, inplace=True)
 
 # Create a file with the completeness
-df_comp.to_csv(filename+"_completenes.tab", sep="\t")
+df_comp.to_csv(args.filename + "_completenes.tab", sep="\t")
 
-#outfilename_comp = 'itol_mebs_comp.txt'
-outfilename_comp = filename + "_itol_mebs_comp.txt"
+# outfilename_comp = 'itol_mebs_comp.txt'
+outfilename_comp = args.filename + "_itol_mebs_comp.txt"
 infile = "dataset_heatmap_template.txt"
 outfile2 = open(outfilename_comp, 'w')
 
@@ -240,11 +247,13 @@ outfile2.close()
 # PLOTS
 # Heatmap figure
 sns.set(font_scale=0.7)
-axs = sns.clustermap(df_comp.T, col_cluster=True, linewidths=0.1, cmap=sns.diverging_palette(220, 20, n=10),
+axs = sns.clustermap(df_comp.T, col_cluster=True, linewidths=0.1,
+                     cmap=sns.diverging_palette(220, 20, n=10),
                      figsize=(15, 12))
 # plt.tight_layout()
-#plt.title("Metabolic completeness of S and C pathways", )
-plt.savefig(argv[1]+"comp_heatmap.png", dpi=300, bbox_inches='tight')
+# plt.title("Metabolic completeness of S and C pathways", )
+plt.savefig(args.filename + "_comp_heatmap." + args.im_format,
+            dpi=args.im_res, bbox_inches='tight')
 
 # Barplot figure
 plt.figure(figsize=(12, 7))
@@ -256,7 +265,8 @@ lines, labels = ax1.get_legend_handles_labels()
 ax1.legend(lines[:20], labels[:12], bbox_to_anchor=(
     1, 1), loc=2, borderaxespad=0.05, labelspacing=0.3)
 
-plt.savefig(argv[1]+"_barplot.png", dpi=300, bbox_inches='tight')
+plt.savefig(args.filename + "_barplot." + args.im_format,
+            dpi=args.im_res, bbox_inches='tight')
 
 # Heatmap
 plt.figure(figsize=(7, 5))
@@ -267,7 +277,8 @@ plt.legend(bbox_to_anchor=(1, 1), loc=2, borderaxespad=0.05, labelspacing=0.25)
 lines, labels = ax1.get_legend_handles_labels()
 ax1.legend(lines[:20], labels[:12], bbox_to_anchor=(
     1, 1), loc=2, borderaxespad=0.05, labelspacing=0.3)
-plt.savefig(argv[1]+"_mebs_heatmap.png", dpi=300, bbox_inches='tight')
+plt.savefig(args.filename + "_mebs_heatmap." + args.im_format,
+            dpi=args.im_res, bbox_inches='tight')
 
 # Pairplot
 df_new_ = df_new.copy()
@@ -295,21 +306,23 @@ for ax, title in zip(g.axes.flat, titles):
 
 sns.despine(left=True, bottom=True)
 plt.tight_layout()
-plt.savefig(argv[1]+"_mebs_dotplot.png", dpi=300, bbox_inches='tight')
+plt.savefig(args.filename + "_mebs_dotplot." + args.im_format,
+            dpi=args.im_res, bbox_inches='tight')
 
 print("Done........................\n"
       "Please check the following files:\n",
-      "1. Heatmap displaying the metabolic completeness of N,Fe,S and CH4 pathways:", argv[
-          1]+"comp_heatmap.png\n",
-      "2. Barplot with normalized MEBS score values:", argv[1] +
+      "1. Heatmap displaying the metabolic completeness of N,Fe,S and CH4 pathways:",
+      args.filename + "comp_heatmap.png\n",
+      "2. Barplot with normalized MEBS score values:", args.filename +
       "_barplot.png\n",
-      "3. Heatmap with normalized MEBS score values:", argv[1] +
+      "3. Heatmap with normalized MEBS score values:", args.filename +
       "_mebs_heatmap.png\n",
-      "4. Dotplot with normalized MEBS score values:",  argv[1] +
+      "4. Dotplot with normalized MEBS score values:",  args.filename +
       "_mebs_dotplot.png\n",
-      "5. Completeness file with description of the columns:", filename+"_completenes.tab\n",
-      "6. Mapping file to itol with normalized MEBS scores:", filename+"_itol_mebs.txt\n",
-      "7. Mapping file to itol with metabolic completeness:",  filename +
+      "5. Completeness file with description of the columns:", args.filename +
+      "_completenes.tab\n",
+      "6. Mapping file to itol with normalized MEBS scores:", args.filename + "_itol_mebs.txt\n",
+      "7. Mapping file to itol with metabolic completeness:",  args.filename +
       "_itol_mebs_comp.txt\n",
       ".............................\n",
       " If you have a tree file loaded in  itol, you can drag directly the _itol.txt files into your tree\n",
