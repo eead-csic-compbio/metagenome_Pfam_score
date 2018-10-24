@@ -41,7 +41,7 @@ parser.add_argument('filename',
 parser.add_argument('-im_format', '-f', default='png', type=str,
                     choices=['png', 'pdf', 'ps', 'eps', 'svg', 'tif', 'jpg'],
                     help='''Output format for images [png].''')
-parser.add_argument('-im_res', '-r', default=300, type=int,
+parser.add_argument('--im_res', '-r', default=300, type=int,
                     help='''Output resolution for images in
                     dot per inch (dpi) [dpi].''',
                     metavar='dpi')

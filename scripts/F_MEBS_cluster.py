@@ -252,8 +252,10 @@ for each pathway. The data is standardized and scaled before processing""")
                         choices=['std', 'robust', 'max', 'none'],
                         default='std',
                         help="""Method for scale/standardize the data.
-                        Standardization is a usually needed for machine
-                        learning methods. NOTE: none option uses the
+                        Standardization is usually needed for machine
+                        learning methods. Based on scikit-learn, preprocessing
+                        methods.
+                        NOTE: 'none' option uses the
                         raw data for the analysis [std].""")
     parser.add_argument('-p', '--projection',
                         choices=['tsne', 'pca', 'isomap'],
@@ -283,7 +285,7 @@ for each pathway. The data is standardized and scaled before processing""")
                         is 2''')
     parser.add_argument('--dpi', type=int, default=300,
                         help='''Resolution of images in dot per inch [300].''')
-    parser.add_argument('-im_format', '-f', default='png', type=str,
+    parser.add_argument('--im_format', '-f', default='png', type=str,
                         choices=['png', 'pdf', 'ps', 'eps',
                                  'svg', 'tif', 'jpg'],
                         help='''Output format for images [png].''')
