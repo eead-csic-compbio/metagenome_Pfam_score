@@ -283,6 +283,10 @@ for each pathway. The data is standardized and scaled before processing""")
                         is 2''')
     parser.add_argument('--dpi', type=int, default=300,
                         help='''Resolution of images in dot per inch [300].''')
+    parser.add_argument('-im_format', '-f', default='png', type=str,
+                        choices=['png', 'pdf', 'ps', 'eps',
+                                 'svg', 'tif', 'jpg'],
+                        help='''Output format for images [png].''')
 
     args = parser.parse_args()
     return args
@@ -331,7 +335,8 @@ def main():
     config_models(args)
     if args.all:
         print('[PlotAll] Creating all models...')
-        allname = basename + '_plot_all_{}.png'.format(args.scaler)
+        allname = basename + '_plot_all_{}.{}'.format(args.scaler,
+                                                      args.im_format)
         plot_all(df, allname, dpi=args.dpi,
                  scale=args.scaler,
                  k=args.kparam, kb=0.2)
@@ -346,9 +351,10 @@ def main():
                                 proj=args.projection,
                                 clust=args.clustering)
         # creatig image
-        fname = basename + '_{}_{}_{}.png'.format(args.scaler,
-                                                  args.clustering,
-                                                  args.projection)
+        fname = basename + '_{}_{}_{}.{}'.format(args.scaler,
+                                                 args.clustering,
+                                                 args.projection,
+                                                 args.im_format)
         print('[RedClust] Plotting in : {}'.format(fname))
         axislabeldic = {'tsne': 'tSNE ',
                         'pca': 'PCA ',
