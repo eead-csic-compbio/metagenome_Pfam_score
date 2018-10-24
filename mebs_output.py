@@ -161,7 +161,7 @@ with open(infile) as inf:
         else:
             outfile.write(line)
 # new line
-outfile.write('\n')
+# outfile.write('\n')
 
 # new df
 
@@ -362,8 +362,8 @@ print("Done........................\n"
       "6. Mapping file to itol with normalized MEBS scores:", args.filename + "_itol_mebs.txt\n",
       "7. Mapping file to itol with metabolic completeness:",  args.filename +
       "_itol_mebs_comp.txt\n",
-      ".............................\n",
-      "8. File to be used as the input of F_MEBS_cluster.py -s none option"; args.filename + "_2_cluster_mebs.txt\n",
+      "8. File to be used as the input of F_MEBS_cluster.py -s none option", args.filename + "_2_cluster_mebs.txt\n",
+      ".............................\n",      
       " If you have a tree file loaded in  itol, you can drag directly the _itol.txt files into your tree\n",
       "and customize the colors of the pathways and the scores as in the following example\n",
       "https://itol.embl.de/tree/97981518041461538630153\n",
