@@ -248,6 +248,7 @@ outfile2.close()
 # Heatmap figure
 sns.set(font_scale=0.7)
 axs = sns.clustermap(df_comp.T, col_cluster=True, linewidths=0.1,
+                     # cmap=sns.light_palette((210, 90, 60), input="husl"),
                      cmap=sns.diverging_palette(220, 20, n=10),
                      figsize=(15, 12))
 # plt.tight_layout()
@@ -256,21 +257,30 @@ plt.savefig(args.filename + "_comp_heatmap." + args.im_format,
             dpi=args.im_res, bbox_inches='tight')
 
 # Barplot figure
-plt.figure(figsize=(12, 7))
-ax1 = df_new.plot(kind='bar')
-plt.ylabel("MEBS", weight='bold')
-plt.xlabel("Samples", weight="bold")
-plt.legend(bbox_to_anchor=(1, 1), loc=2, borderaxespad=0.05, labelspacing=0.25)
-lines, labels = ax1.get_legend_handles_labels()
-ax1.legend(lines[:20], labels[:12], bbox_to_anchor=(
-    1, 1), loc=2, borderaxespad=0.05, labelspacing=0.3)
+if len(df.index) >= 50:
+    print('''[WARNING] Skiping bar plot due to large data set (number of samples)''')
+else:
+    plt.figure(figsize=(12, 7))
+    ax1 = df_new.plot(kind='bar')
+    plt.ylabel("MEBS", weight='bold')
+    plt.xlabel("Samples", weight="bold")
+    plt.legend(bbox_to_anchor=(1, 1), loc=2,
+               borderaxespad=0.05, labelspacing=0.25)
+    lines, labels = ax1.get_legend_handles_labels()
+    ax1.legend(lines[:20], labels[:12], bbox_to_anchor=(
+        1, 1), loc=2, borderaxespad=0.05, labelspacing=0.3)
 
-plt.savefig(args.filename + "_barplot." + args.im_format,
-            dpi=args.im_res, bbox_inches='tight')
+    plt.savefig(args.filename + "_barplot." + args.im_format,
+                dpi=args.im_res, bbox_inches='tight')
+
 
 # Heatmap
 plt.figure(figsize=(7, 5))
-ax1 = sns.heatmap(df_new.T)
+ax1 = sns.heatmap(df_new.T,
+                  #cmap=sns.color_palette("cubehelix", n_colors=10),
+                  # cmap=sns.light_palette("dodgerblue", n_colors=10),
+                  cmap=sns.diverging_palette(220, 20, n=10),
+                  vmin=0, vmax=1, linewidths=0.1)
 plt.ylabel("MEBS", weight='bold')
 plt.xlabel("Samples", weight="bold")
 plt.legend(bbox_to_anchor=(1, 1), loc=2, borderaxespad=0.05, labelspacing=0.25)
