@@ -13,7 +13,8 @@
 """ Parse mebs.pl output and creates several files and figures:
 -File to map mebs normalized values to itol         => itol_mebs.txt
 -File with the metabolic completeness with names    => input+completenes.tab
--Heatmap with normalized mebs values                => input+mebs_heatmap.png
+-File to be the output of F_MEBS_cluster.py -s none => input+2_cluster_mebs.txt
+-Heatmap with normalized mebs values                => inputmebs_heatmap.png
 -Heatmap with metabolic completness of S and C      => input+comp_heatmap.png
 -Barplot with normalized mebs values                => input+barplot.png
 
@@ -129,6 +130,33 @@ with open(infile) as inf:
         if 'FIELD_LABELS ' in line:
             new_line = ['FIELD_LABELS'] + list(df_new.columns)
             new_line = ' '.join(new_line) + '\n'   # spaces
+            outfile.write(new_line)
+        else:
+            outfile.write(line)
+# new line
+outfile.write('\n')
+
+# new df
+
+for ind_ in df_new.index:
+    l = [str(i) for i in df_new.loc[ind_]]
+    line = ind_ + ' ' + ' '.join(l) + '\n'
+    outfile.write(line)
+outfile.close()
+
+
+#Create file to be input of   F_MEBS_cluster.py  using -s none option 
+
+outfilename = args.filename + '_2_cluster_mebs.txt'
+infile = 'mebs.gen.nr.norm.tab'
+outfile = open(outfilename, 'w')
+
+# Modify FIELD_LABELS
+with open(infile) as inf:
+    for line in inf:
+        if 'nitrogen ' in line:
+            new_line = ['nitrogen'] + list(df_new.columns)
+            new_line = ' '.join(new_line) + '\t'   # separated by tab
             outfile.write(new_line)
         else:
             outfile.write(line)
@@ -335,6 +363,7 @@ print("Done........................\n"
       "7. Mapping file to itol with metabolic completeness:",  args.filename +
       "_itol_mebs_comp.txt\n",
       ".............................\n",
+      "8. File to be used as the input of F_MEBS_cluster.py -s none option"; args.filename + "_2_cluster_mebs.txt\n",
       " If you have a tree file loaded in  itol, you can drag directly the _itol.txt files into your tree\n",
       "and customize the colors of the pathways and the scores as in the following example\n",
       "https://itol.embl.de/tree/97981518041461538630153\n",
