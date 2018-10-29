@@ -55,9 +55,9 @@ args = parser.parse_args()
 ############################################
 # Remove asterisks from original mebs file #
 ############################################
-noast_fname = args.filename + '.noa' 
+noast_fname = args.filename + '.noa'
 cmd = "sed s/\*//g {} > {}".format(args.filename,
-                                     noast_fname)
+                                   noast_fname)
 run(cmd, shell=True)
 
 # END remove asterisks #
@@ -154,7 +154,7 @@ for ind_ in df_new.index:
 outfile.close()
 
 
-#Create file to be input of   F_MEBS_cluster.py  using -s none option 
+# Create file to be input of   F_MEBS_cluster.py  using -s none option
 
 outfilename = args.filename + '_2_cluster_mebs.txt'
 infile = 'mebs.gen.nr.norm.tab'
@@ -176,7 +176,7 @@ with open(infile) as inf:
 
 for ind_ in df_new.index:
     l = [str(i) for i in df_new.loc[ind_]]
-    line = ind_ + ' ' + ' '.join(l) + '\n'
+    line = ind_ + '\t' + '\t'.join(l) + '\n'
     outfile.write(line)
 outfile.close()
 
@@ -372,8 +372,9 @@ print("Done........................\n"
       "6. Mapping file to itol with normalized MEBS scores:", args.filename + "_itol_mebs.txt\n",
       "7. Mapping file to itol with metabolic completeness:",  args.filename +
       "_itol_mebs_comp.txt\n",
-      "8. File to be used as the input of F_MEBS_cluster.py -s none option", args.filename + "_2_cluster_mebs.txt\n",
-      ".............................\n",      
+      "8. File to be used as the input of F_MEBS_cluster.py -s none option", args.filename +
+      "_2_cluster_mebs.txt\n",
+      ".............................\n",
       " If you have a tree file loaded in  itol, you can drag directly the _itol.txt files into your tree\n",
       "and customize the colors of the pathways and the scores as in the following example\n",
       "https://itol.embl.de/tree/97981518041461538630153\n",
