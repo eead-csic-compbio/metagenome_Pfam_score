@@ -46,15 +46,18 @@ if (-t STDIN && ($INP_help || $INP_folder eq '' || $INP_type eq '') && !$INP_cyc
 
    -help    Brief help message
    
-   -input   Folder containing FASTA peptide files ($VALIDEXT)                  (required)
+   -input   Folder containing FASTA peptide files ($VALIDEXT)             (required)
 
    -type    Nature of input sequences, either 'genomic' or 'metagenomic'  (required)
 
    -fdr     Score cycles with False Discovery Rate @validFDR  (optional, default=$FDR)
 
-   -cycles  Show currently supported biogeochemical cycles
+   -cycles  Show currently supported biogeochemical cycles/pathways
    
-   -comp    Compute the metabolic completeness                            (optional)
+   -comp    Compute the metabolic completeness of default cycles.         (optional) 
+            Required option  for mebs_output.py                                 
+
+   -custom  Compute the metabolic completeness of user input pathways     (optional) 
 
 EODOC
 }
@@ -205,7 +208,17 @@ if($INP_FDR)
   }
 }
 
+###Option to use TGRFAM or Pfam 
 
+##if custom is selected download current pfam database  
+#option would you like to dowload current Pfam database?
+##Warning heavy file 1.4 G
+#Download PFAM => ftp://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/
+#gzip Pfam-A.hmm.gz
+#mv Pfam-A.hmm.gz my_Pfam.custom.hmm && mv my_Pfam.custom.hmm cycles/custom
+#
+#
+#
 ## 3) scan input sequences with selected Pfam HMMs for each input file & cycle
 
 # print header
