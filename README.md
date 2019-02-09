@@ -52,7 +52,7 @@ perl mebs.pl -h
 
 This version includes the option **-custom** in which the user can add specific Pfams for custom searches in the mapping file [pfam2kegg](https://github.com/eead-csic-compbio/metagenome_Pfam_score/blob/master/cycles/custom/pfam2kegg.tab) located under /cycles/custom directory. 
 We provide an example of marker genes described in  [Peura et al. 2015](https://www.nature.com/articles/srep12102); you can modify these Pfams and add the Pfams of interest.  
-By using the  option -custom MEBS will download the current Pfam database (heavy file ~1.2G), and it will place it under /cycles/custom/ directory with the name  *my\_Pfam.custom.hmm*. 
+By using the  option -custom MEBS will download the current Pfam database (heavy file ~1.2G), and it will place it under /cycles/custom/ directory with the name  **my\_Pfam.custom.hmm**
 
 ### Usage
 
