@@ -1,10 +1,10 @@
 ![MEBS](./images/MEBS.png) 
 
-Authors: Valerie de Anda (1), Cesar Poot-Hernandez (2), Bruno Contreras-Moreira (3)
+Authors: 
+* [Valerie de Anda](https://valdeanda.github.io/)
+* [Cesar Poot-Hernandez](https://www.researchgate.net/profile/Augusto_Poot-Hernandez)
+* [Bruno Contreras-Moreira](https://www.ebi.ac.uk/about/people/bruno-contreras-moreira)
 
-1. [Instituto de Ecologia](http://web.ecologia.unam.mx), UNAM, Mexico
-2. [Instituto de Investigaciones Matematicas Aplicadas y en Sistemas](http://www.iimas.unam.mx), UNAM, Mexico
-3. [Fundacion ARAID](http://www.araid.es) & [EEAD-CSIC](http://www.eead.csic.es), Zaragoza, Spain
 
 # Documentation
 
@@ -34,6 +34,11 @@ perl mebs.pl -h
    -cycles  Show currently supported biogeochemical cycles
    
    -comp    Compute the metabolic completeness      
+
+
+   -custom  Compute the metabolic completeness of user input pathways
+            involved downloading PFAM db (larger file 1.4G)               (optional) 
+
    
 ```
 
@@ -41,6 +46,26 @@ perl mebs.pl -h
 
 
 # UPDATES 
+---
+
+** /02/08/19: Version 1.2 is available**
+
+This version includes the option -custom in which the user can add specific PFAMS for custom searches in the mapping file [pfam2kegg](https://github.com/eead-csic-compbio/metagenome_Pfam_score/blob/master/cycles/custom/pfam2kegg.tab) located under /cycles/custom directory. 
+We provide an example of marker genes described in  [Peura et al. 2015](https://www.nature.com/articles/srep12102); you can modify these Pfams and add the Pfams of interest.  
+By using the  option -custom MEBS will download the current Pfam database (heavy file ~1.2G), and it will place it under /cycles/custom/ directory with the name  *my\_Pfam.custom.hmm*. 
+
+### Usageusage
+
+```
+perl mebs.pl -input test_genomes/ -type genomic -comp -custom > test.genomes.out.tab
+
+```
+
+The output  test.genomes.out.tab will contain the completeness/presence absence of the custom Pfam markers specified in the pfam2kegg file. 
+
+If one Pfam is selected for each specific pathway, then the result will reflect the presence/absence pattern (0/100 respectively). If several Pfams are indicated in one pathway i.e  PF14710, PF02665, PF05573 for Denifitrication pathway (number 4 in the pfam2kegg.tab file under cycles/custom/ directory), then the output will reflect the completeness of those Pfams (i.e 100 will indicate that the three Pfams are present in the genome/metagenome, 66% only two and 33 % only one Pfam). Depending on the number of Pfams on each pathways the completeness will reflect different values. 
+If the user wants to analyze only presence/absence profiles, we encourage to use one Pfam per pathway. 
+  
 ---
 
 
