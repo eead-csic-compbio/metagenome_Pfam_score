@@ -3,17 +3,24 @@ use strict;
 use Getopt::Long;
 use FindBin '$Bin';
 
-# This script takes two input files and several optional choices: 
-#
-# 1) a hmmsearch tbl-format outfile with the results of scanning a collection of Pfam domais against
-# a large set of genomes or metagenomes
-#
-# 2) a TSV file with pre-computed entropies of Pfam domains produced by scripts/extract_entropies.py
 
-# Output:
-# 1) TAB-separated output with Pfam entropy scores
+# ---------------------------------------------------------
+# Name:           pfam_score.pl
+# Purpose:        Script that build up MEBS by using the hmmsearch agains the input data and the pre-computed entropies
+# @uthors:        B Contreras-Moreira (bcontreras@eead.csic.es) and  V de Anda  (valdeanda@ciencias.unam.mx) 
+# Created:        2018
+# Licence:        GNU GENERAL PUBLIC LICENSE 
+# Description:   This script takes two input files and several optional choices: 
 
-# B Contreras-Moreira, V de Anda 2017
+#		 1. A hmmsearch tbl-format outfile with the results of scanning a collection of Pfam domais/ KO's
+#		    against input data (either genomes, metagenomes or metagenome-assembled-genomes: MAG's)  
+#		 2. A  TSV file with pre-computed entropies of Pfam domains produced by scripts/extract_entropies.py
+
+# Output:        A  TAB-separated output file  with Pfam entropy scores
+# Last updated:  July 2019  
+# Version:       v1.3 (KEGG option) 
+# ---------------------------------------------------------
+
 
 my $DEFAULTFRAGSIZE  = 100;
 my $DEFAULTMINRELENTROPY  = -9;
@@ -23,28 +30,30 @@ my $DEFAULTMINRELENTROPY  = -9;
 my @COLORS = ( '#2c7bb6', '#abd9e9',  '#ffffbf', '#fdae61', '#d7191c' );
 #my @COLORS = ( '#FF9999', '#FF6666',  '#FF3333', '#FF0000', '#CC0000' );
 
-my ($INP_pfamsearchfile,$INP_infile_bzipped,$INP_entropyfile) = ('',0,'');
-my ($INP_fragment_size,$INP_help,$INP_keggmapfile,$INP_minentropy) = ($DEFAULTFRAGSIZE,0,'',$DEFAULTMINRELENTROPY);
+my ($INP_hmmsearchfile,$INP_infile_bzipped,$INP_entropyfile) = ('',0,'');
+my ($INP_fragment_size,$INP_help,$INP_keggmapfile,$INP_minentropy,$INP_KEGG) = ($DEFAULTFRAGSIZE,0,'',$DEFAULTMINRELENTROPY,'');
 my ($INP_pathways,$RAND_percent,@user_pathways,$pw) = ('',0);
 
 GetOptions
 (
-  'help|h|?'        => \$INP_help,
-  'input|in=s'      => \$INP_pfamsearchfile,
-  'size|s:s'        => \$INP_fragment_size,
-	'bzip|b'          => \$INP_infile_bzipped,
-	'entropyfile|enf=s' => \$INP_entropyfile,
-  'keggmap|km=s'    => \$INP_keggmapfile,
-  'minentropy|min=f'=> \$INP_minentropy,
-	'pathway|pw=s'    => \$INP_pathways,
-	'random|rd:i'     => \$RAND_percent
+  'help|h|?'           => \$INP_help,
+  'input|in=s'         => \$INP_hmmsearchfile,
+  'size|s:s'           => \$INP_fragment_size,
+  'bzip|b'             => \$INP_infile_bzipped,
+  'entropyfile|enf=s'  => \$INP_entropyfile,
+  'keggmap|km=s'       => \$INP_keggmapfile,
+  'minentropy|min=f'   => \$INP_minentropy,
+  'pathway|pw=s'       => \$INP_pathways,
+  'random|rd:i'        => \$RAND_percent,
+  'kegg|kg=s'          => \$INP_KEGG, 
+
 );
 
-if (-t STDIN && ($INP_help || $INP_pfamsearchfile eq '' || $INP_entropyfile eq ''))
+if (-t STDIN && ($INP_help || $INP_hmmsearchfile eq '' || $INP_entropyfile eq ''))
 {
 die<<EODOC;
 
-Program to compute Pfam entropy score (i.e Sulfur score).
+Program to compute Multigenomic Entropy-based Score (MEBS) using pre-computed entropies 
 
 usage: $0 [options] 
 
@@ -62,14 +71,9 @@ usage: $0 [options]
  
  -entropyfile   TSV file with pre-computed entropies from peptides     (required)
                 of variable size, produced by extract_entropies.py
-                The file must be formatted as follows:
-
-                  real  30  60  100 150 200 250 300
-                  PF00005 -0.001  0.001 -0.001  -0.001  -0.001  -0.001  -0.001  -0.001
-                  ...
  
- -minentropy    Min relative entropy of HMMs to be considered          (optional, unsigned float, example -min 0.3)
-                to compute the Pfam score    
+-minentropy    Min relative entropy of HMMs to be considered          (optional, unsigned float, example -min 0.3)
+               to compute the Pfam score    
 						 
  -keggmap       TSV file with HMM to KEGG mappings and pathway names.  (optional)
                 This produces a report on pathway completness and  
@@ -80,20 +84,22 @@ usage: $0 [options]
                   PF00890 K00394  1 Sulfite oxidation 
                   PF01087   1 Sulfite oxidation 
                   PF00581 K01011  2 Thiosulfate oxidation
-                  ...
+               
  
  -pathway       Comma-separated pathway numbers from -keggmap file to  (optional, by default all pathways are used)
                 produce pathway reports and to compute the Pfam score
 
  -random        Percent of random-sampled Pfams to compute the score   (integer, default=100)
 
+ -kegg          Compute the presence of KO'S from HMM data 
+
 EODOC
 }
    
 # required input files
-if(!$INP_pfamsearchfile || !-s $INP_pfamsearchfile)
+if(!$INP_hmmsearchfile || !-s $INP_hmmsearchfile)
 {
-    die "# ERROR : cannot locate input file -input $INP_pfamsearchfile\n";
+    die "# ERROR : cannot locate input file -input $INP_hmmsearchfile\n";
 }  
 elsif(!$INP_entropyfile || !-s $INP_entropyfile)
 {
@@ -127,7 +133,7 @@ elsif($INP_keggmapfile)
 	}
 }
 
-print "# $0 call:\n# -input $INP_pfamsearchfile -size $INP_fragment_size -bzip $INP_infile_bzipped ".
+print "# $0 call:\n# -input $INP_hmmsearchfile -size $INP_fragment_size -bzip $INP_infile_bzipped ".
 	"-entropyfile $INP_entropyfile -minentropy $INP_minentropy -random $RAND_percent -keggmap $INP_keggmapfile ".
   "-pathway $INP_pathways\n\n";
 
@@ -227,24 +233,42 @@ my $maxmatches = 0;
 my $pathwayOK;
 if($INP_infile_bzipped)
 {
-	open(INFILE,"bzcat $INP_pfamsearchfile|") ||
-		die "# $0 : cannot find $INP_pfamsearchfile, please check paths and re-run\n";
+	open(INFILE,"bzcat $INP_hmmsearchfile|") ||
+		die "# $0 : cannot find $INP_hmmsearchfile, please check paths and re-run\n";
 }
 else
 {
-	open(INFILE,$INP_pfamsearchfile) ||
-		die "# $0 : cannot find $INP_pfamsearchfile, please check paths and re-run\n";
+	open(INFILE,$INP_hmmsearchfile) ||
+		die "# $0 : cannot find $INP_hmmsearchfile, please check paths and re-run\n";
 }
+
+#HMMs from  KEGG #
+
+#ABPS01009746_47_750_+ -          K09807               -            1.3e-45  155.9   1.2   1.4e-45  155.8   1.2   1.0   1   0   0   1   1   1   1 -
+#ABPS01007303_1_158_+  -          K09807               -            7.3e-09   35.2   0.4   7.6e-09   35.1   0.4   1.0   1   0   0   1   1   1   1 -
+ 
 
 while(<INFILE>)
 {
+
+#Example of a Pfam hmmsearch output file 
 	#5723145_1_98_+          -          2-Hacid_dh           PF00389.25   1.9e-08   36.7   0.1   1.9e-08   36.7   0.1   1.0   1   0   0   1   1   1   1 -
 	#SRR000281.13791_1_100_+ -          2-Hacid_dh           PF00389.25   6.1e-06   28.6   0.1   6.1e-06   28.6   0.0   1.0   1   0   0   1   1   1   1 -
+
+	#HMMs from  KEGG #
+#Example of a KEGG hmmsearch output file 
+	#ABPS01009746_47_750_+ -          K09807               -            1.3e-45  155.9   1.2   1.4e-45  155.8   1.2   1.0   1   0   0   1   1   1   1 -
+	#ABPS01007303_1_158_+  -          K09807               -            7.3e-09   35.2   0.4   7.6e-09   35.1   0.4   1.0   1   0   0   1   1   1   1 -
+
 	chomp;
 	next if(/^#/ || /^\s+$/);
 
 	my @data = split(/\s+/,$_);
-	$hmm = $data[3];  
+ 
+	#$hmm = $data[3]; 
+	#$hmm = $data[2];
+	
+		
 	$hmm = (split(/\.\d+/,$hmm))[0];
 	
 	if($INP_pathways)
