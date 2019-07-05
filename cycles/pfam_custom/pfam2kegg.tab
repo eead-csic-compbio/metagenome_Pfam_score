@@ -1,0 +1,41 @@
+PFAM	KO	PATHWAY	PATHWAY NAME
+PF03598		1	WL
+PF00101		2	Calvin Cycle
+PF06240		3	CO oxydation 
+PF14710		4	Denitrification
+PF02665		4	Denitrification
+PF05573		4	Denitrification
+PF02335		5	Dissimilatory nitrate reduction
+PF12139		6	Dissimilatory sulfate reduction
+PF01077		7	Dissimilatory sulfate/nitrate reduction
+PF04976		8	DMSO reduction
+PF12367		9	Fermentation
+PF10657		10	GSB photosynthesis
+PF00285		11	Krebs cycle
+PF02964		12	Methane oxidation
+PF02249		13	Methanogenesis and reverse methanogenesis
+PF02745		13	Methanogenesis and reverse methanogenesis
+PF02241		13	Methanogenesis and reverse methanogenesis
+PF02783		13	Methanogenesis and reverse methanogenesis
+PF02240		13	Methanogenesis and reverse methanogenesis
+PF02461		14	Nitrification
+PF12942		14	Nitrification
+PF04896		15	Nitrification/methane oxidation
+PF04744		15	Nitrification/methane oxidation
+PF03460		16	Nitrogen and sulfur assimilation
+PF00120		17	Nitrogen assimilation
+PF03951		17	Nitrogen assimilation
+PF04898		17	Nitrogen assimilation
+PF01645		17	Nitrogen assimilation
+PF00142		18	Nitrogen fixation
+PF02579		18	Nitrogen fixation
+PF05088		19	Nitrogen mineralization/assimilation
+PF12466		19	Nitrogen mineralization/assimilation
+PF10712		19	Nitrogen mineralization/assimilation
+PF00115		20	oxidative phosphorylation
+PF00034		20	oxidative phosphorylation
+PF00485		21	pentose phosphate pathway
+PF00510		22	respiration
+PF13442		23	respiration
+PF04223		24	rTCA
+PF05995		25	Sulfur mineralization
