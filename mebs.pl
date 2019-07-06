@@ -7,13 +7,13 @@ use FindBin '$Bin';
 # ---------------------------------------------------------
 # Name:           mebs.pl
 # Purpose:        General script that depends on pfam_score.pl to compute MEBS from input data
-# @uthors:        B Contreras-Moreira (bcontreras@eead.csic.es) and  V de Anda  (valdeanda@ciencias.unam.mx) 
+# Authors:        B Contreras-Moreira (bcontreras@eead.csic.es) and V de Anda (valdeanda@ciencias.unam.mx) 
 # Created:        2018
 # Licence:        GNU GENERAL PUBLIC LICENSE 
 # Description:    For each omic file (either genome, metagenome, mag in fasta .aa format), 
 #                 mebs.pl will run hmmsearch against the databases located in /cycles directory
-#                 #                 If custom/kegg options are given, 
-# Output:         
+#                 to compute MEBS scores and completeness.
+#
 # Last updated:   July 2019  
 # Version:        v1.3 (KEGG option) 
 # Custom option added February 2019 (v1.2)
@@ -124,7 +124,7 @@ EODOC
 
 ## 1) Checking binaries
 my $sample_output = `$HMMSEARCHEXE -h 2>&1 `;
-if(!$HMMSEARCHEXE || $sample_output !~ /Usage/)
+if(!$HMMSEARCHEXE || !$sample_output || $sample_output !~ /Usage/)
 {
   die "#ERROR:  hmmsearch not found, please install or set \$HMMSEARCHEXE correctly\n";
 }
@@ -177,60 +177,54 @@ while(my $line = <CONFIG>)
 }
 close(CONFIG); 
 
-
 if ($INP_kegg)
 {
-print "You seleclected option -pfam... \n ";  
-print "Veryfing database..\n"; 
+  print "You selected option -kegg... \n ";  
+  print "Veryfing database..\n"; 
 }
 
-
-
-my $ftp;
 if ($INP_pfam)
 {
-print "You seleclected option -pfam... \n ";
-print "Veryfing database..\n";
+  print "You selected option -pfam... \n ";
+  print "Veryfing database..\n";
 
+  #code from  https://github.com/eead-csic-compbio/get_homologues/blob/master/install.pl
+  if(!-s $PFAM_HMMS)
+  {
+    print "# $PFAMNAME not found \n";
+    print "# connecting to $PFAMSERVERURL ...\n";
+    eval{ require Net::FTP; };
 
-	#code from  https://github.com/eead-csic-compbio/get_homologues/blob/master/install.pl
-        if(!-s $PFAM_HMMS)
-        {
-          print "# $PFAMNAME not found \n";
-          print "# connecting to $PFAMSERVERURL ...\n";
-          eval{ require Net::FTP; };
+    my ($ftp,$downsize);
+    if($ftp = Net::FTP->new($PFAMSERVERURL,Passive=>1,Debug =>0,Timeout=>60))
+    {
+      $ftp->login("anonymous",'-anonymous@') || die "# cannot login ". $ftp->message();
+      $ftp->cwd($PFAMFOLDER) || warn "# cannot change working directory to $PFAMFOLDER ". $ftp->message();
+      $ftp->binary();
+      $downsize = $ftp->size($PFAMHMMFILE);
+      $ftp->hash(\*STDOUT,$downsize/20) if($downsize);
+      printf("# downloading Pfam database, please wait........\n");
+      printf("# downloading ftp://%s/%s/%s (%1.1fMb) ...\n",
+	      $PFAMSERVERURL,$PFAMFOLDER,$PFAMHMMFILE,$downsize/(1024*1024));
+      print "# [        50%       ]\n# ";
 
-        if($ftp = Net::FTP->new($PFAMSERVERURL,Passive=>1,Debug =>0,Timeout=>60))
-            {
-          $ftp->login("anonymous",'-anonymous@') || die "# cannot login ". $ftp->message();
-          $ftp->cwd($PFAMFOLDER) || warn "# cannot change working directory to $PFAMFOLDER ". $ftp->message();
-          $ftp->binary();
-          my $downsize = $ftp->size($PFAMHMMFILE);
-          $ftp->hash(\*STDOUT,$downsize/20) if($downsize);
-          printf("# downloading Pfam database, please wait........\n");
-          printf("# downloading ftp://%s/%s/%s (%1.1fMb) ...\n",$PFAMSERVERURL,$PFAMFOLDER,$PFAMHMMFILE,$downsize/(1024*1024));
-          print "# [        50%       ]\n# ";
-
-          if(!$ftp->get($PFAMHMMFILE))
-             {
-            warn "# cannot download file $PFAMHMMFILE ". $ftp->message() ."\n\n";
-            warn "<< You might manually download $PFAMHMMFILE from $PFAMSERVERURL/$PFAMFOLDER to any location\n".
-              "<< and edit variable PFAMDB as to point to that location, as explained in the manual.\n".
+      if(!$ftp->get($PFAMHMMFILE))
+      {
+        warn "# cannot download file $PFAMHMMFILE ". $ftp->message() ."\n\n";
+        warn "<< You might download $PFAMHMMFILE from $PFAMSERVERURL/$PFAMFOLDER to $PFAMFOLDER\n".
               "<< Then re-run\n";
-             }
-             else
-               {
-               warn "# cannot connect to $PFAMSERVERURL: $@\n\n";
-               warn "<< You might manually download $PFAMHMMFILE from $PFAMSERVERURL/$PFAMFOLDER >>";
-               }
-            }
+      }
+    }  
+    else
+    {
+      warn "# cannot connect to $PFAMSERVERURL: $@\n\n";
+      warn "<< You might download $PFAMHMMFILE from $PFAMSERVERURL/$PFAMFOLDER to $PFAMFOLDER>>";
+    }
  
-        print "\n";
-exit(0);
-       }
+    print "\n";
+    exit(0);
+  }
 }
-
-
 
 
 if ($INP_cycles)
