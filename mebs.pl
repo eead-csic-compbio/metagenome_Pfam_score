@@ -16,7 +16,7 @@ use FindBin '$Bin';
 # Output:         
 # Last updated:   July 2019  
 # Version:        v1.3 (KEGG option) 
-#Custom option added February 2019 (v1.2)
+# Custom option added February 2019 (v1.2)
 # KEGG option added July 2019 (v1.3)
 # ---------------------------------------------------------
 
@@ -74,52 +74,49 @@ GetOptions
 );
 
 
-if (-t STDIN && ($INP_help || $INP_folder eq '' || $INP_type eq '') && !$INP_cycles  &&! $INP_pfam &&! $INP_kegg)
+if (-t STDIN && ($INP_help || $INP_folder eq '' || $INP_type eq '') && 
+	!$INP_cycles  &&! $INP_pfam &&! $INP_kegg)
 {
   die<<EODOC;
 
-  Program to compute MEBS  for a set of FASTA files from a given input folder.
+  Program to compute MEBS or completeness for a set of FASTA files in a given input folder.
   Version: $VERSION
 
   usage: $0 [options] 
 
-   -help         Brief help message
+   -help   Brief help message
    
-   -input        Folder containing FASTA peptide files ($VALIDEXT)			(required)
+   -input  Folder containing FASTA peptide files ($VALIDEXT).                 (required)
 
-   -type    	 Nature of input sequences, either 'genomic' or 'metagenomic' 
-                 if  you have Metagenome-Assembled Genomes (MAGs) we recommend
-	         to use the 'genomic' option					(required)
+   -type   Nature of input sequences, either 'genomic' or 'metagenomic'. (required)
+           If you have Metagenome-Assembled Genomes (MAGs) we recommend
+           to use the 'genomic' option.
 
-   -fdr     	 Score cycles with False Discovery Rate (FDR)
-   		 Allows to identify iput data that is enriched in a given cycle
-		 The most restrictive FDR (i.e 0.0001) the less false positives
-		 Cycles matching precalculated FDR-based cutoffs
-		 are indicated with asterisks 
-                 Valid options are:  @validFDR                  (optional, default=$FDR)
+   -fdr    Score cycles with False Discovery Rate (FDR).                 (optional, default=$FDR)
+           Computes whether input peptides are enriched in a given cycle.
+           The most restrictive FDR (i.e 0.0001) the less false positives.
+           Cycles matching precalculated FDR-based cutoffs are indicated with asterisks. 
+           Valid options are: @validFDR 
 
-   -cycles  	 Show currently supported biogeochemical cycles/pathways
+   -cycles Show supported biogeochemical cycles/pathways.
    
-   -comp    	 Compute the metabolic completeness of current supported cycles
-		 or pathways.We defined metabolic completenness as the full
-                 repertoire of protein domains involved in a given metabolic
-		 pathway  such as sulfate reduction or methanogenesis. 
-	       	 This option is required for visualization 
-                 purpuses by using  mebs_output.py				(optional)
+   -comp   Compute the metabolic completeness of supported cycles        (optional) 
+           or pathways. We define metabolic completenness as the full
+           set of protein domains involved in a given metabolic pathway,
+           such as sulfate reduction or methanogenesis. 
+           This option is required for visualization with mebs_output.py		
 
-   -pfam        Compute the presence abscence of custom PFAMS
-           	Please modify the  /cycles/pfam_custom/pfam2kegg.tab file
-                if you want to include your own custom set of Pfams   
-  	        This option involves downloading PFAM db (larg file 1.4G), 
-	        and  cannot be used to evaluate scores	
-                Requires the -comp option					(optional) 
+   -pfam   Compute presence/absence of custom PFAMs.                     (optional, requires -comp)
+           Please modify the cycles/pfam_custom/pfam2kegg.tab file
+           if you want to define your own custom set of PFAM domains.   
+           This option involves downloading PFAM db (large file >1GB)
+           and does not evaluate MEBS score.	
 
-   -kegg	Compute the presence of KO's in the input data 
-                Please modify the  /cycles/kegg_custom/pfam2kegg.tab file
-     		if you want to include your own custom set of KO's   
-                This option involves downloading KEGG hmms (large file 1.1G) 
- 	        and cannot be used to evaluate scores			
-                Requires the -comp option 					(optional)  
+   -kegg   Compute presence/absence of KOs in the input data.            (optional, requires -comp)
+           Please modify the cycles/kegg_custom/pfam2kegg.tab file
+           if you want to define your own custom set of KO orthogroups.   
+           This option involves downloading KEGG hmms (large file >1GB) 
+           and does not evaluate MEBS score.			
 
 EODOC
 }
