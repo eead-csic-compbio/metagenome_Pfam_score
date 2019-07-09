@@ -47,7 +47,7 @@ my $PFAMFOLDER        = 'pub/databases/Pfam/current_release/';
 my $PFAMHMMFILE       = 'Pfam-A.hmm.gz';
 my $PFAMHMMDECO       = 'Pfam-A.hmm'; 
 my $PFAMNAME          = 'my_Pfam.pfam.hmm';
-my $PFAMDIR           = $Bin.'/cycles/pfam_custom';
+my $PFAMDIR           = $Bin.'/DB/';
 my $PFAM_HMMS         = $Bin.'/cycles/pfam_custom/my_Pfam.pfam.hmm';
 my $PFAMCUSTOM_FILE   = $Bin.'/cycles/pfam_custom/pfam2kegg.tab';
 
@@ -56,7 +56,7 @@ my $PFAMCUSTOM_FILE   = $Bin.'/cycles/pfam_custom/pfam2kegg.tab';
 my $KEGGSERVERURL   = 'ftp://ftp.genome.jp/pub/db/kofam/';
 my $KEGGFOLDER      = 'profiles.tar.gz';
 my $KEGG_HMMS       = $Bin.'/cycles/kegg/my_Pfam.kegg.hmm';
-my $KEGGDIR         = $Bin.'/cycles/kegg_custom';
+my $KEGGDIR         = $Bin.'/DB/';
 my $KEGGCUSTOM_FILE = $Bin.'/cycles/kegg_custom/pfam2kegg.tab';
 
 #---------------------------------------------------------
@@ -189,9 +189,10 @@ if ($INP_pfam)
   print "Veryfing database..\n";
 
   #code from  https://github.com/eead-csic-compbio/get_homologues/blob/master/install.pl
-  if(!-s $PFAM_HMMS)
+  #Tal vez deberia
+  if(!-s $PFAMDIR)
   {
-    print "# $PFAMNAME not found \n";
+    print "# $PFAMHMMFILE  or $PFAMHMMDECO not found \n";
     print "# connecting to $PFAMSERVERURL ...\n";
     eval{ require Net::FTP; };
 
