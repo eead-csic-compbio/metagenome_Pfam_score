@@ -1,10 +1,3 @@
 
-## We moved MEBS to a new location. 
-
-Plaease visit the currently supported MEBS 
-
-https://github.com/valdeanda/mebs
-
-
-
-
+Thanks for visiting MEBS 
+Sorry for the inconvinience, we have moved  MEBS to a new  location  https://github.com/valdeanda/mebs
